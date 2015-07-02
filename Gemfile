@@ -42,6 +42,7 @@ gem 'carrierwave'
 gem 'friendly_id', '~> 5.0.0'
 
 gem 'will_paginate', '~> 3.0.6'
+gem 'public_activity'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
