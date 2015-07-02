@@ -10,4 +10,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << [:name, :password_confirmation]
     devise_parameter_sanitizer.for(:sign_in) << [:email, :remember_me]
   end
+
+  include PublicActivity::StoreController
+
 end
