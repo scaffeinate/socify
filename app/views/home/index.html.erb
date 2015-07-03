@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-lg-6 col-lg-offset-3">
-    <%= render 'form' %>
+    <%= render 'posts/form' %>
     <div class="row">
-      <div class="col-lg-12">
-        <%= render_activities(@activities, layout: '/partials/activity') %>
+      <div id="activities" class="col-lg-12">
+        <%= render_activities(@activities, layout: :activity) %>
       </div>
     </div>
   </div>
