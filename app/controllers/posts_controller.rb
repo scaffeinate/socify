@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   respond_to :html
 
   def show
+    @comments = @post.comments.all
     respond_with(@post)
   end
 

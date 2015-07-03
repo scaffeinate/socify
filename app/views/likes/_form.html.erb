@@ -1,10 +1,10 @@
-<%= pluralize(likeable.cached_votes_up, 'like') %>
+<h5><%= pluralize(likeable.cached_votes_up, 'like') %></h5>
 <% if current_user.liked? likeable %>
   <%= form_tag like_path(find_like(likeable), post_id: likeable.id), method: :delete, remote: true do %>
-    <%= button_tag 'unlike' %>
+    <%= button_tag 'unlike', class: 'btn btn-primary' %>
   <% end %>
 <% else %>
   <%= form_tag likes_path(post_id: likeable.id), remote: true do %>
-    <%= button_tag 'like' %>
+    <%= button_tag 'like', class: 'btn btn-primary' %>
   <% end %>
 <% end %>

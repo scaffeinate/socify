@@ -1,19 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user %>
-</p>
-
-<p>
-  <strong>Attachment:</strong>
-  <%= @post.attachment %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div id="post-<%= @post.id %>" class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <%= @post.content %>
+    <br>
+    <br>
+    <div class="likes">
+      <%= render 'likes/form', likeable: @post %>
+    </div>
+    <br>
+    <%= render 'comments/form', commentable: @post %>
+    <div class="comments">
+      <h4>Comments</h4>
+      <%= render @comments %>
+    </div>
+  </div>
+</div>

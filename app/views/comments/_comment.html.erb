@@ -1,0 +1,6 @@
+<div id="comment-<%= comment.id %>">
+  <h5><%= comment.user.name %> commented</h5>
+  <%= comment.comment %>
+  <%= link_to 'delete', comment_path(comment), method: :delete, remote: true %>
+  <hr>
+</div>
