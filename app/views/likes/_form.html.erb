@@ -1,3 +1,4 @@
+<%= pluralize(likeable.cached_votes_up, 'like') %>
 <% if current_user.liked? likeable %>
   <%= form_tag like_path(find_like(likeable), post_id: likeable.id), method: :delete, remote: true do %>
     <%= button_tag 'unlike' %>

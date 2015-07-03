@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150703041854) do
+ActiveRecord::Schema.define(version: 20150703053202) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -31,13 +31,15 @@ ActiveRecord::Schema.define(version: 20150703041854) do
   add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
 
   create_table "posts", force: true do |t|
-    t.text     "content",    null: false
+    t.text     "content",                     null: false
     t.integer  "user_id"
     t.string   "attachment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cached_votes_up", default: 0
   end
 
+  add_index "posts", ["cached_votes_up"], name: "index_posts_on_cached_votes_up"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "users", force: true do |t|
