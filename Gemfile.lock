@@ -27,6 +27,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts_as_commentable (4.0.2)
+    acts_as_votable (0.10.0)
     addressable (2.3.8)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (5.2.1)
@@ -190,6 +192,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_commentable
+  acts_as_votable (~> 0.10.0)
   autoprefixer-rails
   better_errors
   bootstrap-sass (~> 3.2.0)

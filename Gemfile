@@ -44,6 +44,9 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'will_paginate', '~> 3.0.6'
 gem 'public_activity'
 
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'acts_as_commentable'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
