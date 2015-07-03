@@ -1,4 +1,11 @@
 posted
 <% if activity.trackable %>
-  <%= link_to activity.trackable.content, activity.trackable %>
+  <div id="post-<%= activity.trackable.id %>">
+    <%= link_to activity.trackable.content, activity.trackable %>
+    <br>
+    <br>
+    <div class="likes">
+      <%= render 'likes/form', likeable: activity.trackable %>
+    </div>
+  </div>
 <% end %>
