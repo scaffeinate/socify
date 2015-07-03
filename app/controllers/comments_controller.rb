@@ -11,14 +11,12 @@ class CommentsController < ApplicationController
       comment.user = current_user
     end
     @comment.save
-    respond_with(@comment)
   end
 
   def destroy
     @comment = current_user.comments.find(params[:id])
     @comment_id = params[:id]
     @comment.destroy
-    respond_with(@comment)
   end
 
   private
