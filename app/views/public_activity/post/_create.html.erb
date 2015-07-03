@@ -1,14 +1,16 @@
-posted
+<%= activity.owner.name %>  posted
 <% if activity.trackable %>
   <div id="activity-<%= activity.id %>">
     <div id="post-<%= activity.trackable.id %>">
       <%= link_to activity.trackable.content, activity.trackable %>
       <br>
       <br>
-      <div class="likes">
-        <%= render 'likes/form', likeable: activity.trackable %>
-      </div>
-      <%= link_to pluralize(activity.trackable.comments_count, 'comment'), activity.trackable %>
+      <% if user_signed_in? %>
+        <div class="likes">
+          <%= render 'likes/form', likeable: activity.trackable %>
+        </div>
+        <%= link_to pluralize(activity.trackable.comments_count, 'comment'), activity.trackable %>
+      <% end %>
     </div>
   </div>
 <% end %>
