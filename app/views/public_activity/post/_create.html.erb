@@ -6,6 +6,9 @@
       <%= link_to activity.trackable.content, activity.trackable %>
       <br>
       <br>
+      <%= image_tag activity.trackable.attachment, class: 'attachment' %>
+      <br>
+      <br>
       <% if user_signed_in? %>
         <div class="likes">
           <%= render 'likes/form', likeable: activity.trackable %>
