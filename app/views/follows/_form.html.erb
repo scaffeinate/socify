@@ -1,0 +1,9 @@
+<% if user.followed_by?(current_user) %>
+  <%= form_tag unfollow_path(user_id: user.id), method: :post, remote: true do %>
+    <%= button_tag 'unfollow', class: 'btn btn-primary' %>
+  <% end %>
+<% else %>
+  <%= form_tag follow_path(user_id: user.id), method: :post, remote: true do %>
+    <%= button_tag 'follow', class: 'btn btn-success' %>
+  <% end %>
+<% end %>

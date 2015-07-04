@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
 
-  before_action :find_likeable, only: [:create, :destroy]
+  before_action :find_likeable
   before_action :authenticate_user!
 
   respond_to :js

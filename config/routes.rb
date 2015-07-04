@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+
   resources :posts
-  resources :likes, only: :create
   resources :comments, only: [:create, :destroy]
   devise_for :users
 
   root to: 'home#index'
-  delete 'unlikes' => 'likes#destroy'
+  match :follow, to: 'follows#create', as: :follow, via: :post
+  match :unfollow, to: 'follows#destroy', as: :unfollow, via: :post
+  match :like, to: 'likes#create', as: :like, via: :post
+  match :unlike, to: 'likes#destroy', as: :unlike, via: :post
+  match :find_friends, to: 'home#find_friends', as: :find_friends, via: :get
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

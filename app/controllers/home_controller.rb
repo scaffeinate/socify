@@ -3,4 +3,8 @@ class HomeController < ApplicationController
     @post = Post.new
     @activities = PublicActivity::Activity.all
   end
+
+  def find_friends
+    @users = User.all
+  end
 end

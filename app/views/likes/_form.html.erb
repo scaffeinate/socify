@@ -1,9 +1,9 @@
 <% if current_user.liked? likeable %>
-  <%= form_tag unlikes_path(post_id: likeable.id), method: :delete, remote: true do %>
+  <%= form_tag unlike_path(post_id: likeable.id), method: :delete, remote: true do %>
     <%= button_tag 'unlike', class: 'btn btn-primary' %>
   <% end %>
 <% else %>
-  <%= form_tag likes_path(post_id: likeable.id), remote: true do %>
+  <%= form_tag like_path(post_id: likeable.id), remote: true do %>
     <%= button_tag 'like', class: 'btn btn-primary' %>
   <% end %>
 <% end %>
