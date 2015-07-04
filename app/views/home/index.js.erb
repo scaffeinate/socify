@@ -1,0 +1,10 @@
+$('#activities').append("<%= j render_activities(@activities, layout: :activity) %>");
+
+<% if @activities.next_page %>
+  $(".pagination").replaceWith("<%= j will_paginate(@activities) %>");
+  $(".pagination").hide();
+<% else %>
+  $(window).off('scroll');
+  $("#loader").remove();
+  $(".pagination").remove();
+<% end %>

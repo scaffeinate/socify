@@ -4,6 +4,7 @@
     <div class="row">
       <div id="activities" class="col-lg-12">
         <%= render_activities(@activities, layout: :activity) %>
+        <%= will_paginate @activities %>
       </div>
     </div>
   </div>

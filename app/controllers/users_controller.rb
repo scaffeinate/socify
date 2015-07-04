@@ -3,8 +3,10 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
 
+  respond_to :html, :js
+
   def show
-    @activities = PublicActivity::Activity.where(owner: @user)
+    @activities = PublicActivity::Activity.where(owner: @user).paginate(page: params[:page], per_page: 2).order(created_at: :desc)
   end
 
   def edit

@@ -5,6 +5,9 @@
     <%= link_to 'Change your password', edit_user_registration_path %>
     <br>
     <br>
-    <%= render_activities(@activities, layout: :activity) %>
+    <div id="activities">
+      <%= render_activities(@activities, layout: :activity) %>
+      <%= will_paginate @activities %>
+    </div>
   </div>
 </div>
