@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   resources :posts
   resources :comments, only: [:create, :destroy]
   devise_for :users
+  resources :users do
+    member do
+      get :friends
+      get :followers
+    end
+  end
 
   root to: 'home#index'
   match :follow, to: 'follows#create', as: :follow, via: :post

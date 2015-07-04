@@ -1,3 +1,4 @@
+<%= render 'partials/avatar', user: activity.owner %>
 <%= activity.owner.name %>  posted
 <% if activity.trackable %>
   <div id="activity-<%= activity.id %>">

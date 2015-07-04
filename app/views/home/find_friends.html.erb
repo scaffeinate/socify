@@ -2,6 +2,7 @@
   <div class="col-lg-6 col-lg-offset-3">
     <% @users.each do |user| %>
       <div id="user-<%= user.id %>">
+        <%= render 'partials/avatar', user: user %>
         <%= user.name %>
         <div class="follow">
           <%= render 'follows/form', user: user %>

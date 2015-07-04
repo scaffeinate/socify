@@ -1,0 +1,10 @@
+<%= render 'partials/cover', user: @user %>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <%= link_to 'Edit Profile', edit_user_path(current_user) %>
+    <%= link_to 'Change your password', edit_user_registration_path %>
+    <br>
+    <br>
+    <%= render_activities(@activities, layout: :activity) %>
+  </div>
+</div>
