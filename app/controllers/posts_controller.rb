@@ -7,7 +7,6 @@ class PostsController < ApplicationController
 
   def show
     @comments = @post.comments.all
-    respond_with(@post)
   end
 
   def create
@@ -23,12 +22,10 @@ class PostsController < ApplicationController
 
   def update
     @post.update(post_params)
-    respond_with(@post)
   end
 
   def destroy
     @post.destroy
-    respond_with(@post)
   end
 
   private

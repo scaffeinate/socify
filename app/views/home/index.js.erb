@@ -5,6 +5,5 @@ $('#activities').append("<%= j render_activities(@activities, layout: :activity)
   $(".pagination").hide();
 <% else %>
   $(window).off('scroll');
-  $("#loader").remove();
   $(".pagination").remove();
 <% end %>

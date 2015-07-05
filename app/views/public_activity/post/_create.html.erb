@@ -1,8 +1,8 @@
-<%= render 'partials/avatar', user: activity.owner %>
-<%= activity.owner.name %>  posted
 <% if activity.trackable %>
   <div id="activity-<%= activity.id %>">
     <div id="post-<%= activity.trackable.id %>">
+      <%= render 'partials/avatar', user: activity.owner %>
+      <%= activity.owner.name %>  posted
       <%= link_to activity.trackable.content, activity.trackable %>
       <br>
       <br>
@@ -17,4 +17,5 @@
       <% end %>
     </div>
   </div>
+  <hr>
 <% end %>

@@ -1,7 +1,8 @@
-<%= activity.owner.name %> commented
 <% if activity.trackable %>
   <div id="activty-<%= activity.id %>">
+    <%= render 'partials/avatar', user: activity.owner %>
+    <%= activity.owner.name %>  commented
     <%= activity.trackable.comment %>
   </div>
+  on <%= activity.trackable.commentable.content %><hr>
 <% end %>
-on <%= activity.trackable.commentable.content %>

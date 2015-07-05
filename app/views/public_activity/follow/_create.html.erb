@@ -1,3 +1,3 @@
 <% if activity.trackable %>
-  <%= activity.trackable.follower.name %> follows <%= activity.trackable.followable.name %>
+  <%= render 'partials/avatar', user: activity.trackable.follower %> <%= activity.trackable.follower.name %> follows <%= render 'partials/avatar', user: activity.trackable.followable %> <%= activity.trackable.followable.name %><hr>
 <% end %>

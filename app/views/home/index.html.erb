@@ -4,6 +4,8 @@
     <div class="row">
       <div id="activities" class="col-lg-12">
         <%= render_activities(@activities, layout: :activity) %>
+      </div>
+      <div id="endless-scroll">
         <%= will_paginate @activities %>
       </div>
     </div>
