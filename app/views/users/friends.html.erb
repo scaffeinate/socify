@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <% @friends.each do |user| %>
+      <div id="user-<%= user.id %>">
+        <%= render 'partials/avatar', user: user %>
+        <%= user.name %>
+        <div class="follow">
+          <%= render 'follows/form', user: user %>
+        </div>
+      </div>
+      <hr>
+    <% end %>
+  </div>
+</div>

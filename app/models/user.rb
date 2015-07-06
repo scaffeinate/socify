@@ -15,4 +15,6 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name
 
+  self.per_page = 10
+
 end

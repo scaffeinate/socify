@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   respond_to :html, :js
 
   def show
-    @activities = PublicActivity::Activity.where(owner: @user).paginate(page: params[:page], per_page: 2).order(created_at: :desc)
+    @activities = PublicActivity::Activity.where(owner: @user).paginate(page: params[:page], per_page: 10).order(created_at: :desc)
   end
 
   def edit
@@ -19,6 +19,14 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def friends
+    @friends = @user.following_users.paginate(page: params[:page])
+  end
+
+  def followers
+    @followers = @user.user_followers.paginate(page: params[:page])
   end
 
   private
