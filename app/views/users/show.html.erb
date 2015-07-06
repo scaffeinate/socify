@@ -1,10 +1,13 @@
 <%= render 'partials/cover', user: @user %>
-<div class="row">
+<div id="user-<%= @user.id %>" class="row">
   <div class="col-lg-6 col-lg-offset-3">
-    <%= link_to 'Edit Profile', edit_user_path(current_user) %>
+    <%= link_to 'Edit Profile', edit_user_path(@user) %>
     <%= link_to 'Change your password', edit_user_registration_path %>
-    <%= link_to 'Friends', friends_user_path(current_user) %>
-    <%= link_to 'Followers', followers_user_path(current_user) %>
+    <%= link_to 'Friends', friends_user_path(@user) %>
+    <%= link_to 'Followers', followers_user_path(@user) %>
+    <% if @user != current_user %>
+      <%= render 'follows/form', user: @user %>
+    <% end %>
     <br>
     <br>
     <div id="activities">
