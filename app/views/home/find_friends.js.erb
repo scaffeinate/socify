@@ -1,0 +1,9 @@
+$('#users').append("<%= j render(@users) %>");
+
+<% if @users.next_page %>
+  $(".pagination").replaceWith("<%= j will_paginate(@users) %>");
+  $(".pagination").hide();
+<% else %>
+  $(window).off('scroll');
+  $(".pagination").remove();
+<% end %>

@@ -1,0 +1,6 @@
+<div id="user-<%= user.id %>">
+  <%= render 'partials/avatar', user: user %>
+  <%= user.name %>
+  <%= render 'follows/form', user: user %>
+</div>
+<hr>
