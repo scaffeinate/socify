@@ -1,5 +1,29 @@
+$navbar-color: #005686;
+
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
 body {
   padding-top: 100px;
+  background: #f0f0f0;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+  background-color: $navbar-color;
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-brand {
+  font-family: 'Montserrat';
+  color: white !important;
 }
 
 .avatar {
