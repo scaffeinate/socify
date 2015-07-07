@@ -10,7 +10,13 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'home#index'
+  authenticated :user do
+    root to: "home#index", as: "home"
+  end
+  unauthenticated :user do
+    root 'home#front'
+  end
+
   match :follow, to: 'follows#create', as: :follow, via: :post
   match :unfollow, to: 'follows#destroy', as: :unfollow, via: :post
   match :like, to: 'likes#create', as: :like, via: :post

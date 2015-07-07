@@ -1,6 +1,5 @@
 <div class="row">
-  <div class="col-lg-6 col-lg-offset-3">
-    <%= render 'posts/form' %>
+  <div class="col-lg-6">
     <div class="row">
       <div id="activities">
         <%= render_activities(@activities) %>
@@ -9,5 +8,8 @@
         <%= will_paginate @activities %>
       </div>
     </div>
+  </div>
+  <div class="col-lg-6">
+    <h2>Socify</h2>
   </div>
 </div>
