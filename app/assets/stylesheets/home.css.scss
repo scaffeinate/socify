@@ -2,6 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#newsfeed h4 {
+  text-align: center;
+  padding: 10px;
+}
+
+#intro {
+  margin-top: 125px;
+  padding: 10px 50px;
+  text-align: center;
+  h1 {
+    color: $navbar-color;
+    font-weight: 300 !important;
+  }
+
+  p {
+    font-size: 1.65rem;
+    line-height: 3rem;
+  }
+}
+
 .activity {
   background: white;
   border: 1px solid #e0e0e0;

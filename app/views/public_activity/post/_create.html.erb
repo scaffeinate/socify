@@ -3,6 +3,7 @@
     <%= render 'partials/avatar', user: activity.owner %>
     <%= activity.owner.name %>  posted
     <%= link_to activity.trackable.content, activity.trackable %>
+    <%= image_tag activity.trackable.attachment, class: 'attachment' %>
     <% if user_signed_in? %>
       <div class="likes">
         <%= render 'likes/form', likeable: activity.trackable %>
