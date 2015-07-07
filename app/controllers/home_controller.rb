@@ -4,12 +4,12 @@ class HomeController < ApplicationController
 
   def index
     @post = Post.new
-    if user_signed_in?
-      @friends = current_user.all_following
-      @activities = PublicActivity::Activity.where('owner_id = (?) OR owner_id in (?)', current_user, @friends).paginate(page: params[:page], per_page: 10).order(created_at: :desc)
-    else
-      @activities = PublicActivity::Activity.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
-    end
+    @friends = current_user.all_following
+    @activities = PublicActivity::Activity.where(owner_id: @friends.unshift(current_user)).paginate(page: params[:page], per_page: 10).order(created_at: :desc)
+  end
+
+  def front
+    @activities = PublicActivity::Activity.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
   end
 
   def find_friends

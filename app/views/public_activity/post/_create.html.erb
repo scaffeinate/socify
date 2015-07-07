@@ -1,21 +1,13 @@
-<% if activity.trackable %>
-  <div id="activity-<%= activity.id %>">
-    <div id="post-<%= activity.trackable.id %>">
-      <%= render 'partials/avatar', user: activity.owner %>
-      <%= activity.owner.name %>  posted
-      <%= link_to activity.trackable.content, activity.trackable %>
-      <br>
-      <br>
-      <%= image_tag activity.trackable.attachment, class: 'attachment' %>
-      <br>
-      <br>
-      <% if user_signed_in? %>
-        <div class="likes">
-          <%= render 'likes/form', likeable: activity.trackable %>
-        </div>
-        <%= link_to pluralize(activity.trackable.comments_count, 'comment'), activity.trackable %>
-      <% end %>
-    </div>
+<div id="activity-<%= activity.id %>" class="activity">
+  <div id="post-<%= activity.trackable.id %>">
+    <%= render 'partials/avatar', user: activity.owner %>
+    <%= activity.owner.name %>  posted
+    <%= link_to activity.trackable.content, activity.trackable %>
+    <% if user_signed_in? %>
+      <div class="likes">
+        <%= render 'likes/form', likeable: activity.trackable %>
+      </div>
+      <%= link_to pluralize(activity.trackable.comments_count, 'comment'), activity.trackable %>
+    <% end %>
   </div>
-  <hr>
-<% end %>
+</div>
