@@ -6,12 +6,12 @@
   .info {
     .name {
       display: inline-block;
-      font-size: 1.65rem;
+      font-size: 1.5rem;
       margin-left: 20px;
     }
 
     .action {
-      font-size: 1.55rem;
+      font-size: 1.5rem;
       margin-left: 2px;
     }
   }
@@ -20,7 +20,7 @@
     margin-left: 60px;
     padding: 5px 15px;
     .text {
-      font-size: 1.55rem;
+      font-size: 1.5rem;
     }
 
     .attachment {
@@ -31,16 +31,37 @@
     }
 
     .created-at {
-      font-size: 1.5rem;
+      color: #808080;
+      font-size: 1.25rem;
       margin-top: 15px;
     }
 
     .points span {
-      background-color: #e0e0e0;
       padding: 5px;
+      background-color: #f0f0f0;
+      color: #808080;
       display: inline-block;
+      font-size: 1.25rem;
       margin-top: 10px;
-      margin-right: 5px;
+      margin-right: 10px;
+    }
+  }
+
+  .actions {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+    a, button {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #e0e0e0;
+      color: #555;
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    .liked {
+      color: #2a6496;
     }
   }
 }

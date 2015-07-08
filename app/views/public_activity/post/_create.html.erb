@@ -21,7 +21,19 @@
         <span><%= pluralize(activity.trackable.comments_count, 'comment') %></span>
       </div>
     </div>
-    <div class="actions">
-    </div>
+    <% if user_signed_in? %>
+      <div class="actions">
+        <div class="row">
+          <div class="col-xs-6 like">
+            <%= render 'likes/form', likeable: activity.trackable %>
+          </div>
+          <div class="col-xs-6 comment">
+            <%= link_to activity.trackable, class: 'btn btn-block' do %>
+              <%= fa_icon 'comment' %> comment
+          <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 <% end %>

@@ -3,7 +3,7 @@
     <%= render 'posts/form' %>
     <div class="row">
       <div id="activities">
-        <%= render_activities(@activities) %>
+        <%= render_activities(@activities, layout: :activity) %>
       </div>
       <div id="endless-scroll">
         <%= will_paginate @activities %>
