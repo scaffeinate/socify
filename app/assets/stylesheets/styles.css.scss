@@ -3,7 +3,7 @@
 
 body {
   padding-top: 100px;
-  background: #f0f0f0;
+  background: $bg-color;
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .avatar {
-  border: 1px solid #e0e0e0;
+  border: 1px solid $border-color;
   width: 50px;
   height: 50px;
 }
@@ -37,8 +37,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .activity {
   background: white;
-  border: 1px solid #e0e0e0;
+  border: 1px solid $border-color;
   border-radius: 3px;
   padding: 10px;
   margin: 10px;
+}
+
+.name {
+  display: inline-block;
+  font-size: $default-font-size;
+  margin-left: 10px;
+}
+
+.action {
+  font-size: $default-font-size;
+  margin-left: 2px;
+}
+
+.created-at {
+  color: $light-text-color;
+  font-size: $small-font-size;
+  margin-top: 15px;
 }
