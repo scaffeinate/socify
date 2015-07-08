@@ -1,4 +1,4 @@
-$('#activities').append("<%= j render_activities(@activities) %>");
+$('#activities').append("<%= j render_activities(@activities, layout: :activity) %>");
 
 <% if @activities.next_page %>
   $(".pagination").replaceWith("<%= j will_paginate(@activities) %>");

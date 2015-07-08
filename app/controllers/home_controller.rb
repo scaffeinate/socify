@@ -6,11 +6,12 @@ class HomeController < ApplicationController
     @post = Post.new
     @friends = current_user.all_following
     @activities = PublicActivity::Activity.where(owner_id: @friends.unshift(current_user))
-    .paginate(page: params[:page], per_page: 3).order(created_at: :desc)
+    .order(created_at: :desc)
+    .paginate(page: params[:page], per_page: 3)
   end
 
   def front
-    @activities = PublicActivity::Activity.paginate(page: params[:page], per_page: 4).order(created_at: :desc)
+    @activities = PublicActivity::Activity.order(created_at: :desc).paginate(page: params[:page], per_page: 4)
   end
 
   def find_friends

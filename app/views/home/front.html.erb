@@ -2,7 +2,7 @@
   <div id="newsfeed" class="col-lg-6">
     <h4><%= fa_icon "newspaper-o" %> NEWSFEED</h4>
     <div id="activities">
-      <%= render_activities(@activities) %>
+      <%= render_activities(@activities,layout: :activity) %>
     </div>
     <div id="endless-scroll">
       <%= will_paginate @activities %>
