@@ -12,10 +12,7 @@
           <%= image_tag activity.trackable.attachment%>
         </div>
       <% end %>
-      <div class="created-at">
-        <%= fa_icon 'clock-o' %>
-        <%= relative_time(activity.created_at) %> ago
-      </div>
+      <%= render 'partials/created_at', activity: activity %>
       <div class="points">
         <span><%= pluralize(activity.trackable.cached_votes_up, 'like') %></span>
         <span><%= pluralize(activity.trackable.comments_count, 'comment') %></span>
