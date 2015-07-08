@@ -1,10 +1,9 @@
 <% if user_signed_in? %>
   <%= form_for(@post) do |f| %>
     <div class="form-group">
-      <%= f.label 'Update status' %><br>
+      <h4>Update Status</h4>
       <%= f.text_area :content, class: 'form-control', autofocus: true, placeholder: 'What\'s up?' %>
-      <%= f.file_field :attachment, class: 'form-control' %>
     </div>
-    <%= f.submit :post, class: 'btn btn-primary'%>
+    <%= f.submit 'Post', class: 'btn btn-primary'%>
   <% end %>
 <% end %>

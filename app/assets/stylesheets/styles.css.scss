@@ -59,3 +59,35 @@ h1, h2, h3, h4, h5, h6 {
   font-size: $small-font-size;
   margin-top: 15px;
 }
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-primary {
+  background-color: $navbar-color;
+  padding: 10px 20px;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+textarea {
+  box-shadow: none !important;
+  border: 2px solid #ccc !important;
+  &:focus {
+    border: 2px solid #888 !important;
+  };
+}
+
+.alert-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-left: 32%;
+  margin-top: 30px;
+  width: 450px;
+  z-index: 10000;
+  text-align: center;
+  padding: 5px 25px;
+}
