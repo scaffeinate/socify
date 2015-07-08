@@ -1,14 +1,27 @@
-<div id="activity-<%= activity.id %>" class="activity">
-  <div id="post-<%= activity.trackable.id %>">
-    <%= render 'partials/avatar', user: activity.owner %>
-    <%= activity.owner.name %>  posted
-    <%= link_to activity.trackable.content, activity.trackable %>
-    <%= image_tag activity.trackable.attachment, class: 'attachment' %>
-    <% if user_signed_in? %>
-      <div class="likes">
-        <%= render 'likes/form', likeable: activity.trackable %>
+<% if activity.trackable %>
+  <div id="post-<%= activity.trackable.id %>" class="post">
+    <div class="info">
+      <%= render 'partials/avatar', user: activity.owner %>
+      <h4 class="name"><%= activity.owner.name %></h4>
+      <span class="action">created a <%= link_to 'post', activity.trackable %></span>
+    </div>
+    <div class="content">
+      <span class="text"><%= activity.trackable.content %></span>
+      <% if activity.trackable.attachment.present? %>
+        <div class="attachment">
+          <%= image_tag activity.trackable.attachment%>
+        </div>
+      <% end %>
+      <div class="created-at">
+        <%= fa_icon 'clock-o' %>
+        <%= relative_time(activity.created_at) %> ago
       </div>
-      <%= link_to pluralize(activity.trackable.comments_count, 'comment'), activity.trackable %>
-    <% end %>
+      <div class="points">
+        <span><%= pluralize(activity.trackable.cached_votes_up, 'like') %></span>
+        <span><%= pluralize(activity.trackable.comments_count, 'comment') %></span>
+      </div>
+    </div>
+    <div class="actions">
+    </div>
   </div>
-</div>
+<% end %>
