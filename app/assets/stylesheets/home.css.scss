@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#newsfeed h4 {
+#newsfeed > h4 {
   text-align: center;
   padding: 10px;
 }
@@ -28,4 +28,35 @@
   border-radius: 3px;
   padding: 10px;
   margin: 10px;
+}
+
+.comment, .post {
+  .name {
+    display: inline;
+    font-size: 1.6rem;
+    margin-left: 10px;
+  }
+
+  .post-content {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    margin: 10px 65px;
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  .time {
+    margin: 0px 65px;
+    padding: 5px;
+    display: inline-block;
+  }
+}
+
+.post {
+  .post-content {
+    margin: 0px 65px;
+    padding: 0px !important;
+    border: none;
+  }
 }
