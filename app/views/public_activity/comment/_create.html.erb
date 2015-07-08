@@ -1,6 +1,17 @@
 <% if activity.trackable %>
-  <%= render 'partials/avatar', user: activity.owner %>
-  <%= activity.owner.name %>  commented
-    <%= activity.trackable.comment %>
-  on <%= activity.trackable.commentable.content %>
+  <div class="comment">
+    <div class="info">
+      <%= render 'partials/avatar', user: activity.owner %>
+      <h4 class="name"><%= activity.owner.name %></h4>
+      <span class="action">commented on <%= link_to 'post', activity.trackable.commentable %></span>
+    </div>
+    <div class="content">
+      <%= render 'partials/avatar', user: activity.trackable.commentable.user %>
+      <span class="text"><%= activity.trackable.commentable.content %></span>
+    </div>
+    <div class="created-at">
+      <%= fa_icon 'clock-o' %>
+      <%= relative_time(activity.created_at) %> ago
+    </div>
+  </div>
 <% end %>

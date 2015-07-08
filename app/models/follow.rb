@@ -12,6 +12,6 @@ class Follow < ActiveRecord::Base
   end
 
   include PublicActivity::Model
-  tracked only: [:create]
+  tracked only: [:create], owner: Proc.new{ |controller, model| model.follower }
 
 end

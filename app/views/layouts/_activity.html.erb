@@ -1,3 +1,5 @@
-<div id="activity-<%= activity.id %>" class="activity">
-  <%= render_activity(activity) %>
-</div>
+<% if activity.trackable %>
+  <div id="activity-<%= activity.id %>" class="activity">
+    <%= render_activity(activity) %>
+  </div>
+<% end %>

@@ -1,3 +1,35 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment {
+  .info {
+    .name {
+      display: inline-block;
+      font-size: 1.5rem;
+      margin-left: 20px;
+    }
+
+    .action {
+      font-size: 1.5rem;
+      margin-left: 2px;
+    }
+  }
+
+  .content {
+    border: 1px solid #e0e0e0;
+    margin-left: 75px;
+    margin-right: 15px;
+    padding: 5px 15px;
+    .text {
+      font-size: 1.5rem;
+    }
+  }
+
+  .created-at {
+    color: #808080;
+    font-size: 1.25rem;
+    margin-top: 15px;
+    margin-left: 75px;
+  }
+}
