@@ -1,3 +1,46 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post {
+  .info {
+    .name {
+      display: inline-block;
+      font-size: 1.65rem;
+      margin-left: 20px;
+    }
+
+    .action {
+      font-size: 1.55rem;
+      margin-left: 2px;
+    }
+  }
+
+  .content {
+    margin-left: 60px;
+    padding: 5px 15px;
+    .text {
+      font-size: 1.55rem;
+    }
+
+    .attachment {
+      margin-top: 10px;
+      img {
+        width: 100%;
+      }
+    }
+
+    .created-at {
+      font-size: 1.5rem;
+      margin-top: 15px;
+    }
+
+    .points span {
+      background-color: #e0e0e0;
+      padding: 5px;
+      display: inline-block;
+      margin-top: 10px;
+      margin-right: 5px;
+    }
+  }
+}
