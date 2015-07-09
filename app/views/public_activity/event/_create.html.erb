@@ -1,17 +1,13 @@
 <% if activity.trackable %>
-  <div id="post-<%= activity.trackable.id %>" class="post">
+  <div id="event-<%= activity.trackable.id %>" class="event">
     <div class="info">
       <%= render 'partials/avatar', user: activity.owner %>
       <h4 class="name"><%= activity.owner.name %></h4>
-      <span class="action">created a <%= link_to 'post', activity.trackable %></span>
+      <span class="action">created an <%= link_to 'event', activity.trackable %></span>
     </div>
     <div class="content">
-      <span class="text"><%= activity.trackable.content %></span>
-      <% if activity.trackable.attachment.present? %>
-        <div class="attachment">
-          <%= image_tag activity.trackable.attachment%>
-        </div>
-      <% end %>
+      <span class="text"><%= activity.trackable.name %></span>
+      <%= formatted_time(activity.trackable.when) %>
       <%= render 'partials/created_at', activity: activity %>
       <div class="points">
         <span><%= pluralize(activity.trackable.cached_votes_up, 'like') %></span>

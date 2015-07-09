@@ -15,8 +15,7 @@ class LikesController < ApplicationController
 
   private
   def find_likeable
-    params.each do |name, value|
-      @likeable = $1.classify.constantize.find_by(id: value) if name =~ /(.+)_id$/
-    end
+    @likeable_type = params[:likeable_type].classify
+    @likeable = @likeable_type.constantize.find(params[:likeable_id])
   end
 end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get :followers
     end
   end
+  resources :events, except: [:edit, :update]
 
   authenticated :user do
     root to: "home#index", as: "home"

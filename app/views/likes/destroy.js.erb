@@ -1,1 +1,1 @@
-$("#post-<%= @likeable.id %> .likes").html("<%=j render('likes/form', likeable: @likeable) %>");
+$("#<%= @likeable_type.downcase %>-<%= @likeable.id %> .like").html("<%=j render('likes/form', likeable: @likeable) %>");

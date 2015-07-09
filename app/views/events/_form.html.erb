@@ -1,0 +1,13 @@
+<%= form_for(@event) do |f| %>
+  <div class="form-group">
+    <%= f.label :event_name %>
+    <%= f.text_field :name, autofocus: true, placeholder: 'Event Name', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :when? %>
+    <%= f.text_field :when, class: 'form-control', "data-date-format" => "YYYY-MM-DD hh:MM A" %>
+  </div>
+  <div class="actions">
+    <%= f.submit :create, class: 'btn btn-primary' %>
+  </div>
+<% end %>
