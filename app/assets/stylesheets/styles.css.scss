@@ -91,3 +91,31 @@ textarea {
   text-align: center;
   padding: 5px 25px;
 }
+
+.liked {
+  color: $liked-color !important;
+}
+
+.points span {
+  padding: 5px;
+  background-color: $bg-color;
+  color: $light-text-color;
+  display: inline-block;
+  font-size: $small-font-size;
+  margin-top: 10px;
+  margin-right: 10px;
+}  
+
+.actions {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid $border-color;
+  a, button {
+    font-family: 'Montserrat', sans-serif;
+    background-color: $border-color;
+    color: #555;
+    i {
+      margin-right: 5px;
+    }
+  }
+}
