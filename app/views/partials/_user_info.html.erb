@@ -1,6 +1,14 @@
-<div class="well">
+<div id="user-info" class="well">
   <div class="text-center">
     <%= render 'partials/avatar', user: current_user %>
+    <h4 class="name">
+      <%= link_to current_user.name, current_user %>
+    </h4>
+    <h5><%= fa_icon 'shield' %> <%= pluralize(current_user.posts_count, 'post') %></h5>
+    <% if current_user.sex == 'male' %>
+      <h5><%= fa_icon 'male' %> Male</h5>
+    <% else %>
+      <h5><%= fa_icon 'female' %> Female</h5>
+    <% end %>
   </div>
-  <h4 class="name"><%= current_user.name %></h4>
 </div>
