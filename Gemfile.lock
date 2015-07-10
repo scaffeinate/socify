@@ -42,8 +42,6 @@ GEM
       rack (>= 0.9.0)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
-    bootstrap3-datetimepicker-rails (4.14.30)
-      momentjs-rails (>= 2.8.1)
     builder (3.2.2)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -113,8 +111,6 @@ GEM
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.7.0)
-    momentjs-rails (2.10.3)
-      railties (>= 3.1)
     multi_json (1.11.1)
     nenv (0.2.0)
     net-http-persistent (2.9.4)
@@ -222,7 +218,6 @@ DEPENDENCIES
   autoprefixer-rails
   better_errors
   bootstrap-sass (~> 3.2.0)
-  bootstrap3-datetimepicker-rails (~> 4.14.30)
   carrierwave
   devise
   faker
@@ -233,7 +228,6 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   link_thumbnailer
-  momentjs-rails (>= 2.9.0)
   pg
   populator
   public_activity

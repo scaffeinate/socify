@@ -14,6 +14,16 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bindWithDelay
-//= require moment
-//= require bootstrap-datetimepicker
+//= require jquery.datetimepicker
 //= require_tree .
+
+$(document).ready(function(){
+  $("#event_when").datetimepicker({
+    maxDate:'0'
+  });
+  $("#user_dob").datetimepicker({
+    timepicker:false,
+    format:'m/d/Y',
+    maxDate:'0'
+  });
+});
