@@ -4,6 +4,6 @@
   <h5><%= fa_icon 'arrow-circle-right' %> <%= link_to 'Friends', friends_user_path(current_user) %></h5>
   <h5><%= fa_icon 'arrow-circle-left' %> <%= link_to 'Followers', followers_user_path(current_user) %></h5>
   <h5><%= fa_icon 'user' %> <%= link_to('Find Friends', find_friends_path)%></h5>
-  <h5><%= link_to 'Edit Profile', edit_user_path(current_user) %></h5>
-  <h5><%= link_to 'Change password', edit_user_registration_path %></h5>
+  <h5><%= fa_icon 'pencil' %> <%= link_to 'Edit Profile', edit_user_path(current_user) %></h5>
+  <h5><%= fa_icon 'lock' %> <%= link_to 'Change password', edit_user_registration_path %></h5>
 </div>

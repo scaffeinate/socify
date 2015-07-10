@@ -5,10 +5,12 @@
       <%= link_to current_user.name, current_user %>
     </h4>
     <h5><%= fa_icon 'shield' %> <%= pluralize(current_user.posts_count, 'post') %></h5>
-    <% if current_user.sex == 'male' %>
-      <h5><%= fa_icon 'male' %> Male</h5>
-    <% else %>
-      <h5><%= fa_icon 'female' %> Female</h5>
+    <h5>
+      <%= fa_icon current_user.sex %>
+      <%= "#{pluralize(age(current_user.dob), 'year')} old" if current_user.dob.present? %>
+    </h5>
+    <% if current_user.location.present? %>
+      <h5><%= fa_icon 'map-marker' %> <%= current_user.location %></h5>
     <% end %>
   </div>
 </div>
