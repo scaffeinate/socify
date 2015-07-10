@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
+    @user.sex = params[:user][:sex]
     if @user.save
       redirect_to user_path(@user)
     else
@@ -31,7 +32,8 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :about, :avatar, :cover)
+    params.require(:user).permit(:name, :about, :avatar, :cover,
+                                 :sex, :dob, :location, :phone_number)
   end
 
   def set_user

@@ -15,14 +15,30 @@
       </div>
       <div class="form-group">
         <%= f.label :name %>
-        <%= f.text_field :name, placeholder: 'name', class: 'form-control' %>
+        <%= f.text_field :name, placeholder: 'Full Name', class: 'form-control' %>
       </div>
       <div class="form-group">
         <%= f.label :about %>
-        <%= f.text_area :about, placeholder: 'about', class: 'form-control' %>
+        <%= f.text_area :about, placeholder: 'About', class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= submit_tag "Update", class: 'btn btn-primary' %>
+        <%= f.label :location %>
+        <%= f.text_field :location, placeholder: 'Location', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number, placeholder: 'Phone Number', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :dob %>
+        <%= f.text_field :dob, placeholder: 'Date of Birth', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :sex %><br>
+        <%= f.select :sex, options_for_seasons, class: 'form-control', prompt: 'Select One' %>
+      </div>
+      <div class="form-group">
+        <%= submit_tag 'Update', class: 'btn btn-primary' %>
       </div>
     <% end %>
     <hr>
