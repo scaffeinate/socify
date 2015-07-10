@@ -1,13 +1,14 @@
 <div class="row">
   <div class="col-lg-3">
     <%= render 'partials/user_info' %>
+    <%= render 'partials/links' %>
   </div>
   <div class="col-lg-6">
     <%= render 'posts/form' %>
     <br>
     <div id="newsfeed" class="row">
       <h4><%= fa_icon "newspaper-o" %> NEWSFEED</h4>
-      <div class="activities">
+      <div id="activities">
         <%= render_activities(@activities, layout: :activity) %>
       </div>
       <div id="endless-scroll">

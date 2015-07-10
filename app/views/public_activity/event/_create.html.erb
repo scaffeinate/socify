@@ -6,8 +6,8 @@
       <span class="action">created an <%= link_to 'event', activity.trackable %></span>
     </div>
     <div class="content">
-      <span class="text"><%= activity.trackable.name %></span>
-      <%= formatted_time(activity.trackable.when) %>
+      <h3><%= activity.trackable.name %></h3>
+      <span class="text"><%= formatted_time(activity.trackable.when) %></span>
       <%= render 'partials/created_at', activity: activity %>
       <div class="points">
         <span><%= pluralize(activity.trackable.cached_votes_up, 'like') %></span>
