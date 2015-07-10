@@ -10,8 +10,8 @@
       <span class="text"><%= formatted_time(activity.trackable.when) %></span>
       <%= render 'partials/created_at', activity: activity %>
       <div class="points">
-        <span><%= pluralize(activity.trackable.cached_votes_up, 'like') %></span>
-        <span><%= pluralize(activity.trackable.comments_count, 'comment') %></span>
+        <span class="like-count"><%= pluralize(activity.trackable.cached_votes_up, 'like') %></span>
+        <span class="comment-count"><%= pluralize(activity.trackable.comments_count, 'comment') %></span>
       </div>
     </div>
     <% if user_signed_in? %>
