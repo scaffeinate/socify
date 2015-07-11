@@ -62,11 +62,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn {
   font-family: 'Montserrat', sans-serif;
+  padding: 10px 20px;
 }
 
 .btn-primary {
   background-color: $navbar-color;
-  padding: 10px 20px;
 }
 
 input[type="text"], 
@@ -119,5 +119,21 @@ textarea {
         margin-right: 5px;
       }
     }
+  }
+}
+
+#links {
+  h5 {
+    border-bottom: 1px solid $border-color;
+    padding: 15px 10px;
+    margin: 0;
+  }
+
+  a {
+    margin-left: 20px;
+  }
+
+  i {
+    font-size: 1.75rem;
   }
 }

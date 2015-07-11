@@ -1,16 +1,22 @@
 <div id="user-info" class="well">
   <div class="text-center">
-    <%= render 'partials/avatar', user: current_user %>
+    <%= render 'partials/avatar', user: @user %><br>
     <h4 class="name">
-      <%= link_to current_user.name, current_user %>
+      <%= link_to @user.name, @user %>
     </h4>
-    <h5><%= fa_icon 'shield' %> <%= pluralize(current_user.posts_count, 'post') %></h5>
-    <h5>
-      <%= fa_icon current_user.sex %>
-      <%= "#{pluralize(age(current_user.dob), 'year')} old" if current_user.dob.present? %>
-    </h5>
-    <% if current_user.location.present? %>
-      <h5><%= fa_icon 'map-marker' %> <%= current_user.location %></h5>
+    <h5><%= fa_icon 'shield' %> <%= pluralize(@user.posts_count, 'post') %></h5>
+    <% if @user.dob.present? %>
+      <h5>
+        <%= fa_icon @user.sex %>
+        <%= "#{pluralize(age(@user.dob), 'year')} old" %>
+      </h5>
+    <% end %>
+    <% if @user.location.present? %>
+      <h5><%= fa_icon 'map-marker' %> <%= @user.location %></h5>
+    <% end %>
+    <% unless is_current_user?(@user) %>
+      <%= render 'follows/form', user: @user %>
+      <h6><%= 'Follows you' if current_user.followed_by?(@user) %></h6>
     <% end %>
   </div>
 </div>

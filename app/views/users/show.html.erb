@@ -5,14 +5,16 @@
     <%= render 'partials/user_info' %>
   </div>
   <div class="col-lg-6">
-    <div class="well">
-      <ul class="nav nav-pills">
-        <li><%= link_to 'Edit Profile', edit_user_path(@user) %></li>
-        <li><%= link_to 'Change password', edit_user_registration_path %></li>
-        <li><%= link_to 'Friends', friends_user_path(@user) %></li>
-        <li><%= link_to 'Followers', followers_user_path(@user) %></li>
-      </ul>
-    </div>
+    <% if is_current_user?(@user) %>
+      <div class="well">
+        <ul class="nav nav-pills">
+          <li><%= link_to 'Edit Profile', edit_user_path(@user) %></li>
+          <li><%= link_to 'Change password', edit_user_registration_path %></li>
+          <li><%= link_to 'Friends', friends_user_path(@user) %></li>
+          <li><%= link_to 'Followers', followers_user_path(@user) %></li>
+        </ul>
+      </div>
+    <% end %>
     <div id="activities">
       <%= render_activities(@activities, layout: :activity) %>
     </div>
