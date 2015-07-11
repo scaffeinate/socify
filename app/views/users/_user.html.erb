@@ -1,8 +1,12 @@
 <div id="user-<%= user.id %>">
-  <%= render 'partials/avatar', user: user %>
-  <%= user.name %>
-  <div class="follow">
-    <%= render 'follows/form', user: user %>
+  <div class="col-lg-8">
+    <%= render 'partials/avatar', user: user %>
+    <h5 class="name"><%= link_to user.name, user %></h5>
+  </div>
+  <div class="col-lg-4">
+    <div class="follow">
+      <%= render 'follows/form', user: user %>
+    </div>
   </div>
 </div>
 <hr>

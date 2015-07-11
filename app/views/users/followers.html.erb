@@ -8,9 +8,7 @@
     <div id="followers">
       <%= render @followers %>
     </div>
-    <div id="endless-scroll">
-      <%= will_paginate @followers %>
-    </div>
+    <%= render 'partials/paginate', resources: @followers %>
   </div>
   <div class="col-lg-3">
     <%= render 'partials/links' %>

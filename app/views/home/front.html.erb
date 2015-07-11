@@ -4,9 +4,7 @@
     <div id="activities">
       <%= render_activities(@activities,layout: :activity) %>
     </div>
-    <div id="endless-scroll">
-      <%= will_paginate @activities %>
-    </div>
+    <%= render 'partials/paginate', resources: @activities %>
   </div>
   <div id="intro" class="col-lg-6">
     <h1>Socify</h1>
