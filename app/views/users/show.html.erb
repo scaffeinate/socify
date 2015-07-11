@@ -5,9 +5,15 @@
     <%= render 'partials/user_info' %>
   </div>
   <div class="col-lg-6">
+    <div id="activities">
+      <%= render_activities(@activities, layout: :activity) %>
+    </div>
+    <%= render 'partials/paginate', resources: @activities %>
+  </div>
+  <div class="col-lg-3">
     <% if is_current_user?(@user) %>
       <div class="well">
-        <ul class="nav nav-pills">
+        <ul class="nav nav-pills nav-stacked">
           <li><%= link_to 'Edit Profile', edit_user_path(@user) %></li>
           <li><%= link_to 'Change password', edit_user_registration_path %></li>
           <li><%= link_to 'Friends', friends_user_path(@user) %></li>
@@ -15,11 +21,5 @@
         </ul>
       </div>
     <% end %>
-    <div id="activities">
-      <%= render_activities(@activities, layout: :activity) %>
-    </div>
-    <div id="endless-scroll">
-      <%= will_paginate @activities %>
-    </div>
   </div>
 </div>
