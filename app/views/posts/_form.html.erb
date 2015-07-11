@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<div class="well">
   <%= form_for(@post) do |f| %>
     <div class="form-group">
       <h4>Update Status</h4>
@@ -6,4 +6,4 @@
     </div>
     <%= f.submit 'Post', class: 'btn btn-primary'%>
   <% end %>
-<% end %>
+</div>

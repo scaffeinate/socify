@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-lg-3">
     <%= render 'partials/user_info' %>
-    <%= render 'partials/links' %>
   </div>
   <div class="col-lg-6 well">
     <h3>Find Friends</h3>
@@ -12,5 +11,8 @@
     <div id="endless-scroll">
       <%= will_paginate @users %>
     </div>
+  </div>
+  <div class="col-lg-3">
+    <%= render 'partials/links' %>
   </div>
 </div>
