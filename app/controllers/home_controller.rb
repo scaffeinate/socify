@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
 
+  before_action :set_user, except: :front
   respond_to :html, :js
 
   def index
     @post = Post.new
-    @user = current_user
     @friends = @user.all_following
     @activities = PublicActivity::Activity.where(owner_id: @friends.unshift(@user))
     .order(created_at: :desc)
@@ -16,7 +16,13 @@ class HomeController < ApplicationController
   end
 
   def find_friends
-    @friends = current_user.all_following
-    @users =  User.where.not(id: @friends.unshift(current_user)).paginate(page: params[:page])
+    @friends = @user.all_following
+    @users =  User.where.not(id: @friends.unshift(@user)).paginate(page: params[:page])
   end
+
+  private
+  def set_user
+    @user = current_user
+  end
+
 end
