@@ -20,6 +20,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def deactivate
+  end
+
   def friends
     @friends = @user.following_users.paginate(page: params[:page])
   end

@@ -24,6 +24,7 @@
           <li><%= link_to 'Change password', edit_user_registration_path %></li>
           <li><%= link_to 'Friends', friends_user_path(@user) %></li>
           <li><%= link_to 'Followers', followers_user_path(@user) %></li>
+          <li><%= link_to 'Deactivate', deactivate_user_path(@user) %></li>
         </ul>
       </div>
     <% end %>

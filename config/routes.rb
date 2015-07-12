@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     member do
       get :friends
       get :followers
+      get :deactivate
     end
   end
   resources :events, except: [:edit, :update]
