@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   respond_to :js
 
   def create
-    @comment = @commentable.comments.create do |comment|
+    @comment = @commentable.comments.new do |comment|
       comment.comment = params[:comment_text]
       comment.user = current_user
     end
