@@ -6,7 +6,13 @@
     <%= render 'posts/form' %>
     <br>
     <div id="activities">
-      <%= render_activities(@activities, layout: :activity) %>
+      <% if @activities.empty? %>
+        <div class="well">
+          <%= render('shared/no_resource', resources: 'Activities') %>
+        </div>
+      <% else %>
+        <%= render_activities(@activities, layout: :activity) %>
+      <% end %>
     </div>
     <%= render 'shared/paginate', resources: @activities %>
   </div>

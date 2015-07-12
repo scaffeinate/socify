@@ -6,7 +6,7 @@
     <h3>Friends</h3>
     <hr>
     <div id="friends">
-      <%= render @friends %>
+      <%= render(@friends) || render('shared/no_resource', resources: 'Friends') %>
     </div>
     <%= render 'shared/paginate', resources: @friends %>
   </div>
