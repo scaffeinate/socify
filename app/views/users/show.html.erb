@@ -1,14 +1,14 @@
-<%= render 'partials/cover', user: @user %>
+<%= render 'shared/cover', user: @user %>
 <br>
 <div id="user-<%= @user.id %>" class="row">
   <div class="col-lg-3">
-    <%= render 'partials/user_info' %>
+    <%= render 'shared/user_info' %>
   </div>
   <div class="col-lg-6">
     <div id="activities">
       <%= render_activities(@activities, layout: :activity) %>
     </div>
-    <%= render 'partials/paginate', resources: @activities %>
+    <%= render 'shared/paginate', resources: @activities %>
   </div>
   <div class="col-lg-3">
     <% if is_current_user?(@user) %>

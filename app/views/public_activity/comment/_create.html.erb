@@ -1,14 +1,14 @@
 <% if activity.trackable %>
   <div class="comment">
     <div class="info">
-      <%= render 'partials/avatar', user: activity.owner %>
+      <%= render 'shared/avatar', user: activity.owner %>
       <h4 class="name"><%= activity.owner.name %></h4>
       <span class="action">commented on <%= link_to 'post', activity.trackable.commentable %></span>
     </div>
     <div class="content">
-      <%= render 'partials/avatar', user: activity.trackable.commentable.user %>
+      <%= render 'shared/avatar', user: activity.trackable.commentable.user %>
       <span class="text"><%= activity.trackable.commentable.content %></span>
     </div>
-    <%= render 'partials/created_at', activity: activity %>
+    <%= render 'shared/created_at', activity: activity %>
   </div>
 <% end %>

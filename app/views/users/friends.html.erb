@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-3">
-    <%= render 'partials/user_info' %>
+    <%= render 'shared/user_info' %>
   </div>
   <div class="col-lg-6 well">
     <h3>Friends</h3>
@@ -8,9 +8,9 @@
     <div id="friends">
       <%= render @friends %>
     </div>
-    <%= render 'partials/paginate', resources: @friends %>
+    <%= render 'shared/paginate', resources: @friends %>
   </div>
   <div class="col-lg-3">
-    <%= render 'partials/links' %>
+    <%= render 'shared/links' %>
   </div>
 </div>
