@@ -13,9 +13,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
-    @user.sex = params[:user][:sex]
-    if @user.save
+    if @user.update(user_params)
       redirect_to user_path(@user)
     else
       render :edit

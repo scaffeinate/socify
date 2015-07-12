@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
 
+  before_action :set_user
   before_action :authenticate_user!
   before_action :set_event, only: [:show, :destroy]
 
@@ -7,15 +8,10 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    @user = current_user
   end
 
   def create
-    @event = Event.new do |event|
-      event.name = params[:event][:name]
-      event.user = current_user
-      event.when = params[:event][:when]
-    end
+    @event = current_user.events.new(event_params)
     if @event.save
       redirect_to root_path
     else
@@ -39,4 +35,9 @@ class EventsController < ApplicationController
   def set_event
     @event = Event.find(params[:id])
   end
+
+  def set_user
+    @user = current_user
+  end
+
 end

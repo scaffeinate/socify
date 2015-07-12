@@ -19,11 +19,12 @@
 
 $(document).ready(function(){
   $("#event_when").datetimepicker({
-    maxDate:'0'
+    maxDate:'0',
+    format:'Y/m/d H:i'
   });
   $("#user_dob").datetimepicker({
     timepicker:false,
-    format:'m/d/Y',
+    format:'Y/m/d',
     maxDate:'0'
   });
 });
