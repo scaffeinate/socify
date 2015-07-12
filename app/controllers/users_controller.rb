@@ -2,11 +2,11 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_user
-
+  before_action :check_ownership, only: [:edit, :update]
   respond_to :html, :js
 
   def show
-    @activities = PublicActivity::Activity.where(owner: @user).paginate(page: params[:page], per_page: 10).order(created_at: :desc)
+    @activities = PublicActivity::Activity.where(owner: @user).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   def edit
@@ -35,6 +35,10 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :about, :avatar, :cover,
                                  :sex, :dob, :location, :phone_number)
+  end
+
+  def check_ownership
+    redirect_to current_user, notice: 'Not Authorized' unless @user == current_user
   end
 
   def set_user
