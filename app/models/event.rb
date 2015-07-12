@@ -5,5 +5,7 @@ class Event < ActiveRecord::Base
 
   include PublicActivity::Model
   tracked only: [:create], owner: Proc.new{ |controller, model| controller.current_user }
+
   validates_presence_of :name
+  validates_presence_of :when
 end

@@ -6,9 +6,12 @@ class Post < ActiveRecord::Base
 
   include PublicActivity::Model
   tracked only: [:create], owner: Proc.new{ |controller, model| controller.current_user }
-  validates_presence_of :content
 
   default_scope -> { order('created_at DESC') }
 
   mount_uploader :attachment, AvatarUploader
+
+  validates_presence_of :content
+  validates_presence_of :user
+
 end
