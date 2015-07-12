@@ -16,6 +16,13 @@
       <div class="points">
         <span class="like-count"><%= pluralize(activity.trackable.cached_votes_up, 'like') %></span>
         <span class="comments-count"><%= pluralize(activity.trackable.comments_count, 'comment') %></span>
+        <div class="pull-right">
+          <% if belongs_to_user?(activity.trackable) %>
+            <%= link_to post_path(activity.trackable), method: :delete, class: 'btn btn-danger btn-sm' do %>
+              <%= fa_icon 'trash' %>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
     <% if user_signed_in? %>
