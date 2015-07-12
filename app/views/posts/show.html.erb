@@ -1,27 +1,5 @@
-<div id="post-<%= @post.id %>" class="row">
+<div class="row">
   <div class="col-lg-6 col-lg-offset-3 well">
-    <div class="content">
-      <%= @post.content %>
-      <div class="points">
-        <span class="like-count"><%= pluralize(@post.cached_votes_up, 'like') %></span>
-        <span class="comments-count"><%= pluralize(@post.comments_count, 'comment') %></span>
-      </div>
-    </div>
-    <% if user_signed_in? %>
-      <div class="actions">
-        <div class="row">
-          <div class="col-xs-2 like">
-            <%= render 'likes/form', likeable: @post %>
-          </div>
-          <div class="comment">
-            <%= render 'comments/form', commentable: @post %>
-            <div class="comments">
-              <h4>Comments</h4>
-              <%= render @comments %>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <%= render @post, remote: false %>
   </div>
 </div>

@@ -22,7 +22,6 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    @activity = params[:activity]
     respond_to do |format|
       format.js
       format.html { redirect_to root_path }

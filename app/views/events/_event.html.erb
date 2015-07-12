@@ -1,0 +1,41 @@
+<div id="event-<%= event.id %>" class="event">
+  <div class="info">
+    <%= render 'shared/avatar', user: event.user %>
+    <h4 class="name"><%= event.user.name %></h4>
+    <span class="action">created an <%= link_to 'event', event %></span>
+  </div>
+  <div class="content">
+    <h3><%= event.name %></h3>
+    <span class="text">
+      <%= fa_icon'calendar' %> <%= formatted_time(event.when) %>
+    </span>
+    <%= render 'shared/created_at', activity: event %>
+    <div class="points">
+      <span class="like-count"><%= pluralize(event.cached_votes_up, 'like') %></span>
+      <span class="comment-count"><%= pluralize(event.comments_count, 'comment') %></span>
+      <div class="pull-right">
+        <% if belongs_to_user?(event) %>
+          <%= form_tag event_path(event), method: :delete, remote: remote do %>
+            <% button_tag class: 'btn btn-danger btn-sm' do %>
+              <%= fa_icon 'trash' %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% if user_signed_in? %>
+    <div class="actions">
+      <div class="row">
+        <div class="col-xs-6 like">
+          <%= render 'likes/form', likeable: event %>
+        </div>
+        <div class="col-xs-6 comment">
+          <%= link_to event, class: 'btn btn-block' do %>
+            <%= fa_icon 'comment' %> comment
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
