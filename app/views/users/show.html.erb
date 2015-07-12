@@ -11,7 +11,7 @@
           <%= render('shared/no_resource', resources: 'Activities') %>
         </div>
       <% else %>
-        <%= render_activities(@activities, layout: :activity) %>
+        <%= render_activities(@activities, layout: '/shared/activity') %>
       <% end %>
     </div>
     <%= render 'shared/paginate', resources: @activities %>

@@ -1,3 +1,3 @@
-$('#activities').append("<%= j render_activities(@activities, layout: :activity) %>");
+$('#activities').append("<%= j render_activities(@activities, layout: '/shared/activity') %>");
 
 <%= render 'shared/paginate', resources: @activities %>
