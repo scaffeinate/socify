@@ -7,10 +7,14 @@
           <%= f.label :avatar %>
           <br>
           <%= render 'shared/avatar', user: @user %>
+          <br>
+          <br>
           <%= f.file_field :avatar %>
         </div>
         <div class="form-group">
           <%= f.label :cover %>
+          <br>
+          <%= render 'shared/cover', user: @user %>
           <br>
           <%= f.file_field :cover %>
         </div>

@@ -1,14 +1,12 @@
-<% if activity.trackable %>
-  <div class="follow">
-    <div class="follower">
-      <%= render 'shared/avatar', user: activity.owner %>
-      <h4 class="name"><%= activity.owner.name %></h4>
-      <span class="action">Followed </span>
-    </div>
-    <div class="followee">
-      <%= render 'shared/avatar', user: activity.trackable.followable %>
-      <h4 class="name"><%= activity.trackable.followable.name %></h4>
-    </div>
-    <%= render 'shared/created_at', activity: activity %>
+<div class="follow">
+  <div class="follower">
+    <%= render 'shared/avatar', user: activity.owner %>
+    <h4 class="name"><%= activity.owner.name %></h4>
+    <span class="action">Followed </span>
   </div>
-<% end %>
+  <div class="followee">
+    <%= render 'shared/avatar', user: activity.trackable.followable %>
+    <h4 class="name"><%= activity.trackable.followable.name %></h4>
+  </div>
+  <%= render 'shared/created_at', activity: activity %>
+</div>

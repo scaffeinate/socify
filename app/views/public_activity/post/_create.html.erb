@@ -1,43 +1,43 @@
-<% if activity.trackable %>
-  <div id="post-<%= activity.trackable.id %>" class="post">
-    <div class="info">
-      <%= render 'shared/avatar', user: activity.owner %>
-      <h4 class="name"><%= activity.owner.name %></h4>
-      <span class="action">created a <%= link_to 'post', activity.trackable %></span>
-    </div>
-    <div class="content">
-      <span class="text"><%= activity.trackable.content %></span>
-      <% if activity.trackable.attachment.present? %>
-        <div class="attachment">
-          <%= image_tag activity.trackable.attachment%>
-        </div>
-      <% end %>
-      <%= render 'shared/created_at', activity: activity %>
-      <div class="points">
-        <span class="like-count"><%= pluralize(activity.trackable.cached_votes_up, 'like') %></span>
-        <span class="comments-count"><%= pluralize(activity.trackable.comments_count, 'comment') %></span>
-        <div class="pull-right">
-          <% if belongs_to_user?(activity.trackable) %>
-            <%= link_to post_path(activity.trackable), method: :delete, class: 'btn btn-danger btn-sm' do %>
+<div id="post-<%= activity.trackable.id %>" class="post">
+  <div class="info">
+    <%= render 'shared/avatar', user: activity.owner %>
+    <h4 class="name"><%= activity.owner.name %></h4>
+    <span class="action">created a <%= link_to 'post', activity.trackable %></span>
+  </div>
+  <div class="content">
+    <span class="text"><%= activity.trackable.content %></span>
+    <% if activity.trackable.attachment.present? %>
+      <div class="attachment">
+        <%= image_tag activity.trackable.attachment%>
+      </div>
+    <% end %>
+    <%= render 'shared/created_at', activity: activity %>
+    <div class="points">
+      <span class="like-count"><%= pluralize(activity.trackable.cached_votes_up, 'like') %></span>
+      <span class="comments-count"><%= pluralize(activity.trackable.comments_count, 'comment') %></span>
+      <div class="pull-right">
+        <% if belongs_to_user?(activity.trackable) %>
+          <%= form_tag post_path(activity.trackable, activity: activity), method: :delete, remote: true do %>
+            <% button_tag class: 'btn btn-danger btn-sm' do %>
               <%= fa_icon 'trash' %>
             <% end %>
           <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% if user_signed_in? %>
+    <div class="actions">
+      <div class="row">
+        <div class="col-xs-6 like">
+          <%= render 'likes/form', likeable: activity.trackable %>
+        </div>
+        <div class="col-xs-6 comment">
+          <%= link_to activity.trackable, class: 'btn btn-block' do %>
+            <%= fa_icon 'comment' %> comment
+          <% end %>
         </div>
       </div>
     </div>
-    <% if user_signed_in? %>
-      <div class="actions">
-        <div class="row">
-          <div class="col-xs-6 like">
-            <%= render 'likes/form', likeable: activity.trackable %>
-          </div>
-          <div class="col-xs-6 comment">
-            <%= link_to activity.trackable, class: 'btn btn-block' do %>
-              <%= fa_icon 'comment' %> comment
-          <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+  <% end %>
+</div>
