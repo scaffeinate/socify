@@ -1,5 +1,7 @@
-<div class="row">
-  <div class="col-lg-6 col-lg-offset-3 well">
-    <%= render @event, remote: false %>
+<div id="event-<%= @event.id %>" class="event">
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3 well">
+      <%= render @event, remote: false %>
+    </div>
   </div>
 </div>
