@@ -4,8 +4,6 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_event, only: [:show, :destroy]
 
-  respond_to :html
-
   def new
     @event = Event.new
   end
@@ -24,7 +22,11 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to root_path
+    @activity = params[:activity]
+    respond_to do |format|
+      format.js
+      format.html { redirect_to root_path }
+    end
   end
 
   private

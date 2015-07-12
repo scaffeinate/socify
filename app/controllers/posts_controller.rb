@@ -3,16 +3,12 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: [:show, :update, :destroy]
 
-  respond_to :html
-
   def show
     @comments = @post.comments.all
   end
 
   def create
-    @post = Post.new(post_params) do |post|
-      post.user = current_user
-    end
+    @post = current_user.posts.new(post_params)
     if @post.save
       redirect_to root_path
     else
@@ -26,6 +22,11 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
+    @activity = params[:activity]
+    respond_to do |format|
+      format.js
+      format.html { redirect_to root_path }
+    end
   end
 
   private
