@@ -4,7 +4,7 @@
     <div id="activities">
       <%= render_activities(@activities,layout: :activity) %>
     </div>
-    <%= render 'partials/paginate', resources: @activities %>
+    <%= render 'shared/paginate', resources: @activities %>
   </div>
   <div id="intro" class="col-lg-6">
     <h1>Socify</h1>

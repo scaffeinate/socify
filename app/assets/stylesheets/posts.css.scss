@@ -11,6 +11,8 @@
     }
 
     .attachment {
+      border: 1px solid $border-color;
+      padding: 5px;
       margin-top: 10px;
       img {
         width: 100%;
