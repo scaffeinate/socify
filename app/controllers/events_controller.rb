@@ -18,6 +18,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @comments = @event.comments
   end
 
   def destroy

@@ -1,1 +1,1 @@
-$("#post-<%= @commentable.id %> .comments").prepend("<%=j render(@comment) %>");
+$("#<%= @commentable_type.downcase %>-<%= @commentable.id %> .comments").prepend("<%=j render(@comment) %>");
