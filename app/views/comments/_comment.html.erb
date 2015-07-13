@@ -1,6 +1,19 @@
 <div id="comment-<%= comment.id %>">
-  <h5><%= comment.user.name %> commented</h5>
-  <%= comment.comment %>
-  <%= link_to 'delete', comment_path(comment), method: :delete, remote: true %>
+  <div class="info">
+    <%= render 'shared/avatar', user: comment.user %>
+    <h4 class="name"><%= comment.user.name %></h4>
+  </div>
+  <div class="content">
+    <span class="text"><%= comment.comment %></span>
+    <div class="pull-right">
+      <% if belongs_to_user?(comment.commentable) || belongs_to_user?(comment) %>
+        <%= form_tag comment_path(comment), method: :delete, remote: true do %>
+          <%= button_tag class: 'btn btn-danger btn-sm' do %>
+            <% fa_icon 'trash' %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
   <hr>
 </div>

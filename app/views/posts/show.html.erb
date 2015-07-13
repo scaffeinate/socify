@@ -9,6 +9,7 @@
       <h4>Comments</h4>
       <hr>
       <%= render 'comments/form', commentable: @post %>
+      <br>
       <div class="comments">
         <%= render(@comments) || render('shared/no_resource', resources: 'Comments') %>
       </div>
