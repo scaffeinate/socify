@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :events, except: [:edit, :update]
 
   authenticated :user do
-    root to: "home#index", as: "home"
+    root to: 'home#index', as: 'home'
   end
   unauthenticated :user do
     root 'home#front'
@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   match :like, to: 'likes#create', as: :like, via: :post
   match :unlike, to: 'likes#destroy', as: :unlike, via: :post
   match :find_friends, to: 'home#find_friends', as: :find_friends, via: :get
+  match :about, to: 'home#about', as: :about, via: :get
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
