@@ -2,9 +2,11 @@
   <div class="info">
     <%= render 'shared/avatar', user: activity.owner %>
     <h4 class="name"><%= activity.owner.name %></h4>
-    <span class="action">commented on <%= link_to 'post', activity.trackable.commentable %></span>
+    <span class="action">commented on a <%= link_to 'post', activity.trackable.commentable %></span>
   </div>
   <div class="content">
+    <h4><small><%= activity.trackable.comment %></small></h4>
+    <hr>
     <%= render 'shared/avatar', user: activity.trackable.commentable.user %>
     <span class="text"><%= activity.trackable.commentable.content %></span>
   </div>
