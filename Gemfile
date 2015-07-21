@@ -35,6 +35,7 @@ end
 group :production do
   gem 'pg'
   gem 'unicorn'
+  gem 'cloudinary'
 end
 
 gem 'devise'
