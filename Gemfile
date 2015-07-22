@@ -50,6 +50,9 @@ gem 'acts_as_commentable'
 gem 'acts_as_follower'
 gem 'counter_culture', '~> 0.1.33'
 
+gem 'faker'
+gem 'populator'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
