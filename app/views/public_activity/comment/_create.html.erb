@@ -6,9 +6,6 @@
   </div>
   <div class="content">
     <h4><small><%= activity.trackable.comment %></small></h4>
-    <hr>
-    <%= render 'shared/avatar', user: activity.trackable.commentable.user %>
-    <span class="text"><%= activity.trackable.commentable.content %></span>
   </div>
   <%= render 'shared/created_at', activity: activity %>
 </div>

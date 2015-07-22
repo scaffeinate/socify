@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   acts_as_commentable
 
   include PublicActivity::Model
-  tracked only: [:create], owner: Proc.new{ |controller, model| controller.current_user }
+  tracked only: [:create], owner: Proc.new{ |controller, model| model.user }
 
   default_scope -> { order('created_at DESC') }
 
