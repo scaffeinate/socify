@@ -53,6 +53,7 @@ gem 'counter_culture', '~> 0.1.33'
 
 gem 'faker'
 gem 'populator'
+gem 'auto_html'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
