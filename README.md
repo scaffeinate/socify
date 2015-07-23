@@ -51,6 +51,12 @@ This will create records with values from faker & populator gems. Also here are 
 * password: password
 
 ### Screenshots
+![index](https://cloud.githubusercontent.com/assets/1825853/8845551/daa4d51c-30e5-11e5-8d65-171a06fa31e2.png)
+![home](https://cloud.githubusercontent.com/assets/1825853/8845431/b5a5de74-30e4-11e5-8a80-00ebc59c2804.png)
+![profile](https://cloud.githubusercontent.com/assets/1825853/8845432/b5a61718-30e4-11e5-8b1f-ecd401404c31.png)
+![post](https://cloud.githubusercontent.com/assets/1825853/8845433/b5a5fe86-30e4-11e5-9ebf-312e00153768.png)
+![find_friends](https://cloud.githubusercontent.com/assets/1825853/8845434/b5a657d2-30e4-11e5-807d-1045e754b02d.png)
+
 
 ### Pull Requests
 
