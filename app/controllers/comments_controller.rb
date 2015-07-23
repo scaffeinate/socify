@@ -3,10 +3,8 @@
 # under GNU GPL v2 or later. See the LICENSE.
 
 class CommentsController < ApplicationController
-
   before_action :authenticate_user!
   before_action :find_commentable, only: :create
-
   respond_to :js
 
   def create

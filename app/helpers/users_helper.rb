@@ -1,3 +1,7 @@
+# Copyright (c) 2015, @sudharti(Sudharsanan Muralidharan)
+# Socify is an Open source Social network written in Ruby on Rails This file is licensed
+# under GNU GPL v2 or later. See the LICENSE.
+
 module UsersHelper
   def options_for_seasons
     [['Male', 'male'], ['Female', 'female']]
@@ -11,5 +15,4 @@ module UsersHelper
   def is_current_user?(user)
     user == current_user
   end
-
 end

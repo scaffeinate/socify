@@ -16,5 +16,4 @@ class ApplicationController < ActionController::Base
   end
 
   include PublicActivity::StoreController
-
 end

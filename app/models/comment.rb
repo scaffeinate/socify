@@ -1,5 +1,8 @@
-class Comment < ActiveRecord::Base
+# Copyright (c) 2015, @sudharti(Sudharsanan Muralidharan)
+# Socify is an Open source Social network written in Ruby on Rails This file is licensed
+# under GNU GPL v2 or later. See the LICENSE.
 
+class Comment < ActiveRecord::Base
   include Shared::Callbacks
   include ActsAsCommentable::Comment
 
@@ -27,5 +30,4 @@ class Comment < ActiveRecord::Base
     link target: '_blank', rel: 'nofollow'
     simple_format
   end
-
 end

@@ -3,7 +3,6 @@
 # under GNU GPL v2 or later. See the LICENSE.
 
 class EventsController < ApplicationController
-
   before_action :set_user
   before_action :authenticate_user!
   before_action :set_event, only: [:show, :destroy]
@@ -45,5 +44,4 @@ class EventsController < ApplicationController
   def set_user
     @user = current_user
   end
-
 end

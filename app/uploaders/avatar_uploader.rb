@@ -1,7 +1,8 @@
-# encoding: utf-8
+# Copyright (c) 2015, @sudharti(Sudharsanan Muralidharan)
+# Socify is an Open source Social network written in Ruby on Rails This file is licensed
+# under GNU GPL v2 or later. See the LICENSE.
 
 class AvatarUploader < CarrierWave::Uploader::Base
-
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -51,5 +52,4 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 end

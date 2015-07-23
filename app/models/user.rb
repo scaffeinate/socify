@@ -1,3 +1,7 @@
+# Copyright (c) 2015, @sudharti(Sudharsanan Muralidharan)
+# Socify is an Open source Social network written in Ruby on Rails This file is licensed
+# under GNU GPL v2 or later. See the LICENSE.
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -20,5 +24,4 @@ class User < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
-
 end

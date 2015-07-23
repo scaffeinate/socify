@@ -3,7 +3,6 @@
 # under GNU GPL v2 or later. See the LICENSE.
 
 class FollowsController < ApplicationController
-
   before_action :authenticate_user!
   respond_to :js
 
@@ -16,5 +15,4 @@ class FollowsController < ApplicationController
     @user = User.find(params[:user_id])
     current_user.stop_following(@user)
   end
-
 end

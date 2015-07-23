@@ -1,5 +1,8 @@
-class Post < ActiveRecord::Base
+# Copyright (c) 2015, @sudharti(Sudharsanan Muralidharan)
+# Socify is an Open source Social network written in Ruby on Rails This file is licensed
+# under GNU GPL v2 or later. See the LICENSE.
 
+class Post < ActiveRecord::Base
   include Shared::Callbacks
 
   belongs_to :user
@@ -24,5 +27,4 @@ class Post < ActiveRecord::Base
     link target: '_blank', rel: 'nofollow'
     simple_format
   end
-
 end

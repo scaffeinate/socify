@@ -3,7 +3,6 @@
 # under GNU GPL v2 or later. See the LICENSE.
 
 class HomeController < ApplicationController
-
   before_action :set_user, except: :front
   respond_to :html, :js
 
@@ -26,5 +25,4 @@ class HomeController < ApplicationController
   def set_user
     @user = current_user
   end
-
 end

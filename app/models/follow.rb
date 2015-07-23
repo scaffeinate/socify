@@ -1,5 +1,8 @@
-class Follow < ActiveRecord::Base
+# Copyright (c) 2015, @sudharti(Sudharsanan Muralidharan)
+# Socify is an Open source Social network written in Ruby on Rails This file is licensed
+# under GNU GPL v2 or later. See the LICENSE.
 
+class Follow < ActiveRecord::Base
   include Shared::Callbacks
 
   extend ActsAsFollower::FollowerLib
@@ -18,5 +21,4 @@ class Follow < ActiveRecord::Base
 
   validates_presence_of :follower
   validates_presence_of :followable
-
 end
