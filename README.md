@@ -38,9 +38,16 @@ Run rails using
 rails server
 ```
 
+### Screenshots
 
 ### Pull Requests
 
 * Fork this repo 
 * Make changes to code
 * Send Pull Request
+
+### Issues
+If you find any issue with the app please do raise an issue here https://github.com/sudharti/socify/issues
+
+### License
+This project is Licensed under the GNU General Public License Version 2.0. Refer the License.
