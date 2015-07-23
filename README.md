@@ -38,6 +38,18 @@ Run rails using
 rails server
 ```
 
+### Populate Mock data
+To test the app with mock data by running the following rake task:
+
+```
+rake fill:data
+```
+
+This will create records with values from faker & populator gems. Also here are the test user credentials:
+
+* email: test@socify.com
+* password: password
+
 ### Screenshots
 
 ### Pull Requests
