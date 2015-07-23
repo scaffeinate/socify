@@ -1,1 +1,2 @@
 $("#<%= @commentable_type.downcase %>-<%= @commentable.id %> .comments").prepend("<%=j render(@comment) %>");
+$("#comment_text").val("");
