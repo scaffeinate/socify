@@ -28,10 +28,11 @@ namespace :fill do
       puts "created user #{user.name}"
     end
 
-    user = User.new(name: 'Sudharti', email: 'sudhar.ti@gmail.com', sex: 'male', password: 'password')
+
+    user = User.new(name: 'Rails', email: 'test@socify.com', sex: 'female', password: 'password')
     user.skip_confirmation!
     user.save!
-    puts 'Created primary user: Sudharti'
+    puts 'Created test user with email=test@socify.com and password=password'
 
     puts 'Generate Friendly id slug for users'
     puts '==================================='
