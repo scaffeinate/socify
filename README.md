@@ -1,6 +1,6 @@
 ## Socify
 
-Socify is an open source social networking web application written in Ruby on Rails. To read the blog post: [How to build a social network using Rails](https://medium.com/@sudharshanmuralidharaniyer/eb31da569233).
+Socify is an open source social networking platform written in Ruby on Rails. Here is the blog post: [How to build a social network using Rails](https://medium.com/@sudharshanmuralidharaniyer/eb31da569233).
 
 Do you want to see it in action? Here is a working version deployed to heroku [http://socifyapp.herokuapp.com](http://socifyapp.herokuapp.com)
 
