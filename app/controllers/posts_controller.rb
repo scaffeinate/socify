@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_post, only: [:show, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def show
     @comments = @post.comments.all
@@ -16,8 +16,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     @post.update(post_params)
+    redirect_to @post
   end
 
   def destroy

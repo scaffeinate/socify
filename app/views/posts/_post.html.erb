@@ -16,10 +16,11 @@
     <span class="comments-count"><%= pluralize(post.comments_count, 'comment') %></span>
     <div class="pull-right">
       <% if belongs_to_user?(post) %>
-        <%= form_tag post_path(post), method: :delete, remote: remote do %>
-          <%= button_tag class: 'btn btn-danger btn-sm' do %>
-            <% fa_icon 'trash' %>
-          <% end %>
+        <%= link_to edit_post_path(post), class: 'btn btn-primary btn-sm' do %>
+          <% fa_icon 'pencil' %>
+        <% end %>
+        <%= link_to post_path(post), method: :delete, class:'btn btn-danger btn-sm', remote: remote do %>
+          <% fa_icon 'trash' %>
         <% end %>
       <% end %>
     </div>
