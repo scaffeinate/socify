@@ -10,7 +10,7 @@ module Shared::Callbacks
   end
 
   def remove_activity
-    activity = PublicActivity::Activity.find_by_trackable_id(self.id)
+    activity = PublicActivity::Activity.find_by_trackable_id_and_trackable_type(self.id, self.class.to_s)
     activity.destroy if activity.present?
     true
   end
