@@ -28,8 +28,6 @@ end
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'faker'
-  gem 'populator'
 end
 
 group :production do
