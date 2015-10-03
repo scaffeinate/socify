@@ -27,4 +27,15 @@ class User < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
+
+  def self.find_for_oauth(auth)
+    user = User.where(email: auth.info.email).first
+    if user
+      user.update_attribute(:remote_avatar_url, auth.info.image.gsub('http://', 'https://'))
+    else
+      user = User.create(name: auth.info.name, email: auth.info.email,
+                         password: Devise.friendly_token[0, 20], remote_avatar_url: auth.info.image.gsub('http://', 'https://'))
+    end
+    user
+  end
 end
