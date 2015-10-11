@@ -8,8 +8,11 @@ Rails.application.routes.draw do
       get :followers
       get :deactivate
       get :mentionable
+      get :complete_profile
+      post :set_password
     end
   end
+
   resources :events, except: [:edit, :update]
 
   authenticated :user do

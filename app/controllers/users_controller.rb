@@ -3,7 +3,7 @@
 # under GNU GPL v2 or later. See the LICENSE.
 
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:complete_profile, :set_password]
   before_action :set_user
   before_action :check_ownership, only: [:edit, :update]
   respond_to :html, :js
@@ -38,7 +38,20 @@ class UsersController < ApplicationController
     render json: @user.following_users.as_json(only: [:id, :name]), root: false
   end
 
+  def set_password
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
+    @user.profile_complete = true
+    if @user.save
+      sign_in(@user)
+      redirect_to root_path
+    else
+      render :complete_profile
+    end
+  end
+
   private
+
   def user_params
     params.require(:user).permit(:name, :about, :avatar, :cover,
                                  :sex, :dob, :location, :phone_number)
