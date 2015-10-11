@@ -12,7 +12,7 @@ namespace :fill do
 
     puts 'Creating users'
     puts '=============='
-    genders = ['male', 'female']
+    genders = %w(male female)
     password = 'socify'
 
     User.populate 20 do |user|
@@ -25,9 +25,9 @@ namespace :fill do
       user.confirmed_at = DateTime.now
       user.sign_in_count = 0
       user.posts_count = 0
+      user.profile_complete = true
       puts "created user #{user.name}"
     end
-
 
     user = User.new(name: 'Rails', email: 'test@socify.com', sex: 'female', password: 'password')
     user.skip_confirmation!
@@ -111,6 +111,5 @@ namespace :fill do
       comment.save
       puts "user #{user.name} commented on event #{event.id}"
     end
-
   end
 end

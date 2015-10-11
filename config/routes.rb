@@ -7,8 +7,11 @@ Rails.application.routes.draw do
       get :friends
       get :followers
       get :deactivate
+      get :complete_profile
+      post :set_password
     end
   end
+
   resources :events, except: [:edit, :update]
 
   authenticated :user do

@@ -18,6 +18,6 @@ class Users::OmniauthCallbacksController < ApplicationController
       redirect_to root_path
     else
       redirect_to complete_profile_user_path(user)
-    end
+     end
   end
 end
