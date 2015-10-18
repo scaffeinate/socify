@@ -13,8 +13,8 @@ class Users::OmniauthCallbacksController < ApplicationController
     auth = request.env['omniauth.auth']
     user = User.find_for_oauth(auth)
     authentication = Authentication.from_omniauth(auth, user)
-    sign_in(user)
     if user.profile_complete?
+      sign_in(user)
       redirect_to root_path
     else
       redirect_to complete_profile_user_path(user)
