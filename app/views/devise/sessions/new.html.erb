@@ -22,6 +22,9 @@
       </div>
     <% end %>
     <br>
+    <%= link_to "<i class='fa fa-facebook'></i> &nbsp; Login with Facebook".html_safe, user_omniauth_authorize_path(:facebook), class: 'btn btn-block btn-primary' %><br>
+    <%= link_to "<i class='fa fa-google-plus'></i> &nbsp; Login with Google".html_safe, user_omniauth_authorize_path(:google_oauth2), class: 'btn btn-block btn-danger' %>
+    <br>
     <%= render 'devise/shared/links' %>
   </div>
 </div>
