@@ -7,11 +7,12 @@ module Shared::Callbacks
 
   included do
     before_destroy :remove_activity
+    before_destroy :remove_likes
   end
 
   def remove_activity
-    activity = PublicActivity::Activity.find_by_trackable_id_and_trackable_type(self.id, self.class.to_s)
-    activity.destroy && remove_likes if activity.present?
+    activity = PublicActivity::Activity.find_by(trackable_id: self.id, trackable_type: self.class.to_s, key: "#{self.class.to_s.downcase}.create")
+    activity.destroy if activity.present?
     true
   end
 
