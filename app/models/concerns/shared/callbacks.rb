@@ -11,7 +11,13 @@ module Shared::Callbacks
 
   def remove_activity
     activity = PublicActivity::Activity.find_by_trackable_id_and_trackable_type(self.id, self.class.to_s)
-    activity.destroy if activity.present?
+    activity.destroy && remove_likes if activity.present?
     true
   end
+
+  def remove_likes
+    activity = PublicActivity::Activity.find_by(trackable_id: self.id, trackable_type: self.class.to_s, key: "#{self.class.to_s.downcase}.like")
+    activity.destroy if activity.present?
+  end
+
 end
