@@ -12,16 +12,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar {
+  padding: 2px;
   border: none;
   background-color: $navbar-color;
 }
 
 .navbar-brand {
-  font-weight: 600;
+  font-family: 'Montserrat';
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 .navbar-default .navbar-nav > li > a, .navbar-brand {
-  font-family: 'Montserrat';
   color: white !important;
   &:hover {
     color: $bg-color !important;
@@ -30,6 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .avatar {
   border: 1px solid $border-color;
+  border-radius: 10rem;
   width: 50px;
   height: 50px;
 }
@@ -42,12 +45,14 @@ h1, h2, h3, h4, h5, h6 {
   background-position: center;
 }
 
+#activities {
+  border: 1px solid $border-color;
+}
+
 .activity {
   background: white;
-  border: 1px solid $border-color;
-  border-radius: 3px;
-  padding: 10px;
-  margin: 10px;
+  border-bottom: 1px solid $border-color;
+  padding: 25px;
 }
 
 .name {
@@ -81,14 +86,26 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
 }
 
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
+.btn-facebook {
+  background-color: $facebook-color;
+  color: white;
+}
+
+.btn-google {
+  background-color: $google-color;
+  color: white;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
 textarea {
+  height: auto;
+  padding: 10px 17px;
   box-shadow: none !important;
-  border: 2px solid #ccc !important;
+  border: 1px solid #ccc !important;
   &:focus {
-    border: 2px solid #888 !important;
+    border: 1px solid #888 !important;
   };
 }
 
@@ -116,7 +133,7 @@ textarea {
   font-size: $small-font-size;
   margin-top: 10px;
   margin-right: 10px;
-}  
+}
 
 .activity-post, .activity-event, .post, .event {
   .actions {
