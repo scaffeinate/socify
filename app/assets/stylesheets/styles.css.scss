@@ -1,10 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400);
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,600);
 
 body {
   padding-top: 100px;
   background: $bg-color;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: $default-font;
+  font-weight: 300;
 }
 
 h1,
@@ -13,90 +14,135 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
-.navbar {
-  border: none;
-  background-color: $navbar-color;
+.btn {
+  font-weight: 300;
 }
 
-.navbar-brand {
-  font-weight: 600;
-}
-
-.navbar-brand,
-.navbar-default .navbar-nav > li > a {
-  font-family: 'Montserrat';
-  color: white !important;
-
-  &:hover {
-    color: $bg-color !important;
-  };
+.avatar,
+.avatar-sm {
+  border-radius: 10rem;
 }
 
 .avatar {
-  border: 1px solid $border-color;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
 }
 
-.cover {
+.avatar-sm {
+  width: 35px;
+  height: 35px;
+}
+
+.container > .cover {
   width: 100%;
-  height: 400px;
+  height: 250px;
+  margin-top: -50px;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
-.activity {
-  background: white;
-  border: 1px solid $border-color;
+.well {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 25px;
   border-radius: 3px;
-  padding: 10px;
-  margin: 10px;
+  border: 1px solid $border-color;
+  box-shadow: none;
 }
 
 .name {
-  display: inline-block;
-  font-size: $default-font-size;
-  margin-left: 10px;
-}
+  a {
+    font-family: $default-font;
+    font-size: $medium-font-size;
+    text-decoration: none;
+    color: $default-text-color;
+    font-weight: bold;
 
-.action {
-  font-size: $default-font-size;
-  margin-left: 2px;
+    &:active,
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
 }
 
 .created-at {
   color: $light-text-color;
   font-size: $small-font-size;
-  margin-top: 15px;
 }
 
 .btn {
-  font-family: 'Montserrat', sans-serif;
-  padding: 10px 20px;
+  padding: 7px 17px;
 }
 
 .btn-primary {
   background-color: $navbar-color;
+
+  &:active,
+  &:hover {
+    background: #0E6AC7;
+  }
+}
+
+.btn-primary-inverted {
+  background-color: white;
+  border: 1px solid $default-color;
+  color: $default-color;
+
+  &:active,
+  &:hover {
+    background: $default-color;
+    color: white;
+  }
 }
 
 .btn-sm {
   padding: 7px 15px;
-  border: none;
+}
+
+#btn-facebook {
+  background-color: $facebook-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background: darken($facebook-color, 5%);
+  }
+}
+
+#btn-google {
+  background-color: $google-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background: darken($google-color, 5%);
+  }
+}
+
+.btn-social {
+  color: white;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: white;
+  }
 }
 
 input[type="email"],
 input[type="password"],
 input[type="text"],
 textarea {
+  height: auto;
+  padding: 10px 17px;
   box-shadow: none !important;
-  border: 2px solid #ccc !important;
+  border: 1px solid #ccc !important;
 
   &:focus {
-    border: 2px solid #888 !important;
+    border: 1px solid #888 !important;
   };
 }
 
@@ -112,61 +158,35 @@ textarea {
   padding: 5px 25px;
 }
 
-.liked {
-  color: $liked-color !important;
-}
+.commentable {
+  @extend .well;
+  margin-top: 20px;
 
-.points span {
-  padding: 5px;
-  background-color: $bg-color;
-  color: $light-text-color;
-  display: inline-block;
-  font-size: $small-font-size;
-  margin-top: 10px;
-  margin-right: 10px;
-}
-
-.activity-event,
-.activity-post,
-.event,
-.post {
-  .actions {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid $border-color;
-
-    a,
-    button {
-      font-family: 'Montserrat', sans-serif;
-      background-color: $border-color;
-      color: #555;
-
-      i {
-        margin-right: 5px;
-      }
+  .comments-block {
+    .comment-content,
+    .created-at {
+      padding: 0 15px;
     }
   }
 }
 
-#links,
-#user-info {
-  h5 {
-    border-bottom: 1px solid $border-color;
-    padding: 15px 10px;
-    margin: 0;
-  }
-
-  i {
-    font-size: 1.75rem;
-    margin-right: 20px;
-  }
+.underlined {
+  text-align: center;
 }
 
-p {
-  font-size: 1.65rem;
-  line-height: 3rem;
+.underlined:after {
+  content: '';
+  background: rgba(0,0,0,0.25);
+  height: 1px;
+  width: 25px;
+  display: block;
+  margin: 10px auto 15px;
 }
 
-.atwho-view .cur {
-  background: $navbar-color;
+.modal-header {
+  border-bottom: none;
+
+  button {
+    cursor: pointer;
+  }
 }
