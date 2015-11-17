@@ -1,10 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 body {
   padding-top: 100px;
   background: $bg-color;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -73,12 +73,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn {
-  font-family: 'Montserrat', sans-serif;
-  padding: 10px 20px;
+  padding: 7px 20px;
 }
 
 .btn-primary {
   background-color: $navbar-color;
+  &:hover, &:active {
+    background: #0E6AC7;
+  }
 }
 
 .btn-sm {
@@ -164,7 +166,7 @@ textarea {
   }
 }
 
-p {
+/*p {
   font-size: 1.65rem;
   line-height: 3rem;
-}
+}*/

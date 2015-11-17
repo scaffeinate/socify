@@ -5,9 +5,10 @@
 .activity-post, .post {
   .content {
     margin-left: 60px;
-    padding: 5px 15px;
+    padding: 5px;
     .text {
       font-size: $default-font-size;
+      font-weight: 300;
     }
 
     .attachment {
