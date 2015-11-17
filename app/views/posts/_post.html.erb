@@ -1,7 +1,9 @@
 <div class="info">
   <%= render 'shared/avatar', user: post.user %>
   <h4 class="name"><%= post.user.name %></h4>
-  <span class="action">created a <%= link_to 'post', post %></span>
+  <div class="pull-right">
+    <%= render 'shared/created_at', activity: post %>
+  </div>
 </div>
 <div class="content">
   <span class="text"><%= post.content_html %></span>
@@ -10,7 +12,6 @@
       <%= image_tag post.attachment %>
     </div>
   <% end %>
-  <%= render 'shared/created_at', activity: post %>
   <div class="points">
     <span class="like-count"><%= pluralize(post.cached_votes_up, 'like') %></span>
     <span class="comments-count"><%= pluralize(post.comments_count, 'comment') %></span>
