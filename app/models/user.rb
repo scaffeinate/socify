@@ -29,10 +29,8 @@ class User < ActiveRecord::Base
   friendly_id :name, use: [:slugged, :finders]
 
   def self.find_for_oauth(auth)
-    puts auth.inspect
     user = User.where(email: auth.info.email).first
     if user
-      puts 'Hereeee'
       user.update_attribute(:remote_avatar_url, auth.info.image.gsub('http://', 'https://'))
     else
       user = User.new(name: auth.info.name, email: auth.info.email,
