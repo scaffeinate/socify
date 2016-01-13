@@ -1,0 +1,44 @@
+.card {
+  background-color: white;
+  border: 1px solid $border-color;
+  .cover {
+    height: 150px;
+    position: relative;
+
+    .cover-pics {
+      display: none;
+    }
+
+    .avatar {
+      width: 75px;
+      height: 75px;
+      position: absolute;
+      bottom: 0;
+      left: 37%;
+      margin-bottom: -35px;
+      border: 1px solid $border-color;
+    }
+  }
+
+  .about {
+    margin-top: 35px;
+    line-height: 1.85rem !important;
+    padding: 15px;
+    text-align: center;
+
+    .username {
+      font-size: $large-font-size;
+      a {
+        font-weight: bold;
+        color: black;
+      }
+    }
+
+    .content {
+      display: block;
+      font-size: $default-font-size;
+      font-weight: 300;
+      margin-top: 10px;
+    }
+  }
+}
