@@ -35,9 +35,11 @@ GEM
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
-    auto_html (1.6.4)
-      redcarpet (~> 3.1)
-      rinku (~> 1.5.0)
+    auto_html (2.0.0)
+      gemoji (~> 2.1)
+      redcarpet (~> 3.3)
+      rinku (~> 1.7)
+      tag_helper (~> 0.5)
     autoprefixer-rails (6.3.6.2)
       execjs
     aws_cf_signer (0.1.3)
@@ -79,12 +81,15 @@ GEM
     execjs (2.7.0)
     faker (1.6.3)
       i18n (~> 0.5)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.10)
     font-awesome-rails (4.6.3.0)
       railties (>= 3.2, < 5.1)
     formatador (0.2.5)
     friendly_id (5.0.5)
       activerecord (>= 4.0.0)
+    gemoji (2.1.0)
     guard (2.14.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -97,6 +102,7 @@ GEM
     guard-rspec (4.2.10)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
+    hashie (3.4.4)
     hike (1.2.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -106,6 +112,7 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    jwt (1.5.1)
     kgio (2.10.0)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -124,11 +131,32 @@ GEM
     mimemagic (0.3.1)
     minitest (5.9.0)
     multi_json (1.12.1)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
     nenv (0.3.0)
     netrc (0.11.0)
     notiffany (0.1.0)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    oauth2 (1.1.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0, < 1.5.2)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    omniauth (1.3.1)
+      hashie (>= 1.2, < 4)
+      rack (>= 1.0, < 3)
+    omniauth-facebook (3.0.0)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-google-oauth2 (0.3.1)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (>= 1.3.1)
+    omniauth-oauth2 (1.4.0)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.4)
     populator (1.0.0)
@@ -176,7 +204,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    rinku (1.5.1)
+    rinku (1.7.3)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -210,6 +238,7 @@ GEM
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.11)
+    tag_helper (0.5.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -234,7 +263,7 @@ DEPENDENCIES
   acts_as_commentable
   acts_as_follower
   acts_as_votable (~> 0.10.0)
-  auto_html (~> 1.6.4)
+  auto_html
   autoprefixer-rails
   better_errors
   binding_of_caller
@@ -251,6 +280,9 @@ DEPENDENCIES
   jquery-atwho-rails
   jquery-rails
   letter_opener
+  omniauth
+  omniauth-facebook
+  omniauth-google-oauth2 (~> 0.3.0)
   pg
   populator
   public_activity

@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 
@@ -29,7 +28,6 @@ group :development do
   gem 'guard-rspec', '~> 4.2.8'
 end
 
-
 group :development, :test do
   gem 'sqlite3'
 end
@@ -55,7 +53,11 @@ gem 'counter_culture', '~> 0.1.33'
 
 gem 'faker'
 gem 'populator'
-gem 'auto_html','~>1.6.4'
+gem 'auto_html'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2', '~> 0.3.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
