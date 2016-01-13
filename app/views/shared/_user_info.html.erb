@@ -1,4 +1,17 @@
-<div id="user-info" class="well">
+<div class="card">
+  <div class="cover" style="background-image: url(/assets/cover.png);">
+    <%= render 'shared/avatar', user: @user %><br>
+  </div>
+  <div class="about">
+    <span class="username"><%= link_to @user.name, @user %></span>
+    <span class="content"><%= @user.about %></span>
+    <h5>
+      <%= fa_icon 'map-marker' %>
+      <%= @user.location || 'Nowhere' %>
+    </h5>
+  </div>
+</div>
+<!--<div id="user-info" class="well">
   <div class="text-center">
     <%= render 'shared/avatar', user: @user %><br>
     <h5><%= link_to @user.name, @user %></h5>
@@ -26,4 +39,4 @@
       <h6><%= 'Follows you' if current_user.followed_by?(@user) %></h6>
     <% end %>
   </div>
-</div>
+</div> -->
