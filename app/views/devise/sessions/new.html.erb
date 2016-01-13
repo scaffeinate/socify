@@ -16,7 +16,7 @@
         </div>
       <% end -%>
       <div class="actions">
-        <%= f.submit 'Log in', class: 'btn btn-primary' %>
+        <%= f.submit 'Log in', class: 'btn btn-primary btn-block' %>
       </div>
     <% end %>
     <br>
@@ -26,7 +26,9 @@
     <%= link_to "<i class='fa fa-google-plus'></i> &nbsp; Login with Google".html_safe, user_omniauth_authorize_path(:google_oauth2), class: 'btn btn-block btn-google' %>
   </div>
 </div>
-<div class="row" style="margin-top: 75px;">
+<br>
+<br>
+<div class="row">
   <div class="text-center">
     <h5><%= link_to 'Forgot password?', new_password_path(resource_name) %></h5>
     <h5><%= link_to "Didn't receive confirmation?", new_confirmation_path(resource_name) %></h5>
