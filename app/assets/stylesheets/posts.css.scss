@@ -4,17 +4,18 @@
 
 .activity-post, .post {
   .content {
-    margin-left: 60px;
-    padding: 5px;
+    margin-top: -15px;
+    margin-left: 77px;
     .text {
-      font-size: $default-font-size;
+      font-size: $medium-font-size;
       font-weight: 300;
+      font-family: $default-font;
     }
 
     .attachment {
-      border: 1px solid $border-color;
+      // border: 1px solid $border-color;
       padding: 5px;
-      margin-top: 10px;
+      margin-top: 15px;
       img {
         width: 100%;
       }
