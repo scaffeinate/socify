@@ -1,14 +1,19 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400);
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,600);
 
 body {
   padding-top: 100px;
   background: $bg-color;
-  font-family: 'Lato', sans-serif;
+  font-family: $default-font;
+  font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+}
+
+.btn {
+  font-weight: 300;
 }
 
 .navbar {
@@ -18,9 +23,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-brand {
-  font-family: 'Montserrat';
+  font-family: 'Raleway', sans-serif;;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 300;
+}
+
+.navbar a {
+  font-family: 'Raleway', sans-serif;;
 }
 
 .navbar-default .navbar-nav > li > a, .navbar-brand {
@@ -31,10 +40,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .avatar {
-  border: 1px solid $border-color;
+  // border: 1px solid $border-color;
   border-radius: 10rem;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
 
 .cover {
@@ -57,8 +66,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .name {
   display: inline-block;
-  font-size: $default-font-size;
-  margin-left: 10px;
+  margin-left: 15px;
+  a {
+    font-family: $default-font;
+    font-size: $default-font-size;
+    text-decoration: none;
+    color: $default-text-color;
+    font-weight: bold;
+    &:hover, &:active {
+      color: $link-hover-color;
+    }
+  }
 }
 
 .action {
@@ -69,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 .created-at {
   color: $light-text-color;
   font-size: $small-font-size;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .btn {
@@ -128,13 +146,19 @@ textarea {
 }
 
 .points span {
-  padding: 5px;
-  background-color: $bg-color;
   color: $light-text-color;
   display: inline-block;
   font-size: $small-font-size;
-  margin-top: 10px;
-  margin-right: 10px;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+.like-count, .comments-count {
+  i {
+    margin-right: 3px;
+    color: $default-text-color;
+    font-size: $medium-font-size;
+  }
 }
 
 .activity-post, .activity-event, .post, .event {

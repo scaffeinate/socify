@@ -1,6 +1,6 @@
 <div class="info">
   <%= render 'shared/avatar', user: post.user %>
-  <h4 class="name"><%= post.user.name %></h4>
+  <h4 class="name"><%= link_to post.user.name, user_path(post.user) %></h4>
   <div class="pull-right">
     <%= render 'shared/created_at', activity: post %>
   </div>
@@ -13,8 +13,8 @@
     </div>
   <% end %>
   <div class="points">
-    <span class="like-count"><%= pluralize(post.cached_votes_up, 'like') %></span>
-    <span class="comments-count"><%= pluralize(post.comments_count, 'comment') %></span>
+    <span class="like-count"><%= fa_icon 'heart-o' %><%= post.cached_votes_up %></span>
+    <span class="comments-count"><%= fa_icon 'comment-o' %><%=post.comments_count %></span>
     <div class="pull-right">
       <% if belongs_to_user?(post) %>
         <%= link_to edit_post_path(post), class: 'btn btn-primary btn-sm' do %>
