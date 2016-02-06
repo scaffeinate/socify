@@ -28,10 +28,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
-.navbar a {
-  font-family: 'Raleway', sans-serif;;
-}
-
 .navbar-default .navbar-nav > li > a, .navbar-brand {
   color: white !important;
   &:hover {
@@ -79,10 +75,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.action {
-  font-size: $default-font-size;
-  margin-left: 2px;
-}
+// .action {
+//   font-size: $default-font-size;
+//   margin-left: 2px;
+// }
 
 .created-at {
   color: $light-text-color;

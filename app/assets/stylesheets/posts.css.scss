@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.post {
+.post, .event {
   @extend .col-xs-12;
 
   .user-info {
@@ -30,7 +30,7 @@
     margin-top: -12px;
   }
 
-  .post-content {
+  .content {
     @extend .col-xs-12;
     margin-top: 20px;
 
@@ -45,6 +45,11 @@
       img {
         width: 100%;
       }
+    }
+
+    .calendar {
+      font-weight: lighter;
+      font-size: $large-font-size;
     }
   }
 
