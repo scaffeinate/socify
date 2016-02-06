@@ -1,26 +1,41 @@
-<div class="info">
-  <%= render 'shared/avatar', user: event.user %>
-  <h4 class="name"><%= link_to event.user.name, user_path(event.user) %></h4>
-  <span class="action">created an <%= link_to 'event', event %></span>
-</div>
-<div class="content">
-  <h3><%= event.name %></h3>
-  <span class="text">
-    <%= fa_icon'calendar' %> <%= formatted_time(event.when) %>
-  </span>
-  <%= render 'shared/created_at', activity: event %>
-  <div class="points">
-    <span class="like-count"><%= pluralize(event.cached_votes_up, 'like') %></span>
-    <span class="comment-count"><%= pluralize(event.comments_count, 'comment') %></span>
-    <div class="pull-right">
-      <% if belongs_to_user?(event) %>
-        <%= form_tag event_path(event), method: :delete, remote: remote do %>
-          <% button_tag class: 'btn btn-danger btn-sm' do %>
-            <%= fa_icon 'trash' %>
-          <% end %>
-        <% end %>
-      <% end %>
+<div id="event-<%= event.id %>" class="event">
+  <div class="row">
+    <div class="user-info">
+      <%= render 'shared/avatar', user: event.user %>
+      <h4 class="name"><%= link_to event.user.name, user_path(event.user) %></h4>
+      <span class="action">created an <%= link_to 'event', event %></span>
+    </div>
+    <div class="actions">
+      <%= render 'events/actions', remote: remote, event: event %>
     </div>
   </div>
+  <div class="row">
+    <%= render 'shared/created_at', activity: event %>
+  </div>
+  <div class="row">
+    <div class="icon">
+      <%= image_tag 'event.png' %>
+    </div>
+    <div class="event-details">
+      <span class="text"><%= event.name %></span>
+      <div class="calendar">
+        <i class="icon-calendar-empty"></i> <%= formatted_time(event.when) %>
+      </div>
+      <div class="location">
+        <i class="icon-location-1"></i> <%= event.where || 'Unknown' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="like-and-comment">
+      <%= render 'shared/like_and_comment', resource: event %>
+    </div>
+  </div>
+  <div class="row">
+    <% if defined? show_all %>
+      <%= render 'shared/comments_block', resource: event, show_all: true %>
+    <% else %>
+      <%= render 'shared/comments_block', resource: event %>
+    <% end %>
+  </div>
 </div>
-<%= render 'shared/actions', resource: event %>
