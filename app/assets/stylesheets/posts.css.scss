@@ -2,10 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.activity-post, .post {
-  .content {
-    margin-top: -15px;
-    margin-left: 77px;
+.post {
+  @extend .col-xs-12;
+
+  .user-info {
+    @extend .col-xs-11;
+    .name {
+      display: inline-block;
+      margin-left: 15px;
+    }
+  }
+
+  .actions {
+    @extend .col-xs-1;
+    .dropdown {
+      margin-top: 15px;
+      li a {
+        padding: 10px;
+        font-size: $small-font-size;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .created-at {
+    @extend .col-xs-offset-2;
+    margin-top: -12px;
+  }
+
+  .post-content {
+    @extend .col-xs-12;
+    margin-top: 20px;
+
     .text {
       font-size: $medium-font-size;
       font-weight: 300;
@@ -13,12 +41,28 @@
     }
 
     .attachment {
-      // border: 1px solid $border-color;
-      padding: 5px;
       margin-top: 15px;
       img {
         width: 100%;
       }
+    }
+  }
+
+  .like-and-comment {
+    @extend .col-xs-12;
+    margin-top: 20px;
+
+    .like, .comment {
+      display: inline-block;
+      i {
+        color: $default-text-color;
+        font-size: $large-font-size;
+      }
+    }
+
+    .likes-count, .comments-count {
+      color: $default-text-color;
+      font-size: $small-font-size;
     }
   }
 }

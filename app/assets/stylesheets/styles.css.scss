@@ -87,7 +87,6 @@ h1, h2, h3, h4, h5, h6 {
 .created-at {
   color: $light-text-color;
   font-size: $small-font-size;
-  margin-top: 20px;
 }
 
 .btn {
@@ -139,42 +138,6 @@ textarea {
   z-index: 10000;
   text-align: center;
   padding: 5px 25px;
-}
-
-.liked {
-  color: $liked-color !important;
-}
-
-.points span {
-  color: $light-text-color;
-  display: inline-block;
-  font-size: $small-font-size;
-  margin-top: 15px;
-  margin-right: 15px;
-}
-
-.like-count, .comments-count {
-  i {
-    margin-right: 3px;
-    color: $default-text-color;
-    font-size: $medium-font-size;
-  }
-}
-
-.activity-post, .activity-event, .post, .event {
-  .actions {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid $border-color;
-    a, button {
-      font-family: 'Montserrat', sans-serif;
-      background-color: $border-color;
-      color: #555;
-      i {
-        margin-right: 5px;
-      }
-    }
-  }
 }
 
 #links, #user-info {
