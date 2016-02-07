@@ -14,15 +14,13 @@
       <%= render 'shared/created_at', activity: event %>
     </div>
     <div class="row">
+      <div class="icon">
+        <%= fa_icon'calendar' %>
+      </div>
       <div class="content">
-        <div class="icon">
-          <%= fa_icon'calendar' %>
-        </div>
-        <div class="col-xs-9">
-          <span class="text"><%= event.name %></span>
-          <div class="calendar">
-            <%= formatted_time(event.when) %>
-          </div>
+        <span class="text"><%= event.name %></span>
+        <div class="calendar">
+          <%= formatted_time(event.when) %>
         </div>
       </div>
     </div>
