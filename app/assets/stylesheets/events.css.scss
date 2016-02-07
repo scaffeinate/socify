@@ -7,6 +7,7 @@
   .user-info {
     @extend .col-xs-11;
     .name {
+      @extend .name;
       display: inline-block;
       margin-left: 15px;
     }
