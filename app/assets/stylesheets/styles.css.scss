@@ -50,6 +50,19 @@ h1, h2, h3, h4, h5, h6 {
   background-position: center;
 }
 
+.name {
+  a {
+    font-family: $default-font;
+    font-size: $medium-font-size;
+    text-decoration: none;
+    color: $default-text-color;
+    font-weight: bold;
+    &:hover, &:active {
+      color: $link-hover-color;
+    }
+  }
+}
+
 #activities {
   border: 1px solid $border-color;
 }
@@ -58,21 +71,6 @@ h1, h2, h3, h4, h5, h6 {
   background: white;
   border-bottom: 1px solid $border-color;
   padding: 25px;
-}
-
-.name {
-  display: inline-block;
-  margin-left: 15px;
-  a {
-    font-family: $default-font;
-    font-size: $default-font-size;
-    text-decoration: none;
-    color: $default-text-color;
-    font-weight: bold;
-    &:hover, &:active {
-      color: $link-hover-color;
-    }
-  }
 }
 
 // .action {

@@ -1,0 +1,61 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user-board {
+  background-color: white;
+  border: 1px solid $border-color;
+  .cover {
+    height: 125px;
+    position: relative;
+
+    .avatar {
+      width: 75px;
+      height: 75px;
+      border-radius: 10rem;
+      position: absolute;
+      bottom: 0;
+      left: 37%;
+      margin-bottom: -35px;
+      border: 3px solid white;
+    }
+  }
+
+  #info {
+    margin-top: 35px;
+    line-height: 1.85rem !important;
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+
+// .avatar {
+//   // border: 1px solid $border-color;
+//   border-radius: 10rem;
+//   width: 60px;
+//   height: 60px;
+// }
+//
+// .cover {
+//   width: 100%;
+//   height: 400px;
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+//   background-position: center;
+// }
+//
+// .name {
+//   display: inline-block;
+//   margin-left: 15px;
+//   a {
+//     font-family: $default-font;
+//     font-size: $medium-font-size;
+//     text-decoration: none;
+//     color: $default-text-color;
+//     font-weight: bold;
+//     &:hover, &:active {
+//       color: $link-hover-color;
+//     }
+//   }
+// }

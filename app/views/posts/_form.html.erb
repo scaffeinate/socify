@@ -2,10 +2,10 @@
   <%= form_for(@post) do |f| %>
     <div class="form-group">
       <h4>Update Status</h4>
-      <%= f.text_area :content, class: 'form-control', autofocus: true, placeholder: 'What\'s up?', rows: 1 %>
+      <%= f.text_area :content, class: 'form-control', autofocus: true, placeholder: 'What\'s up?', rows: 2 %>
     </div>
     <div id="img-preview" class="form-group hidden">
-      <img src="" alt="Preview">
+      <%= image_tag '' %>
     </div>
     <div class="form-group hidden">
       <%= f.file_field :attachment %>
