@@ -29,33 +29,14 @@
   }
 }
 
-
-// .avatar {
-//   // border: 1px solid $border-color;
-//   border-radius: 10rem;
-//   width: 60px;
-//   height: 60px;
-// }
-//
-// .cover {
-//   width: 100%;
-//   height: 400px;
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-//   background-position: center;
-// }
-//
-// .name {
-//   display: inline-block;
-//   margin-left: 15px;
-//   a {
-//     font-family: $default-font;
-//     font-size: $medium-font-size;
-//     text-decoration: none;
-//     color: $default-text-color;
-//     font-weight: bold;
-//     &:hover, &:active {
-//       color: $link-hover-color;
-//     }
-//   }
-// }
+#links {
+  margin-top: 25px;
+  a {
+    padding: 12px;
+  }
+  i {
+    opacity: 0.9;
+    font-size: $default-font-size;
+    margin-right: 15px;
+  }
+}

@@ -1,30 +1,23 @@
-<div id="links" class="well">
-  <h5>
-    <%= fa_icon 'newspaper-o' %>
-    <%= link_to 'NewsFeed', root_path %>
-  </h5>
-  <h5>
-    <%= fa_icon 'calendar-o' %>
-    <%= link_to 'Create Event', new_event_path %>
-  </h5>
-  <h5>
-    <%= fa_icon 'arrow-circle-right' %>
-    <%= link_to 'Friends', friends_user_path(current_user) %>
-  </h5>
-  <h5>
-    <%= fa_icon 'arrow-circle-left' %>
-    <%= link_to 'Followers', followers_user_path(current_user) %>
-  </h5>
-  <h5>
-    <%= fa_icon 'search' %>
-    <%= link_to('Find Friends', find_friends_path)%>
-  </h5>
-  <h5>
-    <%= fa_icon 'pencil' %>
-    <%= link_to 'Edit Profile', edit_user_path(current_user) %>
-  </h5>
-  <h5>
-    <%= fa_icon 'lock' %>
-    <%= link_to 'Change password', edit_user_registration_path %>
-  </h5>
+<div id="links" class="list-group">
+  <%= link_to root_path, class: "list-group-item #{(page=='newsfeed') ? 'active':''}" do %>
+    <%= fa_icon 'newspaper-o' %> News Feed
+  <% end %>
+  <%= link_to new_event_path , class: "list-group-item #{(page=='event') ? 'active':''}" do %>
+    <%= fa_icon 'calendar-o' %> Create Event
+  <% end %>
+  <%= link_to friends_user_path(current_user), class: "list-group-item #{(page=='friends') ? 'active':''}" do %>
+    <%= fa_icon 'arrow-circle-right' %> Friends
+  <% end %>
+  <%= link_to followers_user_path(current_user) , class: "list-group-item #{(page=='followers') ? 'active':''}" do %>
+    <%= fa_icon 'arrow-circle-left' %> Followers
+  <% end %>
+  <%= link_to find_friends_path, class: "list-group-item #{(page=='find_friends') ? 'active':''}" do %>
+    <%= fa_icon 'search' %> Find Friends
+  <% end %>
+  <%= link_to edit_user_path(current_user) , class: "list-group-item #{(page=='edit_profile') ? 'active':''}" do %>
+    <%= fa_icon 'pencil' %> Edit Profile
+  <% end %>
+  <%= link_to edit_user_registration_path , class: "list-group-item #{(page=='change_password') ? 'active':''}" do %>
+    <%= fa_icon 'lock' %> Change Password
+  <% end %>
 </div>
