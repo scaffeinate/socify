@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.post, .event {
+.post {
   @extend .col-xs-12;
 
   .user-info {
@@ -46,16 +46,11 @@
         width: 100%;
       }
     }
-
-    .calendar {
-      font-weight: lighter;
-      font-size: $large-font-size;
-    }
   }
 
   .like-and-comment {
     @extend .col-xs-12;
-    margin-top: 20px;
+    margin-top: 30px;
 
     .like, .comment {
       display: inline-block;
