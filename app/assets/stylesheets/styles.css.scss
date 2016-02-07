@@ -134,17 +134,8 @@ textarea {
   padding: 5px 25px;
 }
 
-#links, #user-info {
-  h5 {
-    border-bottom: 1px solid $border-color;
-    padding: 15px 10px;
-    margin: 0;
-  }
-
-  i {
-    font-size: 1.75rem;
-    margin-right: 20px;
-  }
+#links {
+  margin-top: 25px;
 }
 
 /*p {
