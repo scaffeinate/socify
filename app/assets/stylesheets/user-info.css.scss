@@ -27,6 +27,31 @@
     padding: 15px;
     text-align: center;
   }
+
+  #stats {
+    @extend .col-xs-8, .col-xs-offset-2;
+    margin-top: 15px;
+    .count {
+      @extend .col-xs-6;
+      h4 {
+        margin: 0;
+        font-family: $default-font;
+        font-size: $vlarge-font-size;
+        font-weight: bold;
+        @extend .text-center;
+      }
+
+      span {
+        font-size: 0.95rem;
+        font-weight: 300;
+        @extend .text-center;
+      }
+    }
+  }
+
+  #follow {
+    margin-top: 15px;
+  }
 }
 
 #links {

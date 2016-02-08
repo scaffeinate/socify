@@ -12,18 +12,12 @@ class UsersController < ApplicationController
     @activities = PublicActivity::Activity.where(owner: @user).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
-  def edit
-  end
-
   def update
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
       render :edit
     end
-  end
-
-  def deactivate
   end
 
   def friends
