@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103054344) do
+ActiveRecord::Schema.define(version: 20160208075555) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -56,16 +56,6 @@ ActiveRecord::Schema.define(version: 20151103054344) do
   add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id"
   add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
-
-  create_table "conversations", force: true do |t|
-    t.integer  "sender_id"
-    t.integer  "receiver_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "conversations", ["receiver_id"], name: "index_conversations_on_receiver_id"
-  add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id"
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -149,6 +139,8 @@ ActiveRecord::Schema.define(version: 20151103054344) do
     t.integer  "posts_count",            default: 0,      null: false
     t.string   "slug"
     t.boolean  "profile_complete",       default: false,  null: false
+    t.string   "first_name",             default: "",     null: false
+    t.string   "last_name",              default: "",     null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

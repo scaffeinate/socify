@@ -63,20 +63,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-#activities {
-  border: 1px solid $border-color;
-}
-
 .activity {
   background: white;
   border-bottom: 1px solid $border-color;
+  box-sizing: none;
   padding: 25px;
 }
-
-// .action {
-//   font-size: $default-font-size;
-//   margin-left: 2px;
-// }
 
 .created-at {
   color: $light-text-color;
@@ -137,8 +129,3 @@ textarea {
 #links {
   margin-top: 25px;
 }
-
-/*p {
-  font-size: 1.65rem;
-  line-height: 3rem;
-}*/
