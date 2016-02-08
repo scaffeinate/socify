@@ -13,7 +13,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to(current_user.name, user_path(current_user)) %></li>
+          <li><%= link_to(current_user.first_name, user_path(current_user)) %></li>
           <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
         <% else %>
           <li><%= link_to 'About', about_path %></li>
