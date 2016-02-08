@@ -1,31 +1,27 @@
 <div class="row">
-  <div class="post">
-    <div class="row">
-      <div class="user-info">
-        <%= render 'shared/avatar', user: post.user %>
-        <h4 class="name"><%= link_to post.user.name, user_path(post.user) %></h4>
+  <div class="user-info">
+    <%= render 'shared/avatar', user: post.user %>
+    <h4 class="name"><%= link_to post.user.name, user_path(post.user) %></h4>
+  </div>
+  <div class="actions">
+    <%= render 'posts/actions', remote: remote, post: post %>
+  </div>
+</div>
+<div class="row">
+  <%= render 'shared/created_at', activity: post %>
+</div>
+<div class="row">
+  <div class="content">
+    <span class="text"><%= post.content_html %></span>
+    <% if post.attachment.present? %>
+      <div class="attachment">
+        <%= image_tag post.attachment %>
       </div>
-      <div class="actions">
-        <%= render 'posts/actions', remote: remote, post: post %>
-      </div>
-    </div>
-    <div class="row">
-      <%= render 'shared/created_at', activity: post %>
-    </div>
-    <div class="row">
-      <div class="content">
-        <span class="text"><%= post.content_html %></span>
-        <% if post.attachment.present? %>
-          <div class="attachment">
-            <%= image_tag post.attachment %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="like-and-comment">
-        <%= render 'shared/like_and_comment', resource: post %>
-      </div>
-    </div>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="like-and-comment">
+    <%= render 'shared/like_and_comment', resource: post %>
   </div>
 </div>
