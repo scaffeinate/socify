@@ -43,7 +43,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 5px;
 }
 
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
   background: darken($navbar-color, 10%);
 }
 
@@ -109,14 +111,25 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
 }
 
-.btn-facebook {
+#btn-facebook {
   background-color: $facebook-color;
-  color: white;
+  &:hover, &:focus, &:active {
+    background: darken($facebook-color, 5%);
+  }
 }
 
-.btn-google {
+#btn-google {
   background-color: $google-color;
+  &:hover, &:focus, &:active {
+    background: darken($google-color, 5%);
+  }
+}
+
+.btn-social {
   color: white;
+  &:hover, &:focus, &:active {
+    color: white;
+  }
 }
 
 input[type="text"],
