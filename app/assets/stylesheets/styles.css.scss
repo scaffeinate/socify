@@ -35,6 +35,24 @@ h1, h2, h3, h4, h5, h6 {
   };
 }
 
+.navbar-nav > li > .dropdown-menu {
+  width: 200px;
+}
+
+.navbar-nav > li > .dropdown-toggle > i {
+  margin-left: 5px;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background: darken($navbar-color, 10%);
+}
+
+.navbar-nav > li > .dropdown-menu a {
+  padding: 7px 20px;
+  font-size: $medium-font-size;
+  font-weight: 300;
+}
+
 .avatar {
   // border: 1px solid $border-color;
   border-radius: 10rem;

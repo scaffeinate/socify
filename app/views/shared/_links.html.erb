@@ -14,10 +14,4 @@
   <%= link_to find_friends_path, class: "list-group-item #{(page=='find_friends') ? 'active':''}" do %>
     <%= fa_icon 'search' %> Find Friends
   <% end %>
-  <%= link_to edit_user_path(current_user) , class: "list-group-item #{(page=='edit_profile') ? 'active':''}" do %>
-    <%= fa_icon 'pencil' %> Edit Profile
-  <% end %>
-  <%= link_to edit_user_registration_path , class: "list-group-item #{(page=='change_password') ? 'active':''}" do %>
-    <%= fa_icon 'lock' %> Change Password
-  <% end %>
 </div>
