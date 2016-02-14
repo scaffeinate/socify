@@ -159,12 +159,23 @@ textarea {
   padding: 5px 25px;
 }
 
+#gallery {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid $border-color;
+  padding: 10px;
+  h4 {
+    font-family: $default-font;
+    font-size: $default-font-size;
+    font-weight: bold;
+  }
+}
+
 #links {
+  margin-top: 20px;
   a {
     padding: 12px;
   }
   i {
-    opacity: 0.9;
     font-size: $default-font-size;
     margin-right: 15px;
   }
