@@ -4,3 +4,6 @@
     <h4 class="name"><%= link_to follow.follower.name, user_path(follow.follower) %></h4>
   </div>
 </div>
+<div class="row">
+  <%= render 'shared/created_at', activity: follow %>
+</div>
