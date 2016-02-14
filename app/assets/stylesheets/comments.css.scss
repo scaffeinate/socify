@@ -3,13 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .comments {
-  @extend .col-md-10;
+  @extend .col-md-10, .col-md-offset-1;
   margin-top: 20px;
 
   .comment {
     .avatar {
       height: 40px;
       width: 40px;
+    }
+
+    .content {
+      margin-top: 5px;
+      margin-left: 60px;
     }
   }
 }
