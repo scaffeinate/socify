@@ -1,2 +1,2 @@
-$("#<%= @likeable_type.downcase %>-<%= @likeable.id %> .like").html("<%=j render('likes/form', likeable: @likeable) %>");
+$("#<%= @likeable_type.downcase %>-<%= @likeable.id %> .like-btn").html("<%=j render('likes/form', likeable: @likeable) %>");
 $("#<%= @likeable_type.downcase %>-<%= @likeable.id %> .likes-count").html("<%= @likeable.cached_votes_up %>");
