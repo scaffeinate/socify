@@ -1,5 +1,4 @@
-<div id="comment-<%= comment.id %>">
-  <div class="info">
+<!-- <div class="user-info">
     <%= render 'shared/avatar', user: comment.user %>
     <h4 class="name"><%= link_to comment.user.name, user_path(comment.user) %></h4>
   </div>
@@ -14,7 +13,13 @@
         <% end %>
       <% end %>
     </div>
+  </div> -->
+<div class="row">
+  <div class="user-info">
+    <%= render 'shared/avatar', user: comment.user %>
+    <h4 class="name"><%= link_to comment.user.name, user_path(comment.user) %></h4>
   </div>
-  <br>
-  <hr>
+  <div class="actions">
+    <%= render 'comments/actions', comment: comment %>
+  </div>
 </div>

@@ -34,3 +34,12 @@
     <% end %>
   </div>
 </div>
+<div class="row">
+  <div class="comments">
+    <% post.comments.sort_by { |t| - t.created_at.to_i }.first(3).each do |comment| %>
+      <div class="comment">
+        <%= render comment %>
+      </div>
+    <% end %>
+  </div>
+</div>
