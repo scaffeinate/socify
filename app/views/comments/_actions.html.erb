@@ -1,0 +1,12 @@
+<% if belongs_to_user?(comment) %>
+  <div class="dropdown">
+    <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      <%= fa_icon 'chevron-down' %>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <%= link_to comment_path(comment), method: :delete, class: 'btn btn-danger btn-sm', remote: true %>
+      </li>
+    </ul>
+  </div>
+<% end %>
