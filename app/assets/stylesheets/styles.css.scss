@@ -160,5 +160,12 @@ textarea {
 }
 
 #links {
-  margin-top: 25px;
+  a {
+    padding: 12px;
+  }
+  i {
+    opacity: 0.9;
+    font-size: $default-font-size;
+    margin-right: 15px;
+  }
 }
