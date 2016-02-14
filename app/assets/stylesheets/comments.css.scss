@@ -2,26 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.activity-comment, .activity-like, .comment, .like {
-  .content {
-    border: 1px solid $border-color;
-    margin-left: 75px;
-    margin-right: 15px;
-    padding: 5px 15px;
-    .text {
-      font-size: $default-font-size;
+.comments {
+  @extend .col-md-10;
+  margin-top: 20px;
+
+  .comment {
+    .avatar {
+      height: 40px;
+      width: 40px;
     }
   }
-
-  .created-at {
-    margin-left: 75px;
-  }
-}
-
-.comment {
-  margin-left: 15px;
-}
-
-.comments-count {
-  margin-left: 3px;
 }
