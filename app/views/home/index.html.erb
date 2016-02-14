@@ -1,9 +1,8 @@
 <div class="row">
   <div class="col-lg-3">
-    <%= render 'shared/user_info' %>
-    <%= render 'shared/links', page: 'newsfeed' %>
+    <%= render 'shared/user_board' %>
   </div>
-  <div id="newsfeed" class="col-lg-6">
+  <div class="col-lg-6">
     <%= render 'posts/form' %>
     <br>
     <div id="activities">
@@ -18,5 +17,6 @@
     <%= render 'shared/paginate', resources: @activities %>
   </div>
   <div class="col-lg-3">
+    <%= render 'shared/links', page: 'newsfeed' %>
   </div>
 </div>
