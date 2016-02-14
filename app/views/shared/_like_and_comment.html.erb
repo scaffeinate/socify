@@ -1,16 +1,12 @@
 <% if user_signed_in? %>
-  <div class="row">
-    <div class="col-xs-6">
-      <div class="like">
-        <%= render 'likes/form', likeable: resource %>
-      </div>
-      <span class="likes-count"><%= resource.cached_votes_up %></span>
-      <div class="comment">
-        <%= link_to resource do %>
-          <%= fa_icon 'comment-o' %>
-        <% end %>
-      </div>
-      <span class="comments-count"><%= resource.comments_count %></span>
-    </div>
+  <div class="like">
+    <%= render 'likes/form', likeable: resource %>
   </div>
+  <span class="likes-count"><%= resource.cached_votes_up %></span>
+  <div class="comment">
+    <%= link_to resource do %>
+      <%= fa_icon 'comment-o' %>
+    <% end %>
+  </div>
+  <span class="comments-count"><%= resource.comments_count %></span>
 <% end %>
