@@ -1,9 +1,9 @@
 <% if user_signed_in? %>
-  <div class="like">
+  <div class="like-btn">
     <%= render 'likes/form', likeable: resource %>
   </div>
   <span class="likes-count"><%= resource.cached_votes_up %></span>
-  <div class="comment">
+  <div class="comment-btn">
     <%= link_to resource do %>
       <%= fa_icon 'comment-o' %>
     <% end %>
