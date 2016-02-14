@@ -1,9 +1,88 @@
-#activities {
-  border: 1px solid $border-color;
-}
 .activity {
-  background: white;
+  background-color: rgba(255, 255, 255, 0.75);
   border-bottom: 1px solid $border-color;
-  box-sizing: none;
   padding: 25px;
+
+  .user-info {
+    @extend .col-xs-11;
+    .name {
+      @extend .name;
+      display: inline-block;
+      margin-left: 15px;
+    }
+  }
+
+  .actions {
+    @extend .col-xs-1;
+    .dropdown {
+      margin-top: 15px;
+      li a {
+        padding: 10px;
+        font-size: $small-font-size;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .created-at {
+    @extend .col-xs-offset-2;
+    margin-top: -12px;
+  }
+
+  .icon {
+    @extend .col-xs-1;
+    margin-left: 10px;
+    margin-top: 20px;
+    i {
+      color: $default-color;
+      opacity: 0.8;
+      font-size: 5rem;
+    }
+  }
+
+  .content {
+    @extend .col-xs-12;
+    margin-top: 20px;
+
+    .text {
+      font-size: $medium-font-size;
+      font-weight: 300;
+      font-family: $default-font;
+    }
+
+    .attachment {
+      margin-top: 15px;
+      img {
+        width: 100%;
+      }
+    }
+
+    .calendar {
+      margin-top: 10px;
+      font-size: $small-font-size;
+    }
+  }
+
+  .like-and-comment {
+    @extend .col-xs-12;
+    margin-top: 20px;
+
+    .like, .comment {
+      display: inline-block;
+      i {
+        color: $default-text-color;
+        font-size: $large-font-size;
+      }
+    }
+
+    .likes-count, .comments-count {
+      color: $default-text-color;
+      font-size: $small-font-size;
+    }
+  }
+}
+
+#activities {
+  border-radius: 5px;
+  border: 1px solid $border-color;
 }
