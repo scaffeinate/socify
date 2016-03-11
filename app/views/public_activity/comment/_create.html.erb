@@ -10,4 +10,5 @@
   <%= render 'shared/created_at', activity: activity %>
 </div> -->
 <div id="comment-<%= activity.trackable.id %>" class="comment-activity">
+  <%= render activity.trackable, is_activity: true %>
 </div>
