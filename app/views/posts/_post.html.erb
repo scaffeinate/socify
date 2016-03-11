@@ -27,9 +27,9 @@
 </div>
 <div class="row">
   <div class="comments">
-    <% post.comments.sort_by { |t| - t.created_at.to_i }.first(3).each do |comment| %>
-      <div class="comment">
-        <%= render comment %>
+    <% post.comments.sort_by { |t| - t.created_at.to_i }.first(5).each do |comment| %>
+      <div id="comment-<%= comment.id %>" class="comment">
+        <%= render comment, is_activity: false %>
       </div>
     <% end %>
   </div>

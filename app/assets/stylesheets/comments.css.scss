@@ -18,3 +18,8 @@
     }
   }
 }
+
+.commentable {
+  @extend .well;
+  margin-top: 20px;
+}
