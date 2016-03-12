@@ -26,17 +26,11 @@
       <%= render 'shared/like_and_comment', resource: post %>
     </div>
   </div>
-<% end %>
-<% if render_comments %>
   <div class="row">
-<<<<<<< 40708b1de8dcd3e778b124348effe8f4e6e6c60f
     <% if defined? show_all %>
       <%= render 'shared/comments_block', resource: post, show_all: true %>
     <% else %>
       <%= render 'shared/comments_block', resource: post %>
     <% end %>
-=======
-    <%= render 'shared/resource_comments', resource: post %>
->>>>>>> Handle render_actions and render_comments separately
   </div>
 </div>
