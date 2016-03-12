@@ -4,7 +4,7 @@
     <h4 class="name"><%= link_to event.user.name, user_path(event.user) %></h4>
     <span class="action">created an <%= link_to 'event', event %></span>
   </div>
-  <% unless render_for_comment_activity %>
+  <% if render_actions %>
     <div class="actions">
       <%= render 'events/actions', remote: remote, event: event %>
     </div>
@@ -24,7 +24,7 @@
     </div>
   </div>
 </div>
-<% unless render_for_comment_activity %>
+<% if render_actions %>
   <div class="row">
     <div class="like-and-comment">
       <%= render 'shared/like_and_comment', resource: event %>

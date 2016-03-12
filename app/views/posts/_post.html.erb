@@ -3,7 +3,7 @@
     <%= render 'shared/avatar', user: post.user %>
     <h4 class="name"><%= link_to post.user.name, user_path(post.user) %></h4>
   </div>
-  <% unless render_for_comment_activity %>
+  <% if render_actions %>
     <div class="actions">
       <%= render 'posts/actions', remote: remote, post: post %>
     </div>
@@ -22,7 +22,7 @@
     <% end %>
   </div>
 </div>
-<% unless render_for_comment_activity %>
+<% if render_actions %>
   <div class="row">
     <div class="like-and-comment">
       <%= render 'shared/like_and_comment', resource: post %>
