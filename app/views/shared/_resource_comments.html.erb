@@ -4,7 +4,7 @@
       <%= render comment, is_activity: false %>
     <% end %>
   <% else %>
-    <% resource.comments.sort_by { |t| - t.created_at.to_i }.first(5).each do |comment| %>
+    <% resource.comments.sort_by { |t| - t.created_at.to_i }.first(3).each do |comment| %>
       <%= render comment, is_activity: false %>
     <% end %>
   <% end %>

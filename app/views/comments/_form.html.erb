@@ -1,8 +1,14 @@
-<div class="new-comment">
-  <%= form_tag comments_path(commentable_type: commentable.class.to_s, commentable_id: commentable.id), method: :post, remote: true do %>
-    <div class="form-group">
-      <%= text_area_tag :comment_text, nil, placeholder: 'Enter Comment', class: 'form-control', rows: 1 %>
-    </div>
-    <%= submit_tag :comment, class: 'btn btn-primary' %>
-  <% end %>
+<div class="row new-comment">
+  <div class="col-md-12">
+    <%= form_tag comments_path(commentable_type: commentable.class.to_s, commentable_id: commentable.id), method: :post, remote: true do %>
+      <div class="col-md-10">
+        <%= text_area_tag :comment_text, nil, placeholder: 'Enter Comment', class: 'form-control', rows: 1 %>
+      </div>
+      <div class="col-md-2">
+        <%= button_tag class: 'btn btn-primary' do %>
+          <%= fa_icon 'comment-o' %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
