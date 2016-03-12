@@ -1,7 +1,17 @@
-<div id="mentionable-data" data-content="<%= mentionable_user_path(current_user) %>"></div>
-<%= form_tag comments_path(commentable_type: commentable.class.to_s, commentable_id: commentable.id), method: :post, remote: true do %>
+<%= form_tag comments_path(commentable_type: c.class.to_s, commentable_id: c.id), method: :post, remote: true do %>
   <div class="form-group">
-    <%= text_area_tag :comment_text, nil, placeholder: 'Enter Comment', class: 'form-control input-mentionable' %>
+    <div class="row">
+      <div class="col-xs-1">
+        <%= render 'shared/avatar', user: current_user, klass: 'avatar-sm' %>
+      </div>
+      <div class="col-xs-10 col-xs-offset-1">
+        <%= text_area_tag :comment_text, nil, placeholder: 'Enter Comment', class: 'form-control', rows: 1 %>
+      </div>
+    </div>
   </div>
-  <%= submit_tag :comment, class: 'btn btn-primary' %>
+  <div class="pull-right">
+    <%= button_tag class: 'btn btn-sm btn-primary-inverted' do %>
+      <i class="icon-comment"></i> comment
+      <% end %>
+  </div>
 <% end %>
