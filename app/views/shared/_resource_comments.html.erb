@@ -1,0 +1,7 @@
+<div class="comments">
+  <% resource.comments.sort_by { |t| - t.created_at.to_i }.first(5).each do |comment| %>
+    <div id="comment-<%= comment.id %>" class="comment">
+      <%= render comment, is_activity: false %>
+    </div>
+  <% end %>
+</div>
