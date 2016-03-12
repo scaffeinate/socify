@@ -2,6 +2,7 @@
   <div class="user-info">
     <%= render 'shared/avatar', user: follow.follower %>
     <h4 class="name"><%= link_to follow.follower.name, user_path(follow.follower) %></h4>
+    followed <%= link_to follow.followable.name, user_path(follow.followable) %>
   </div>
 </div>
 <div class="row">
