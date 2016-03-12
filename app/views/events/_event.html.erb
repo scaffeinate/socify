@@ -31,6 +31,8 @@
       <%= render 'shared/like_and_comment', resource: event %>
     </div>
   </div>
+<% end %>
+<% if render_comments %>
   <div class="row">
     <% if defined? show_all %>
       <%= render 'shared/comments_block', resource: event, show_all: true %>
