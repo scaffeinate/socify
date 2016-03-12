@@ -5,6 +5,9 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <%= link_to 'View', event_path(event) %>
+      </li>
+      <li>
         <%= link_to 'Delete', event_path(event), method: :delete, remote: remote %>
       </li>
     </ul>

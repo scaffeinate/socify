@@ -6,7 +6,7 @@
       </div>
     <% end %>
   <% else %>
-    <% resource.comments.sort_by { |t| - t.created_at.to_i }.first(1).each do |comment| %>
+    <% resource.comments.sort_by { |t| - t.created_at.to_i }.first(5).each do |comment| %>
       <div id="comment-<%= comment.id %>" class="comment">
         <%= render comment, is_activity: false %>
       </div>
