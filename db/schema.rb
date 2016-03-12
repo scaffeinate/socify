@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214023654) do
+ActiveRecord::Schema.define(version: 20160312082801) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20160214023654) do
     t.datetime "updated_at"
     t.integer  "cached_votes_up", default: 0
     t.integer  "comments_count",  default: 0
+    t.string   "where"
   end
 
   add_index "events", ["cached_votes_up"], name: "index_events_on_cached_votes_up"
