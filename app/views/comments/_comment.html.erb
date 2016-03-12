@@ -2,7 +2,9 @@
   <div class="user-info">
     <%= render 'shared/avatar', user: comment.user %>
     <h4 class="name"><%= link_to comment.user.name, user_path(comment.user) %></h4>
-    commented on a <%= link_to comment.commentable_type, post_path(comment.commentable_id) %>
+    <% if is_activity %>
+      commented on a <%= link_to comment.commentable_type, post_path(comment.commentable_id) %>
+    <% end %>
   </div>
   <div class="actions">
     <%= render 'comments/actions', comment: comment %>
@@ -13,24 +15,6 @@
 </div>
 <% if is_activity %>
   <div class="commentable">
-    <div class="row">
-      <div class="user-info">
-        <%= render 'shared/avatar', user: comment.commentable.user %>
-        <h4 class="name"><%= link_to comment.commentable.user.name, user_path(comment.commentable.user) %></h4>
-      </div>
-    </div>
-    <div class="row">
-      <%= render 'shared/created_at', activity: comment.commentable %>
-    </div>
-    <div class="row">
-      <div class="content">
-        <span class="text"><%= comment.commentable.content_html %></span>
-        <% if comment.commentable.attachment.present? %>
-          <div class="attachment">
-            <%= image_tag comment.commentable.attachment %>
-          </div>
-        <% end %>
-      </div>
-    </div>
+    <%= render comment.commentable, remote: true, render_for_comment_activity: true %>
   </div>
 <% end %>
