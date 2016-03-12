@@ -30,6 +30,8 @@
       <%= render 'shared/like_and_comment', resource: event %>
     </div>
   </div>
+<% end %>
+<% if render_comments %>
   <div class="row">
     <%= render 'shared/resource_comments', resource: event %>
   </div>

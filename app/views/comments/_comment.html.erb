@@ -15,6 +15,6 @@
 </div>
 <% if is_activity %>
   <div class="commentable">
-    <%= render comment.commentable, remote: true, render_actions: false %>
+    <%= render comment.commentable, remote: true, render_actions: false, render_comments: false %>
   </div>
 <% end %>
