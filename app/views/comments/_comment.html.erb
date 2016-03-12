@@ -6,12 +6,19 @@
       commented on a <%= link_to comment.commentable_type.downcase, post_path(comment.commentable_id) %>
     <% end %>
   </div>
-  <div class="actions">
-    <%= render 'comments/actions', comment: comment %>
-  </div>
+  <% unless is_activity %>
+    <div class="actions">
+      <%= render 'comments/actions', comment: comment %>
+    </div>
+  <% end %>
 </div>
 <div class="row">
   <%= render 'shared/created_at', activity: comment %>
+</div>
+<div class="row">
+  <div class="content">
+    <span class="text"><%= comment.comment_html %></span>
+  </div>
 </div>
 <% if is_activity %>
   <div class="commentable">
