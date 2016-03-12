@@ -1,38 +1,40 @@
-<div class="row">
-  <div class="user-info">
-    <%= render 'shared/avatar', user: event.user %>
-    <h4 class="name"><%= link_to event.user.name, user_path(event.user) %></h4>
-    <span class="action">created an <%= link_to 'event', event %></span>
+<div id="event-<%= event.id %>">
+  <div class="row">
+    <div class="user-info">
+      <%= render 'shared/avatar', user: event.user %>
+      <h4 class="name"><%= link_to event.user.name, user_path(event.user) %></h4>
+      <span class="action">created an <%= link_to 'event', event %></span>
+    </div>
+    <% if render_actions %>
+      <div class="actions">
+        <%= render 'events/actions', remote: remote, event: event %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <%= render 'shared/created_at', activity: event %>
+  </div>
+  <div class="row">
+    <div class="icon">
+      <%= fa_icon'calendar' %>
+    </div>
+    <div class="content">
+      <span class="text"><%= event.name %></span>
+      <div class="calendar">
+        <%= formatted_time(event.when) %>
+      </div>
+    </div>
   </div>
   <% if render_actions %>
-    <div class="actions">
-      <%= render 'events/actions', remote: remote, event: event %>
+    <div class="row">
+      <div class="like-and-comment">
+        <%= render 'shared/like_and_comment', resource: event %>
+      </div>
+    </div>
+  <% end %>
+  <% if render_comments %>
+    <div class="row">
+      <%= render 'shared/resource_comments', resource: event %>
     </div>
   <% end %>
 </div>
-<div class="row">
-  <%= render 'shared/created_at', activity: event %>
-</div>
-<div class="row">
-  <div class="icon">
-    <%= fa_icon'calendar' %>
-  </div>
-  <div class="content">
-    <span class="text"><%= event.name %></span>
-    <div class="calendar">
-      <%= formatted_time(event.when) %>
-    </div>
-  </div>
-</div>
-<% if render_actions %>
-  <div class="row">
-    <div class="like-and-comment">
-      <%= render 'shared/like_and_comment', resource: event %>
-    </div>
-  </div>
-<% end %>
-<% if render_comments %>
-  <div class="row">
-    <%= render 'shared/resource_comments', resource: event %>
-  </div>
-<% end %>
