@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="user-info">
+    <%= render 'shared/avatar', user: user %>
+    <h4 class="name"><%= link_to user.name, user_path(user) %></h4>
+    liked a <%= link_to resource.class.to_s.downcase, resource %>
+  </div>
+</div>
+<div class="row">
+  <%= render 'shared/created_at', activity: resource %>
+</div>
+<div class="commentable">
+  <%= render resource, remote: true, render_actions: false, render_comments: false %>
+</div>
