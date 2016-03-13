@@ -20,6 +20,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2px;
   border: none;
   background-color: $navbar-color;
+  input {
+    width: 350px !important;
+    padding: 7px 12px !important;
+  }
 }
 
 .navbar-brand {
@@ -108,9 +112,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.btn-primary-inverted {
+  background-color: transparent;
+  border: 1px solid $default-color;
+  color: $default-color;
+  &:hover, &:active {
+    background: $default-color;
+    color: white;
+  }
+}
+
 .btn-sm {
   padding: 7px 15px;
-  border: none;
 }
 
 #btn-facebook {
@@ -178,4 +191,9 @@ textarea {
     font-size: $default-font-size;
     margin-right: 15px;
   }
+}
+
+.commentable, .likeable {
+  @extend .well;
+  margin-top: 20px;
 }
