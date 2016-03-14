@@ -69,10 +69,18 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
-.avatar {
+.avatar, .avatar-sm {
   border-radius: 10rem;
+}
+
+.avatar {
   width: 55px;
   height: 55px;
+}
+
+.avatar-sm {
+  width: 35px;
+  height: 35px;
 }
 
 .cover {
@@ -113,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary-inverted {
-  background-color: transparent;
+  background-color: white;
   border: 1px solid $default-color;
   color: $default-color;
   &:hover, &:active {
