@@ -8,8 +8,7 @@
     <div class="col-lg-6 col-lg-offset-3 well">
       <h4>Comments</h4>
       <hr>
-      <%= render 'comments/form', commentable: @event %>
-      <%= render 'shared/resource_comments', resource: @event, show_all: true %>
+      <%= render 'shared/comments_block', resource: @event, show_all: true %>
     </div>
   </div>
 </div>

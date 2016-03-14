@@ -32,10 +32,7 @@
   <% end %>
   <% if render_comments %>
     <div class="row">
-      <%= render 'comments/form', commentable: post %>
-    </div>
-    <div class="row">
-      <%= render 'shared/resource_comments', resource: post %>
+      <%= render 'shared/comments_block', resource: post %>
     </div>
   <% end %>
 </div>
