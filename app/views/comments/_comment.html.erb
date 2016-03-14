@@ -4,7 +4,7 @@
       <%= render 'shared/avatar', user: comment.user %>
       <h4 class="name"><%= link_to comment.user.name, user_path(comment.user) %></h4>
       <% if is_activity %>
-        commented on a <%= link_to comment.commentable_type.downcase, post_path(comment.commentable_id) %>
+        commented on a <%= link_to comment.commentable_type.downcase, comment.commentable %>
       <% end %>
     </div>
     <% unless is_activity %>
