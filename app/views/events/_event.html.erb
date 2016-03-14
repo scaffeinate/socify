@@ -16,12 +16,15 @@
   </div>
   <div class="row">
     <div class="icon">
-      <%= fa_icon'calendar' %>
+      <%= image_tag 'event.png' %>
     </div>
-    <div class="content">
+    <div class="event-details">
       <span class="text"><%= event.name %></span>
       <div class="calendar">
-        <%= formatted_time(event.when) %>
+        <%= fa_icon 'calendar-o' %> <%= formatted_time(event.when) %>
+      </div>
+      <div class="location">
+        <%= fa_icon 'map-marker' %> <%= event.where || 'Unknown' %>
       </div>
     </div>
   </div>

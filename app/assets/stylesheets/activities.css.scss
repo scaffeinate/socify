@@ -30,15 +30,37 @@
   }
 
   .icon {
-    @extend .col-xs-1;
+    @extend .col-xs-2;
     margin-left: 10px;
     margin-top: 20px;
-    i {
-      color: $default-color;
-      opacity: 0.8;
-      font-size: 5rem;
+    img {
+      width: 85px;
+      height: 85px;
     }
   }
+
+  .event-details {
+    @extend .col-xs-6;
+    margin: 20px;
+    i {
+      font-size: 1.5rem;
+      width: 20px;
+    }
+
+    .calendar, .location {
+      margin-top: 7px;
+    }
+
+    .location {
+      color: $light-text-color;
+    }
+
+    .text {
+      font-size: $large-font-size;
+      font-weight: 400;
+    }
+  }
+
 
   .content {
     @extend .col-xs-12;
