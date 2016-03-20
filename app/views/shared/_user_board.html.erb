@@ -1,5 +1,5 @@
 <div id="user-board">
-  <div class="profile">
+  <div id="profile">
     <div class="cover" style="background-image: url(/assets/cover.png);">
       <%= render 'shared/avatar', user: @user %><br>
     </div>
@@ -29,7 +29,7 @@
       <% end %>
     </div>
   </div>
-  <div class="about">
+  <div id="about">
     <h4 class="text-center">About</h4>
     <ul>
       <li>Joined <%= get_date_and_year(@user.created_at) %></li>

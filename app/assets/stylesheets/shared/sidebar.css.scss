@@ -1,0 +1,24 @@
+#sidebar {
+  @extend .col-md-3;
+
+  #gallery {
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid $border-color;
+    padding: 10px;
+    h4 {
+      font-family: $default-font;
+      font-size: $default-font-size;
+      font-weight: bold;
+    }
+  }
+
+  #links {
+    a {
+      padding: 12px;
+    }
+    i {
+      font-size: $default-font-size;
+      margin-right: 15px;
+    }
+  }
+}

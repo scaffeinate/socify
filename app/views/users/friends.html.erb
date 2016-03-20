@@ -1,7 +1,5 @@
 <div class="row">
-  <div class="col-md-3">
-    <%= render 'shared/user_board' %>
-  </div>
+  <%= render 'shared/user_board' %>
   <div class="col-md-6 well">
     <h3>Friends</h3>
     <hr>
@@ -10,7 +8,5 @@
     </div>
     <%= render 'shared/paginate', resources: @friends %>
   </div>
-  <div class="col-md-3">
-    <%= render 'shared/sidebar', page: 'friends' %>
-  </div>
+  <%= render 'shared/sidebar', page: 'friends' %>
 </div>
