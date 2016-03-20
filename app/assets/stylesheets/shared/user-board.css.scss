@@ -3,14 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #user-board {
+  @extend .col-md-3;
 
-  .profile, .about {
+  #profile, #about {
     background-color: white;
     border: 1px solid $border-color;
     border-radius: 5px;
   }
 
-  .profile {
+  #profile {
     .cover {
       height: 125px;
       position: relative;
@@ -60,7 +61,7 @@
     }
   }
 
-  .about {
+  #about {
     margin-top: 20px;
     padding: 10px;
     h4 {
