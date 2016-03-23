@@ -3,7 +3,8 @@
     <%= render 'shared/avatar', user: user %>
     <span class="name"><%= link_to user.name, user %></span>
     <h5 class="location">
-      <%= fa_icon 'map-marker' %> <%= user.location || 'Unknown'%></h5>
+      <%= fa_icon 'map-marker' %> <%= user.location || 'Unknown'%>
+    </h5>
   </div>
   <div class="follow-button">
     <%= render 'follows/form', user: user %>
