@@ -1,27 +1,15 @@
 <div class="row">
-  <div id="newsfeed" class="col-lg-6">
-    <h4><%= fa_icon "newspaper-o" %> NEWSFEED</h4>
-    <div id="activities">
+  <div class="stream">
+    <h4 class="underlined"><%= fa_icon 'newspaper-o' %> NEWSFEED</h4>
+    <div id="activities" class="resources-block">
       <% if @activities.empty? %>
-        <div class="well">
-          <%= render('shared/no_resource', resources: 'Activities') %>
-        </div>
+        <%= render('shared/no_resource', resources: 'Activities') %>
       <% else %>
         <%= render_activities(@activities, layout: '/shared/activity') %>
       <% end %>
     </div>
-    <%= render 'shared/paginate', resources: @activities %>
-  </div>
-  <div id="intro" class="col-lg-6">
-    <h1>Socify</h1>
-    <p>Socify is an open source social networking app written using <%= fa_icon 'diamond' %> Ruby on Rails. You can checkout the blog <a href="https://medium.com/@sudharshanmuralidharaniyer/eb31da569233">post</a> on how
-    it was developed and also the source code on <a href="https://github.com/sudharti/socify"><%= fa_icon 'github' %> Github</a>.</p>
-    <hr>
-    <a href="https://github.com/sudharti/socify" class="btn btn-warning">
-      <%= fa_icon 'star' %> Star it
-    </a>
-    <a href="https://github.com/sudharti/socify" class="btn btn-primary">
-      <%= fa_icon 'code-fork' %> Fork it
-    </a>
+    <div class="pagination-block">
+      <%= render 'shared/paginate', resources: @activities %>
+    </div>
   </div>
 </div>

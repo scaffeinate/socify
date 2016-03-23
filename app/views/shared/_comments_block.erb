@@ -1,0 +1,20 @@
+<div class="comments-block">
+  <div class="row">
+    <div class="comments-form">
+      <%= render 'comments/form', c: resource %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="comments">
+      <% if defined? show_all %>
+        <% resource.comments.each do |comment| %>
+          <%= render comment, is_activity: false %>
+        <% end %>
+      <% else %>
+        <% resource.comments.sort_by { |t| - t.created_at.to_i }.first(3).each do |comment| %>
+          <%= render comment, is_activity: false %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

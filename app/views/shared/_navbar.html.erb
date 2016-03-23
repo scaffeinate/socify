@@ -9,11 +9,35 @@
       </button>
       <%= link_to "Socify", root_url, class: "navbar-brand" %>
     </div>
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+    </form>
     <div class="collapse navbar-collapse" id="navbar-top">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><%= link_to(current_user.name, user_path(current_user)) %></li>
-          <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
+          <li><%= link_to 'Home', root_path %></li>
+          <li class="dropdown">
+            <%= link_to '#', class: 'dropdown-toggle', data: {toggle: 'dropdown'} do %>
+              <%= current_user.first_name %> <%= fa_icon('angle-down') %>
+            <% end %>
+            <ul class="dropdown-menu">
+              <li>
+                <%= link_to 'View Profile', user_path(current_user) %>
+              </li>
+              <li>
+                <%= link_to 'Edit Profile', edit_user_path(current_user) %>
+              </li>
+              <li>
+                <%= link_to 'Change Password', edit_user_registration_path %>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
+              </li>
+            </ul>
+          </li>
         <% else %>
           <li><%= link_to 'About', about_path %></li>
           <li><%= link_to 'Sign up', new_user_registration_path %></li>

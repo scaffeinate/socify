@@ -1,37 +1,33 @@
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400);
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,600);
 
 body {
   padding-top: 100px;
   background: $bg-color;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: $default-font;
+  font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
-.navbar {
-  border: none;
-  background-color: $navbar-color;
+.btn {
+  font-weight: 300;
 }
 
-.navbar-brand {
-  font-weight: 600;
-}
-
-.navbar-default .navbar-nav > li > a, .navbar-brand {
-  font-family: 'Montserrat';
-  color: white !important;
-  &:hover {
-    color: $bg-color !important;
-  };
+.avatar, .avatar-sm {
+  border-radius: 10rem;
 }
 
 .avatar {
-  border: 1px solid $border-color;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
+}
+
+.avatar-sm {
+  width: 35px;
+  height: 35px;
 }
 
 .cover {
@@ -42,53 +38,88 @@ h1, h2, h3, h4, h5, h6 {
   background-position: center;
 }
 
-.activity {
-  background: white;
+.well {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 25px;
+  border-radius: 5px;
   border: 1px solid $border-color;
-  border-radius: 3px;
-  padding: 10px;
-  margin: 10px;
 }
+
 
 .name {
-  display: inline-block;
-  font-size: $default-font-size;
-  margin-left: 10px;
-}
-
-.action {
-  font-size: $default-font-size;
-  margin-left: 2px;
+  a {
+    font-family: $default-font;
+    font-size: $medium-font-size;
+    text-decoration: none;
+    color: $default-text-color;
+    font-weight: bold;
+    &:hover, &:active {
+      color: $link-hover-color;
+    }
+  }
 }
 
 .created-at {
   color: $light-text-color;
   font-size: $small-font-size;
-  margin-top: 15px;
 }
 
 .btn {
-  font-family: 'Montserrat', sans-serif;
-  padding: 10px 20px;
+  padding: 7px 20px;
 }
 
 .btn-primary {
   background-color: $navbar-color;
+  &:hover, &:active {
+    background: #0E6AC7;
+  }
+}
+
+.btn-primary-inverted {
+  background-color: white;
+  border: 1px solid $default-color;
+  color: $default-color;
+  &:hover, &:active {
+    background: $default-color;
+    color: white;
+  }
 }
 
 .btn-sm {
   padding: 7px 15px;
-  border: none;
 }
 
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
+#btn-facebook {
+  background-color: $facebook-color;
+  &:hover, &:focus, &:active {
+    background: darken($facebook-color, 5%);
+  }
+}
+
+#btn-google {
+  background-color: $google-color;
+  &:hover, &:focus, &:active {
+    background: darken($google-color, 5%);
+  }
+}
+
+.btn-social {
+  color: white;
+  &:hover, &:focus, &:active {
+    color: white;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
 textarea {
+  height: auto;
+  padding: 10px 17px;
   box-shadow: none !important;
-  border: 2px solid #ccc !important;
+  border: 1px solid #ccc !important;
   &:focus {
-    border: 2px solid #888 !important;
+    border: 1px solid #888 !important;
   };
 }
 
@@ -104,50 +135,28 @@ textarea {
   padding: 5px 25px;
 }
 
-.liked {
-  color: $liked-color !important;
-}
-
-.points span {
-  padding: 5px;
-  background-color: $bg-color;
-  color: $light-text-color;
-  display: inline-block;
-  font-size: $small-font-size;
-  margin-top: 10px;
-  margin-right: 10px;
-}  
-
-.activity-post, .activity-event, .post, .event {
-  .actions {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid $border-color;
-    a, button {
-      font-family: 'Montserrat', sans-serif;
-      background-color: $border-color;
-      color: #555;
-      i {
-        margin-right: 5px;
-      }
-    }
+#gallery {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid $border-color;
+  padding: 10px;
+  h4 {
+    font-family: $default-font;
+    font-size: $default-font-size;
+    font-weight: bold;
   }
 }
 
-#links, #user-info {
-  h5 {
-    border-bottom: 1px solid $border-color;
-    padding: 15px 10px;
-    margin: 0;
+#links {
+  a {
+    padding: 12px;
   }
-
   i {
-    font-size: 1.75rem;
-    margin-right: 20px;
+    font-size: $default-font-size;
+    margin-right: 15px;
   }
 }
 
-p {
-  font-size: 1.65rem;
-  line-height: 3rem;
+.commentable, .likeable {
+  @extend .well;
+  margin-top: 20px;
 }

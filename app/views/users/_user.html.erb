@@ -1,13 +1,12 @@
-<br>
-<div id="user-<%= user.id %>" class="row">
-  <div class="col-lg-8">
+<div id="user-<%= user.id %>" class="user">
+  <div class="user-info">
     <%= render 'shared/avatar', user: user %>
-    <h5 class="name"><%= link_to user.name, user %></h5>
+    <span class="name"><%= link_to user.name, user %></span>
+    <h5 class="location">
+      <%= fa_icon 'map-marker' %> <%= user.location || 'Unknown'%>
+    </h5>
   </div>
-  <div class="col-lg-4">
-    <div class="follow">
-      <%= render 'follows/form', user: user %>
-    </div>
+  <div class="follow-button">
+    <%= render 'follows/form', user: user %>
   </div>
 </div>
-<br>

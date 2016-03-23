@@ -22,6 +22,7 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def find_commentable
     @commentable_type = params[:commentable_type].classify
     @commentable = @commentable_type.constantize.find(params[:commentable_id])

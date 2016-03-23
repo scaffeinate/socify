@@ -1,29 +1,38 @@
-<div class="info">
-  <%= render 'shared/avatar', user: post.user %>
-  <h4 class="name"><%= post.user.name %></h4>
-  <span class="action">created a <%= link_to 'post', post %></span>
-</div>
-<div class="content">
-  <span class="text"><%= post.content_html %></span>
-  <% if post.attachment.present? %>
-    <div class="attachment">
-      <%= image_tag post.attachment %>
+<div id="post-<%= post.id %>" class="post">
+  <div class="row">
+    <div class="user-info">
+      <%= render 'shared/avatar', user: post.user %>
+      <h4 class="name"><%= link_to post.user.name, user_path(post.user) %></h4>
     </div>
-  <% end %>
-  <%= render 'shared/created_at', activity: post %>
-  <div class="points">
-    <span class="like-count"><%= pluralize(post.cached_votes_up, 'like') %></span>
-    <span class="comments-count"><%= pluralize(post.comments_count, 'comment') %></span>
-    <div class="pull-right">
-      <% if belongs_to_user?(post) %>
-        <%= link_to edit_post_path(post), class: 'btn btn-primary btn-sm' do %>
-          <% fa_icon 'pencil' %>
-        <% end %>
-        <%= link_to post_path(post), method: :delete, class:'btn btn-danger btn-sm', remote: remote do %>
-          <% fa_icon 'trash' %>
-        <% end %>
+    <% if render_actions %>
+      <div class="actions">
+        <%= render 'posts/actions', remote: remote, post: post %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <%= render 'shared/created_at', activity: post %>
+  </div>
+  <div class="row">
+    <div class="content">
+      <span class="text"><%= post.content_html %></span>
+      <% if post.attachment.present? %>
+        <div class="attachment">
+          <%= image_tag post.attachment %>
+        </div>
       <% end %>
     </div>
   </div>
+  <% if render_actions %>
+    <div class="row">
+      <div class="like-and-comment">
+        <%= render 'shared/like_and_comment', resource: post %>
+      </div>
+    </div>
+  <% end %>
+  <% if render_comments %>
+    <div class="row">
+      <%= render 'shared/comments_block', resource: post %>
+    </div>
+  <% end %>
 </div>
-<%= render 'shared/actions', resource: post %>

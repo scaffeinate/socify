@@ -1,15 +1,13 @@
-<div class="row">
-  <div class="col-lg-4 col-lg-offset-4 well">
-    <h3 class="text-center">Log in</h3>
+<div class="row" style="margin-top: 50px;">
+  <div class="col-lg-3 col-lg-offset-2">
+    <h3 class="text-center">Login</h3>
     <br>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control', autofocus: true, placeholder: 'email@example.com' %>
+        <%= f.email_field :email, class: 'form-control', autofocus: true, placeholder: 'Email' %>
       </div>
       <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control', autocomplete: 'off', placeholder: 'password' %>
+        <%= f.password_field :password, class: 'form-control', autocomplete: 'off', placeholder: 'Password' %>
       </div>
       <% if devise_mapping.rememberable? -%>
         <div class="form-group">
@@ -18,13 +16,21 @@
         </div>
       <% end -%>
       <div class="actions">
-        <%= f.submit 'Log in', class: 'btn btn-success' %>
+        <%= f.submit 'Log in', class: 'btn btn-primary btn-block' %>
       </div>
     <% end %>
     <br>
-    <%= link_to "<i class='fa fa-facebook'></i> &nbsp; Login with Facebook".html_safe, user_omniauth_authorize_path(:facebook), class: 'btn btn-block btn-primary' %><br>
-    <%= link_to "<i class='fa fa-google-plus'></i> &nbsp; Login with Google".html_safe, user_omniauth_authorize_path(:google_oauth2), class: 'btn btn-block btn-danger' %>
-    <br>
-    <%= render 'devise/shared/links' %>
+  </div>
+  <div class="col-lg-3 col-lg-offset-2" style="margin-top: 75px;">
+    <%= link_to "<i class='fa fa-facebook'></i> &nbsp; Login with Facebook".html_safe, user_omniauth_authorize_path(:facebook), id: 'btn-facebook', class: 'btn btn-block btn-social' %><br>
+    <%= link_to "<i class='fa fa-google-plus'></i> &nbsp; Login with Google".html_safe, user_omniauth_authorize_path(:google_oauth2), id: 'btn-google', class: 'btn btn-block btn-social' %>
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="text-center">
+    <h5><%= link_to 'Forgot password?', new_password_path(resource_name) %></h5>
+    <h5><%= link_to "Didn't receive confirmation?", new_confirmation_path(resource_name) %></h5>
   </div>
 </div>

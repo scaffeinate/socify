@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .activity-follow {
-
   .action {
     font-size: $default-font-size;
     margin-left: 2px;
@@ -16,4 +15,8 @@
   .created-at {
     margin-left: 75px;
   }
+}
+
+.follow {
+  margin-top: 10px;
 }

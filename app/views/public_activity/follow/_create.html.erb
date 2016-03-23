@@ -1,4 +1,7 @@
-<div class="activity-follow">
+<div id="follow-<%= activity.trackable.id %>" class="follow">
+  <%= render activity.trackable, remote: true %>
+</div>
+<!-- <div class="activity-follow">
   <div class="follower">
     <%= render 'shared/avatar', user: activity.owner %>
     <h4 class="name"><%= activity.owner.name %></h4>
@@ -9,4 +12,4 @@
     <h4 class="name"><%= activity.trackable.followable.name %></h4>
   </div>
   <%= render 'shared/created_at', activity: activity %>
-</div>
+</div> -->

@@ -1,11 +1,1 @@
-<div class="activity-comment">
-  <div class="info">
-    <%= render 'shared/avatar', user: activity.owner %>
-    <h4 class="name"><%= activity.owner.name %></h4>
-    <span class="action">commented on a <%= link_to 'post', activity.trackable.commentable %></span>
-  </div>
-  <div class="content">
-    <h4><small><%= activity.trackable.comment %></small></h4>
-  </div>
-  <%= render 'shared/created_at', activity: activity %>
-</div>
+<%= render activity.trackable, is_activity: true %>
