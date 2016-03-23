@@ -2,8 +2,9 @@
 <br>
 <div id="user-<%= @user.id %>" class="row">
   <%= render 'shared/user_board' %>
-  <div class="col-lg-6">
-    <div id="activities">
+  <div class="stream">
+    <h4 class="underlined">USER STREAM</h4>
+    <div id="activities" class="resources-block">
       <% if @activities.empty? %>
         <div class="well">
           <%= render('shared/no_resource', resources: 'Activities') %>
@@ -12,7 +13,9 @@
         <%= render_activities(@activities, layout: '/shared/activity') %>
       <% end %>
     </div>
-    <%= render 'shared/paginate', resources: @activities %>
+    <div class="pagination-block">
+      <%= render 'shared/paginate', resources: @activities %>
+    </div>
   </div>
   <% if is_current_user?(@user) %>
     <div id="sidebar">

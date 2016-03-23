@@ -4,7 +4,7 @@
 
 .user {
   @extend .row;
-  padding: 10px 20px;
+  margin-top: 20px;
   .user-info {
     @extend .col-md-9;
     .name {
