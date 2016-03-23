@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :events
   has_many :authentications
+  has_many :albums
 
   mount_uploader :avatar, AvatarUploader
   mount_uploader :cover, AvatarUploader
@@ -30,7 +31,6 @@ class User < ActiveRecord::Base
 
   def self.find_for_oauth(auth)
     user = User.where(email: auth.info.email).first
-    puts auth.info.inspect
     if user
       user.update_attribute(:remote_avatar_url, auth.info.image.gsub('http://', 'https://'))
     else
