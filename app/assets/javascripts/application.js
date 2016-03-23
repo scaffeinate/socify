@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require bindWithDelay
 //= require jquery.datetimepicker
+//= require dropzone
 //= require_tree .
 
 $(document).ready(function(){
