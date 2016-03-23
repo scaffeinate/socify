@@ -39,7 +39,9 @@
       <li>Lives in <%= @user.location %></li>
       <li>From <%= @user.hometown %></li>
       <li>Works at <%= @user.works_at %></li>
-      <li>Became friends with <%= @user.following_users.last.first_name %></li>
+      <% if @user.following_users.last.present? %>
+        <li>Became friends with <%= @user.following_users.last.first_name %></li>
+      <% end %>
     </ul>
   </div>
 </div>
