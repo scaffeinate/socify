@@ -1,7 +1,10 @@
+#activities {
+  padding: 0px;
+}
+
 .activity, .show {
-  background-color: rgba(255, 255, 255, 0.75);
   border-bottom: 1px solid $border-color;
-  padding: 15px 25px;
+  padding: 25px 35px;
 
   .user-info {
     @extend .col-xs-11;
@@ -118,11 +121,6 @@
       margin-left: 5px;
     }
   }
-}
-
-#activities {
-  border-radius: 5px;
-  border: 1px solid $border-color;
 }
 
 .show {

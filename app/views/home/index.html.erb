@@ -5,7 +5,7 @@
       <%= render 'posts/form' %>
     </div>
     <h4 class="underlined">STREAM</h4>
-    <div id="activities" class="resources">
+    <div id="activities" class="resources-block">
       <% if @activities.empty? %>
         <%= render('shared/no_resource', resources: 'Activities') %>
       <% else %>
