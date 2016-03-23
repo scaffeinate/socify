@@ -1,20 +1,18 @@
-<div class="well">
-  <%= form_for(@post) do |f| %>
-    <div class="form-group">
-      <h4>Update Status</h4>
-      <%= f.text_area :content, class: 'form-control', autofocus: true, placeholder: 'What\'s up?', rows: 2 %>
-    </div>
-    <div id="img-preview" class="form-group hidden">
-      <%= image_tag '' %>
-    </div>
-    <div class="form-group hidden">
-      <%= f.file_field :attachment %>
-    </div>
-    <div class="form-group">
-      <a id="post-attachment" href="javascript:void(0);" class="pull-right btn btn-primary">
-        <%= fa_icon 'image' %>
-      </a>
-      <%= f.submit 'Post', class: 'btn btn-primary'%>
-    </div>
-  <% end %>
-</div>
+<%= form_for(@post) do |f| %>
+  <div class="form-group">
+    <h4>Update Status</h4>
+    <%= f.text_area :content, class: 'form-control', autofocus: true, placeholder: 'What\'s up?', rows: 2 %>
+  </div>
+  <div id="img-preview" class="form-group hidden">
+    <%= image_tag '' %>
+  </div>
+  <div class="form-group hidden">
+    <%= f.file_field :attachment %>
+  </div>
+  <div class="form-group">
+    <a id="post-attachment" href="javascript:void(0);" class="pull-right btn btn-primary">
+      <%= fa_icon 'image' %>
+    </a>
+    <%= f.submit 'Post', class: 'btn btn-primary'%>
+  </div>
+<% end %>

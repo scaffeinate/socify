@@ -1,18 +1,20 @@
 <div class="row">
   <%= render 'shared/user_board' %>
-  <div class="col-lg-6">
-    <%= render 'posts/form' %>
-    <br>
-    <div id="activities">
+  <div class="stream">
+    <div class="new-post">
+      <%= render 'posts/form' %>
+    </div>
+    <h4 class="underlined">STREAM</h4>
+    <div id="activities" class="resources">
       <% if @activities.empty? %>
-        <div class="well">
-          <%= render('shared/no_resource', resources: 'Activities') %>
-        </div>
+        <%= render('shared/no_resource', resources: 'Activities') %>
       <% else %>
         <%= render_activities(@activities, layout: '/shared/activity') %>
       <% end %>
     </div>
-    <%= render 'shared/paginate', resources: @activities %>
+    <div class="pagination-block">
+      <%= render 'shared/paginate', resources: @activities %>
+    </div>
   </div>
   <%= render 'shared/sidebar', page: 'newsfeed' %>
 </div>
