@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312082801) do
+ActiveRecord::Schema.define(version: 20160323185552) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -97,6 +97,19 @@ ActiveRecord::Schema.define(version: 20160312082801) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "photo_albums", force: true do |t|
+    t.string   "title",           default: "Album"
+    t.string   "front_image_url"
+    t.integer  "images_count",    default: 0,       null: false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  add_index "photo_albums", ["slug"], name: "index_photo_albums_on_slug", unique: true
+  add_index "photo_albums", ["user_id"], name: "index_photo_albums_on_user_id"
 
   create_table "posts", force: true do |t|
     t.text     "content",                     null: false

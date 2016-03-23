@@ -1,9 +1,12 @@
 <div id="links" class="list-group">
   <%= link_to root_path, class: "list-group-item #{(page=='newsfeed') ? 'active':''}" do %>
-    <%= fa_icon 'newspaper-o' %> News Feed
+    <%= fa_icon 'newspaper-o' %> Stream
   <% end %>
   <%= link_to new_event_path , class: "list-group-item #{(page=='event') ? 'active':''}" do %>
     <%= fa_icon 'calendar-o' %> Create Event
+  <% end %>
+  <%= link_to root_path , class: "list-group-item #{(page=='gallery') ? 'active':''}" do %>
+    <%= fa_icon 'image' %>Create Album
   <% end %>
   <%= link_to friends_user_path(current_user), class: "list-group-item #{(page=='friends') ? 'active':''}" do %>
     <%= fa_icon 'arrow-circle-right' %> Friends
@@ -12,6 +15,6 @@
     <%= fa_icon 'arrow-circle-left' %> Followers
   <% end %>
   <%= link_to find_friends_path, class: "list-group-item #{(page=='find_friends') ? 'active':''}" do %>
-    <%= fa_icon 'user' %> Find Friends
+    <%= fa_icon 'search' %> Find Friends
   <% end %>
 </div>
