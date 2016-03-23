@@ -16,59 +16,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
-.navbar {
-  padding: 2px;
-  border: none;
-  background-color: $navbar-color;
-  input {
-    width: 350px !important;
-    padding: 7px 12px !important;
-  }
-}
-
-.navbar-brand {
-  font-family: 'Raleway', sans-serif;;
-  font-size: 2rem;
-  font-weight: 300;
-}
-
-.navbar-default .navbar-nav > li > a, .navbar-brand {
-  color: white !important;
-  &:hover {
-    color: $bg-color !important;
-  };
-}
-
-.navbar-nav > li > .dropdown-menu {
-  width: 200px;
-}
-
-.navbar-nav > li > .dropdown-toggle > i {
-  margin-left: 5px;
-}
-
-.navbar {
-  .navbar-nav li a {
-    &:hover, &:focus, &:active {
-      color: white;
-      background: darken($navbar-color, 10%);
-    }
-  }
-}
-
-.navbar-default .navbar-nav > .open > a {
-  background: darken($navbar-color, 10%);
-  &:hover,&:focus {
-    background: darken($navbar-color, 10%);
-  }
-}
-
-.navbar-nav > li > .dropdown-menu a {
-  padding: 7px 20px;
-  font-size: $medium-font-size;
-  font-weight: 300;
-}
-
 .avatar, .avatar-sm {
   border-radius: 10rem;
 }
@@ -82,7 +29,6 @@ h1, h2, h3, h4, h5, h6 {
   width: 35px;
   height: 35px;
 }
-
 
 .cover {
   width: 100%;
