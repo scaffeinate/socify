@@ -3,8 +3,8 @@
 <div id="user-<%= @user.id %>" class="row">
   <%= render 'shared/user_board' %>
   <div class="stream">
-    <h4 class="underlined">USER STREAM</h4>
     <div id="activities" class="resources-block">
+      <h4 class="underlined">USER STREAM</h4>
       <% if @activities.empty? %>
         <div class="well">
           <%= render('shared/no_resource', resources: 'Activities') %>

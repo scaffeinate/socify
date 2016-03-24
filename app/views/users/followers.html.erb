@@ -1,8 +1,8 @@
 <div class="row">
   <%= render 'shared/user_board' %>
   <div class="stream">
-    <h4 class="underlined">FOLLOWERS</h4>
     <div id="followers" class="resources-block">
+      <h4 class="underlined">FOLLOWERS</h4>
       <%= render(@followers) || render('shared/no_resource', resources: 'Followers')  %>
     </div>
     <div class="pagination-block">
