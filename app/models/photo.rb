@@ -4,5 +4,5 @@ class Photo < ActiveRecord::Base
 
   validates_presence_of :photo_album
 
-  mount_uploader :url, :photo_uploader
+  mount_uploader :file, :photo_uploader
 end

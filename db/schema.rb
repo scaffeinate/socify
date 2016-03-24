@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323190317) do
+ActiveRecord::Schema.define(version: 20160324013703) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 20160323190317) do
 
   create_table "photos", force: true do |t|
     t.string   "title",          default: "", null: false
-    t.string   "url",                         null: false
+    t.string   "file",                        null: false
     t.integer  "photo_album_id"
     t.datetime "created_at"
     t.datetime "updated_at"

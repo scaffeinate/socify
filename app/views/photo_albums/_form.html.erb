@@ -1,1 +1,5 @@
-
+<%= form_for @photo_album do |f| %>
+  <div class="form-group">
+    <%= f.text_field :title, value: '', class: 'form-control', autofocus: true, placeholder: 'Photo Album Title' %>
+  </div>
+<% end %>
