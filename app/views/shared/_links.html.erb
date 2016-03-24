@@ -5,7 +5,7 @@
   <%= link_to new_event_path , class: "list-group-item #{(page=='event') ? 'active':''}" do %>
     <%= fa_icon 'calendar-o' %> Create Event
   <% end %>
-  <%= link_to root_path , class: "list-group-item #{(page=='gallery') ? 'active':''}" do %>
+  <%= link_to new_photo_album_path, class: "list-group-item #{(page=='photo_album') ? 'active':''}" do %>
     <%= fa_icon 'image' %>Create Album
   <% end %>
   <%= link_to friends_user_path(current_user), class: "list-group-item #{(page=='friends') ? 'active':''}" do %>
