@@ -18,6 +18,7 @@ class PhotoAlbumsController < ApplicationController
   end
 
   def show
+    @photos = @photo_album.photos
   end
 
   private
