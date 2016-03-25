@@ -3,8 +3,6 @@ class PhotoAlbumsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_photo_album, only: [:show, :destroy]
 
-  respond_to :json, :html
-
   def new
     @photo_album = PhotoAlbum.new
   end
@@ -14,11 +12,17 @@ class PhotoAlbumsController < ApplicationController
     @photo_album.user = current_user
 
     if @photo_album.save
-      render json: @photo_album
+      respond_to do |format|
+        format.json { render json: @photo_album }
+      end
     else
-      render errors: [
-        error: @photo_album.errors.full_messages.first
-      ]
+      respond_to do |format|
+        format.json do
+          render json: {
+            error: @photo_album.errors.full_messages.first.as_json
+          }, status: :unprocessable_entity
+        end
+      end
     end
   end
 
