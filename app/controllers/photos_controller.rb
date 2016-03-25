@@ -1,14 +1,18 @@
 class PhotosController < ApplicationController
-  respond_to :json
-
   def create
     @photo = Photo.new(photo_params)
-    @photo.save
+    respond_to do |format|
+      if @photo.save
+        format.json { render json: @photo }
+      else
+        format.json { render json: @photo.errors.full_messages.first }
+      end
+    end
   end
 
   private
 
   def photo_params
-    params.require(:photo).permit(:file, :photo_album_id)
+    params.permit(:file, :photo_album_id)
   end
 end

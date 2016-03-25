@@ -6,5 +6,5 @@ class PhotoAlbum < ActiveRecord::Base
   validates_presence_of :user
 
   extend FriendlyId
-  friendly_id :name, use: [:slugged, :finders]
+  friendly_id :title, use: [:slugged, :finders]
 end

@@ -1,0 +1,6 @@
+<%= form_tag photos_path, method: :post, class: 'dropzone form', id: 'photo-dropzone' do %>
+  <%= hidden_field_tag :photo_album_id %>
+  <div class="fallback">
+    <%= file_field_tag :file, multiple: true %>
+  </div>
+<% end %>
