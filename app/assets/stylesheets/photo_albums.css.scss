@@ -5,3 +5,26 @@
 #photo-dropzone {
   display: none;
 }
+
+#photo-albums {
+  margin-top: 50px;
+  .photo-album {
+    @extend .col-md-6;
+    a {
+      @extend .thumbnail;
+      text-decoration: none;
+    }
+    .thumbnail {
+      background: $bg-color;
+      padding: 5px;
+      img {
+        padding: 15px;
+      }
+    }
+    .caption {
+      @extend .text-center;
+      padding: 5px !important;
+      border-top: 1px solid $border-color;
+    }
+  }
+}

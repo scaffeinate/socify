@@ -1,5 +1,8 @@
-<%= form_for @photo_album do |f| %>
+<%= form_for @photo_album, remote: true do |f| %>
   <div class="form-group">
     <%= f.text_field :title, value: '', class: 'form-control', autofocus: true, placeholder: 'Photo Album Title' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit :create, class: 'btn btn-primary'%>
   </div>
 <% end %>

@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :events
   has_many :authentications
-  has_many :albums
+  has_many :photo_albums
 
   mount_uploader :avatar, AvatarUploader
   mount_uploader :cover, AvatarUploader

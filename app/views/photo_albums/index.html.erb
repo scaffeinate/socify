@@ -1,0 +1,16 @@
+<div class="row">
+  <%= render 'shared/user_board' %>
+  <div class="stream">
+    <div class="new-resource">
+      <%= link_to new_photo_album_path, class: 'btn btn-primary pull-right' do %>
+        <%= fa_icon 'plus' %>
+      <% end %>
+      <br>
+      <h4 class="underlined">PHOTO ALBUMS</h4>
+      <div id="photo-albums" class="row">
+        <%= render(@photo_albums) || render('shared/no_resource', resources: 'Photo Albums')%>
+      </div>
+    </div>
+  </div>
+  <%= render 'shared/sidebar', page: 'photo_album' %>
+</div>

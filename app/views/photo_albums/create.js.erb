@@ -1,0 +1,6 @@
+<% if @photo_album.persisted? %>
+  $("#photo-dropzone").fadeIn();
+  alertify.success("Album created");
+<% else %>
+  alertify.error("<%= @photo_album.errors.full_messages.first %>");
+<% end %>

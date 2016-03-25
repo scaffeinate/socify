@@ -3,6 +3,12 @@ class PhotoAlbumsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_photo_album, only: [:show, :destroy]
 
+  respond_to :js, :html
+
+  def index
+    @photo_albums = current_user.photo_albums.paginate(page: params[:page])
+  end
+
   def new
     @photo_album = PhotoAlbum.new
   end
@@ -10,20 +16,7 @@ class PhotoAlbumsController < ApplicationController
   def create
     @photo_album = PhotoAlbum.new(photo_album_params)
     @photo_album.user = current_user
-
-    if @photo_album.save
-      respond_to do |format|
-        format.json { render json: @photo_album }
-      end
-    else
-      respond_to do |format|
-        format.json do
-          render json: {
-            error: @photo_album.errors.full_messages.first.as_json
-          }, status: :unprocessable_entity
-        end
-      end
-    end
+    @photo_album.save
   end
 
   def show
