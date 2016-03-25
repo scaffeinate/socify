@@ -1,3 +1,15 @@
 // Place all the styles related to the photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#photos {
+  margin-top: 50px;
+  .photo {
+    @extend .col-md-4;
+    margin-top: 20px;
+    height: 100px;
+    a {
+      @extend .thumbnail;
+      text-decoration: none;
+    }
+  }
+}

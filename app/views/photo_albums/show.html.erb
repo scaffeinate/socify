@@ -1,1 +1,12 @@
-
+<div class="row">
+  <%= render 'shared/user_board' %>
+  <div class="stream">
+    <div class="new-resource">
+      <h4 class="underlined">PHOTOS</h4>
+      <div id="photos" class="row">
+        <%= render(@photos) || render('shared/no_resource', resources: 'Photos') %>
+      </div>
+    </div>
+  </div>
+  <%= render 'shared/sidebar', page: 'photo_album' %>
+</div>
