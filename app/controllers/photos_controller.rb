@@ -2,17 +2,16 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
 
-    @photo_album = PhotoAlbum.find(params[:photo_album_id])
-
     respond_to do |format|
       if @photo.save
-        if @photo_album.photos_count == 0
-          @photo_album.front_image_url = @photo.file.url
-          @photo_album.save
-        end
+        # @photo_album.update(front_image_url: @photo.file.url) if @photo_album.photos.empty?
         format.json { render json: @photo }
       else
-        format.json { render json: @photo.errors.full_messages.first }
+        format.json do
+          render json: {
+            error: @photo.errors.full_messages.first
+          }, status: :unprocessable_entity
+        end
       end
     end
   end

@@ -1,5 +1,5 @@
 <div class="photo-album">
-  <%= link_to photo_album do %>
+  <%= link_to photo_album, class: 'thumbnail' do %>
     <%= image_tag photo_album.front_image_url || 'album.png' %>
     <div class="caption">
       <h5><%= photo_album.title %></h5>

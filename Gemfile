@@ -60,6 +60,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2', '~> 0.3.0'
 
 gem 'dropzonejs-rails'
+gem 'mini_magick'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

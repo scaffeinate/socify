@@ -1,5 +1,5 @@
 <div class="photo">
-  <%= link_to photo do %>
-    <%= image_tag photo.file.url %>
+  <%= link_to photo, class: 'thumbnail' do %>
+    <%= image_tag photo.file.thumb.url %>
   <% end %>
 </div>
