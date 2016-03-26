@@ -6,7 +6,7 @@
   .photo {
     @extend .col-md-4;
     margin-top: 20px;
-    height: 100px;
+    height: 100%;
     a {
       @extend .thumbnail;
       text-decoration: none;

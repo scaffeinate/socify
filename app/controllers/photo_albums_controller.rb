@@ -1,7 +1,7 @@
 class PhotoAlbumsController < ApplicationController
   before_action :set_user
   before_action :authenticate_user!
-  before_action :set_photo_album, only: [:show, :destroy]
+  before_action :set_photo_album, only: [:show, :edit, :destroy]
 
   respond_to :js, :html
 
@@ -21,6 +21,18 @@ class PhotoAlbumsController < ApplicationController
 
   def show
     @photos = @photo_album.photos
+  end
+
+  def edit
+    @photos = @photo_album.photos
+  end
+
+  def destroy
+    if @photo_album.destroy
+      redirect_to photo_albums_path
+    else
+      redirect_to @photo_album, notice: @photo_album.errors.full_messages.first
+    end
   end
 
   private

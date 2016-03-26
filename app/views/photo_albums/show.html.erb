@@ -2,6 +2,9 @@
   <%= render 'shared/user_board' %>
   <div class="stream">
     <div class="new-resource">
+      <%= link_to photo_album_path(@photo_album), method: :delete, class: 'btn btn-danger pull-right' do %>
+        <%= fa_icon 'trash' %>
+      <% end %>
       <h4 class="underlined">PHOTOS</h4>
       <div id="photos" class="row">
         <%= render(@photos) || render('shared/no_resource', resources: 'Photos') %>
