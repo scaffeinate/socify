@@ -24,10 +24,10 @@
     .thumbnail {
       background: $bg-color;
       text-decoration: none;
-      padding: 5px;
+      padding: 0px;
       img {
-        height: 250px;
-        padding: 15px;
+        height: 200px;
+        padding: 10px 0px;
       }
     }
     .caption {

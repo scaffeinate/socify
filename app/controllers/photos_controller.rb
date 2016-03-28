@@ -1,10 +1,14 @@
 class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
+    @photo_album = PhotoAlbum.find(params[:photo_album_id])
 
     respond_to do |format|
       if @photo.save
-        # @photo_album.update(front_image_url: @photo.file.url) if @photo_album.photos.empty?
+        if @photo_album.front_image_url.nil?
+          @photo_album.front_image_url = @photo.file.thumb.url
+          @photo_album.save
+        end
         format.json { render json: @photo }
       else
         format.json do
