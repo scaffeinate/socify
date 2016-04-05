@@ -2,13 +2,13 @@
   <% if user.followed_by?(current_user) %>
     <%= form_tag unfollow_path(user_id: user.id), method: :post, remote: true do %>
       <%= button_tag class: 'btn btn-sm btn-success' do %>
-        <%= fa_icon 'user-plus' %> Following
+        <i class="icon-user"></i> Following
       <% end %>
     <% end %>
   <% else %>
     <%= form_tag follow_path(user_id: user.id), method: :post, remote: true do %>
       <%= button_tag class: 'btn btn-sm btn-primary-inverted' do %>
-        <%= fa_icon 'user-plus' %> Follow
+        <i class="icon-user-add"></i> Follow
       <% end %>
     <% end %>
   <% end %>
