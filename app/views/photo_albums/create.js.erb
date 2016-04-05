@@ -1,7 +1,6 @@
 <% if @photo_album.persisted? %>
-  $("#photo-dropzone").fadeIn();
-  $("#photo_album_id").val("<%= @photo_album.id %>");
-  alertify.success("Album created");
+  window.location.href = "<%= photo_album_path(@photo_album) %>";
+  alertify.success("Created photo album");
 <% else %>
   alertify.error("<%= @photo_album.errors.full_messages.first %>");
 <% end %>

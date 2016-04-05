@@ -1,15 +1,29 @@
 <div class="row">
   <%= render 'shared/user_board' %>
   <div class="stream">
-    <div class="new-resource">
-      <%= link_to photo_album_path(@photo_album), method: :delete, class: 'btn btn-danger pull-right' do %>
-        <%= fa_icon 'trash' %>
+    <div class="resources-block">
+      <%= link_to '#', 'data-toggle' => 'modal', 'data-target' => '#upload-photos', class: 'btn btn-primary pull-right' do %>
+        <%= fa_icon 'plus' %>
       <% end %>
-      <h4 class="underlined">PHOTOS</h4>
+      <h4 class="underlined"><%= @photo_album.title %></h4>
       <div id="photos" class="row">
         <%= render(@photos) || render('shared/no_resource', resources: 'Photos') %>
       </div>
     </div>
   </div>
   <%= render 'shared/sidebar', page: 'photo_album' %>
+</div>
+<div class="modal fade" id="upload-photos" tabindex="-1" role="dialog" aria-labelledby="uploadPhotosLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h4 class="underlined">UPLOAD PHOTOS</h4>
+        <%= render 'photos/form' %>
+      </div>
+    </div>
+  </div>
 </div>

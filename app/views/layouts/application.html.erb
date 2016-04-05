@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Socify</title>
+    <title>Socify - Open source social networking platform</title>
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -24,5 +23,6 @@
     <div class="container">
       <%= yield %>
     </div>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>
