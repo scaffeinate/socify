@@ -1,5 +1,12 @@
 <%= form_tag photos_path, method: :post, class: 'dropzone form', id: 'photo-dropzone' do %>
-  <%= hidden_field_tag :photo_album_id %>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <%= hidden_field_tag :photo_album_id, @photo_album.id %>
+  <div class="dz-default dz-message">
+    <i class="icon-picture"></i>
+    <h4><b>Drop files here to upload</b></h4>
+  </div>
   <div class="fallback">
     <%= file_field_tag :file, multiple: true %>
   </div>
