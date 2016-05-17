@@ -1,5 +1,15 @@
 <div class="photo">
-  <%= link_to photo.file.url, class: 'thumbnail', "data-lightbox" => photo.photo_album.title.downcase do %>
-    <%= image_tag photo.file.thumb.url %>
-  <% end %>
+  <div class="thumbnail">
+    <%= link_to photo.file.url, "data-lightbox" => photo.photo_album.title.downcase do %>
+      <%= image_tag photo.file.thumb.url %>
+    <% end %>
+    <div class="caption">
+      <div class="title">
+        <h5>Thumbnail label</h5>
+      </div>
+      <div class="actions">
+        <%= render 'photos/actions', photo: photo %>
+      </div>
+    </div>
+  </div>
 </div>

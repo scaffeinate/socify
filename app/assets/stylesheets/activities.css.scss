@@ -17,20 +17,6 @@
     }
   }
 
-  .actions {
-    @extend .col-xs-1;
-
-    .dropdown {
-      margin-top: 15px;
-
-      li a {
-        padding: 10px;
-        font-size: $small-font-size;
-        font-weight: 300;
-      }
-    }
-  }
-
   .created-at {
     @extend .col-xs-offset-2;
     margin-top: -12px;

@@ -5,7 +5,9 @@
       <div id="g-photos">
         <% @photos.each do |photo| %>
           <div class="g-photo">
-            <%= image_tag photo.file.thumb.url %>
+            <%= link_to photo.file.url, "data-lightbox" => 'gallery' do %>
+              <%= image_tag photo.file.thumb.url %>
+            <% end %>
           </div>
         <% end %>
       </div>
