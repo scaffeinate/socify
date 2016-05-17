@@ -1,10 +1,12 @@
-<div class="row">
-  <div class="user-info">
-    <%= render 'shared/avatar', user: follow.follower %>
-    <h4 class="name"><%= link_to follow.follower.name, user_path(follow.follower) %></h4>
-    followed <%= link_to follow.followable.name, user_path(follow.followable) %>
+<div id="follow-<%= follow.id %>" class="follow">
+  <div class="row">
+    <div class="user-info">
+      <%= render 'shared/avatar', user: follow.follower %>
+      <h4 class="name"><%= link_to follow.follower.name, user_path(follow.follower) %></h4>
+      followed <%= link_to follow.followable.name, user_path(follow.followable) %>
+    </div>
   </div>
-</div>
-<div class="row">
-  <%= render 'shared/created_at', activity: follow %>
+  <div class="row">
+    <%= render 'shared/created_at', activity: follow %>
+  </div>
 </div>
