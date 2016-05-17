@@ -17,6 +17,7 @@
       <%= render 'shared/paginate', resources: @activities %>
     </div>
   </div>
+  <%= render 'shared/sidebar', page: 'user' %>
   <% if is_current_user?(@user) %>
     <div id="sidebar">
       <div id="links" class="list-group">

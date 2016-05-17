@@ -1,3 +1,16 @@
 <div id="gallery">
-  <h4 class="text-center">Gallery</h4>
+  <h4 class="text-center">Photos</h4>
+  <div class="row">
+    <% unless @photos.empty? %>
+      <div id="g-photos">
+        <% @photos.each do |photo| %>
+          <div class="g-photo">
+            <%= image_tag photo.file.thumb.url %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <%= render 'shared/no_resource', resources: 'photos' %>
+    <% end %>
+  </div>
 </div>
