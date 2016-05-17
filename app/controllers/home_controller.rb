@@ -4,7 +4,10 @@
 
 class HomeController < ApplicationController
   before_action :set_user, except: :front
+  before_action :fetch_photos, only: :index
   respond_to :html, :js
+
+  include Shared::Photos
 
   def index
     @post = Post.new
