@@ -2,11 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #photos {
-  margin-top: 50px;
+  margin-top: 10px;
+  @extend .col-md-12;
+
   .photo {
     @extend .col-md-4;
     margin-top: 20px;
     height: 100%;
+
     .thumbnail {
       text-decoration: none;
     }

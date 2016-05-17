@@ -20,7 +20,7 @@
           <li><%= link_to 'Home', root_path %></li>
           <li class="dropdown">
             <%= link_to '#', class: 'dropdown-toggle', data: {toggle: 'dropdown'} do %>
-              <%= current_user.first_name %> <%= fa_icon('angle-down') %>
+              <%= current_user.first_name %> <i class="icon-down-open-big"></i>
             <% end %>
             <ul class="dropdown-menu">
               <li>

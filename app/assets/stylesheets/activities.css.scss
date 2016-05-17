@@ -1,14 +1,15 @@
 #activities {
-  padding: 0px;
-  padding-top: 20px;
+  padding: 20px 0 0;
 }
 
-.activity, .show {
+.activity,
+.show {
   border-bottom: 1px solid $border-color;
   padding: 25px 35px;
 
   .user-info {
     @extend .col-xs-11;
+
     .name {
       @extend .name;
       display: inline-block;
@@ -18,8 +19,10 @@
 
   .actions {
     @extend .col-xs-1;
+
     .dropdown {
       margin-top: 15px;
+
       li a {
         padding: 10px;
         font-size: $small-font-size;
@@ -37,6 +40,7 @@
     @extend .col-xs-2;
     margin-left: 10px;
     margin-top: 20px;
+
     img {
       width: 85px;
       height: 85px;
@@ -46,12 +50,14 @@
   .event-details {
     @extend .col-xs-6;
     margin: 20px;
+
     i {
       font-size: 1.5rem;
       width: 20px;
     }
 
-    .calendar, .location {
+    .calendar,
+    .location {
       margin-top: 7px;
     }
 
@@ -65,7 +71,6 @@
     }
   }
 
-
   .content {
     @extend .col-xs-12;
     margin-top: 20px;
@@ -78,6 +83,7 @@
 
     .attachment {
       margin-top: 15px;
+
       img {
         width: 100%;
       }
@@ -98,6 +104,7 @@
       border: none !important;
       outline: none;
       padding: 0;
+
       > form {
         display: inline-block;
       }
@@ -107,16 +114,19 @@
       color: $liked-color !important;
     }
 
-    .like-btn, .comment-btn {
+    .comment-btn,
+    .like-btn {
       margin-left: 10px;
       display: inline-block;
+
       i {
         color: $default-text-color;
         font-size: $large-font-size;
       }
     }
 
-    .likes-count, .comments-count {
+    .comments-count,
+    .likes-count {
       color: $default-text-color;
       font-size: $medium-font-size;
       margin-left: 5px;

@@ -2,19 +2,23 @@
   <%= render 'shared/user_board' %>
   <div class="stream">
     <div class="resources-block">
+      <h4 class="underlined"><%= @photo_album.title.upcase %></h4>
       <div class="row">
-        <h4 class="underlined"><%= @photo_album.title.upcase %></h4>
-        <div class="pull-right">
-          <%= link_to photo_album_path(@photo_album), method: :delete, class: 'btn btn-danger' do %>
-            <i class="icon-trash"></i>
-          <% end %>
-          <a href="#" data-toggle="modal" , data-target="#upload-photos" class="btn btn-primary">
-            <i class="icon-plus"></i>
-          </a>
+        <div class="actions">
+          <div class="pull-right">
+            <%= link_to photo_album_path(@photo_album), method: :delete, class: 'btn btn-sm btn-danger' do %>
+              <i class="icon-trash"></i>
+            <% end %>
+            <a href="#" data-toggle="modal" , data-target="#upload-photos" class="btn btn-sm btn-primary">
+              <i class="icon-upload"></i>
+            </a>
+          </div>
         </div>
       </div>
-      <div id="photos" class="row">
-        <%= render(@photos) || render('shared/no_resource', resources: 'Photos') %>
+      <div class="row">
+        <div id="photos">
+          <%= render(@photos) || render('shared/no_resource', resources: 'Photos') %>
+        </div>
       </div>
     </div>
   </div>

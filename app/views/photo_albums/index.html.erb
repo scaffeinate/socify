@@ -2,12 +2,18 @@
   <%= render 'shared/user_board' %>
   <div class="stream">
     <div class="resources-block">
-      <%= link_to '#', 'data-toggle' => 'modal', 'data-target' => '#new-photo-album', class: 'btn btn-primary pull-right' do %>
-        <%= fa_icon 'plus' %>
-      <% end %>
       <h4 class="underlined">PHOTO ALBUMS</h4>
-      <div id="photo-albums" class="row">
-        <%= render(@photo_albums) || render('shared/no_resource', resources: 'Photo Albums') %>
+      <div class="row">
+        <div class="actions">
+          <%= link_to '#', 'data-toggle' => 'modal', 'data-target' => '#new-photo-album', class: 'btn btn-primary pull-right' do %>
+            <i class="icon-plus"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div id="photo-albums">
+          <%= render(@photo_albums) || render('shared/no_resource', resources: 'Photo Albums') %>
+        </div>
       </div>
     </div>
   </div>

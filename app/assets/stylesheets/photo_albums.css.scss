@@ -13,21 +13,21 @@
 
 #photo-albums {
   margin-top: 50px;
+  @extend .col-md-12;
+
   .photo-album {
     @extend .col-md-6;
+
     .thumbnail {
       background: $bg-color;
       text-decoration: none;
-      padding: 0px;
-      img {
-        height: 200px;
-        padding: 10px 0px;
-      }
     }
+
     .caption {
       @extend .text-center;
       border-top: 1px solid $border-color;
-      padding: 5px !important;
+      padding: 0;
+      margin-top: 10px;
     }
   }
 }
