@@ -4,5 +4,9 @@ class Photo < ActiveRecord::Base
 
   validates_presence_of :photo_album
 
+  scope :latest, -> (user = nil, limit = 10) do
+    where(photo_album_id: user.photo_albums.map(&:id)).order('created_at desc').limit(limit)
+  end
+
   mount_uploader :file, PhotoUploader
 end
