@@ -1,6 +1,6 @@
 <div id="photo-<%= photo.id %>" class="photo">
   <div class="thumbnail">
-    <%= link_to photo.file.url, "data-lightbox" => photo.photo_album.title.downcase do %>
+    <%= link_to photo.file.url, 'data-title' => photo.title, 'data-lightbox' => photo.photo_album.title.downcase do %>
       <%= image_tag photo.file.thumb.url %>
     <% end %>
     <div class="caption">

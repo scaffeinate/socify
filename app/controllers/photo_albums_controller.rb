@@ -1,7 +1,7 @@
 class PhotoAlbumsController < ApplicationController
   before_action :set_user
   before_action :authenticate_user!
-  before_action :set_photo_album, only: [:show, :edit, :destroy]
+  before_action :set_photo_album, only: [:show, :update, :destroy]
 
   respond_to :js, :html
 
@@ -23,8 +23,8 @@ class PhotoAlbumsController < ApplicationController
     @photos = @photo_album.photos
   end
 
-  def edit
-    @photos = @photo_album.photos
+  def update
+    @photo_album.update(photo_album_params)
   end
 
   def destroy
