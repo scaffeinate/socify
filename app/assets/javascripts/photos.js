@@ -42,7 +42,9 @@ $(function() {
 
           _this.removeAllFiles();
 
-          window.location.reload();
+          if(rejectedFiles.length == 0) {
+            window.location.reload();
+          }
 
         }, 1500);
       }
