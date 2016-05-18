@@ -1,31 +1,39 @@
-<div class="row">
-  <%= render 'shared/user_board' %>
-  <div class="stream">
-    <div class="resources-block">
-      <h4 class="underlined"><%= @photo_album.title.upcase %></h4>
-      <div class="row">
-        <div class="pull-right">
-          <%= link_to photo_album_path(@photo_album), method: :delete, class: 'btn btn-sm btn-danger' do %>
-            <i class="icon-trash"></i>
-          <% end %>
-          <a href="#" data-toggle="modal" , data-target="#upload-photos" class="btn btn-sm btn-primary">
-            <i class="icon-upload"></i>
-          </a>
+<div id="photo-album-<%= @photo_album.id %>" class="photo-album">
+  <div class="row">
+    <%= render 'shared/user_board' %>
+    <div class="stream">
+      <div class="resources-block">
+        <div class="title">
+          <h4 class="underlined"><%= @photo_album.title.upcase %></h4>
         </div>
-      </div>
-      <div class="row">
-        <div id="photos">
-          <%= render(@photos) || render('shared/no_resource', resources: 'Photos') %>
+        <div class="row">
+          <div class="pull-right">
+            <%= link_to '#', class: 'btn btn-sm btn-primary', 'data-toggle' => 'modal', 'data-target' => '#upload-photos-modal' do %>
+              <i class="icon-upload"></i>
+            <% end %>
+            <%= link_to '#', class: 'btn btn-sm btn-primary', 'data-toggle' => 'modal', 'data-target' => '#edit-photo-album-modal' do %>
+              <i class="icon-pencil"></i>
+            <% end %>
+            <%= link_to photo_album_path(@photo_album), method: :delete, class: 'btn btn-sm btn-danger' do %>
+              <i class="icon-trash"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="row">
+          <div id="photos">
+            <%= render(@photos) || render('shared/no_resource', resources: 'Photos') %>
+          </div>
         </div>
       </div>
     </div>
+    <%= render 'shared/sidebar', page: 'photo_album' %>
   </div>
-  <%= render 'shared/sidebar', page: 'photo_album' %>
 </div>
-<div class="modal fade" id="upload-photos" tabindex="-1" role="dialog" aria-labelledby="uploadPhotosLabel">
+<div class="modal fade" id="upload-photos-modal" tabindex="-1" role="dialog" aria-labelledby="uploadPhotosLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-body">
       <%= render 'photos/form' %>
     </div>
   </div>
 </div>
+<%= render 'photo_albums/edit_form', photo_album: @photo_album %>

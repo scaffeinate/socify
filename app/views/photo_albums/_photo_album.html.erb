@@ -1,4 +1,4 @@
-<div class="photo-album">
+<div id="photo-album-<%= photo_album.id %>" class="photo-album">
   <%= link_to photo_album, class: 'thumbnail' do %>
     <%= image_tag photo_album.front_image_url || 'album.png' %>
     <div class="caption">
