@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   post :unlike, to: 'likes#destroy', as: :unlike
   get :find_friends, to: 'home#find_friends', as: :find_friends
   get :about, to: 'home#about', as: :about
+  post :update_photo, to: 'photos#update', as: :update_photo
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

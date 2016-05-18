@@ -1,4 +1,8 @@
 class PhotosController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_photo, except: :create
+  respond_to :js
+
   def create
     @photo = Photo.new(photo_params)
     @photo_album = PhotoAlbum.find(params[:photo_album_id])
@@ -17,9 +21,22 @@ class PhotosController < ApplicationController
     end
   end
 
+  def update
+    @photo.update(photo_params)
+  end
+
+  def destroy
+    @photo_id = @photo.id
+    @photo.destroy
+  end
+
   private
 
   def photo_params
-    params.permit(:file, :photo_album_id)
+    params.permit(:id, :file, :title, :photo_album_id)
+  end
+
+  def set_photo
+    @photo = Photo.find(params[:id])
   end
 end
