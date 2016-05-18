@@ -23,6 +23,9 @@
           <div id="photos">
             <%= render(@photos) || render('shared/no_resource', resources: 'Photos') %>
           </div>
+          <div class="pagination-block">
+            <%= render 'shared/paginate', resources: @photos %>
+          </div>
         </div>
       </div>
     </div>
