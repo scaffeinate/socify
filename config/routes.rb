@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get :mentionable
       get :complete_profile
       post :set_password
+      get :photo_albums
     end
   end
 

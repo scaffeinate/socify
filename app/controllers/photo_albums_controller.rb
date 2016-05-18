@@ -5,10 +5,6 @@ class PhotoAlbumsController < ApplicationController
 
   respond_to :js, :html
 
-  def index
-    @photo_albums = current_user.photo_albums.paginate(page: params[:page])
-  end
-
   def new
     @photo_album = PhotoAlbum.new
   end
@@ -20,7 +16,7 @@ class PhotoAlbumsController < ApplicationController
   end
 
   def show
-    @photos = @photo_album.photos
+    @photos = @photo_album.photos.paginate(page: params[:page])
   end
 
   def update

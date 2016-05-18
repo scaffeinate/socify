@@ -35,6 +35,10 @@ class UsersController < ApplicationController
     render json: @user.following_users.as_json(only: [:id, :name]), root: false
   end
 
+  def photo_albums
+    @photo_albums = @user.photo_albums.paginate(page: params[:page])
+  end
+
   def set_password
     @user.password = params[:password]
     @user.password_confirmation = params[:password_confirmation]
