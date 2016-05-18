@@ -14,7 +14,7 @@
             <%= link_to '#', class: 'btn btn-sm btn-primary', 'data-toggle' => 'modal', 'data-target' => '#edit-photo-album-modal' do %>
               <i class="icon-pencil"></i>
             <% end %>
-            <%= link_to photo_album_path(@photo_album), method: :delete, class: 'btn btn-sm btn-danger' do %>
+            <%= link_to user_photo_album_path(@photo_album.user, @photo_album), method: :delete, class: 'btn btn-sm btn-danger' do %>
               <i class="icon-trash"></i>
             <% end %>
           </div>

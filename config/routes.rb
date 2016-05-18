@@ -10,12 +10,11 @@ Rails.application.routes.draw do
       get :mentionable
       get :complete_profile
       post :set_password
-      get :photo_albums
     end
+    resources :photo_albums
   end
 
   resources :events, except: [:edit, :update]
-  resources :photo_albums
   resources :photos, only: [:create, :destroy]
 
   authenticated :user do

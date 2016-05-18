@@ -5,8 +5,8 @@ class PhotoAlbumsController < ApplicationController
 
   respond_to :js, :html
 
-  def new
-    @photo_album = PhotoAlbum.new
+  def index
+    @photo_albums = @user.photo_albums.paginate(page: params[:page])
   end
 
   def create
@@ -25,9 +25,9 @@ class PhotoAlbumsController < ApplicationController
 
   def destroy
     if @photo_album.destroy
-      redirect_to photo_albums_path
+      redirect_to user_photo_albums_path(@photo_album.user)
     else
-      redirect_to @photo_album, notice: @photo_album.errors.full_messages.first
+      redirect_to user_photo_album_path(@photo_album.user, @photo_album), notice: @photo_album.errors.full_messages.first
     end
   end
 
@@ -39,5 +39,9 @@ class PhotoAlbumsController < ApplicationController
 
   def set_photo_album
     @photo_album = PhotoAlbum.find(params[:id])
+  end
+
+  def set_user
+    @user = User.find_by(slug: params[:user_id])
   end
 end
