@@ -15,11 +15,11 @@
     <div class="content">
       <% if is_activity %>
         <% photo_album.photos.limit(3).each do |photo| %>
-          <%= link_to user_photo_album_path(photo_album.user, photo_album), class: 'thumbnail col-xs-3' do %>
+          <%= link_to user_photo_album_path(photo_album.user, photo_album), class: 'thumbnail' do %>
             <%= image_tag photo.file.thumb.url %>
           <% end %>
         <% end %>
-        <%= link_to user_photo_album_path(photo_album.user, photo_album), class: 'thumbnail col-xs-3' do %>
+        <%= link_to user_photo_album_path(photo_album.user, photo_album), class: 'thumbnail' do %>
           <%= image_tag 'more.png' %>
         <% end %>
       <% else %>

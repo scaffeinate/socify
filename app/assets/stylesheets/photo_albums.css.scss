@@ -13,10 +13,10 @@
 
 #photo-albums {
   margin-top: 50px;
-  @extend .col-md-12;
+  @extend .col-xs-12;
 
   .photo-album {
-    @extend .col-md-6;
+    @extend .col-xs-6;
 
     .thumbnail {
       background: $bg-color;

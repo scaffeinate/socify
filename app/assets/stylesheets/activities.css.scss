@@ -118,6 +118,14 @@
       margin-left: 5px;
     }
   }
+
+  .photo-album {
+    .thumbnail {
+      @extend .col-xs-3;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
 }
 
 .show {
