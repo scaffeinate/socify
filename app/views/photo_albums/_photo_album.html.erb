@@ -1,8 +1,35 @@
 <div id="photo-album-<%= photo_album.id %>" class="photo-album">
-  <%= link_to user_photo_album_path(photo_album.user, photo_album), class: 'thumbnail' do %>
-    <%= image_tag photo_album.front_image_url || 'album.png' %>
-    <div class="caption">
-      <h5><%= photo_album.title %></h5>
+  <% if is_activity ||= false %>
+    <div class="row">
+      <div class="user-info">
+        <%= render 'shared/avatar', user: photo_album.user %>
+        <h4 class="name"><%= link_to photo_album.user.name, user_path(photo_album.user) %></h4>
+        posted an album
+      </div>
+    </div>
+    <div class="row">
+      <%= render 'shared/created_at', activity: photo_album %>
     </div>
   <% end %>
+  <div class="row">
+    <div class="content">
+      <% if is_activity %>
+        <% photo_album.photos.limit(3).each do |photo| %>
+          <%= link_to user_photo_album_path(photo_album.user, photo_album), class: 'thumbnail col-xs-3' do %>
+            <%= image_tag photo.file.thumb.url %>
+          <% end %>
+        <% end %>
+        <%= link_to user_photo_album_path(photo_album.user, photo_album), class: 'thumbnail col-xs-3' do %>
+          <%= image_tag 'more.png' %>
+        <% end %>
+      <% else %>
+        <%= link_to user_photo_album_path(photo_album.user, photo_album), class: 'thumbnail' do %>
+          <%= image_tag photo_album.front_image_url || 'album.png' %>
+          <div class="caption">
+            <h5><%= photo_album.title %></h5>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
