@@ -4,15 +4,21 @@
 
 .comments-block {
   background-color: $bg-color;
-  padding: 30px 50px;
+  @extend .col-xs-12;
+  padding: 20px 50px;
   margin-top: 20px;
 
   .avatar {
     padding: 10px;
   }
 
-  .content {
-    margin-top: 5px;
-    padding-left: 85px;
+  .comment-content,
+  .created-at {
+    @extend .col-xs-10, .col-xs-offset-2;
+    padding: 0 10px;
+  }
+
+  .comment-content {
+    margin-top: 10px;
   }
 }
