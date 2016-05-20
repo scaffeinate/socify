@@ -1,14 +1,7 @@
 <div id="event-<%= @event.id %>" class="show">
   <div class="row">
     <div class="col-lg-6 col-lg-offset-3 well">
-      <%= render @event, remote: false %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 well">
-      <h4>Comments</h4>
-      <hr>
-      <%= render 'shared/comments_block', resource: @event, show_all: true %>
+      <%= render @event, remote: false, show_all: true %>
     </div>
   </div>
 </div>
