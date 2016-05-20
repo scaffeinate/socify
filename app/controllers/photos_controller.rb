@@ -28,7 +28,11 @@ class PhotosController < ApplicationController
   def destroy
     @photo_album = @photo.photo_album
     @photo.destroy
-    @photo_album.update!(front_image_url: nil) if @photo_album.photos_count == 1
+    if @photo_album.photos_count == 1
+      @photo_album.update!(front_image_url: nil)
+    else
+      @photo_album.update!(front_image_url: @photo_album.photos.first)
+    end
   end
 
   private

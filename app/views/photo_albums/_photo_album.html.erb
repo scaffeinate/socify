@@ -15,7 +15,7 @@
     <div class="content">
       <% if is_activity %>
         <% if photo_album.photos_count == 0 %>
-          <div class="thumbnail">
+          <div class="default-thumbnail">
             <%= link_to photo_album do %>
               <%= image_tag 'album.png' %>
             <% end %>
