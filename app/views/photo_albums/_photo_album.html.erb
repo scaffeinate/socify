@@ -14,16 +14,29 @@
   <div class="row">
     <div class="content">
       <% if is_activity %>
-        <% photo_album.photos.limit(3).each do |photo| %>
-          <%= link_to user_photo_album_path(photo_album.user, photo_album), class: 'thumbnail' do %>
-            <%= image_tag photo.file.thumb.url %>
+        <% if photo_album.photos_count == 0 %>
+          <div class="thumbnail">
+            <%= link_to photo_album do %>
+              <%= image_tag 'album.png' %>
+            <% end %>
+            <div class="caption">
+              <div class="title">
+                <%= photo_album.title %>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <% photo_album.photos.limit(3).each do |photo| %>
+            <%= link_to photo_album, class: 'thumbnail' do %>
+              <%= image_tag photo.file.thumb.url %>
+            <% end %>
+          <% end %>
+          <%= link_to photo_album, class: 'thumbnail' do %>
+            <%= image_tag 'more.png' %>
           <% end %>
         <% end %>
-        <%= link_to user_photo_album_path(photo_album.user, photo_album), class: 'thumbnail' do %>
-          <%= image_tag 'more.png' %>
-        <% end %>
       <% else %>
-        <%= link_to user_photo_album_path(photo_album.user, photo_album), class: 'thumbnail' do %>
+        <%= link_to photo_album, class: 'thumbnail' do %>
           <%= image_tag photo_album.front_image_url || 'album.png' %>
           <div class="caption">
             <h5><%= photo_album.title %></h5>
