@@ -3,8 +3,8 @@
     <div class="user-info">
       <%= render 'shared/avatar', user: photo_album.user %>
       <h4 class="name"><%= link_to photo_album.user.name, user_path(photo_album.user) %></h4>
-      posted an album
-      </div>
+      posted a <%= link_to 'photo_album', photo_album %>
+    </div>
   </div>
   <div class="row">
     <%= render 'shared/created_at', activity: photo_album %>
@@ -23,6 +23,7 @@
           </div>
         </div>
       <% else %>
+        <h4 class="underlined"><%= photo_album.title.upcase %></h4>
         <% photo_album.photos.limit(3).each do |photo| %>
           <%= link_to photo_album, class: 'thumbnail' do %>
             <%= image_tag photo.file.thumb.url %>

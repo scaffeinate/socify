@@ -5,7 +5,8 @@
 #user-board {
   @extend .col-md-3;
 
-  #profile, #about {
+  #about,
+  #profile {
     background-color: white;
     border: 1px solid $border-color;
     border-radius: 5px;
@@ -17,13 +18,13 @@
       position: relative;
 
       .avatar {
-        width: 75px;
-        height: 75px;
+        width: 95px;
+        height: 95px;
         border-radius: 10rem;
         position: absolute;
         bottom: 0;
-        left: 37%;
-        margin-bottom: -35px;
+        left: 34%;
+        margin-bottom: -45px;
         border: 3px solid white;
       }
     }
@@ -36,10 +37,12 @@
     }
 
     #stats {
-      @extend .col-xs-8, .col-xs-offset-2;
+      @extend .col-xs-12;
       margin-top: 15px;
+
       .count {
-        @extend .col-xs-6;
+        @extend .col-xs-4;
+
         h4 {
           margin: 0;
           font-family: $default-font;
@@ -64,6 +67,7 @@
   #about {
     margin-top: 20px;
     padding: 10px;
+
     h4 {
       font-family: $default-font;
       font-size: $default-font-size;
@@ -74,6 +78,7 @@
       list-style: none;
       padding: 10px;
       margin-top: 10px;
+
       li {
         text-align: left;
         margin: 10px;
