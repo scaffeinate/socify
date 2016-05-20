@@ -10,7 +10,7 @@ class PhotoAlbum < ActiveRecord::Base
   include Shared::Callbacks
 
   include PublicActivity::Model
-  tracked only: [:create, :like], owner: proc { |_controller, model| model.user }
+  tracked only: [:create], owner: proc { |_controller, model| model.user }
 
   default_scope -> { order('created_at DESC') }
 
