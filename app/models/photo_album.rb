@@ -7,6 +7,8 @@ class PhotoAlbum < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :user
 
+  include Shared::Callbacks
+
   include PublicActivity::Model
   tracked only: [:create, :like], owner: proc { |_controller, model| model.user }
 

@@ -6,6 +6,11 @@ class PhotoAlbumsController < ApplicationController
   respond_to :js, :html
 
   def index
+    if params[:user_id]
+      @user = User.find_by(slug: params[:user_id])
+    else
+      @user = current_user
+    end
     @photo_albums = @user.photo_albums.paginate(page: params[:page])
   end
 
@@ -25,9 +30,9 @@ class PhotoAlbumsController < ApplicationController
 
   def destroy
     if @photo_album.destroy
-      redirect_to user_photo_albums_path(@photo_album.user)
+      redirect_to @photo_album
     else
-      redirect_to user_photo_album_path(@photo_album.user, @photo_album), notice: @photo_album.errors.full_messages.first
+      redirect_to @photo_album, notice: @photo_album.errors.full_messages.first
     end
   end
 
@@ -39,9 +44,5 @@ class PhotoAlbumsController < ApplicationController
 
   def set_photo_album
     @photo_album = PhotoAlbum.find(params[:id])
-  end
-
-  def set_user
-    @user = User.find_by(slug: params[:user_id])
   end
 end
