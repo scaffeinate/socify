@@ -120,10 +120,6 @@
   }
 
   .photo-album {
-    .content {
-      @extend .col-xs-10, .col-xs-offset-2;
-    }
-
     .thumbnail {
       @extend .col-xs-3;
       padding: 0;
@@ -131,7 +127,7 @@
     }
 
     .default-thumbnail {
-      @extend .col-xs-6, .col-xs-offset-2, .thumbnail;
+      @extend .col-xs-8, .col-xs-offset-2, .thumbnail;
 
       .caption {
         border-top: 1px solid $border-color;
