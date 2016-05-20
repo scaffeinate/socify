@@ -45,4 +45,16 @@
       <% end %>
     </div>
   </div>
+  <% if render_actions %>
+    <div class="row">
+      <div class="like-and-comment">
+        <%= render 'shared/like_and_comment', resource: photo_album %>
+      </div>
+    </div>
+  <% end %>
+  <% if render_comments %>
+    <div class="row">
+      <%= render 'shared/comments_block', resource: photo_album %>
+    </div>
+  <% end %>
 </div>

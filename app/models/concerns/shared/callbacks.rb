@@ -17,6 +17,7 @@ module Shared::Callbacks
   end
 
   def remove_likes
+    puts self.class.name.underscore
     activity = PublicActivity::Activity.find_by(trackable_id: id, trackable_type: self.class.to_s, key: "#{self.class.name.underscore}.like")
     activity.destroy if activity.present?
   end
