@@ -31,7 +31,7 @@ class PhotosController < ApplicationController
     if @photo_album.photos_count == 1
       @photo_album.update!(front_image_url: nil)
     else
-      @photo_album.update!(front_image_url: @photo_album.photos.first)
+      @photo_album.update!(front_image_url: @photo_album.photos.first.file.thumb.url)
     end
   end
 
