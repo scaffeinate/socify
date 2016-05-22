@@ -1,6 +1,6 @@
 <div class="info">
   <%= render 'shared/avatar', user: event.user %>
-  <h4 class="name"><%= event.user.name %></h4>
+  <h4 class="name"><%= link_to event.user.name, user_path(event.user) %></h4>
   <span class="action">created an <%= link_to 'event', event %></span>
 </div>
 <div class="content">
