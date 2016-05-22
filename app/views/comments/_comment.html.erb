@@ -1,7 +1,7 @@
 <div id="comment-<%= comment.id %>">
   <div class="info">
     <%= render 'shared/avatar', user: comment.user %>
-    <h4 class="name"><%= comment.user.name %></h4>
+    <h4 class="name"><%= link_to comment.user.name, user_path(comment.user) %></h4>
   </div>
   <div class="content">
     <div class="row">
