@@ -23,6 +23,7 @@ gem 'font-awesome-rails'
 group :development do
   gem 'spring'
   gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'letter_opener'
   gem 'guard'
   gem 'guard-rspec', '~> 4.2.8'

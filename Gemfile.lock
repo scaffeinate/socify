@@ -47,6 +47,8 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.2)
@@ -63,6 +65,7 @@ GEM
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
       after_commit_action (~> 1.0.0)
+    debug_inspector (0.0.2)
     devise (3.5.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -233,6 +236,7 @@ DEPENDENCIES
   auto_html (~> 1.6.4)
   autoprefixer-rails
   better_errors
+  binding_of_caller
   bootstrap-sass (~> 3.2.0)
   carrierwave
   cloudinary
