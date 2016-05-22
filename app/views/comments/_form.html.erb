@@ -4,3 +4,13 @@
   </div>
   <%= submit_tag :comment, class: 'btn btn-primary' %>
 <% end %>
+
+<script>
+  $('[name="comment_text"]').atwho({
+    at: '@',
+    data: '<%= mentionable_user_path(current_user) %>',
+    insertTpl: '${name}',
+    displayTpl: '<li data-id="${id}"><span>${name}</span></li>',
+    limit: 15
+  });
+</script>

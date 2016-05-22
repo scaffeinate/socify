@@ -11,11 +11,4 @@ $(document).ready(function(){
       }
     }, 150);
   }
-  $('[name="post[content]"]').atwho({
-	  at: '@',
-	  data: "/users/22/mentionable.json",
-	  insertTpl: '${name}',
-	  displayTpl: '<li data-id="${id}"><span>${name}</span></li>',
-	  limit: 15
-  });
 });

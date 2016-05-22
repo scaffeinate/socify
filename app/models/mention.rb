@@ -8,10 +8,8 @@ private
 
   def friends_names
     names_array = []
-    if user.following_users.present?
-      user.following_users.each do |friend|
-        names_array << friend.name
-      end
+    user.following_users.each do |friend|
+      names_array << friend.name
     end
     names_array
   end
