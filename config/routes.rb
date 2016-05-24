@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get :friends
       get :followers
       get :deactivate
+      get :mentionable
     end
   end
   resources :events, except: [:edit, :update]

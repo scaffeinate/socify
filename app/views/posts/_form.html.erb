@@ -18,3 +18,13 @@
     </div>
   <% end %>
 </div>
+
+<script>
+  $('[name="post[content]"]').atwho({
+    at: '@',
+    data: '<%= mentionable_user_path(current_user) %>',
+    insertTpl: '${name}',
+    displayTpl: '<li data-id="${id}"><span>${name}</span></li>',
+    limit: 15
+  });
+</script>
