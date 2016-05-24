@@ -7,7 +7,12 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -20,9 +25,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-.navbar-default .navbar-nav > li > a, .navbar-brand {
+.navbar-brand,
+.navbar-default .navbar-nav > li > a {
   font-family: 'Montserrat';
   color: white !important;
+
   &:hover {
     color: $bg-color !important;
   };
@@ -81,12 +88,13 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
 }
 
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
+input[type="email"],
+input[type="password"],
+input[type="text"],
 textarea {
   box-shadow: none !important;
   border: 2px solid #ccc !important;
+
   &:focus {
     border: 2px solid #888 !important;
   };
@@ -116,17 +124,23 @@ textarea {
   font-size: $small-font-size;
   margin-top: 10px;
   margin-right: 10px;
-}  
+}
 
-.activity-post, .activity-event, .post, .event {
+.activity-event,
+.activity-post,
+.event,
+.post {
   .actions {
     margin-top: 10px;
     padding-top: 10px;
     border-top: 1px solid $border-color;
-    a, button {
+
+    a,
+    button {
       font-family: 'Montserrat', sans-serif;
       background-color: $border-color;
       color: #555;
+
       i {
         margin-right: 5px;
       }
@@ -134,7 +148,8 @@ textarea {
   }
 }
 
-#links, #user-info {
+#links,
+#user-info {
   h5 {
     border-bottom: 1px solid $border-color;
     padding: 15px 10px;
@@ -150,4 +165,8 @@ textarea {
 p {
   font-size: 1.65rem;
   line-height: 3rem;
+}
+
+.atwho-view .cur {
+  background: $navbar-color;
 }
