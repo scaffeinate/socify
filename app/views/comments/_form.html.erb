@@ -1,16 +1,7 @@
+<div id="mentionable-data" data-content="<%= mentionable_user_path(current_user) %>"></div>
 <%= form_tag comments_path(commentable_type: commentable.class.to_s, commentable_id: commentable.id), method: :post, remote: true do %>
   <div class="form-group">
-    <%= text_area_tag :comment_text, nil, placeholder: 'Enter Comment', class: 'form-control' %>
+    <%= text_area_tag :comment_text, nil, placeholder: 'Enter Comment', class: 'form-control input-mentionable' %>
   </div>
   <%= submit_tag :comment, class: 'btn btn-primary' %>
 <% end %>
-
-<script>
-  $('[name="comment_text"]').atwho({
-    at: '@',
-    data: '<%= mentionable_user_path(current_user) %>',
-    insertTpl: '${name}',
-    displayTpl: '<li data-id="${id}"><span>${name}</span></li>',
-    limit: 15
-  });
-</script>

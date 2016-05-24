@@ -11,4 +11,12 @@ $(document).ready(function(){
       }
     }, 150);
   }
+
+  $('.input-mentionable').atwho({
+    at: '@',
+    data: $('#mentionable-data').data('content'),
+    insertTpl: '${name}',
+    displayTpl: '<li data-id="${id}"><span>${name}</span></li>',
+    limit: 15
+  });
 });

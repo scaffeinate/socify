@@ -1,8 +1,9 @@
 <div class="well">
+  <div id="mentionable-data" data-content="<%= mentionable_user_path(current_user) %>"></div>
   <%= form_for(@post) do |f| %>
     <div class="form-group">
       <h4>Update Status</h4>
-      <%= f.text_area :content, class: 'form-control', autofocus: true, placeholder: 'What\'s up?' %>
+      <%= f.text_area :content, class: 'form-control input-mentionable', autofocus: true, placeholder: 'What\'s up?' %>
     </div>
     <div id="img-preview" class="form-group hidden">
       <img src="" alt="Preview">
@@ -18,13 +19,3 @@
     </div>
   <% end %>
 </div>
-
-<script>
-  $('[name="post[content]"]').atwho({
-    at: '@',
-    data: '<%= mentionable_user_path(current_user) %>',
-    insertTpl: '${name}',
-    displayTpl: '<li data-id="${id}"><span>${name}</span></li>',
-    limit: 15
-  });
-</script>
