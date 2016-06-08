@@ -1,5 +1,7 @@
 class PhotoAlbum < ActiveRecord::Base
+  counter_culture :user
   belongs_to :user
+
   has_many :photos, dependent: :destroy
   acts_as_votable
   acts_as_commentable
