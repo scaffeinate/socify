@@ -1,0 +1,33 @@
+// Place all the styles related to the photo_albums controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dropzone {
+  background: $bg-color;
+  border: 1px solid $border-color;
+}
+
+.dz-message {
+  font-size: 2rem;
+}
+
+#photo-albums {
+  margin-top: 50px;
+  @extend .col-xs-12;
+
+  .photo-album {
+    @extend .col-xs-6;
+
+    .thumbnail {
+      background: $bg-color;
+      text-decoration: none;
+    }
+
+    .caption {
+      @extend .text-center;
+      border-top: 1px solid $border-color;
+      padding: 0;
+      margin-top: 10px;
+    }
+  }
+}

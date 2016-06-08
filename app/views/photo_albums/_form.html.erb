@@ -1,0 +1,8 @@
+<%= form_tag photo_albums_path, remote: true do %>
+  <div class="form-group">
+    <%= text_field_tag "photo_album[title]", nil, class: 'form-control', autofocus: true, placeholder: 'Photo Album Title' %>
+  </div>
+  <div class="form-group">
+    <%= submit_tag :create, class: 'btn btn-primary'%>
+  </div>
+<% end %>

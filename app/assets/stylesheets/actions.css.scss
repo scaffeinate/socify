@@ -1,0 +1,13 @@
+.actions {
+  @extend .col-xs-1;
+
+  .dropdown {
+    margin-top: 15px;
+
+    li a {
+      padding: 10px;
+      font-size: $small-font-size;
+      font-weight: 300;
+    }
+  }
+}

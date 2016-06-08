@@ -1,0 +1,8 @@
+<div id="sidebar">
+  <% if page != 'user' %>
+    <%= render 'shared/links', page: page %>
+  <% end %>
+  <% if page == 'newsfeed' || page == 'user' %>
+    <%= render 'shared/gallery' %>
+  <% end %>
+</div>

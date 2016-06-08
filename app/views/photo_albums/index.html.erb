@@ -1,0 +1,39 @@
+<div class="row">
+  <%= render 'shared/user_board' %>
+  <div class="stream">
+    <div class="resources-block">
+      <h4 class="underlined">PHOTO ALBUMS</h4>
+      <% if user_signed_in? %>
+        <div class="row">
+          <%= link_to '#', 'data-toggle' => 'modal', 'data-target' => '#new-photo-album', class: 'btn btn-sm btn-primary pull-right' do %>
+            <i class="icon-plus"></i>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="row">
+        <div id="photo-albums">
+          <%= render(@photo_albums) || render('shared/no_resource', resources: 'Photo Albums') %>
+        </div>
+      </div>
+    </div>
+    <div class="pagination-block">
+      <%= render 'shared/paginate', resources: @photo_albums %>
+    </div>
+  </div>
+  <%= render 'shared/sidebar', page: 'photo_album' %>
+</div>
+<% if user_signed_in? %>
+  <div class="modal fade" id="new-photo-album" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <h4 class="underlined">CREATE PHOTO ALBUM</h4>
+          <%= render 'photo_albums/form' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

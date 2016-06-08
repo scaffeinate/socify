@@ -1,0 +1,57 @@
+<div id="user-board">
+  <div id="profile">
+    <% if @user.cover.url %>
+      <div class="cover" style="background-image: url(<%= @user.cover.url %>);">
+        <%= render 'shared/avatar', user: @user %><br>
+      </div>
+    <% else %>
+      <div class="cover" style="background-image: url(/assets/cover.png);">
+        <%= render 'shared/avatar', user: @user %><br>
+      </div>
+    <% end %>
+    <div id="info">
+      <h4 class="name"><%= link_to @user.name, @user %></h4>
+      <span id="bio">
+        <%= @user.bio || 'Nothing to say about me.' %>
+      </span>
+      <% if is_current_user?(@user) %>
+        <div class="row">
+          <div id="stats">
+            <div class="count">
+              <span>FRIENDS</span>
+              <h4><%= @user.following_users.count %></h4>
+            </div>
+            <div class="count">
+              <span>POSTS</span>
+              <h4><%= @user.posts_count %></h4>
+            </div>
+            <div class="count">
+              <span>ALBUMS</span>
+              <h4><%= @user.posts_count %></h4>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div id="follow" class="text-center">
+          <%= render 'follows/form', user: @user %>
+          <h6><%= 'Follows you' if current_user.followed_by?(@user) %></h6>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div id="about">
+    <h4 class="text-center"><i class="icon-user"></i> About</h4>
+    <ul>
+      <li><i class="icon-back-in-time"></i> Joined <%= get_date_and_year(@user.created_at) %></li>
+      <% if @user.dob.present? %>
+        <li><i class="icon-birthday"></i> <%= get_date_and_year(@user.dob) %></li>
+      <% end %>
+      <li><i class="icon-location-1"></i> Lives in <%= @user.location %></li>
+      <li><i class="icon-home"></i> From <%= @user.hometown %></li>
+      <li><i class="icon-briefcase"></i> Works at <%= @user.works_at %></li>
+      <% if @user.following_users.last.present? %>
+        <li><i class="icon-users"></i> Became friends with <%= @user.following_users.last.first_name %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

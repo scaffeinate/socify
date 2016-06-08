@@ -1,0 +1,15 @@
+<% if belongs_to_user?(photo.photo_album) %>
+  <div class="dropdown">
+    <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      <i class="icon-down-open-big"></i>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <%= link_to 'Edit', '#', class: 'edit-photo', 'data-editable' => photo.id %>
+      </li>
+      <li>
+        <%= link_to 'Delete', photo_path(photo), method: :delete, remote: true %>
+      </li>
+    </ul>
+  </div>
+<% end %>

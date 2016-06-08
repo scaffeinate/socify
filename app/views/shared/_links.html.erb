@@ -1,30 +1,20 @@
-<div id="links" class="well">
-  <h5>
-    <%= fa_icon 'newspaper-o' %>
-    <%= link_to 'NewsFeed', root_path %>
-  </h5>
-  <h5>
-    <%= fa_icon 'calendar-o' %>
-    <%= link_to 'Create Event', new_event_path %>
-  </h5>
-  <h5>
-    <%= fa_icon 'arrow-circle-right' %>
-    <%= link_to 'Friends', friends_user_path(current_user) %>
-  </h5>
-  <h5>
-    <%= fa_icon 'arrow-circle-left' %>
-    <%= link_to 'Followers', followers_user_path(current_user) %>
-  </h5>
-  <h5>
-    <%= fa_icon 'search' %>
-    <%= link_to('Find Friends', find_friends_path)%>
-  </h5>
-  <h5>
-    <%= fa_icon 'pencil' %>
-    <%= link_to 'Edit Profile', edit_user_path(current_user) %>
-  </h5>
-  <h5>
-    <%= fa_icon 'lock' %>
-    <%= link_to 'Change password', edit_user_registration_path %>
-  </h5>
+<div id="links" class="list-group">
+  <%= link_to root_path, class: "list-group-item #{(page=='newsfeed') ? 'active':''}" do %>
+    <i class="icon-newspaper"></i> Stream
+  <% end %>
+  <%= link_to new_event_path , class: "list-group-item #{(page=='event') ? 'active':''}" do %>
+    <i class="icon-calendar-empty"></i> Create Event
+  <% end %>
+  <%= link_to photo_albums_path, class: "list-group-item #{(page=='photo_album') ? 'active':''}" do %>
+    <i class="icon-picture"></i> Photo Albums
+  <% end %>
+  <%= link_to friends_user_path(current_user), class: "list-group-item #{(page=='friends') ? 'active':''}" do %>
+    <i class="icon-users"></i> Friends
+  <% end %>
+  <%= link_to followers_user_path(current_user) , class: "list-group-item #{(page=='followers') ? 'active':''}" do %>
+    <i class="icon-user"></i> Followers
+  <% end %>
+  <%= link_to find_friends_path, class: "list-group-item #{(page=='find_friends') ? 'active':''}" do %>
+    <i class="icon-search"></i> Find Friends
+  <% end %>
 </div>

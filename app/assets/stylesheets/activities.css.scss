@@ -1,0 +1,142 @@
+#activities {
+  padding: 20px 0 0;
+}
+
+.activity,
+.show {
+  border-bottom: 1px solid $border-color;
+  padding: 25px 35px;
+
+  .user-info {
+    @extend .col-xs-11;
+
+    .name {
+      @extend .name;
+      display: inline-block;
+      margin-left: 15px;
+    }
+  }
+
+  .created-at {
+    @extend .col-xs-offset-2;
+    margin-top: -12px;
+  }
+
+  .icon {
+    @extend .col-xs-2;
+    margin-left: 10px;
+    margin-top: 20px;
+
+    img {
+      width: 85px;
+      height: 85px;
+    }
+  }
+
+  .event-details {
+    @extend .col-xs-6;
+    margin: 20px;
+
+    i {
+      font-size: 1.5rem;
+      width: 20px;
+    }
+
+    .calendar,
+    .location {
+      margin-top: 7px;
+    }
+
+    .location {
+      color: $light-text-color;
+    }
+
+    .text {
+      font-size: $large-font-size;
+      font-weight: 400;
+    }
+  }
+
+  .content {
+    @extend .col-xs-12;
+    margin-top: 20px;
+
+    .text {
+      font-size: $medium-font-size;
+      font-weight: 300;
+      font-family: $default-font;
+    }
+
+    .attachment {
+      margin-top: 15px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .calendar {
+      margin-top: 10px;
+      font-size: $small-font-size;
+    }
+  }
+
+  .like-and-comment {
+    @extend .col-xs-12;
+    margin-top: 20px;
+
+    .like-btn button {
+      background: none !important;
+      border: none !important;
+      outline: none;
+      padding: 0;
+
+      > form {
+        display: inline-block;
+      }
+    }
+
+    .liked i {
+      color: $liked-color !important;
+    }
+
+    .comment-btn,
+    .like-btn {
+      margin-left: 10px;
+      display: inline-block;
+
+      i {
+        color: $default-text-color;
+        font-size: $large-font-size;
+      }
+    }
+
+    .comments-count,
+    .likes-count {
+      color: $default-text-color;
+      font-size: $medium-font-size;
+      margin-left: 5px;
+    }
+  }
+
+  .photo-album {
+    .thumbnail {
+      @extend .col-xs-3;
+      padding: 0;
+      border-radius: 0;
+    }
+
+    .default-thumbnail {
+      @extend .col-xs-8, .col-xs-offset-2, .thumbnail;
+
+      .caption {
+        border-top: 1px solid $border-color;
+        @extend .text-center;
+      }
+    }
+  }
+}
+
+.show {
+  background: none;
+}

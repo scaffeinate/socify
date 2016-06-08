@@ -1,0 +1,89 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user-board {
+  @extend .col-md-3;
+
+  #about,
+  #profile {
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+  }
+
+  #profile {
+    .cover {
+      height: 125px;
+      position: relative;
+
+      .avatar {
+        width: 95px;
+        height: 95px;
+        border-radius: 10rem;
+        position: absolute;
+        bottom: 0;
+        left: 34%;
+        margin-bottom: -45px;
+        border: 3px solid white;
+      }
+    }
+
+    #info {
+      margin-top: 35px;
+      line-height: 1.85rem !important;
+      padding: 15px;
+      text-align: center;
+    }
+
+    #stats {
+      @extend .col-xs-12;
+      margin-top: 15px;
+
+      .count {
+        @extend .col-xs-4;
+
+        h4 {
+          margin: 0;
+          font-family: $default-font;
+          font-size: $vlarge-font-size;
+          font-weight: bold;
+          @extend .text-center;
+        }
+
+        span {
+          font-size: 0.95rem;
+          font-weight: 300;
+          @extend .text-center;
+        }
+      }
+    }
+
+    #follow {
+      margin-top: 15px;
+    }
+  }
+
+  #about {
+    margin-top: 20px;
+    padding: 10px;
+
+    h4 {
+      font-family: $default-font;
+      font-size: $default-font-size;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style: none;
+      padding: 10px;
+      margin-top: 10px;
+
+      li {
+        text-align: left;
+        margin: 10px;
+      }
+    }
+  }
+
+}

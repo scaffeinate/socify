@@ -1,0 +1,18 @@
+<div id="gallery">
+  <h4 class="text-center"><i class="icon-picture"></i> Photos</h4>
+  <div class="row">
+    <% unless @photos.empty? %>
+      <div id="g-photos">
+        <% @photos.each do |photo| %>
+          <div class="g-photo">
+            <%= link_to photo.file.url, "data-lightbox" => 'gallery' do %>
+              <%= image_tag photo.file.thumb.url %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <%= render 'shared/no_resource', resources: 'photos' %>
+    <% end %>
+  </div>
+</div>

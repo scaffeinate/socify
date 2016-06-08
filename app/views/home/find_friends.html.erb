@@ -1,16 +1,13 @@
 <div class="row">
-  <div class="col-lg-3">
-    <%= render 'shared/user_info' %>
-  </div>
-  <div class="col-lg-6 well">
-    <h3>Find Friends</h3>
-    <hr>
-    <div id="users">
+  <%= render 'shared/user_board' %>
+  <div class="stream">
+    <div id="users" class="resources-block">
+      <h4 class="underlined">FIND FRIENDS</h4>
       <%= render(@users) || render('shared/no_resource', resources: 'Users') %>
     </div>
-    <%= render 'shared/paginate', resources: @users %>
+    <div class="pagination-block">
+      <%= render 'shared/paginate', resources: @users %>
+    </div>
   </div>
-  <div class="col-lg-3">
-    <%= render 'shared/links' %>
-  </div>
+  <%= render 'shared/sidebar', page: 'find_friends' %>
 </div>

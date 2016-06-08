@@ -1,0 +1,50 @@
+<div id="photo-album-<%= photo_album.id %>" class="photo-album">
+  <div class="row">
+    <div class="user-info">
+      <%= render 'shared/avatar', user: photo_album.user %>
+      <h4 class="name"><%= link_to photo_album.user.name, user_path(photo_album.user) %></h4>
+      posted a <%= link_to 'photo_album', photo_album %>
+    </div>
+  </div>
+  <div class="row">
+    <%= render 'shared/created_at', activity: photo_album %>
+  </div>
+  <div class="row">
+    <div class="content">
+      <% if photo_album.photos_count == 0 %>
+        <div class="default-thumbnail">
+          <%= link_to photo_album do %>
+            <%= image_tag 'album.png' %>
+          <% end %>
+          <div class="caption">
+            <div class="title">
+              <%= photo_album.title %>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <h4 class="underlined"><%= photo_album.title.upcase %></h4>
+        <% photo_album.photos.limit(3).each do |photo| %>
+          <%= link_to photo_album, class: 'thumbnail' do %>
+            <%= image_tag photo.file.thumb.url %>
+          <% end %>
+        <% end %>
+        <%= link_to photo_album, class: 'thumbnail' do %>
+          <%= image_tag 'more.png' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="like-and-comment">
+      <%= render 'shared/like_and_comment', resource: photo_album %>
+    </div>
+  </div>
+  <div class="row">
+    <% if defined? show_all %>
+      <%= render 'shared/comments_block', resource: photo_album, show_all: true %>
+    <% else %>
+      <%= render 'shared/comments_block', resource: photo_album %>
+    <% end %>
+  </div>
+</div>

@@ -1,18 +1,7 @@
-<div id="post-<%= @post.id %>" class="post">
+<div id="post-<%= @post.id %>" class="show">
   <div class="row">
     <div class="col-lg-6 col-lg-offset-3 well">
-      <%= render @post, remote: false %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 well">
-      <h4>Comments</h4>
-      <hr>
-      <%= render 'comments/form', commentable: @post %>
-      <br>
-      <div class="comments">
-        <%= render(@comments) || render('shared/no_resource', resources: 'Comments') %>
-      </div>
+      <%= render @post, remote: false, show_all: true %>
     </div>
   </div>
 </div>

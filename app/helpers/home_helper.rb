@@ -8,6 +8,10 @@ module HomeHelper
   end
 
   def formatted_time(time)
-    time.to_formatted_s(:short)
+    time.strftime('%a, %d %b at %H:%M')
+  end
+
+  def get_date_and_year(time)
+    time.strftime('%d-%b-%Y')
   end
 end

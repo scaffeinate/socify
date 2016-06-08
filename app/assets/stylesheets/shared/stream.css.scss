@@ -1,0 +1,8 @@
+.stream {
+  @extend .col-md-6;
+
+  .new-resource,
+  .resources-block {
+    @extend .well;
+  }
+}

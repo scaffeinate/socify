@@ -1,0 +1,18 @@
+<% if belongs_to_user?(post) %>
+  <div class="dropdown">
+    <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      <i class="icon-down-open-big"></i>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <%= link_to 'View', post_path(post) %>
+      </li>
+      <li>
+        <%= link_to 'Edit', edit_post_path(post) %>
+      </li>
+      <li>
+        <%= link_to 'Delete', post_path(post), method: :delete, remote: remote %>
+      </li>
+    </ul>
+  </div>
+<% end %>

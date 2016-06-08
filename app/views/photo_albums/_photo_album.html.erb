@@ -1,0 +1,7 @@
+<div id="photo-album-<%= photo_album.id %>" class="photo-album">
+  <% if defined? is_activity %>
+    <%= render 'photo_albums/activity', photo_album: photo_album %>
+  <% else %>
+    <%= render 'photo_albums/display', photo_album: photo_album %>
+  <% end %>
+</div>

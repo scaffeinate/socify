@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.well {
-  background-color: white;
+.user {
+  @extend .row;
+  margin-top: 20px;
+  .user-info {
+    @extend .col-md-9;
+    .name {
+      margin-left: 15px;
+    }
+
+    .location {
+      margin-top: -10px;
+      margin-left: 75px;
+    }
+  }
+
+  .follow-button {
+    @extend .col-md-2;
+  }
 }
