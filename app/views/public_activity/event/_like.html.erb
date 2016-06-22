@@ -2,7 +2,7 @@
   <div class="activity-like">
     <div class="info">
       <%= render 'shared/avatar', user: activity.owner %>
-      <h4 class="name"><%= link_to activity.owner.name, user_path(activiy.owner) %></h4>
+      <h4 class="name"><%= link_to activity.owner.name, user_path(activity.owner) %></h4>
       <span class="action">liked a <%= link_to 'event', activity.trackable %></span>
     </div>
     <div class="content">
