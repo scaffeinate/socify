@@ -5,7 +5,7 @@
     <span class="action">commented on a <%= link_to 'post', activity.trackable.commentable %></span>
   </div>
   <div class="content">
-    <h4><small><%= activity.trackable.comment %></small></h4>
+    <h4><small><%= activity.trackable.comment_html %></small></h4>
   </div>
   <%= render 'shared/created_at', activity: activity %>
 </div>

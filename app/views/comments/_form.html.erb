@@ -1,5 +1,5 @@
 <div id="mentionable-data" data-content="<%= mentionable_user_path(current_user) %>"></div>
-<%= form_tag comments_path(commentable_type: commentable.class.to_s, commentable_id: commentable.id), id: 'comments_form', method: :post, remote: true do %>
+<%= form_tag comments_path(commentable_type: commentable.class.to_s, commentable_id: commentable.id), id: 'new_comment', method: :post, remote: true do %>
   <div class="form-group">
     <div id="comment-text" contenteditable="true" class="editable form-control input-mentionable" placeholder="Enter Comment"></div>
     <%= hidden_field_tag :comment_text, nil, placeholder: 'Enter Comment', class: 'form-control input-mentionable' %>

@@ -88,6 +88,12 @@ h6 {
   border : none;
 }
 
+div.editable {
+  height    : 65px;
+  max-height: 65px;
+  overflow-y: scroll;
+}
+
 div.editable,
 input[type="email"],
 input[type="password"],

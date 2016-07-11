@@ -19,4 +19,9 @@ $(document).ready(function() {
     displayTpl: '<li data-id="${id}"><span>${name}</span></li>',
     limit: 15
   });
+
+  $('#new_post').submit(function() {
+    $('#post_content').val($('#post-content').html());
+    $('#post-content').html('');
+  });
 });

@@ -2,7 +2,8 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function() {
-  $('#comments_form').submit(function() {
+  $('#new_comment').submit(function() {
     $('#comment_text').val($('#comment-text').html());
+    $('#comment-text').html('');
   });
 });
