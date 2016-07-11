@@ -1,2 +1,8 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
+
+$(document).ready(function() {
+  $('#comments_form').submit(function() {
+    $('#comment_text').val($('#comment-text').html());
+  });
+});
