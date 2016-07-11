@@ -4,7 +4,6 @@
 
 class Post < ActiveRecord::Base
   include Shared::Callbacks
-  include Mention
 
   belongs_to :user
   counter_culture :user
@@ -17,8 +16,6 @@ class Post < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
 
   mount_uploader :attachment, AvatarUploader
-
-  before_validation :add_mention_links_to_content
 
   validates_presence_of :content
   validates_presence_of :user

@@ -20,8 +20,6 @@ class Comment < ActiveRecord::Base
   include PublicActivity::Model
   tracked only: [:create], owner: proc { |_controller, model| model.user }
 
-  before_validation :add_mention_links_to_content
-
   validates_presence_of :comment
   validates_presence_of :commentable
   validates_presence_of :user
