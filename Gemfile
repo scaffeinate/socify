@@ -57,6 +57,7 @@ gem 'auto_html', '~>1.6.4'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2', '~> 0.3.0'
+gem 'sanitize'
 
 gem 'dropzonejs-rails'
 gem 'mini_magick'

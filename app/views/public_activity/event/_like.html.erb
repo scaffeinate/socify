@@ -1,0 +1,14 @@
+<% if activity.trackable %>
+  <div class="activity-like">
+    <div class="info">
+      <%= render 'shared/avatar', user: activity.owner %>
+      <h4 class="name"><%= link_to activity.owner.name, user_path(activity.owner) %></h4>
+      <span class="action">liked a <%= link_to 'event', activity.trackable %></span>
+    </div>
+    <div class="content">
+      <h4><small><%= activity.trackable.name %></small></h4>
+      <h4><small><%= fa_icon'calendar' %> <%= formatted_time(activity.trackable.when) %></small></h4>
+    </div>
+    <%= render 'shared/created_at', activity: activity %>
+  </div>
+<% end %>

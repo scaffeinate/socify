@@ -4,7 +4,6 @@
 
 class Post < ActiveRecord::Base
   include Shared::Callbacks
-  include Mention
 
   belongs_to :user
   counter_culture :user
@@ -18,17 +17,13 @@ class Post < ActiveRecord::Base
 
   mount_uploader :attachment, AvatarUploader
 
-  before_validation :add_mention_links_to_content
-
   validates_presence_of :content
   validates_presence_of :user
 
   auto_html_for :content do
-    html_escape
     image
     youtube(width: 400, height: 250, autoplay: true)
     link target: '_blank', rel: 'nofollow'
     simple_format
   end
-
 end

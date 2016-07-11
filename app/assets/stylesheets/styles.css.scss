@@ -3,7 +3,7 @@
 
 body {
   padding-top: 100px;
-  background: $bg-color;
+  background : $bg-color;
   font-family: $default-font;
   font-weight: 300;
 }
@@ -27,39 +27,39 @@ h6 {
 }
 
 .avatar {
-  width: 55px;
+  width : 55px;
   height: 55px;
 }
 
 .avatar-sm {
-  width: 35px;
+  width : 35px;
   height: 35px;
 }
 
 .container > .cover {
-  width: 100%;
-  height: 250px;
-  margin-top: -50px;
-  background-repeat: no-repeat;
+  width                : 100%;
+  height               : 250px;
+  margin-top           : -50px;
+  background-repeat    : no-repeat;
   background-attachment: fixed;
-  background-position: center;
+  background-position  : center;
 }
 
 .well {
   background-color: rgba(255, 255, 255, 0.75);
-  padding: 25px;
-  border-radius: 3px;
-  border: 1px solid $border-color;
-  box-shadow: none;
+  padding         : 25px;
+  border-radius   : 3px;
+  border          : 1px solid $border-color;
+  box-shadow      : none;
 }
 
 .name {
   a {
-    font-family: $default-font;
-    font-size: $medium-font-size;
+    font-family    : $default-font;
+    font-size      : $medium-font-size;
     text-decoration: none;
-    color: $default-text-color;
-    font-weight: bold;
+    color          : $default-text-color;
+    font-weight    : bold;
 
     &:active,
     &:hover {
@@ -69,7 +69,7 @@ h6 {
 }
 
 .created-at {
-  color: $light-text-color;
+  color    : $light-text-color;
   font-size: $small-font-size;
 }
 
@@ -88,13 +88,13 @@ h6 {
 
 .btn-primary-inverted {
   background-color: white;
-  border: 1px solid $default-color;
-  color: $default-color;
+  border          : 1px solid $default-color;
+  color           : $default-color;
 
   &:active,
   &:hover {
     background: $default-color;
-    color: white;
+    color     : white;
   }
 }
 
@@ -132,30 +132,46 @@ h6 {
   }
 }
 
+div.editable,
 input[type="email"],
 input[type="password"],
 input[type="text"],
 textarea {
-  height: auto;
-  padding: 10px 17px;
+  height    : auto;
+  padding   : 10px 17px;
   box-shadow: none !important;
-  border: 1px solid #ccc !important;
+  border    : 1px solid #ccc !important;
 
   &:focus {
     border: 1px solid #888 !important;
   };
 }
 
+div.editable {
+  height    : 65px;
+  max-height: 65px;
+  overflow-y: scroll;
+}
+
+[placeholder]:empty:before {
+  content: attr(placeholder);
+  color  : $light-text-color;
+}
+
+[placeholder]:empty:focus:before {
+  content: '';
+}
+
 .alert-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position   : fixed;
+  top        : 0;
+  left       : 0;
   margin-left: 32%;
-  margin-top: 30px;
-  width: 450px;
-  z-index: 10000;
-  text-align: center;
-  padding: 5px 25px;
+  margin-top : 30px;
+  width      : 450px;
+  z-index    : 10000;
+  text-align : center;
+  padding    : 5px 25px;
 }
 
 .commentable {
@@ -175,12 +191,12 @@ textarea {
 }
 
 .underlined:after {
-  content: '';
+  content   : '';
   background: rgba(0,0,0,0.25);
-  height: 1px;
-  width: 25px;
-  display: block;
-  margin: 10px auto 15px;
+  height    : 1px;
+  width     : 25px;
+  display   : block;
+  margin    : 10px auto 15px;
 }
 
 .modal-header {

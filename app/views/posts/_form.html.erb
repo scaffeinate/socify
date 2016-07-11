@@ -1,6 +1,7 @@
 <%= form_for(@post) do |f| %>
   <div class="form-group">
-    <%= f.text_area :content, class: 'form-control', autofocus: true, placeholder: 'What\'s up?', rows: 2 %>
+    <div id="post-content" contenteditable="true" class="editable form-control input-mentionable" placeholder="What's up?"></div>
+    <%= f.hidden_field :content, class: 'form-control input-mentionable', autofocus: true %>
   </div>
   <div id="img-preview" class="form-group hidden">
     <%= image_tag '' %>
