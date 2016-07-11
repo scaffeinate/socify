@@ -27,6 +27,7 @@ namespace :fill do
       user.confirmed_at = DateTime.now
       user.sign_in_count = 0
       user.posts_count = 0
+      user.photo_albums_count = 0
       user.profile_complete = true
       puts "created user #{user.name}"
     end
