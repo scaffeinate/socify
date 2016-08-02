@@ -1,3 +1,5 @@
-<div id="post-<%= activity.trackable.id %>" class="activity-post">
-  <%= render activity.trackable, remote: true %>
-</div>
+<% if activity_resources_exist?(activity) %>
+  <div id="post-<%= activity.trackable.id %>" class="activity-post">
+    <%= render activity.trackable, remote: true %>
+  </div>
+<% end %>
