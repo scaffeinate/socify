@@ -43,7 +43,7 @@ end
 
 gem 'devise'
 gem 'carrierwave'
-gem 'friendly_id', '~> 5.0.0'
+gem 'friendly_id', '~> 5.0'
 
 gem 'will_paginate', '~> 3.0.6'
 gem 'public_activity'
