@@ -45,7 +45,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'friendly_id', '~> 5.0'
 
-gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate', '~> 3.1.0'
 gem 'public_activity'
 
 gem 'acts_as_votable', '~> 0.10.0'
