@@ -14,7 +14,7 @@ https://github.com/sudharti/socify/tree/930b2f7c6a6eb6b442189dc6237765dbf16d461c
 
 ### What it uses?
 
-* [Ruby on Rails 4.1.6](https://github.com/rails/rails) 
+* [Ruby on Rails](https://github.com/rails/rails)
 * [Bootstrap](https://github.com/twbs/bootstrap-sass)
 * [Devise](https://github.com/plataformatec/devise)
 * [Public Activity](https://github.com/chaps-io/public_activity)
@@ -23,7 +23,7 @@ https://github.com/sudharti/socify/tree/930b2f7c6a6eb6b442189dc6237765dbf16d461c
 ### How do I get set up?
 
 To set it up on your local machine here is what you need to do. Install Ruby & Rails. Clone this repo using the following command:
-  
+
 ```
 git clone https://github.com/sudharti/socify
 cd socify
@@ -68,7 +68,7 @@ This will create records with values from faker & populator gems. Also here are 
 
 ### Pull Requests
 
-* Fork this repo 
+* Fork this repo
 * Make changes to code
 * Send Pull Request
 

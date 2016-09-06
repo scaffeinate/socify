@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
+gem 'rails', '5.0.0'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -42,9 +43,9 @@ end
 
 gem 'devise'
 gem 'carrierwave'
-gem 'friendly_id', '~> 5.0.0'
+gem 'friendly_id', '~> 5.0'
 
-gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate', '~> 3.1.0'
 gem 'public_activity'
 
 gem 'acts_as_votable', '~> 0.10.0'
