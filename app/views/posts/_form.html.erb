@@ -1,6 +1,6 @@
 <div class="well">
   <div id="mentionable-data" data-content="<%= mentionable_user_path(current_user) %>"></div>
-  <%= form_for(@post) do |f| %>
+  <%= form_for @post, html: { class: 'post_form' } do |f| %>
     <div class="form-group">
       <h4>Update Status</h4>
       <div id="post-content" contenteditable="true" class="editable form-control input-mentionable" placeholder="What's up?"></div>

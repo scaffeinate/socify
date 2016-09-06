@@ -20,7 +20,7 @@ $(document).ready(function() {
     limit: 15
   });
 
-  $('#new_post').submit(function() {
+  $('.post_form').submit(function() {
     $('#post_content').val($('#post-content').html());
     $('#post-content').html('');
   });
