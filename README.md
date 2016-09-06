@@ -7,10 +7,14 @@ Socify is an open source social networking platform written in Ruby on Rails. He
 
 Do you want to see it in action? Here is a working version deployed to heroku [http://socifyapp.herokuapp.com](http://socifyapp.herokuapp.com)
 
-**UPDATE**
+### UPDATE
 
 Since my cloudinary free tier hit a bandwidth overload. So had to switch to AWS. If you plan on deploying to production please set the AWS key and secret as environment variables. Or you can checkout the older version which uses cloudinary 
 https://github.com/sudharti/socify/tree/930b2f7c6a6eb6b442189dc6237765dbf16d461c
+
+### UPDATE #2
+
+Updated the Rails version to 5.0. Thanks to @briankung for the Pull Request. There are some more things to be upgraded which will be done shortly. Refer this for the list of changes to be done https://hashrocket.com/blog/posts/how-to-upgrade-to-rails-5.
 
 ### What it uses?
 
