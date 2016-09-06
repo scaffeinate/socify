@@ -2,7 +2,6 @@
 
 Socify is an open source social networking platform written in Ruby on Rails. Here is the blog post: [How to build a social network using Rails](https://medium.com/@sudharshanmuralidharaniyer/eb31da569233).
 
-[![Codewake](https://www.codewake.com/badges/ask_question_flat_square.svg)](https://www.codewake.com/p/socify)
 [![Heroku](http://heroku-badge.herokuapp.com/?app=socifyapp&style=flat)](http://socifyapp.herokuapp.com)
 
 Do you want to see it in action? Here is a working version deployed to heroku [http://socifyapp.herokuapp.com](http://socifyapp.herokuapp.com)
@@ -14,7 +13,7 @@ https://github.com/sudharti/socify/tree/930b2f7c6a6eb6b442189dc6237765dbf16d461c
 
 ### UPDATE #2
 
-Updated the Rails version to 5.0. Thanks to @briankung for the Pull Request. There are some more things to be upgraded which will be done shortly. Refer this for the list of changes to be done https://hashrocket.com/blog/posts/how-to-upgrade-to-rails-5.
+Updated the Rails version to 5.0. Thanks to [@briankung](https://github.com/briankung) for the Pull Request. There are some more things to be upgraded which will be done shortly. Refer this for the list of changes to be done https://hashrocket.com/blog/posts/how-to-upgrade-to-rails-5.
 
 ### What it uses?
 
