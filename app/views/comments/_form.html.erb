@@ -1,12 +1,12 @@
-<%= form_tag comments_path(commentable_type: c.class.to_s, commentable_id: c.id), id: 'new_comment', method: :post, remote: true do %>
+<%= form_tag comments_path(commentable_type: c.class.to_s, commentable_id: c.id), method: :post, remote: true do %>
   <div class="form-group">
     <div class="row">
       <div class="col-xs-1">
         <%= render 'shared/avatar', user: current_user, klass: 'avatar-sm' %>
       </div>
       <div class="col-xs-10 col-xs-offset-1">
-        <div id="comment-text" contenteditable="true" class="editable form-control input-mentionable" placeholder="Enter Comment"></div>
-        <%= hidden_field_tag :comment_text, nil, placeholder: 'Enter Comment', class: 'form-control input-mentionable' %>
+        <div contenteditable="true" class="editable form-control input-mentionable" placeholder="Enter Comment"></div>
+        <%= hidden_field_tag :comment_text, nil %>
       </div>
     </div>
   </div>
