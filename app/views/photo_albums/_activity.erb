@@ -41,10 +41,6 @@
     </div>
   </div>
   <div class="row">
-    <% if defined? show_all %>
-      <%= render 'shared/comments_block', resource: photo_album, show_all: true %>
-    <% else %>
-      <%= render 'shared/comments_block', resource: photo_album %>
-    <% end %>
+    <%= render 'shared/comments_block', resource: photo_album, expand: (defined?(expand_comments) && expand_comments) %>
   </div>
 </div>
