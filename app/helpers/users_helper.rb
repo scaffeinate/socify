@@ -17,6 +17,7 @@ module UsersHelper
   end
 
   def has_about_fields?(user)
-    !user.attributes.reject { |_k, v| v.present? }.empty?
+    about_fields = %w(created_at dob location works_at hometown)
+    !user.attributes.select { |_k, v| about_fields.include?(_k) && v.present? }.empty?
   end
 end
