@@ -2,7 +2,9 @@
   <div id="about">
     <h4 class="text-center"><i class="icon-user"></i> About</h4>
     <ul>
-      <li><i class="icon-back-in-time"></i> Joined <%= get_date_and_year(@user.created_at) %></li>
+      <% if @user.created_at.present? %>
+        <li><i class="icon-back-in-time"></i> Joined <%= get_date_and_year(@user.created_at) %></li>
+      <% end %>
       <% if @user.dob.present? %>
         <li><i class="icon-birthday"></i> <%= get_date_and_year(@user.dob) %></li>
       <% end %>
