@@ -36,15 +36,7 @@
     margin-top: 20px;
     padding: 0;
 
-    h4 {
-      font-family: $default-font;
-      font-size: $default-font-size;
-      font-weight: bold;
-      padding: 5px;
-    }
-
     ul {
-      margin-top: 10px;
       margin-bottom: 5px;
 
       li {
@@ -59,9 +51,17 @@
         }
       }
 
+      li:first-child {
+        border-top: none;
+      }
+
       li:last-child {
         border-bottom: none;
       }
+    }
+
+    .section {
+      @extend .col-xs-12;
     }
   }
 
