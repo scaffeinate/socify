@@ -1,0 +1,22 @@
+<div class="row">
+  <div id="gallery-block" class="sidebar-block">
+    <h4 class="block-title">
+      <i class="icon-picture"></i> Photos
+    </h4>
+    <div class="row">
+      <div id="photos-section" class="section">
+        <% if @photos.empty? %>
+          <%= render 'shared/no_resource', resources: 'photos' %>
+        <% else %>
+          <% @photos.each do |photo| %>
+            <div class="photo">
+              <%= link_to photo.file.url, "data-lightbox" => 'gallery' do %>
+                <%= image_tag photo.file.thumb.url %>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
