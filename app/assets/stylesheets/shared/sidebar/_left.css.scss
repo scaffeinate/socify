@@ -2,19 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#user-board {
+#left-sidebar {
   @extend .col-md-3;
 
-  #about,
-  #profile {
-    background-color: white;
-    border: 1px solid $border-color;
-    border-radius: 5px;
-  }
+  #profile-block {
+    padding-bottom: 15px;
 
-  #profile {
     .cover {
       height: 125px;
+      margin-bottom: 35px;
       position: relative;
 
       .avatar {
@@ -29,61 +25,61 @@
       }
     }
 
-    #info {
-      margin-top: 35px;
+    .section {
+      @extend .col-xs-12, .text-center;
+      padding: 5px 30px 10px;
       line-height: 1.85rem !important;
-      padding: 15px;
-      text-align: center;
-    }
-
-    #stats {
-      @extend .col-xs-12;
-      margin-top: 15px;
-
-      .count {
-        @extend .col-xs-4;
-
-        h4 {
-          margin: 0;
-          font-family: $default-font;
-          font-size: $vlarge-font-size;
-          font-weight: bold;
-          @extend .text-center;
-        }
-
-        span {
-          font-size: 0.95rem;
-          font-weight: 300;
-          @extend .text-center;
-        }
-      }
-    }
-
-    #follow {
-      margin-top: 15px;
     }
   }
 
-  #about {
+  #about-block {
     margin-top: 20px;
-    padding: 10px;
+    padding: 0;
 
     h4 {
       font-family: $default-font;
       font-size: $default-font-size;
       font-weight: bold;
+      padding: 5px;
     }
 
     ul {
-      list-style: none;
-      padding: 10px;
       margin-top: 10px;
+      margin-bottom: 5px;
 
       li {
         text-align: left;
-        margin: 10px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+
+        i {
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+      }
+
+      li:last-child {
+        border-bottom: none;
       }
     }
   }
 
+  .stats-count {
+    @extend .col-xs-4;
+
+    h4 {
+      margin: 0;
+      font-family: $default-font;
+      font-size: $vlarge-font-size;
+      font-weight: bold;
+      @extend .text-center;
+    }
+
+    span {
+      font-size: 0.95rem;
+      font-weight: 300;
+      @extend .text-center;
+    }
+  }
 }
