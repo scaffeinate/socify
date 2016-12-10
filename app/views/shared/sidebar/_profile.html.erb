@@ -1,39 +1,42 @@
-<div id="profile">
-  <% if @user.cover.url %>
-    <div class="cover" style="background-image: url(<%= @user.cover.url %>);">
+<div class="row">
+  <div id="profile-block" class="sidebar-block">
+    <!-- cover and profile pic -->
+    <div class="cover" style="background-image: url(<%= @user.cover.url || '/assets/cover.png' %>);">
       <%= render 'shared/avatar', user: @user %><br>
     </div>
-  <% else %>
-    <div class="cover" style="background-image: url(/assets/cover.png);">
-      <%= render 'shared/avatar', user: @user %><br>
+    <!-- user info -->
+    <div class="row">
+      <div id="info-section" class="section">
+        <h4 class="name"><%= link_to @user.name, @user %></h4>
+        <span id="bio">
+          <%= @user.bio || 'Nothing to say about me.' %>
+        </span>
+      </div>
     </div>
-  <% end %>
-  <div id="info">
-    <h4 class="name"><%= link_to @user.name, @user %></h4>
-    <span id="bio">
-      <%= @user.bio || 'Nothing to say about me.' %>
-    </span>
-    <% if is_current_user?(@user) %>
-      <div class="row">
-        <div id="stats">
-          <div class="count">
-            <span>FRIENDS</span>
-            <h4><%= @user.following_users.count %></h4>
-          </div>
-          <div class="count">
-            <span>POSTS</span>
-            <h4><%= @user.posts_count %></h4>
-          </div>
-          <div class="count">
-            <span>ALBUMS</span>
-            <h4><%= @user.photo_albums_count %></h4>
-          </div>
+    <!-- stats -->
+    <div class="row">
+      <div id="stats-section" class="section">
+        <div class="stats-count">
+          <span>FRIENDS</span>
+          <h4><%= @user.following_users.count %></h4>
+        </div>
+        <div class="stats-count">
+          <span>POSTS</span>
+          <h4><%= @user.posts_count %></h4>
+        </div>
+        <div class="stats-count">
+          <span>ALBUMS</span>
+          <h4><%= @user.photo_albums_count %></h4>
         </div>
       </div>
-    <% else %>
-      <div id="follow" class="text-center">
-        <%= render 'follows/form', user: @user %>
-        <h6><%= 'Follows you' if current_user.followed_by?(@user) %></h6>
+    </div>
+    <!-- follow/unfollow block -->
+    <% unless is_current_user?(@user) %>
+      <div class="row">
+        <div id="follow-section" class="section">
+          <%= render 'follows/form', user: @user %>
+          <h6><%= 'Follows you' if current_user.followed_by?(@user) %></h6>
+        </div>
       </div>
     <% end %>
   </div>
