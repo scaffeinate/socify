@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def mentionable
-    render json: @user.following_users.as_json(only: [:id, :name]), root: false
+    render json: @user.following_users.as_json(only: [:slug, :name]), root: false
   end
 
   def photo_albums
