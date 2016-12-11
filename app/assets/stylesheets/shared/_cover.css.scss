@@ -1,0 +1,47 @@
+.cover-pic {
+  width: 100%;
+  height: 350px;
+  margin-top: -50px;
+  margin-bottom: 50px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  z-index: 2;
+  position: relative;
+}
+
+.sidebar-cover,
+.sidebar-cover-user {
+  height: 125px;
+  margin-bottom: 35px;
+  position: relative;
+
+  img {
+    border-radius: 10rem;
+    position: absolute;
+    bottom: 0;
+    left: 34%;
+    margin-bottom: -45px;
+    border: 3px solid white;
+    z-index: 3;
+  }
+
+  img.avatar {
+    width: 95px;
+    height: 95px;
+  }
+}
+
+.sidebar-cover-user {
+  margin-top: -110px;
+  margin-bottom: 0;
+  background: none !important;
+
+  img.avatar {
+    width: 125px;
+    height: 125px;
+    border: 5px solid white;
+    left: 27%;
+    top: 0;
+  }
+}
