@@ -1,6 +1,6 @@
 <%= render 'shared/cover', user: @user %>
 <br>
-<div id="user-<%= @user.id %>" class="row">
+<div id="user-<%= @user.id %>">
   <div class="stream">
     <div id="activities" class="resources-block">
       <h4 class="underlined">USER STREAM</h4>
@@ -16,25 +16,4 @@
       <%= render 'shared/paginate', resources: @activities %>
     </div>
   </div>
-  <% if is_current_user?(@user) %>
-    <div id="sidebar">
-      <div id="links" class="list-group">
-        <%= link_to edit_user_path(@user), class: 'list-group-item' do %>
-          <i class="icon-pencil"></i> Edit Profile
-        <% end %>
-        <%= link_to edit_user_registration_path, class: 'list-group-item' do %>
-          <i class="icon-lock"></i> Change password
-        <% end %>
-        <%= link_to friends_user_path(@user), class: 'list-group-item' do %>
-          <i class="icon-users"></i> Friends
-        <% end %>
-        <%= link_to followers_user_path(@user), class: 'list-group-item' do %>
-          <i class="icon-user"></i> Followers
-        <% end %>
-        <%= link_to deactivate_user_path(@user), class: 'list-group-item' do %>
-          <i class="icon-trash"></i>Deactivate
-        <% end %>
-      </div>
-    </div>
-  <% end %>
 </div>
