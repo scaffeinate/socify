@@ -6,4 +6,8 @@ module SidebarHelper
   def is_active(controller, action)
     'active' if params[:controller] == controller && params[:action] == action
   end
+
+  def is_user_page
+    params[:controller] == 'users' && params[:action] == 'show'
+  end
 end

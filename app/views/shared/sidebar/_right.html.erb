@@ -1,4 +1,8 @@
 <div id="right-sidebar">
-  <%= render 'shared/sidebar/links' %>
+  <% if is_user_page %>
+    <%= render 'shared/sidebar/user' %>
+  <% else %>
+    <%= render 'shared/sidebar/links' %>
+  <% end %>
   <%= render 'shared/sidebar/gallery' %>
 </div>
