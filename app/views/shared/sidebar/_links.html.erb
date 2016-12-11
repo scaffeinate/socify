@@ -1,22 +1,22 @@
 <div class="row">
   <div id="links-block" class="sidebar-block">
     <div id="links-section" class="list-group">
-      <%= link_to root_path, class: "list-group-item #{(page=='newsfeed') ? 'active':''}" do %>
+      <%= link_to root_path, class: "list-group-item #{is_active('home', 'index')}" do %>
         <i class="icon-newspaper"></i> Stream
       <% end %>
-      <%= link_to new_event_path , class: "list-group-item #{(page=='event') ? 'active':''}" do %>
+      <%= link_to new_event_path , class: "list-group-item #{is_active('events', 'new')}" do %>
         <i class="icon-calendar-empty"></i> Create Event
       <% end %>
-      <%= link_to photo_albums_path, class: "list-group-item #{(page=='photo_album') ? 'active':''}" do %>
+      <%= link_to photo_albums_path, class: "list-group-item #{is_active('photo_albums', 'index')}" do %>
         <i class="icon-picture"></i> Photo Albums
       <% end %>
-      <%= link_to friends_user_path(current_user), class: "list-group-item #{(page=='friends') ? 'active':''}" do %>
+      <%= link_to friends_user_path(current_user), class: "list-group-item #{is_active('users', 'friends')}" do %>
         <i class="icon-users"></i> Friends
       <% end %>
-      <%= link_to followers_user_path(current_user) , class: "list-group-item #{(page=='followers') ? 'active':''}" do %>
+      <%= link_to followers_user_path(current_user) , class: "list-group-item #{is_active('users', 'followers')}" do %>
         <i class="icon-user"></i> Followers
       <% end %>
-      <%= link_to find_friends_path, class: "list-group-item #{(page=='find_friends') ? 'active':''}" do %>
+      <%= link_to find_friends_path, class: "list-group-item #{is_active('home', 'find_friends')}" do %>
         <i class="icon-search"></i> Find Friends
       <% end %>
     </div>
