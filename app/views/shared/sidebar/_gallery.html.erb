@@ -5,7 +5,7 @@
     </h4>
     <div class="row">
       <div id="photos-section" class="section">
-        <% if @photos.empty? %>
+        <% if @photos.blank? %>
           <%= render 'shared/no_resource', resources: 'photos' %>
         <% else %>
           <% @photos.each do |photo| %>
