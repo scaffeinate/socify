@@ -1,22 +1,14 @@
 #right-sidebar {
   @extend .col-md-3;
 
-  #gallery {
-    background-color: rgba(255, 255, 255, 0.75);
-    border: 1px solid $border-color;
-    padding: 10px;
+  #gallery-block {
+    margin-top: 25px;
 
-    h4 {
-      font-family: $default-font;
-      font-size: $default-font-size;
-      font-weight: bold;
-    }
-
-    #g-photos {
+    #photos-section {
       padding: 10px;
     }
 
-    .g-photo {
+    .photo {
       @extend .col-xs-4;
       padding: 0;
     }
@@ -28,7 +20,17 @@
     }
   }
 
-  #links {
+  #links-section {
+    margin-bottom: 0;
+
+    .list-group-item:first-child {
+      border-top: none;
+    }
+
+    .list-group-item:last-child {
+      border-bottom: none;
+    }
+
     a {
       padding: 12px;
     }
