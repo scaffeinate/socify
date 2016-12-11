@@ -1,13 +1,9 @@
-<div class="row">
-  <%= render 'shared/sidebar/left' %>
-  <div class="stream">
-    <div id="followers" class="resources-block">
-      <h4 class="underlined">FOLLOWERS</h4>
-      <%= render(@followers) || render('shared/no_resource', resources: 'Followers')  %>
-    </div>
-    <div class="pagination-block">
-      <%= render 'shared/paginate', resources: @followers %>
-    </div>
+<div class="stream">
+  <div id="followers" class="resources-block">
+    <h4 class="underlined">FOLLOWERS</h4>
+    <%= render(@followers) || render('shared/no_resource', resources: 'Followers')  %>
   </div>
-  <%= render 'shared/sidebar/right', page: 'followers' %>
+  <div class="pagination-block">
+    <%= render 'shared/paginate', resources: @followers %>
+  </div>
 </div>
