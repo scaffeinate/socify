@@ -1,6 +1,9 @@
 <% if is_current_user?(@user) %>
   <div id="user-links-block" class="sidebar-block">
     <div id="links-section" class="list-group">
+      <%= link_to @user, class: 'list-group-item' do %>
+        <i class="icon-user"></i> Profile
+      <% end %>
       <%= link_to edit_user_path(@user), class: 'list-group-item' do %>
         <i class="icon-pencil"></i> Edit Profile
       <% end %>
