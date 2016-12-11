@@ -1,0 +1,7 @@
+<% content_for :main do %>
+  <div class="row">
+    <%= render 'shared/sidebar/left' %>
+    <%= yield %>
+    <%= render 'shared/sidebar/right' %>
+  </div>
+<% end %>
