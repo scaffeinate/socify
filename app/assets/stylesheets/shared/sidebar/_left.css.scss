@@ -8,23 +8,6 @@
   #profile-block {
     padding-bottom: 15px;
 
-    .cover {
-      height: 125px;
-      margin-bottom: 35px;
-      position: relative;
-
-      .avatar {
-        width: 95px;
-        height: 95px;
-        border-radius: 10rem;
-        position: absolute;
-        bottom: 0;
-        left: 34%;
-        margin-bottom: -45px;
-        border: 3px solid white;
-      }
-    }
-
     .section {
       @extend .col-xs-12, .text-center;
       padding: 5px 30px 10px;
