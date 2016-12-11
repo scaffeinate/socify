@@ -1,6 +1,5 @@
-<div class="row">
-  <div id="links-block" class="sidebar-block">
-    <div id="links-section" class="list-group">
+<div id="links-block" class="sidebar-block">
+  <div id="links-section" class="list-group">
       <%= link_to root_path, class: "list-group-item #{is_active('home', 'index')}" do %>
         <i class="icon-newspaper"></i> Stream
       <% end %>
@@ -19,6 +18,5 @@
       <%= link_to find_friends_path, class: "list-group-item #{is_active('home', 'find_friends')}" do %>
         <i class="icon-search"></i> Find Friends
       <% end %>
-    </div>
   </div>
 </div>
