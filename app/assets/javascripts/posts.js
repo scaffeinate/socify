@@ -15,8 +15,8 @@ $(document).ready(function() {
   $('.input-mentionable').atwho({
     at: '@',
     data: $('#mentionable-data').data('content'),
-    insertTpl: '<a href="/users/${id}">${name}</a>',
-    displayTpl: '<li data-id="${id}"><span>${name}</span></li>',
+    insertTpl: '<a href="/users/${slug}">${name}</a>',
+    displayTpl: '<li data-slug="${slug}"><span>${name}</span></li>',
     limit: 15
   });
 
