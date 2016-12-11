@@ -8,6 +8,6 @@ module SidebarHelper
   end
 
   def is_user_page
-    params[:controller] == 'users' && params[:action] == 'show'
+    params[:controller] == 'users'
   end
 end

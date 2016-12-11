@@ -21,6 +21,7 @@
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       </div>
     <% end %>
+    <%= render 'shared/cover' %>
     <div class="container">
       <% if user_signed_in? %>
         <% render 'layouts/main' %>
