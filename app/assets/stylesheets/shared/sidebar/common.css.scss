@@ -3,6 +3,10 @@
   border-radius: 3px;
   box-shadow: 2px 3px 5px #888888;
 
+  .section {
+    @extend .col-xs-12
+  }
+
   .block-title {
     @extend .text-center;
     font-family: $default-font;

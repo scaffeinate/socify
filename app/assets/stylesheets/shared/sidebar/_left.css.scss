@@ -9,7 +9,7 @@
     padding-bottom: 15px;
 
     .section {
-      @extend .col-xs-12, .text-center;
+      @extend .text-center;
       padding: 5px 30px 10px;
       line-height: 1.85rem !important;
     }
