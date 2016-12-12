@@ -1,41 +1,41 @@
 <div id="links-block" class="sidebar-block">
   <div id="links-section" class="list-group">
-    <% if is_user_page %>
-      <%= link_to @user, class: "list-group-item #{is_active('users', 'show')}" do %>
+    <% if is_user_page? %>
+      <%= link_to @user, class: "list-group-item #{is_active?('users', 'show')}" do %>
         <i class="icon-user"></i> Profile
       <% end %>
     <% else %>
-      <%= link_to root_path, class: "list-group-item #{is_active('home', 'index')}" do %>
+      <%= link_to root_path, class: "list-group-item #{is_active?('home', 'index')}" do %>
         <i class="icon-newspaper"></i> Stream
       <% end %>
     <% end %>
     <% if is_current_user?(@user) %>
-      <%= link_to new_event_path , class: "list-group-item #{is_active('events', 'new')}" do %>
+      <%= link_to new_event_path , class: "list-group-item #{is_active?('events', 'new')}" do %>
         <i class="icon-calendar-empty"></i> Create Event
       <% end %>
     <% end %>
-    <%= link_to photo_albums_path, class: "list-group-item #{is_active('photo_albums', 'index')}" do %>
+    <%= link_to photo_albums_path, class: "list-group-item #{is_active?('photo_albums', 'index')}" do %>
       <i class="icon-picture"></i> Photo Albums
     <% end %>
-    <%= link_to friends_user_path(@user), class: "list-group-item #{is_active('users', 'friends')}" do %>
+    <%= link_to friends_user_path(@user), class: "list-group-item #{is_active?('users', 'friends')}" do %>
       <i class="icon-users"></i> Friends
     <% end %>
-    <%= link_to followers_user_path(@user) , class: "list-group-item #{is_active('users', 'followers')}" do %>
+    <%= link_to followers_user_path(@user) , class: "list-group-item #{is_active?('users', 'followers')}" do %>
       <i class="icon-user"></i> Followers
     <% end %>
-    <% unless is_user_page %>
-      <%= link_to find_friends_path, class: "list-group-item #{is_active('home', 'find_friends')}" do %>
+    <% unless is_user_page? %>
+      <%= link_to find_friends_path, class: "list-group-item #{is_active?('home', 'find_friends')}" do %>
         <i class="icon-search"></i> Find Friends
       <% end %>
     <% end %>
-    <% if is_current_user?(@user) && is_user_page %>
-      <%= link_to edit_user_path(@user), class: "list-group-item #{is_active('users', 'edit')}" do %>
+    <% if is_current_user?(@user) && is_user_page? %>
+      <%= link_to edit_user_path(@user), class: "list-group-item #{is_active?('users', 'edit')}" do %>
         <i class="icon-pencil"></i> Edit Profile
       <% end %>
-      <%= link_to edit_user_registration_path, class: "list-group-item #{is_active('devise/passwords', 'update')}" do %>
+      <%= link_to edit_user_registration_path, class: "list-group-item #{is_active?('devise/passwords', 'update')}" do %>
         <i class="icon-lock"></i> Change password
       <% end %>
-      <%= link_to deactivate_user_path(@user), class: "list-group-item #{is_active('users', 'deactivate')}" do %>
+      <%= link_to deactivate_user_path(@user), class: "list-group-item #{is_active?('users', 'deactivate')}" do %>
         <i class="icon-trash"></i>Deactivate
       <% end %>
     <% end %>
