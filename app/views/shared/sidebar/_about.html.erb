@@ -16,6 +16,11 @@
               <i class="icon-birthday"></i> <%= get_date_and_year(@user.dob) %>
             </li>
           <% end %>
+          <% if @user.sex.present? %>
+            <li class="list-group-item">
+              <i class="icon-user"></i> <%= @user.sex.capitalize %>
+            </li>
+          <% end %>
           <% if @user.location.present? %>
             <li class="list-group-item">
               <i class="icon-location-1"></i> Lives in <%= @user.location %>
