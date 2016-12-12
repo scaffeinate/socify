@@ -5,12 +5,13 @@
     margin-top: 25px;
 
     #photos-section {
-      padding: 10px;
+      @extend .col-xs-12;
+      margin-bottom: 5px;
     }
 
     .photo {
       @extend .col-xs-4;
-      padding: 0;
+      padding: 5px;
     }
 
     img {
