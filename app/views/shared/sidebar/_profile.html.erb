@@ -34,7 +34,9 @@
   <% unless is_current_user?(@user) %>
     <div class="row">
       <div id="follow-section" class="section">
-        <%= render 'follows/form', user: @user %>
+        <div data-follow-user="<%= @user.id %>">
+          <%= render 'follows/form', user: @user %>
+        </div>
         <h6><%= 'Follows you' if current_user.followed_by?(@user) %></h6>
       </div>
     </div>
