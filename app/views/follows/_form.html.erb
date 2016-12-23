@@ -1,4 +1,4 @@
-<div class="follow">
+<div class="follow" data-follow-user="<%= user.id %>">
   <% if user.followed_by?(current_user) %>
     <%= form_tag unfollow_path(user_id: user.id), method: :post, remote: true do %>
       <%= button_tag class: 'btn btn-sm btn-success' do %>

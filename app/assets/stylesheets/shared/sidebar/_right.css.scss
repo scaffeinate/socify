@@ -1,0 +1,22 @@
+#right-sidebar {
+  @extend .col-md-3;
+
+  #gallery-block {
+    margin-top: 25px;
+
+    #photos-section {
+      margin-bottom: 5px;
+    }
+
+    .photo {
+      @extend .col-xs-4;
+      padding: 5px;
+    }
+
+    img {
+      border: 1px solid $border-color;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

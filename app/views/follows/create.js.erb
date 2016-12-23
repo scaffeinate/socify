@@ -1,1 +1,1 @@
-$("#user-<%= @user.id %> .follow").html("<%=j render('follows/form', user: @user) %>");
+$("*[data-follow-user=<%= @user.id %>]").html("<%=j render('follows/form', user: @user) %>");

@@ -15,9 +15,4 @@ module UsersHelper
   def is_current_user?(user)
     user == current_user
   end
-
-  def has_about_fields?(user)
-    about_fields = %w(created_at dob location works_at hometown)
-    !user.attributes.select { |_k, v| about_fields.include?(_k) && v.present? }.empty?
-  end
 end

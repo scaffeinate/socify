@@ -21,8 +21,14 @@
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       </div>
     <% end %>
+    <%= render 'shared/cover' %>
     <div class="container">
-      <%= yield %>
+      <% if user_signed_in? %>
+        <% render 'layouts/main' %>
+        <%= yield :main%>
+      <% else %>
+        <%= yield %>
+      <% end %>
     </div>
     <%= javascript_include_tag 'application' %>
   </body>

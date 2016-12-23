@@ -1,43 +1,39 @@
 <div id="photo-album-<%= @photo_album.id %>" class="photo-album show">
-  <div class="row">
-    <%= render 'shared/sidebar/left' %>
-    <div class="stream">
-      <div class="resources-block">
-        <div class="title">
-          <h4 class="underlined"><%= @photo_album.title.upcase %></h4>
-        </div>
-        <div class="row">
-          <div class="pull-right">
-            <%= link_to '#', class: 'btn btn-sm btn-primary', 'data-toggle' => 'modal', 'data-target' => '#upload-photos-modal' do %>
-              <i class="icon-upload"></i>
-            <% end %>
-            <%= link_to '#', class: 'btn btn-sm btn-primary', 'data-toggle' => 'modal', 'data-target' => '#edit-photo-album-modal' do %>
-              <i class="icon-pencil"></i>
-            <% end %>
-            <%= link_to @photo_album, method: :delete, class: 'btn btn-sm btn-danger' do %>
-              <i class="icon-trash"></i>
-            <% end %>
-          </div>
-        </div>
-        <div class="row">
-          <div id="photos">
-            <%= render(@photos) || render('shared/no_resource', resources: 'Photos') %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="like-and-comment">
-            <%= render 'shared/like_and_comment', resource: @photo_album %>
-          </div>
-        </div>
-        <div class="row">
-          <%= render 'shared/comments_block', resource: @photo_album, expand: true %>
+  <div class="stream">
+    <div class="resources-block">
+      <div class="title">
+        <h4 class="underlined"><%= @photo_album.title.upcase %></h4>
+      </div>
+      <div class="row">
+        <div class="pull-right">
+          <%= link_to '#', class: 'btn btn-sm btn-primary', 'data-toggle' => 'modal', 'data-target' => '#upload-photos-modal' do %>
+            <i class="icon-upload"></i>
+          <% end %>
+          <%= link_to '#', class: 'btn btn-sm btn-primary', 'data-toggle' => 'modal', 'data-target' => '#edit-photo-album-modal' do %>
+            <i class="icon-pencil"></i>
+          <% end %>
+          <%= link_to @photo_album, method: :delete, class: 'btn btn-sm btn-danger' do %>
+            <i class="icon-trash"></i>
+          <% end %>
         </div>
       </div>
-      <div class="pagination-block">
-        <%= render 'shared/paginate', resources: @photos %>
+      <div class="row">
+        <div id="photos">
+          <%= render(@photos) || render('shared/no_resource', resources: 'Photos') %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="like-and-comment">
+          <%= render 'shared/like_and_comment', resource: @photo_album %>
+        </div>
+      </div>
+      <div class="row">
+        <%= render 'shared/comments_block', resource: @photo_album, expand: true %>
       </div>
     </div>
-    <%= render 'shared/sidebar', page: 'photo_album' %>
+    <div class="pagination-block">
+      <%= render 'shared/paginate', resources: @photos %>
+    </div>
   </div>
 </div>
 <div class="modal fade" id="upload-photos-modal" tabindex="-1" role="dialog" aria-labelledby="uploadPhotosLabel">
