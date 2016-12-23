@@ -19,26 +19,4 @@
       height: 100%;
     }
   }
-
-  #links-section {
-    margin-bottom: 0;
-
-    .list-group-item:first-child {
-      border-top: none;
-    }
-
-    .list-group-item:last-child {
-      border-bottom: none;
-    }
-
-    a {
-      padding: 12px;
-    }
-
-    i {
-      font-size: $default-font-size;
-      margin-left: 15px;
-      margin-right: 15px;
-    }
-  }
 }
