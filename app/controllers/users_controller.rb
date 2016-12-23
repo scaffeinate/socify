@@ -31,10 +31,6 @@ class UsersController < ApplicationController
     @followers = @user.user_followers.paginate(page: params[:page])
   end
 
-  def mentionable
-    render json: @user.following_users.as_json(only: [:id, :name]), root: false
-  end
-
   def photo_albums
     @photo_albums = @user.photo_albums.paginate(page: params[:page])
   end
