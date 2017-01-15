@@ -18,7 +18,6 @@ gem 'jquery-atwho-rails'
 # Use twitter bootstrap sass
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
-gem 'font-awesome-rails'
 
 group :development do
   gem 'spring'
@@ -56,8 +55,14 @@ gem 'counter_culture', '~> 0.1.33'
 gem 'faker'
 gem 'populator'
 gem 'auto_html', '~>1.6.4'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2', '~> 0.3.0'
 gem 'sanitize'
 
+gem 'dropzonejs-rails'
+gem 'mini_magick'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

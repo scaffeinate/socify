@@ -2,8 +2,10 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function() {
-  $('#new_comment').submit(function() {
-    $('#comment_text').val($('#comment-text').html());
-    $('#comment-text').html('');
+  $('.comments-form > form').submit(function() {
+    var psuedoCommentEl = $(this).find('[contenteditable]');
+    var commentEl = $(this).find('input[type=hidden]');
+    commentEl.val(psuedoCommentEl.html());
+    psuedoCommentEl.html('');
   });
 });

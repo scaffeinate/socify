@@ -1,0 +1,24 @@
+<div class="modal fade" id="edit-photo-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="underlined">EDIT PHOTO</h4>
+        <%= form_tag update_photo_path, remote: true do %>
+          <%= hidden_field_tag :id, nil, id: 'photo-id' %>
+          <div class="form-group">
+            <%= text_field_tag :title, nil, id: 'photo-title', class: 'form-control', autofocus: true, placeholder: 'Photo Title' %>
+          </div>
+          <img id="edit-photo-img" src="" alt="">
+          <br>
+          <br>
+          <div class="form-group">
+            <%= submit_tag :update, class: 'btn btn-primary'%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

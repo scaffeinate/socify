@@ -5,7 +5,6 @@
 class Comment < ActiveRecord::Base
   include Shared::Callbacks
   include ActsAsCommentable::Comment
-  include Mention
 
   belongs_to :commentable, polymorphic: true, counter_cache: true
   default_scope -> { order('created_at DESC') }

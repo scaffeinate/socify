@@ -1,0 +1,5 @@
+$("#photos #photo-<%= @photo.id %>").remove();
+
+<% if @photo_album.photos_count == 1 %>
+  $("#photos").html("<%= j render('shared/no_resource', resources: 'Photos') %>")
+<% end %>

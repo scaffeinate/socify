@@ -1,11 +1,10 @@
 <%= render 'shared/cover', user: @user %>
 <br>
 <div id="user-<%= @user.id %>" class="row">
-  <div class="col-lg-3">
-    <%= render 'shared/user_info' %>
-  </div>
-  <div class="col-lg-6">
-    <div id="activities">
+  <%= render 'shared/user_board' %>
+  <div class="stream">
+    <div id="activities" class="resources-block">
+      <h4 class="underlined">USER STREAM</h4>
       <% if @activities.empty? %>
         <div class="well">
           <%= render('shared/no_resource', resources: 'Activities') %>
@@ -14,19 +13,30 @@
         <%= render_activities(@activities, layout: '/shared/activity') %>
       <% end %>
     </div>
-    <%= render 'shared/paginate', resources: @activities %>
+    <div class="pagination-block">
+      <%= render 'shared/paginate', resources: @activities %>
+    </div>
   </div>
-  <div class="col-lg-3">
-    <% if is_current_user?(@user) %>
-      <div class="well">
-        <ul class="nav nav-pills nav-stacked">
-          <li><%= link_to 'Edit Profile', edit_user_path(@user) %></li>
-          <li><%= link_to 'Change password', edit_user_registration_path %></li>
-          <li><%= link_to 'Friends', friends_user_path(@user) %></li>
-          <li><%= link_to 'Followers', followers_user_path(@user) %></li>
-          <li><%= link_to 'Deactivate', deactivate_user_path(@user) %></li>
-        </ul>
+  <% if is_current_user?(@user) %>
+    <div id="sidebar">
+      <div id="links" class="list-group">
+        <%= link_to edit_user_path(@user), class: 'list-group-item' do %>
+          <i class="icon-pencil"></i> Edit Profile
+        <% end %>
+        <%= link_to edit_user_registration_path, class: 'list-group-item' do %>
+          <i class="icon-lock"></i> Change password
+        <% end %>
+        <%= link_to friends_user_path(@user), class: 'list-group-item' do %>
+          <i class="icon-users"></i> Friends
+        <% end %>
+        <%= link_to followers_user_path(@user), class: 'list-group-item' do %>
+          <i class="icon-user"></i> Followers
+        <% end %>
+        <%= link_to deactivate_user_path(@user), class: 'list-group-item' do %>
+          <i class="icon-trash"></i>Deactivate
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+  <%= render 'shared/sidebar', page: 'user' %>
 </div>

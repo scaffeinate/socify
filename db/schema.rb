@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723052743) do
-
+ActiveRecord::Schema.define(version: 20160608080500) do
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
     t.string   "trackable_type"
@@ -29,6 +28,17 @@ ActiveRecord::Schema.define(version: 20150723052743) do
   add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type"
   add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
   add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
+
+  create_table "authentications", force: true do |t|
+    t.string   "uid"
+    t.string   "provider"
+    t.string   "oauth_token"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "authentications", ["user_id"], name: "index_authentications_on_user_id"
 
   create_table "comments", force: true do |t|
     t.string   "title",            limit: 50, default: ""
@@ -54,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150723052743) do
     t.datetime "updated_at"
     t.integer  "cached_votes_up", default: 0
     t.integer  "comments_count",  default: 0
+    t.string   "where"
   end
 
   add_index "events", ["cached_votes_up"], name: "index_events_on_cached_votes_up"
@@ -86,6 +97,31 @@ ActiveRecord::Schema.define(version: 20150723052743) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "photo_albums", force: true do |t|
+    t.string   "title",           default: "Album"
+    t.string   "front_image_url"
+    t.integer  "photos_count",    default: 0,       null: false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+    t.integer  "cached_votes_up", default: 0
+    t.integer  "comments_count",  default: 0
+  end
+
+  add_index "photo_albums", ["slug"], name: "index_photo_albums_on_slug", unique: true
+  add_index "photo_albums", ["user_id"], name: "index_photo_albums_on_user_id"
+
+  create_table "photos", force: true do |t|
+    t.string   "title",          default: "", null: false
+    t.string   "file",                        null: false
+    t.integer  "photo_album_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "photos", ["photo_album_id"], name: "index_photos_on_photo_album_id"
+
   create_table "posts", force: true do |t|
     t.text     "content",                     null: false
     t.integer  "user_id"
@@ -105,7 +141,7 @@ ActiveRecord::Schema.define(version: 20150723052743) do
     t.string   "name",                   default: "",     null: false
     t.string   "email",                  default: "",     null: false
     t.string   "encrypted_password",     default: "",     null: false
-    t.string   "about"
+    t.string   "bio"
     t.string   "avatar"
     t.string   "cover"
     t.string   "reset_password_token"
@@ -127,6 +163,12 @@ ActiveRecord::Schema.define(version: 20150723052743) do
     t.string   "phone_number"
     t.integer  "posts_count",            default: 0,      null: false
     t.string   "slug"
+    t.boolean  "profile_complete",       default: false,  null: false
+    t.string   "first_name",             default: "",     null: false
+    t.string   "last_name",              default: "",     null: false
+    t.string   "hometown"
+    t.string   "works_at"
+    t.integer  "photo_albums_count",     default: 0,      null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

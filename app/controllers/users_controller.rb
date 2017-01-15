@@ -3,16 +3,16 @@
 # under GNU GPL v2 or later. See the LICENSE.
 
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:complete_profile, :set_password]
   before_action :set_user
+  before_action :fetch_photos, only: :show
   before_action :check_ownership, only: [:edit, :update]
   respond_to :html, :js
 
+  include Shared::Photos
+
   def show
     @activities = PublicActivity::Activity.where(owner: @user).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
-  end
-
-  def edit
   end
 
   def update
@@ -21,9 +21,6 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def deactivate
   end
 
   def friends
@@ -35,13 +32,29 @@ class UsersController < ApplicationController
   end
 
   def mentionable
-    render json: @user.following_users.as_json(only: [:id, :name]), root: false
+    render json: @user.following_users.as_json(only: [:slug, :name]), root: false
+  end
+
+  def photo_albums
+    @photo_albums = @user.photo_albums.paginate(page: params[:page])
+  end
+
+  def set_password
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
+    @user.profile_complete = true
+    if @user.save
+      sign_in(@user)
+      redirect_to root_path
+    else
+      render :complete_profile
+    end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :about, :avatar, :cover,
+    params.require(:user).permit(:first_name, :last_name, :bio, :avatar, :cover,
                                  :sex, :dob, :location, :phone_number)
   end
 
@@ -50,6 +63,6 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.friendly.find(params[:id])
+    @user = User.find_by(slug: params[:id])
   end
 end

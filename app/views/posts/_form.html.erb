@@ -1,22 +1,18 @@
-<div class="well">
-  <div id="mentionable-data" data-content="<%= mentionable_user_path(current_user) %>"></div>
-  <%= form_for @post, html: { class: 'post_form' } do |f| %>
-    <div class="form-group">
-      <h4>Update Status</h4>
-      <div id="post-content" contenteditable="true" class="editable form-control input-mentionable" placeholder="What's up?"></div>
-      <%= f.hidden_field :content, class: 'form-control input-mentionable', autofocus: true %>
-    </div>
-    <div id="img-preview" class="form-group hidden">
-      <img src="" alt="Preview">
-    </div>
-    <div class="form-group hidden">
-      <%= f.file_field :attachment %>
-    </div>
-    <div class="form-group">
-      <a id="post-attachment" href="javascript:void(0);" class="pull-right btn btn-primary">
-        <%= fa_icon 'image' %>
-      </a>
-      <%= f.submit 'Post', class: 'btn btn-primary'%>
-    </div>
-  <% end %>
-</div>
+<%= form_for(@post) do |f| %>
+  <div class="form-group">
+    <div id="post-content" contenteditable="true" class="editable form-control input-mentionable" placeholder="What's up?"></div>
+    <%= f.hidden_field :content, class: 'form-control input-mentionable', autofocus: true %>
+  </div>
+  <div id="img-preview" class="form-group hidden">
+    <%= image_tag '' %>
+  </div>
+  <div class="form-group hidden">
+    <%= f.file_field :attachment %>
+  </div>
+  <div class="form-group">
+    <a id="post-attachment" href="javascript:void(0);" class="pull-right btn btn-primary">
+      <i class="icon-attach-1"></i>
+    </a>
+    <%= button_tag(type: :submit, class: 'btn btn-primary') do %><i class="icon-paper-plane"></i> Post<% end %>
+  </div>
+<% end %>

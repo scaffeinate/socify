@@ -1,0 +1,22 @@
+<div id="photo-<%= photo.id %>" class="photo">
+  <div class="thumbnail">
+    <%= link_to photo.file.url, 'data-title' => photo.title, 'data-lightbox' => photo.photo_album.title.downcase do %>
+      <%= image_tag photo.file.thumb.url %>
+    <% end %>
+    <div class="caption">
+      <div class="title">
+        <h5>
+          <% if photo.title.blank? %>
+            Untitled
+          <% else %>
+            <%= photo.title %>
+          <% end %>
+        </h5>
+      </div>
+      <div class="actions">
+        <%= render 'photos/actions', photo: photo %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'photos/edit_form' %>

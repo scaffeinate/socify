@@ -12,11 +12,13 @@ namespace :fill do
 
     puts 'Creating users'
     puts '=============='
-    genders = ['male', 'female']
+    genders = %w(male female)
     password = 'socify'
 
     User.populate 20 do |user|
       user.name = Faker::Name.name
+      user.first_name = Faker::Name.first_name
+      user.last_name = Faker::Name.last_name
       user.email = Faker::Internet.email
       user.sex = genders
       user.dob = Faker::Date.between(45.years.ago, 15.years.ago)
@@ -25,11 +27,12 @@ namespace :fill do
       user.confirmed_at = DateTime.now
       user.sign_in_count = 0
       user.posts_count = 0
+      user.photo_albums_count = 0
+      user.profile_complete = true
       puts "created user #{user.name}"
     end
 
-
-    user = User.new(name: 'Rails', email: 'test@socify.com', sex: 'female', password: 'password')
+    user = User.new(name: 'Rails', first_name: 'Rails', last_name: 'Test', email: 'test@socify.com', sex: 'female', password: 'password')
     user.skip_confirmation!
     user.save!
     puts 'Created test user with email=test@socify.com and password=password'
@@ -111,6 +114,5 @@ namespace :fill do
       comment.save
       puts "user #{user.name} commented on event #{event.id}"
     end
-
   end
 end

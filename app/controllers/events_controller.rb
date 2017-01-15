@@ -33,15 +33,12 @@ class EventsController < ApplicationController
   end
 
   private
+
   def event_params
     params.require(:event).permit(:name, :when)
   end
 
   def set_event
     @event = Event.find(params[:id])
-  end
-
-  def set_user
-    @user = current_user
   end
 end
