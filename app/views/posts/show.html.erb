@@ -1,7 +1,5 @@
-<div id="post-<%= @post.id %>" class="show">
-  <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 well">
-      <%= render @post, remote: false, expand_comments: true %>
-    </div>
+<div class="stream">
+  <div class="well">
+    <%= render @post, remote: false, expand_comments: true %>
   </div>
 </div>
