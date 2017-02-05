@@ -1,0 +1,13 @@
+.comment-activity {
+  .comment-activity-content {
+    @extend .col-xs-9, .col-xs-offset-2;
+    margin-top: 15px;
+    background-color: $bg-color;
+    padding: 2px;
+  }
+
+  .comment-activity-commentable {
+    @extend .well;
+    margin-top: 20px;
+  }
+}
