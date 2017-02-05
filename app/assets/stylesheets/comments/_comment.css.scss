@@ -1,12 +1,29 @@
 .comment {
-  .avatar {
-    padding: 5px;
+  .comment-user-info {
+    @extend .col-xs-11;
+
+    img.avatar {
+      padding: 5px;
+    }
+
+    .name {
+      display: inline-block;
+      margin-left: 15px;
+    }
+  }
+
+  .comment-actions {
+    @extend .actions;
   }
 
   .comment-content,
-  .created-at {
+  .comment-created-at {
     @extend .col-xs-10, .col-xs-offset-2;
-    padding: 0 10px;
+    padding: 0 15px;
+  }
+
+  .comment-created-at {
+    margin-top: -10px;
   }
 
   .comment-content {
