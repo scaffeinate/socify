@@ -1,0 +1,25 @@
+<div id="comment-activity-<%= activity.id %>" class="comment-activity">
+  <% comment = activity.trackable %>
+  <div class="row">
+    <div class="activity-user-info">
+      <%= render 'shared/avatar', user: comment.user %>
+      <h4 class="name"><%= link_to comment.user.name, user_path(comment.user) %></h4>
+      commented on a <%= link_to comment.commentable_type.downcase, comment.commentable %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="activity-created-at">
+      <%= relative_time(comment.created_at) %> ago
+      </div>
+  </div>
+  <div class="row">
+    <div class="comment-activity-content">
+      <span class="text"><%= comment.comment_html %></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="comment-activity-commentable">
+      <%= render comment.commentable, remote: true, is_activity: true %>
+    </div>
+  </div>
+</div>

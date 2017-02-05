@@ -1,30 +1,21 @@
 <div id="comment-<%= comment.id %>" class="comment">
   <div class="row">
-    <div class="user-info">
+    <div class="comment-user-info">
       <%= render 'shared/avatar', user: comment.user %>
       <h4 class="name"><%= link_to comment.user.name, user_path(comment.user) %></h4>
-      <% if is_activity %>
-        commented on a <%= link_to comment.commentable_type.downcase, comment.commentable %>
-      <% end %>
     </div>
-    <% unless is_activity %>
-      <div class="actions">
-        <%= render 'comments/actions', comment: comment %>
-      </div>
-    <% end %>
+    <div class="comment-actions">
+      <%= render 'shared/comment/actions', comment: comment %>
+    </div>
   </div>
   <div class="row">
-    <%= render 'shared/created_at', activity: comment %>
+    <div class="comment-created-at">
+      <%= relative_time(comment.created_at) %> ago
+    </div>
   </div>
-  <% if is_activity %>
-    <div class="commentable">
-      <%= render comment.commentable, remote: true, is_activity: true %>
+  <div class="row">
+    <div class="comment-content">
+      <span class="text"><%= comment.comment_html %></span>
     </div>
-  <% else %>
-    <div class="row">
-      <div class="comment-content">
-        <span class="text"><%= comment.comment_html %></span>
-      </div>
-    </div>
-  <% end %>
+  </div>
 </div>

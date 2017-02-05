@@ -48,21 +48,6 @@ h6 {
   box-shadow: none;
 }
 
-.name {
-  a {
-    font-family: $default-font;
-    font-size: $medium-font-size;
-    text-decoration: none;
-    color: $default-text-color;
-    font-weight: bold;
-
-    &:active,
-    &:hover {
-      color: $link-hover-color;
-    }
-  }
-}
-
 .created-at {
   color: $light-text-color;
   font-size: $small-font-size;
@@ -169,18 +154,6 @@ div.editable {
   padding: 5px 25px;
 }
 
-.commentable {
-  @extend .well;
-  margin-top: 20px;
-
-  .comments-block {
-    .comment-content,
-    .created-at {
-      padding: 0 15px;
-    }
-  }
-}
-
 .underlined {
   text-align: center;
 }
@@ -199,5 +172,35 @@ div.editable {
 
   button {
     cursor: pointer;
+  }
+}
+
+/* Put common css here */
+.name {
+  a {
+    font-family: $default-font;
+    font-size: $medium-font-size;
+    text-decoration: none;
+    color: $default-text-color;
+    font-weight: bold;
+
+    &:active,
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+}
+
+.actions {
+  @extend .col-xs-1;
+
+  .dropdown {
+    margin-top: 15px;
+
+    li a {
+      padding: 10px;
+      font-size: $small-font-size;
+      font-weight: 300;
+    }
   }
 }

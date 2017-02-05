@@ -1,0 +1,13 @@
+.comments-form {
+  .comments-form-avatar {
+    @extend .col-xs-1;
+
+    img.avatar {
+      padding: 5px;
+    }
+  }
+
+  .comments-form-textbox {
+    @extend .col-xs-10, .col-xs-offset-1;
+  }
+}

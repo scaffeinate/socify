@@ -7,7 +7,7 @@
   border-bottom: 1px solid $border-color;
   padding: 25px 35px;
 
-  .user-info {
+  .activity-user-info {
     @extend .col-xs-11;
 
     .name {
@@ -17,9 +17,9 @@
     }
   }
 
-  .created-at {
+  .activity-created-at {
     @extend .col-xs-offset-2;
-    margin-top: -12px;
+    margin-top: -17px;
   }
 
   .icon {
