@@ -1,0 +1,15 @@
+.comment {
+  .avatar {
+    padding: 5px;
+  }
+
+  .comment-content,
+  .created-at {
+    @extend .col-xs-10, .col-xs-offset-2;
+    padding: 0 10px;
+  }
+
+  .comment-content {
+    margin-top: 10px;
+  }
+}
