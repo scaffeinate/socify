@@ -11,7 +11,7 @@
           <%= render comment, is_activity: false %>
         <% end %>
       <% else %>
-        <% resource.comments.sort_by { |t| - t.created_at.to_i }.first(2).each do |comment| %>
+        <% get_recent.each do |comment| %>
           <%= render comment, is_activity: false %>
         <% end %>
       <% end %>
