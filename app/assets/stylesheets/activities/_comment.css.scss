@@ -3,11 +3,16 @@
     @extend .col-xs-9, .col-xs-offset-2;
     margin-top: 15px;
     background-color: $bg-color;
-    padding: 2px;
+    padding: 2px 5px;
   }
 
   .comment-activity-commentable {
     @extend .well;
     margin-top: 20px;
+
+    .comment-content,
+    .comment-created-at {
+      padding-left: 15px;
+    }
   }
 }

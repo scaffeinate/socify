@@ -19,7 +19,7 @@
   .comment-content,
   .comment-created-at {
     @extend .col-xs-10, .col-xs-offset-2;
-    padding: 0 15px;
+    padding-left: 2px;
   }
 
   .comment-created-at {
