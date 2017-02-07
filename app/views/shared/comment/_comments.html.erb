@@ -11,7 +11,7 @@
           <%= render comment, is_activity: false %>
         <% end %>
       <% else %>
-        <% get_recent.each do |comment| %>
+        <% get_recent(resource).each do |comment| %>
           <%= render comment, is_activity: false %>
         <% end %>
       <% end %>
