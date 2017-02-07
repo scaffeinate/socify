@@ -1,5 +1,4 @@
-<div id="comment-activity-<%= activity.id %>" class="comment-activity">
-  <% comment = activity.trackable %>
+<div id="comment-<%= comment.id %>" class="comment-activity">
   <div class="row">
     <div class="activity-user-info">
       <%= render 'shared/avatar', user: comment.user %>
@@ -10,7 +9,7 @@
   <div class="row">
     <div class="activity-created-at">
       <%= relative_time(comment.created_at) %> ago
-      </div>
+    </div>
   </div>
   <div class="row">
     <div class="comment-activity-content">

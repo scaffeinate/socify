@@ -1,0 +1,34 @@
+<div id="post-<%= post.id %>" class="post-activity">
+  <div class="row">
+    <div class="activity-user-info">
+      <%= render 'shared/avatar', user: post.user %>
+      <h4 class="name"><%= link_to post.user.name, user_path(post.user) %></h4>
+    </div>
+    <div class="actions">
+      <%= render 'posts/actions', remote: true, post: post %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="activity-created-at">
+      <%= relative_time(post.created_at) %> ago
+    </div>
+  </div>
+  <div class="row">
+    <div class="post-activity-content">
+      <span class="text"><%= post.content_html %></span>
+      <% if post.attachment.present? %>
+        <div class="attachment">
+          <%= image_tag post.attachment %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="like-and-comment">
+      <%= render 'shared/like_and_comment', resource: post %>
+    </div>
+  </div>
+  <div class="row">
+    <%= render 'shared/comment/comments', resource: post, expand: (defined?(expand_comments) && expand_comments) %>
+  </div>
+</div>

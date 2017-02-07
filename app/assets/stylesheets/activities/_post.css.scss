@@ -1,0 +1,20 @@
+.post-activity {
+  .post-activity-content {
+    @extend .col-xs-12;
+    margin-top: 20px;
+
+    .text {
+      font-size: $medium-font-size;
+      font-weight: 300;
+      font-family: $default-font;
+    }
+
+    .attachment {
+      margin-top: 15px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
