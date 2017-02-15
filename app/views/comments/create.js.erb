@@ -1,2 +1,2 @@
-$(".activity > #<%= @commentable_type.underscore.dasherize %>-<%= @commentable.id %> .comments").prepend("<%=j render(@comment) %>");
+$("#<%= @commentable_type.underscore.dasherize %>-<%= @commentable.id %> .comments").prepend("<%=j render(@comment) %>");
 $("#comment_text").val("");
