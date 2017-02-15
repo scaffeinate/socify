@@ -81,44 +81,6 @@
     }
   }
 
-  .like-and-comment {
-    @extend .col-xs-12;
-    margin-top: 20px;
-
-    .like-btn button {
-      background: none !important;
-      border: none !important;
-      outline: none;
-      padding: 0;
-
-      > form {
-        display: inline-block;
-      }
-    }
-
-    .liked i {
-      color: $liked-color !important;
-    }
-
-    .comment-btn,
-    .like-btn {
-      margin-left: 10px;
-      display: inline-block;
-
-      i {
-        color: $default-text-color;
-        font-size: $large-font-size;
-      }
-    }
-
-    .comments-count,
-    .likes-count {
-      color: $default-text-color;
-      font-size: $medium-font-size;
-      margin-left: 5px;
-    }
-  }
-
   .photo-album {
     .thumbnail {
       @extend .col-xs-3;
