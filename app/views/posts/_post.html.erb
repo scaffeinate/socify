@@ -1,18 +1,20 @@
 <div id="post-<%= post.id %>" class="post">
   <div class="row">
-    <div class="user-info">
+    <div class="post-user-info">
       <%= render 'shared/avatar', user: post.user %>
       <h4 class="name"><%= link_to post.user.name, user_path(post.user) %></h4>
     </div>
-    <div class="actions">
+    <div class="post-actions">
       <%= render 'posts/actions', remote: remote, post: post %>
     </div>
   </div>
   <div class="row">
-    <%= render 'shared/created_at', activity: post %>
+    <div class="post-created-at">
+      <%= relative_time(post.created_at) %> ago
+    </div>
   </div>
   <div class="row">
-    <div class="content">
+    <div class="post-content">
       <span class="text"><%= post.content_html %></span>
       <% if post.attachment.present? %>
         <div class="attachment">

@@ -1,0 +1,33 @@
+.post {
+  .post-user-info {
+    @extend .col-xs-11;
+
+    .name {
+      display: inline-block;
+      margin-left: 15px;
+    }
+  }
+
+  .post-actions {
+    @extend .actions;
+  }
+
+  .post-created-at {
+    @extend .col-xs-offset-2;
+    margin-top: -17px;
+  }
+
+  .post-content {
+    @extend .col-xs-12;
+  }
+
+  .post-content {
+    margin-top: 20px;
+
+    .attachment {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
