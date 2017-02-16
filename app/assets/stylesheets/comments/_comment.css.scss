@@ -3,12 +3,12 @@
     @extend .col-xs-11;
 
     img.avatar {
-      padding: 5px;
+      margin-right: -12px;
     }
 
     .name {
+      @extend .col-xs-offset-1;
       display: inline-block;
-      margin-left: 15px;
     }
   }
 
@@ -19,14 +19,14 @@
   .comment-content,
   .comment-created-at {
     @extend .col-xs-10, .col-xs-offset-2;
-    padding-left: 2px;
-  }
-
-  .comment-created-at {
-    margin-top: -17px;
   }
 
   .comment-content {
-    margin-top: 10px;
+    margin-top: -10px;
+  }
+
+  .comment-created-at {
+    font-size: $small-font-size;
+    color: $light-text-color;
   }
 }

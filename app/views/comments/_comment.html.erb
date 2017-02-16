@@ -9,13 +9,15 @@
     </div>
   </div>
   <div class="row">
-    <div class="comment-created-at">
-      <%= relative_time(comment.created_at) %> ago
+    <div class="comment-content">
+      <span class="text"><%= comment.comment_html %></span>
     </div>
   </div>
   <div class="row">
-    <div class="comment-content">
-      <span class="text"><%= comment.comment_html %></span>
+    <div class="comment-created-at">
+      <time class="timeago" datetime="<%= comment.created_at.getutc.iso8601 %>">
+        <%= comment.created_at.to_s %>
+      </time>
     </div>
   </div>
 </div>
