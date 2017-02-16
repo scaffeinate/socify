@@ -13,7 +13,9 @@ class HomeController < ApplicationController
     @post = Post.new
     @friends = @user.all_following
     @mentionable = @user.following_users.to_json(only: [:id, :name])
-    @activities = PublicActivity::Activity.joins('INNER JOIN users ON activities.owner_id = users.id').order(created_at: :desc)
+    @activities = PublicActivity::Activity.joins('INNER JOIN users ON activities.owner_id = users.id')
+                                          .where.not(trackable_type: 'Comment')
+                                          .order(created_at: :desc)
                                           .paginate(page: params[:page], per_page: 10)
   end
 

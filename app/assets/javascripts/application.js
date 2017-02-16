@@ -19,15 +19,16 @@
 //= require dropzone
 //= require alertify
 //= require lightbox.min
+//= require jquery.timeago
 //= require_tree .
 
-$(document).ready(function(){
+$(document).ready(function() {
   $("#event_when").datetimepicker({
-    format:'Y/m/d H:i'
+    format: 'Y/m/d H:i'
   });
   $("#user_dob").datetimepicker({
-    timepicker:false,
-    format:'Y/m/d',
-    maxDate:'0'
+    timepicker: false,
+    format: 'Y/m/d',
+    maxDate: '0'
   });
 });
