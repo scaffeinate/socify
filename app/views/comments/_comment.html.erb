@@ -15,9 +15,7 @@
   </div>
   <div class="row">
     <div class="comment-created-at">
-      <time class="timeago" datetime="<%= comment.created_at.getutc.iso8601 %>">
-        <%= comment.created_at.to_s %>
-      </time>
+      <%= render 'shared/created_at', resource: comment %>
     </div>
   </div>
 </div>

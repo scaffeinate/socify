@@ -1,2 +1,3 @@
 $("#<%= @commentable_type.underscore.dasherize %>-<%= @commentable.id %> .comments").prepend("<%=j render(@comment) %>");
+$('.timeago').timeago();
 $("#comment_text").val("");
