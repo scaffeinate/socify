@@ -24,4 +24,17 @@ $(document).ready(function() {
     $('#post_content').val($('#post-content').html());
     $('#post-content').html('');
   });
+
+  $('#post-content').on('paste', function(e) {
+    var _this = this;
+    setTimeout(function() {
+      var text = $(_this).text();
+      $.get('posts/preview', {
+        "url": text
+      }, function(data) {
+        $('#link-preview').removeClass('hidden');
+        $('#link-preview').html(data['html']);
+      });
+    }, 100);
+  });
 });
