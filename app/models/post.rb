@@ -22,7 +22,7 @@ class Post < ActiveRecord::Base
 
   auto_html_for :content do
     image
-    youtube(width: 400, height: 250, autoplay: true)
+    youtube(width: 480, height: 320, autoplay: false)
     link target: '_blank', rel: 'nofollow'
     simple_format
   end
