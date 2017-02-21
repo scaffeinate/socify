@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do
+    collection do
+      get :preview
+    end
+  end
   resources :comments, only: [:create, :destroy]
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users do
