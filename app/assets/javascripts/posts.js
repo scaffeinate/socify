@@ -32,8 +32,10 @@ $(document).ready(function() {
       $.get('posts/preview', {
         "url": text
       }, function(data) {
+        var html = data['html'];
         $('#link-preview').removeClass('hidden');
-        $('#link-preview').html(data['html']);
+        $('#link-preview').html(html);
+        $('#content-html').val(html);
       });
     }, 100);
   });

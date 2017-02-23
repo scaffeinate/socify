@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
-    @post.content_html = Onebox.preview(@post.content).to_s
+    @post.content_html = @post.content_html
     if @post.save
       redirect_to root_path
     else
@@ -49,6 +49,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:content, :attachment)
+    params.require(:post).permit(:content, :content_html, :attachment)
   end
 end
