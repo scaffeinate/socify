@@ -210,12 +210,28 @@ div.editable {
   @extend .well;
   padding: 10px;
 
-  iframe {
-    width: 100%;
-  }
+  .onebox {
+    iframe {
+      width: 100%;
+    }
 
-  img {
-    width: 100px;
-    height: 100px;
+    .onebox-body {
+      h3 > a {
+        font-size: $large-font-size;
+        font-family: $default-font;
+        color: $default-text-color;
+      }
+
+      p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-height: 100px;
+      }
+
+      img {
+        width: 100px;
+        height: auto;
+      }
+    }
   }
 }
