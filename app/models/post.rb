@@ -20,10 +20,7 @@ class Post < ActiveRecord::Base
   validates_presence_of :content
   validates_presence_of :user
 
-  auto_html_for :content do
-    image
-    youtube(width: 480, height: 320, autoplay: false)
-    link target: '_blank', rel: 'nofollow'
-    simple_format
+  def html
+    content_html.html_safe
   end
 end
