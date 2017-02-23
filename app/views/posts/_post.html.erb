@@ -15,7 +15,9 @@
   </div>
   <div class="row">
     <div class="post-content">
-      <span class="text"><%= post.content_html %></span>
+      <div class="link-preview">
+        <%= post.html %>
+      </div>
       <% if post.attachment.present? %>
         <div class="attachment">
           <%= image_tag post.attachment %>
