@@ -112,36 +112,6 @@ h6 {
   }
 }
 
-div.editable,
-input[type="email"],
-input[type="password"],
-input[type="text"],
-textarea {
-  height: auto;
-  padding: 10px 17px;
-  box-shadow: none !important;
-  border: 1px solid #ccc !important;
-
-  &:focus {
-    border: 1px solid #888 !important;
-  };
-}
-
-div.editable {
-  height: 65px;
-  max-height: 65px;
-  overflow-y: scroll;
-}
-
-[placeholder]:empty:before {
-  content: attr(placeholder);
-  color: $light-text-color;
-}
-
-[placeholder]:empty:focus:before {
-  content: '';
-}
-
 .alert-fixed {
   position: fixed;
   top: 0;
@@ -191,6 +161,9 @@ div.editable {
   }
 }
 
+/***********************************************/
+
+/* Resource actions dropdown styles start */
 .actions {
   @extend .col-xs-1;
 
@@ -204,7 +177,45 @@ div.editable {
     }
   }
 }
+/* Resource actions dropdown styles end */
 
+/***********************************************/
+
+/* Input field, text area, contenteditable styles start */
+div.editable,
+input[type="email"],
+input[type="password"],
+input[type="text"],
+textarea {
+  height: auto;
+  padding: 10px 17px;
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
+
+  &:focus {
+    border: 1px solid #888 !important;
+  };
+}
+
+div.editable {
+  height: 65px;
+  max-height: 65px;
+  overflow-y: scroll;
+}
+
+[placeholder]:empty:before {
+  content: attr(placeholder);
+  color: $light-text-color;
+}
+
+[placeholder]:empty:focus:before {
+  content: '';
+}
+/* Input field, text area, contenteditable styles end */
+
+/***********************************************/
+
+/* Link preview with Onebox styles start */
 .link-preview {
   width: 100%;
   @extend .well;
@@ -262,3 +273,6 @@ div.editable {
     }
   }
 }
+/* Link preview with Onebox styles end */
+
+/***********************************************/
