@@ -1,21 +1,24 @@
-<%= form_for(@post) do |f| %>
-  <div class="form-group">
-    <div id="post-content" contenteditable="true" class="editable form-control input-mentionable" placeholder="What's up?"></div>
-    <%= f.hidden_field :content, class: 'form-control input-mentionable', autofocus: true %>
-    <%= f.hidden_field :content_html, id: 'content-html', class: 'form-control input-mentionable', autofocus: true %>
+<div class="posts-form">
+  <div id="posts-form-tabs">
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active"><a href="#">Status</a></li>
+      <li role="presentation"><a href="#">Photo</a></li>
+    </ul>
   </div>
-  <div id="img-preview" class="form-group hidden">
-    <%= image_tag '' %>
-  </div>
-  <div id="link-preview" class="link-preview form-group hidden">
-  </div>
-  <div class="form-group hidden">
-    <%= f.file_field :attachment %>
-  </div>
-  <div class="form-group">
-    <a id="post-attachment" href="javascript:void(0);" class="pull-right btn btn-primary">
-      <i class="icon-attach-1"></i>
-    </a>
-    <%= button_tag(type: :submit, class: 'btn btn-primary') do %><i class="icon-paper-plane"></i> Post<% end %>
-  </div>
-<% end %>
+  <%= form_for(@post, html: { class: 'form' }) do |f| %>
+    <div class="form-group">
+      <div id="post-content" contenteditable="true" class="editable form-control input-mentionable" placeholder="What's up?"></div>
+      <%= f.hidden_field :content, class: 'form-control input-mentionable', autofocus: true %>
+      <%= f.hidden_field :content_html, id: 'content-html', class: 'form-control input-mentionable', autofocus: true %>
+    </div>
+    <div class="form-group hidden">
+      <%= f.file_field :attachment %>
+    </div>
+    <div class="form-group">
+      <a id="post-attachment" href="javascript:void(0);" class="pull-right btn btn-primary">
+        <i class="icon-attach-1"></i>
+      </a>
+      <%= button_tag(type: :submit, class: 'btn btn-primary') do %><i class="icon-paper-plane"></i> Post<% end %>
+    </div>
+  <% end %>
+</div>
