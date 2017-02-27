@@ -19,24 +19,4 @@ $(document).ready(function() {
     displayTpl: '<li data-id="${id}"><span>${name}</span></li>',
     limit: 15
   });
-
-  $('#new_post').submit(function() {
-    $('#post_content').val($('#post-content').html());
-    $('#post-content').html('');
-  });
-
-  $('#post-content').on('paste', function(e) {
-    var _this = this;
-    setTimeout(function() {
-      var text = $(_this).text();
-      $.get('posts/preview', {
-        "url": text
-      }, function(data) {
-        var html = data['html'];
-        $('#link-preview').removeClass('hidden');
-        $('#link-preview').html(html);
-        $('#content-html').val(html);
-      });
-    }, 100);
-  });
 });
