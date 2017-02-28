@@ -20,6 +20,7 @@
 //= require alertify
 //= require lightbox.min
 //= require jquery.timeago
+//= require validator.min
 //= require_tree .
 
 $(document).ready(function() {
