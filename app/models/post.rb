@@ -19,12 +19,4 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :content
   validates_presence_of :user
-
-  def html
-    if content_html.present?
-      content_html.html_safe
-    else
-      content.to_s
-    end
-  end
 end
