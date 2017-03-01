@@ -15,9 +15,14 @@
   </div>
   <div class="row">
     <div class="post-activity-content">
-      <div class="link-preview">
-        <%= post.html %>
+      <div class="content-html">
+        <%= post.content.html_safe %>
       </div>
+      <% unless post.preview_html.blank? %>
+        <div class="link-preview">
+          <%= post.preview_html.html_safe %>
+        </div>
+      <% end %>
       <% if post.attachment.present? %>
         <div class="attachment">
           <%= image_tag post.attachment %>
