@@ -2,6 +2,7 @@
 // All this logic will automatically be available in application.js.
 $(document).ready(function() {
   var post_content = $('#post_content');
+  var post_preview_html = $('#post_preview_html');
   var pseudo_post_content = $('#pseudo_post_content');
   var showLinkPreview = function(html) {
     $('#link-preview').removeClass('hidden');
@@ -25,7 +26,7 @@ $(document).ready(function() {
           var html = data['html'].trim();
           if (html != '') {
             showLinkPreview(html);
-            $('#content_html').append(html);
+            post_preview_html.val(html);
           }
         });
       }
