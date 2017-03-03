@@ -264,6 +264,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
+    twitter-text (1.14.5)
+      unf (~> 0.1.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -316,6 +318,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   spring
   sqlite3
+  twitter-text
   uglifier (>= 1.3.0)
   unicorn
   will_paginate (~> 3.0.6)

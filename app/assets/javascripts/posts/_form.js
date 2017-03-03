@@ -21,14 +21,11 @@ $(document).ready(function() {
 
   pseudo_post_content.on('paste', function(e) {
     var url = e.originalEvent.clipboardData.getData('Text').trim();
-    var event = e;
     setTimeout(function() {
       var html = pseudo_post_content.html().trim();
       pseudo_post_content.html(stripTags(html));
 
       if (validator.isURL(url)) {
-        event.preventDefault();
-        pseudo_post_content.append("<a href='" + url + "'>" + url + "</a>");
         $.get('posts/preview', {
           "url": url
         }, function(data) {
