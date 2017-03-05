@@ -8,10 +8,10 @@
         <%= link_to 'View', post_path(post) %>
       </li>
       <li>
-        <%= link_to 'Edit', edit_post_path(post) %>
+        <%= link_to 'Edit', edit_post_path(post), remote: true %>
       </li>
       <li>
-        <%= link_to 'Delete', post_path(post), method: :delete, remote: remote %>
+        <%= link_to 'Delete', post_path(post), method: :delete %>
       </li>
     </ul>
   </div>

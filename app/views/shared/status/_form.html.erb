@@ -1,8 +1,7 @@
 <%= form_for(@post, html: { class: 'form' }) do |f| %>
   <!-- post text content section -->
   <div id="content-section" class="form-group">
-    <div id="pseudo_post_content" contenteditable="true" class="editable form-control input-mentionable" placeholder="What's up?">
-    </div>
+    <div id="pseudo_post_content" contenteditable="true" class="editable form-control input-mentionable" placeholder="What's up?"></div>
     <%= f.hidden_field :content, class: 'form-control input-mentionable', autofocus: true %>
   </div>
   <!-- preview section -->

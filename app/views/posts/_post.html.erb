@@ -4,6 +4,9 @@
       <%= render 'shared/avatar', user: post.user %>
       <h4 class="name"><%= link_to post.user.name, user_path(post.user) %></h4>
     </div>
+    <div class="actions">
+      <%= render 'posts/actions', remote: true, post: post %>
+    </div>
   </div>
   <div class="row">
     <div class="post-created-at">
