@@ -1,0 +1,2 @@
+$('#edit-status-modal').modal('show');
+$('#edit-status-modal .modal-body').html("<%= escape_javascript(render('shared/status/edit_form', post: @post))%>");
