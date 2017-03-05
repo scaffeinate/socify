@@ -1,0 +1,11 @@
+<%= form_for(@post, html: { class: 'form' }) do |f| %>
+  <div class="form-group">
+    <div id="pseudo_post_content" contenteditable="true" class="editable form-control input-mentionable" placeholder="What's up?">
+    </div>
+    <%= f.hidden_field :content, class: 'form-control input-mentionable', autofocus: true %>
+  </div>
+  <%= render 'shared/status/attachment', f: f %>
+  <div class="form-group">
+    <%= button_tag(type: :submit, class: 'btn btn-primary') do %><i class="icon-paper-plane"></i> Post<% end %>
+  </div>
+<% end %>
