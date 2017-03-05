@@ -1,5 +1,10 @@
 <div id="user-<%= @user.id %>">
   <div class="stream">
+    <% if is_current_user?(@user) %>
+      <div class="new-resource">
+        <%= render 'shared/status/status' %>
+      </div>
+    <% end %>
     <div id="activities" class="resources-block">
       <h4 class="underlined">USER STREAM</h4>
       <% if @activities.empty? %>
