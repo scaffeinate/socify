@@ -12,9 +12,61 @@ var StatusUtil = (function() {
     }
   };
 
-  return {
-    readURL: function(fileField, callback) {
-      readURL(fileField, callback);
+  var stripTags = function(html) {
+    return html.replace(/<.*?>/g, '');
+  };
+
+  /**
+   * Thanks to the stackoverflow answer.
+   * Link: http://stackoverflow.com/questions/1125292/how-to-move-cursor-to-end-of-contenteditable-entity
+   */
+  var moveCursorToEndOfContentEditable = function(contentEditableElement) {
+    var range, selection;
+    if (document.createRange) {
+      range = document.createRange(); //Create a range (a range is a like the selection but invisible)
+      range.selectNodeContents(contentEditableElement); //Select the entire contents of the element with the range
+      range.collapse(false); //collapse the range to the end point. false means collapse to end rather than the start
+      selection = window.getSelection(); //get the selection object (allows you to change selection)
+      selection.removeAllRanges(); //remove any selections already made
+      selection.addRange(range); //make the range you have just created the visible selection
     }
+    else if (document.selection) {
+      range = document.body.createTextRange(); //Create a range (a range is a like the selection but invisible)
+      range.moveToElementText(contentEditableElement); //Select the entire contents of the element with the range
+      range.collapse(false); //collapse the range to the end point. false means collapse to end rather than the start
+      range.select(); //Select the range (make it the visible selection
+    }
+  };
+
+  var showElement = function(element) {
+    element.removeClass('hidden');
+  };
+
+  var hideElement = function(element) {
+    element.addClass('hidden');
+  }
+
+  var toggleElement = function(element) {
+    element.hasClass('hidden') ? show(element) : hide(element);
+  };
+
+  var markActive = function(listItemElement, listElement) {
+    if (listElement !== undefined) {
+      var children = listElement.children();
+      for (var i = 0; i < children.length; i++) {
+        $(children[i]).removeClass('active');
+      }
+    }
+    listItemElement.addClass('active');
+  }
+
+  return {
+    readURL: readURL,
+    stripTags: stripTags,
+    moveCursorToEndOfContentEditable: moveCursorToEndOfContentEditable,
+    show: showElement,
+    hide: hideElement,
+    toggle: toggleElement,
+    markActive: markActive
   };
 })();

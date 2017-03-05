@@ -1,23 +1,19 @@
 // Place all the behaviors and hooks related to the matching view here.
 // All this logic will automatically be available in application.js.
 $(document).ready(function() {
-  var statusMode = $('.status-mode > a');
-  $('#attachment #link-block').removeClass('hidden');
+  var tabsSection = $('#status-block #tabs-section ul');
+  var tabLink = tabsSection.children('li').children('a');
+  var attachmentSection = $('#status-block #attachment-section');
 
-  statusMode.click(function(e) {
+  tabLink.click(function(e) {
     e.preventDefault();
     var mode = $(this).attr('data-status-mode');
+    StatusUtil.markActive($(this).parent(), tabsSection);
 
     if (mode === 'status') {
-      $('#attachment #img-block').addClass('hidden');
-      $('#attachment #link-block').removeClass('hidden');
-      $('#status-mode-li').addClass('active');
-      $('#photo-mode-li').removeClass('active');
+      StatusUtil.hide(attachmentSection);
     } else if (mode === 'photo') {
-      $('#attachment #img-block').removeClass('hidden');
-      $('#attachment #link-block').addClass('hidden');
-      $('#status-mode-li').removeClass('active');
-      $('#photo-mode-li').addClass('active');
+      StatusUtil.show(attachmentSection);
     }
   });
 });
