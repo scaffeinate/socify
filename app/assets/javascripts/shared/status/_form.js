@@ -1,41 +1,35 @@
 // Place all the behaviors and hooks related to the matching view here.
 // All this logic will automatically be available in application.js.
 $(document).ready(function() {
-  var post_content = $('#post_content');
-  var post_preview_html = $('#post_preview_html');
-  var pseudo_post_content = $('#pseudo_post_content');
-  var showLinkPreview = function(html) {
-    $('#link-preview').removeClass('hidden');
-    $('#link-preview').html(html);
-  };
+  var postContent = $('#status-block #post_content');
+  var pseudoPostContent = $('#status-block #pseudo_post_content');
+  var linkPreview = $('#status-block #link-preview');
+  var postPreviewHTMLHiddenField = $('#post_preview_html');
+  var newPost = $('#new_post');
 
-  var stripTags = function(html) {
-    return html.replace(/<.*?>/g, '');
-  };
-
-  $('#new_post').submit(function(e) {
-    var html = pseudo_post_content.html();
-    post_content.val(html);
-    post_content.html('');
-  });
-
-  pseudo_post_content.on('paste', function(e) {
-    var url = e.originalEvent.clipboardData.getData('Text').trim();
+  pseudoPostContent.on('paste', function(e) {
+    //e.preventDefault();
+    var pastedContent = e.originalEvent.clipboardData.getData('Text').trim();
+    //pastedContent = StatusUtil.stripTags(pastedContent);
     setTimeout(function() {
-      var html = pseudo_post_content.html().trim();
-      pseudo_post_content.html(stripTags(html));
-
-      if (validator.isURL(url)) {
-        $.get('posts/preview', {
-          "url": url
-        }, function(data) {
-          var html = data['html'].trim();
-          if (html != '') {
-            showLinkPreview(html);
-            post_preview_html.val(html);
-          }
+      var html = StatusUtil.stripTags(pseudoPostContent.html());
+      pseudoPostContent.html(html);
+      StatusUtil.moveCursorToEndOfContentEditable(document.getElementById('pseudo_post_content'));
+      if (validator.isURL(pastedContent)) {
+        StatusUtil.fetchPreview(pastedContent, 'posts/preview', function(html) {
+          linkPreview.html(html);
+          StatusUtil.show(linkPreview);
+          postPreviewHTMLHiddenField.val(html);
+        }, function(err) {
+          linkPreview.html('');
+          StatusUtil.hide(linkPreview);
+          postPreviewHTMLHiddenField.val('');
         });
       }
     }, 100);
   });
-});;
+
+  newPost.submit(function() {
+    postContent.val(pseudoPostContent.html());
+  });
+});

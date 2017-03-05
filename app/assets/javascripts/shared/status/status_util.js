@@ -13,7 +13,7 @@ var StatusUtil = (function() {
   };
 
   var stripTags = function(html) {
-    return html.replace(/<.*?>/g, '');
+    return html.replace(/<(?!br).*?\>/g, '');
   };
 
   /**
@@ -58,7 +58,24 @@ var StatusUtil = (function() {
       }
     }
     listItemElement.addClass('active');
-  }
+  };
+
+  var fetchPreview = function(url, endpointURL, successCallback, failureCallback) {
+    if (validator.isURL(url)) {
+      $.get(endpointURL, {
+        'url': url
+      }, function(data) {
+        var html = data['html'].trim();
+        if (html != '') {
+          successCallback(html);
+        } else {
+          failureCallback('HTML not valid');
+        }
+      });
+    } else {
+      failureCallback('URL not valid');
+    }
+  };
 
   return {
     readURL: readURL,
@@ -67,6 +84,7 @@ var StatusUtil = (function() {
     show: showElement,
     hide: hideElement,
     toggle: toggleElement,
-    markActive: markActive
+    markActive: markActive,
+    fetchPreview: fetchPreview
   };
 })();
