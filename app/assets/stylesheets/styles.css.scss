@@ -252,12 +252,6 @@ div.editable {
         }
       }
 
-      p {
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-height: 100px;
-      }
-
       .tags {
         @extend .label, .label-primary;
       }
@@ -265,12 +259,18 @@ div.editable {
       .date {
         margin-top: 10px;
       }
-
-      img {
-        width: 100px;
-        height: auto;
-      }
     }
+  }
+
+  p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 100px;
+  }
+
+  img {
+    width: 100px;
+    height: auto;
   }
 }
 /* Link preview with Onebox styles end */
