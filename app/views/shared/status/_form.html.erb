@@ -1,10 +1,20 @@
 <%= form_for(@post, html: { class: 'form' }) do |f| %>
-  <div class="form-group">
+  <!-- post text content section -->
+  <div id="content-section" class="form-group">
     <div id="pseudo_post_content" contenteditable="true" class="editable form-control input-mentionable" placeholder="What's up?">
     </div>
     <%= f.hidden_field :content, class: 'form-control input-mentionable', autofocus: true %>
   </div>
-  <%= render 'shared/status/attachment', f: f %>
+  <!-- preview section -->
+  <%= render 'shared/status/preview', f: f %>
+  <!-- post attachment section -->
+  <div id="attachment-section" class="form-group hidden">
+    <a id="pseudo_post_attachment" href="javascript:void(0);" class="pull-right btn btn-primary">
+      <i class="icon-attach-1"></i>
+    </a>
+    <%= f.file_field :attachment, class: 'hidden' %>
+  </div>
+  <!-- post submit button -->
   <div class="form-group">
     <%= button_tag(type: :submit, class: 'btn btn-primary') do %><i class="icon-paper-plane"></i> Post<% end %>
   </div>

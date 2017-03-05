@@ -3,7 +3,9 @@
     @extend .col-xs-12;
     margin-top: 20px;
 
-    .text {
+    .content-html {
+      word-wrap: break-word;
+      overflow: auto;
       font-size: $medium-font-size;
       font-weight: 300;
       font-family: $default-font;

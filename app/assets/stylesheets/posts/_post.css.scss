@@ -24,6 +24,11 @@
   .post-content {
     margin-top: 20px;
 
+    .content-html {
+      word-wrap: break-word;
+      overflow: auto;
+    }
+
     .link-preview {
       margin-top: 20px;
     }

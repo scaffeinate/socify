@@ -1,5 +1,6 @@
 <div id="status-block">
-  <div id="status-form-tabs">
+  <!-- tabs to switch mode -->
+  <div id="tabs-section">
     <ul class="nav nav-pills">
       <li id="status-mode-li" role="presentation" class="active status-mode">
         <a href="javascript:void(0);" data-status-mode="status">Status</a>
@@ -9,7 +10,8 @@
       </li>
     </ul>
   </div>
-  <div id="status-form">
+  <!-- status form -->
+  <div id="form-section">
     <%= render 'shared/status/form' %>
   </div>
 </div>
