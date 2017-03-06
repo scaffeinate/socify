@@ -2,3 +2,14 @@
 	height: 100px;
 	max-height: 100px;
 }
+
+#img-preview {
+	padding: 5px;
+	display: inline-block;
+	border: 1px solid $border-color;
+
+	img {
+		width: auto;
+		height: 120px;
+	}
+}

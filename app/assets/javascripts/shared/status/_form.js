@@ -8,9 +8,7 @@ $(document).ready(function() {
   var newPost = $('#new_post');
 
   pseudoPostContent.on('paste', function(e) {
-    //e.preventDefault();
     var pastedContent = e.originalEvent.clipboardData.getData('Text').trim();
-    //pastedContent = StatusUtil.stripTags(pastedContent);
     setTimeout(function() {
       var html = StatusUtil.stripTags(pseudoPostContent.html());
       pseudoPostContent.html(html);
