@@ -5,15 +5,17 @@
     </div>
     <%= f.hidden_field :content, class: 'form-control input-mentionable', autofocus: true %>
   </div>
-  <div id="link-preview-section" class="form-group">
-    <% if @post.attachment.present? %>
-      <div class="attachment">
-        <%= image_tag @post.attachment %>
-      </div>
-    <% elsif @post.preview_html.present? %>
-      <div class="autobox-preview">
-        <%= @post.preview_html.html_safe %>
-      </div>
-    <% end %>
+  <div class="form-group">
+    <div class="link-preview-section">
+      <% if @post.attachment.present? %>
+        <div class="attachment">
+          <%= image_tag @post.attachment %>
+        </div>
+      <% elsif @post.preview_html.present? %>
+        <div class="autobox-preview">
+          <%= @post.preview_html.html_safe %>
+        </div>
+      <% end %>
+    </div>
   </div>
 <% end %>
