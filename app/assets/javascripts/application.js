@@ -21,6 +21,9 @@
 //= require lightbox.min
 //= require jquery.timeago
 //= require validator.min
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
 
 $(document).ready(function() {
