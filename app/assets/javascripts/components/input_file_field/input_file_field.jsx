@@ -1,12 +1,12 @@
 var InputFileField = React.createClass({
   getInitialState() {
     return {
-      attachment: '',
+      data_uri: '',
       preview: ''
     }
   },
-  getPreviewTemplate(attachment, onRemoveClick) {
-    return (<InputFileFieldPreview attachment={attachment} onRemoveClick={onRemoveClick} />);
+  getPreviewTemplate(src, onRemoveClick) {
+    return (<InputFileFieldPreview src={src} onRemoveClick={onRemoveClick} />);
   },
   handleClick(event) {
     this.refs.fileField.click();
@@ -17,7 +17,7 @@ var InputFileField = React.createClass({
     if (fileField.files && fileField.files[0]) {
       var reader = new FileReader();
       reader.onload = function(e) {
-        _this.setState({attachment: e.target.result});
+        _this.setState({data_uri: e.target.result});
         _this.setState({preview: _this.getPreviewTemplate(e.target.result, _this.onRemoveClick)});
       }
       reader.readAsDataURL(fileField.files[0]);
@@ -29,9 +29,9 @@ var InputFileField = React.createClass({
   },
   render() {
     return (
-      <div className="styled-file-field">
+      <div className="input-file-field">
         <input type="file" className="hidden" ref="fileField" onChange={this.onChange} />
-        <input type="hidden" name={this.props.name} value={this.state.attachment} />
+        <input type="hidden" name={this.props.name} value={this.state.data_uri} />
         <a href="#" onClick={this.handleClick} className="btn btn-primary pull-right">
           <i className="icon-attach-1"></i>
         </a>
