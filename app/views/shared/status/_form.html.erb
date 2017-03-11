@@ -1,10 +1,8 @@
 <%= form_for(@post, html: { class: 'form' }) do |f| %>
   <!-- post text content section -->
   <div id="content-section" class="form-group">
-    <%= react_component 'ContentEditable', name: 'post[content]', placeholder: 'What\'s up?' %>
+    <%= react_component 'ContentEditable', name: 'post[content]', previewName: 'post[preview_html]', placeholder: 'What\'s up?' %>
   </div>
-  <!-- preview section -->
-  <%= render 'shared/status/preview', f: f %>
   <!-- post attachment section -->
   <div id="attachment-section" class="form-group hidden">
     <%= react_component 'InputFileField', name: 'post[attachment]' %>
