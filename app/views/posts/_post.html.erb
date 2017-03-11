@@ -19,13 +19,9 @@
         <%= post.content.html_safe %>
       </div>
       <% if post.attachment.present? %>
-        <div class="attachment">
-          <%= image_tag post.attachment %>
-        </div>
+        <%= react_component 'ImagePreview', src: post.attachment.url %>
       <% elsif post.preview_html.present? %>
-        <div class="autobox-preview">
-          <%= post.preview_html.html_safe %>
-        </div>
+        <%= react_component 'LinkPreview', html: post.preview_html %>
       <% end %>
     </div>
   </div>
