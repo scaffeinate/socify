@@ -17,6 +17,12 @@ class Post < ActiveRecord::Base
 
   mount_uploader :attachment, AvatarUploader
 
-  validates_presence_of :content
+  validate :content_or_attachment
   validates_presence_of :user
+
+  private
+
+  def content_or_attachment
+    errors[:base] << 'Post cant be blank' if content.blank? && attachment.blank?
+  end
 end
