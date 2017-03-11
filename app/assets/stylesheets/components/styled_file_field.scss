@@ -1,0 +1,13 @@
+.styled-file-field {
+  .preview {
+    .attachment {
+      width: auto;
+      max-height: 75px;
+    }
+
+    .remove-attachment {
+      @extend .btn, .btn-danger, .pull-right;
+      margin-right: 15px;
+    }
+  }
+}
