@@ -42,9 +42,7 @@ var ContentEditable = React.createClass({
           <div ref="contentEditable" contentEditable className="editable form-control input-mentionable" onInput={this.handleChange} onPaste={this.onPaste} placeholder={this.props.placeholder}></div>
           <input type="hidden" name={this.props.name} value={this.state.text}></input>
         </div>
-        <div className="link-preview">
-          {this.state.linkPreview}
-        </div>
+        {this.state.linkPreview}
       </div>
     );
   }
