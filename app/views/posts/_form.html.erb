@@ -1,14 +1,16 @@
 <%= form_for(@post, html: { class: 'form' }) do |f| %>
   <!-- post text content section -->
-  <div id="content-section" class="form-group">
+  <div class="form-group">
     <%= react_component 'ContentEditable', name: 'post[content]', previewName: 'post[preview_html]', placeholder: 'What\'s up?' %>
   </div>
   <!-- post attachment section -->
-  <div id="attachment-section" class="form-group hidden">
+  <div class="form-group">
     <%= react_component 'InputFileField', name: 'post[attachment]' %>
   </div>
   <!-- post submit button -->
   <div class="form-group">
-    <%= button_tag(type: :submit, class: 'btn btn-primary') do %><i class="icon-paper-plane"></i> Post<% end %>
+    <%= button_tag(type: :submit, class: 'btn btn-primary') do %>
+      <i class="icon-paper-plane"></i> Post
+    <% end %>
   </div>
 <% end %>
