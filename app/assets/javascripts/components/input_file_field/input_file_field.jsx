@@ -1,4 +1,4 @@
-var StyledFileField = React.createClass({
+var InputFileField = React.createClass({
   getInitialState() {
     return {
       attachment: '',
@@ -6,7 +6,7 @@ var StyledFileField = React.createClass({
     }
   },
   getPreviewTemplate(attachment, onRemoveClick) {
-    return (<StyledFileFieldPreview attachment={attachment} onRemoveClick={onRemoveClick} />);
+    return (<InputFileFieldPreview attachment={attachment} onRemoveClick={onRemoveClick} />);
   },
   handleClick(event) {
     this.refs.fileField.click();
