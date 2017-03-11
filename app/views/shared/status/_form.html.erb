@@ -7,10 +7,7 @@
   <%= render 'shared/status/preview', f: f %>
   <!-- post attachment section -->
   <div id="attachment-section" class="form-group hidden">
-    <a id="pseudo_post_attachment" href="javascript:void(0);" class="pull-right btn btn-primary">
-      <i class="icon-attach-1"></i>
-    </a>
-    <%= f.file_field :attachment, class: 'hidden' %>
+    <%= react_component 'StyledFileField', name: 'post[attachment]' %>
   </div>
   <!-- post submit button -->
   <div class="form-group">
