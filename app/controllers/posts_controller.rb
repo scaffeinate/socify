@@ -2,6 +2,7 @@
 # Socify is an Open source Social network written in Ruby on Rails This file is licensed
 # under GNU GPL v2 or later. See the LICENSE.
 include Shared::Links
+include Shared::Base64Parser
 
 class PostsController < ApplicationController
   before_action :authenticate_user!
@@ -11,6 +12,8 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     @post.content = link_urls(post_params[:content])
+    @post.attachment = ActionDispatch::Http::UploadedFile.new(parse_base_64(post_params[:attachment])) unless post_params[:attachment].blank?
+
     if @post.save
       redirect_to root_path
     else
