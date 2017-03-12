@@ -2,11 +2,11 @@ var CommentsForm = React.createClass({
   render() {
     return (
       <form action={this.props.url} method="post" className="form comments-form" data-img-src="true">
-        <input type='hidden' name='authenticity_token' value={this.props.authenticity_token} />
+        <input type='hidden' name='authenticity_token' value={this.props.authenticityToken} />
         <div className="form-group">
           <div className="row">
             <div className="comments-form-avatar">
-              <Avatar linkTo={this.props.linkTo} avatar={this.props.avatar}></Avatar>
+              <Avatar linkTo={this.props.userLinkTo} avatar={this.props.userAvatar}></Avatar>
             </div>
             <div className="comments-form-textbox">
               <ContentEditable name='comment[comment_text]' previewName='comment[preview_html]' placeholder='Enter Comment'></ContentEditable>

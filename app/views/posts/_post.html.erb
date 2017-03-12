@@ -31,6 +31,6 @@
     </div>
   </div>
   <div class="row">
-    <%= render 'shared/comment/comments', resource: post, expand: (defined?(expand_comments) && expand_comments) %>
+    <%= render 'comments/comments_block', resource: post, expand: (defined?(expand_comments) && expand_comments) %>
   </div>
 </div>
