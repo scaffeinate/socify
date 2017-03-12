@@ -8,6 +8,4 @@ $(document).ready(function() {
     commentEl.val(psuedoCommentEl.html());
     psuedoCommentEl.html('');
   });
-
-  $(".timeago").timeago();
 });
