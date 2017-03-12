@@ -3,7 +3,7 @@ var ContentEditable = React.createClass({
     return {
       text: this.stripTags(this.props.content),
       content: this.stripTags(this.props.content),
-      linkPreviewHTML: this.props.linkPreviewHTML
+      linkPreviewHTML: this.props.linkPreviewHTML || ''
     }
   },
   handleChange(event) {
