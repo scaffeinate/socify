@@ -6,7 +6,7 @@ module Shared::Base64Parser
   extend ActiveSupport::Concern
   def parse_base_64(_base64)
     unless _base64.blank?
-      filename = 'upload-image'
+      filename = 'attachment'
       in_content_type, encoding, string = _base64.split(/[:;,]/)[1..3]
 
       tempfile = Tempfile.new(filename)

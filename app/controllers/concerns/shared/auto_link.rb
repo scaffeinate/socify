@@ -2,7 +2,7 @@
 # Socify is an Open source Social network written in Ruby on Rails This file is licensed
 # under GNU GPL v2 or later. See the LICENSE.
 
-module Shared::Links
+module Shared::AutoLink
   extend ActiveSupport::Concern
   def link_urls(content)
     Twitter::Autolink.auto_link(content, target_blank: true)
