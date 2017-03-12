@@ -1,2 +1,3 @@
-$('#edit-status-modal').modal('show');
-$('#edit-status-modal .modal-body').html("<%= escape_javascript(render('shared/status/edit_form', post: @post))%>");
+$('#edit-post-modal').html("<%= escape_javascript(render('posts/edit', post: @post)) %>");
+$('#edit-post-modal > .modal').modal('show');
+ReactRailsUJS.mountComponents();

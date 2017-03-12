@@ -1,18 +1,18 @@
 var ContentEditable = React.createClass({
   getInitialState() {
     return {
-      text: '',
-      html: '',
-      linkPreview: ''
+      text: this.stripTags(this.props.content),
+      content: this.stripTags(this.props.content),
+      linkPreviewHTML: this.props.linkPreviewHTML
     }
   },
   handleChange(event) {
     var html = event.target.innerHTML;
-    var text = html.replace(/<.*?\>/g, '');
-    if(text.trim() == '') {
+    var text = this.stripTags(html);
+    if(!text) {
       this.refs.contentEditable.innerHTML = '';
     }
-    this.setState({ text: text});
+    this.setState({text: text});
   },
   onPaste(ev) {
     ev.preventDefault();
@@ -21,28 +21,27 @@ var ContentEditable = React.createClass({
     document.execCommand('insertText', false, text);
 
     if(validator.isURL(text)) {
-      $.get('posts/preview', {
+      $.get('/posts/preview', {
         'url': text
       }, function(data) {
         var html = data['html'].trim();
         if (html != '') {
-          _this.setState({html: html});
-          _this.renderLinkPreview();
+          _this.setState({linkPreviewHTML: html});
         }
       });
     }
   },
-  renderLinkPreview() {
-    this.setState({linkPreview: <LinkPreview html={this.state.html} name={this.props.previewName} />});
+  stripTags(html) {
+    return html ? html.replace(/<(?!br).*?\>/g, '') : '';
   },
   render() {
     return (
       <div>
         <div className="contenteditable">
-          <div ref="contentEditable" contentEditable className="editable form-control input-mentionable" onInput={this.handleChange} onPaste={this.onPaste} placeholder={this.props.placeholder}></div>
+          <div ref="contentEditable" contentEditable className="editable form-control input-mentionable" onInput={this.handleChange} onPaste={this.onPaste} placeholder={this.props.placeholder} dangerouslySetInnerHTML={{__html: this.state.content}}></div>
           <input type="hidden" name={this.props.name} value={this.state.text}></input>
         </div>
-        {this.state.linkPreview}
+        <LinkPreview html={this.state.linkPreviewHTML} name={this.props.previewName} />
       </div>
     );
   }
