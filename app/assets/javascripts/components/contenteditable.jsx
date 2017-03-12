@@ -14,15 +14,15 @@ var ContentEditable = React.createClass({
     }
     this.setState({text: text});
   },
-  onPaste(ev) {
-    ev.preventDefault();
+  onPaste(event) {
+    event.preventDefault();
     var _this = this;
-    var text = ev.clipboardData.getData('text');
-    document.execCommand('insertText', false, text);
+    var pastedContent = event.clipboardData.getData('text');
+    document.execCommand('insertText', false, pastedContent);
 
-    if(validator.isURL(text)) {
+    if(validator.isURL(pastedContent)) {
       $.get('/posts/preview', {
-        'url': text
+        'url': pastedContent
       }, function(data) {
         var html = data['html'].trim();
         if (html != '') {
@@ -32,7 +32,7 @@ var ContentEditable = React.createClass({
     }
   },
   stripTags(html) {
-    return html ? html.replace(/<(?!br).*?\>/g, '') : '';
+    return html ? html.replace(/<(?!br\s*\/?)[^>]+>/g, '') : '';
   },
   render() {
     return (
