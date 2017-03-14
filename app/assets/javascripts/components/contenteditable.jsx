@@ -10,9 +10,10 @@ var ContentEditable = React.createClass({
     var html = event.target.innerHTML;
     var text = this.stripTags(html);
     if(!text) {
-      this.refs.contentEditable.innerHTML = '';
+      this.setState({content: ''});
     }
     this.setState({text: text});
+    this.props.handleChange(event, text);
   },
   onPaste(event) {
     event.preventDefault();
@@ -39,7 +40,6 @@ var ContentEditable = React.createClass({
       <div>
         <div className="contenteditable">
           <div ref="contentEditable" contentEditable className="editable form-control input-mentionable" onInput={this.handleChange} onPaste={this.onPaste} placeholder={this.props.placeholder} dangerouslySetInnerHTML={{__html: this.state.content}}></div>
-          <input type="hidden" name={this.props.name} value={this.state.text}></input>
         </div>
         <LinkPreview html={this.state.linkPreviewHTML} name={this.props.previewName} />
       </div>
