@@ -5,7 +5,12 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_commentable, only: :create
-  respond_to :js
+  respond_to :js, :json
+
+  def index
+    @comments = Comment.where('commentable_type = ? AND commentable_id = ?', params[:commentable_type], params[:commentable_id]).limit(params[:limit])
+    render json: @comments, each_serializer: CommentSerializer
+  end
 
   def create
     @comment = @commentable.comments.new do |comment|
