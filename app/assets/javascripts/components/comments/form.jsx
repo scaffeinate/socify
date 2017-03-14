@@ -1,7 +1,7 @@
 var CommentsForm = React.createClass({
   render() {
     return (
-      <form action={this.props.url} method="post" className="form comments-form" data-img-src="true">
+      <form action={this.props.url} className="form comments-form" onSubmit={this.props.onSubmit}>
         <input type='hidden' name='authenticity_token' value={this.props.authenticityToken} />
         <div className="form-group">
           <div className="row">
