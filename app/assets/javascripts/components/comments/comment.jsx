@@ -22,7 +22,7 @@ var Comment = React.createClass({
         </div>
         <div className="row">
           <div className="comment-content">
-            <span className="text">{this.props.comment.comment}</span>
+            <div className="text" dangerouslySetInnerHTML={{__html: this.props.comment.comment}}></div>
           </div>
         </div>
         <div className="row">

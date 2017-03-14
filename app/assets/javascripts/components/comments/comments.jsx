@@ -11,7 +11,8 @@ var Comments = React.createClass({
       dataType: 'json',
       data: {
         commentable_type: resource.type,
-        commentable_id: resource.id
+        commentable_id: resource.id,
+        limit: 3
       },
       success: function(data) {
         this.setState({data: data});
@@ -27,7 +28,7 @@ var Comments = React.createClass({
   render() {
     var comments = this.state.data.map(function(comment, index) {
       return(
-        <Comment key={index} comment={comment} user={comment.user} shouldRenderActions={comment.shouldRenderActions || false} />
+        <Comment key={index} comment={comment} user={comment.user} shouldRenderActions={comment.belongs_to_current_user || false} />
       );
     });
     return(
