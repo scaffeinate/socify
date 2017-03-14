@@ -7,7 +7,7 @@ var CommentActions = React.createClass({
         </a>
         <ul className="dropdown-menu">
           <li>
-            <a href='#'>Delete</a>
+            <a href='#' onClick={this.props.OnDelete}>Delete</a>
           </li>
         </ul>
       </div>
