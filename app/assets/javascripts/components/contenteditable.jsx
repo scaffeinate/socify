@@ -2,8 +2,7 @@ var ContentEditable = React.createClass({
   getInitialState() {
     return {
       text: this.stripTags(this.props.content),
-      content: this.stripTags(this.props.content),
-      linkPreviewHTML: this.props.linkPreviewHTML || ''
+      content: this.stripTags(this.props.content)
     }
   },
   handleChange(event) {
@@ -20,17 +19,7 @@ var ContentEditable = React.createClass({
     var _this = this;
     var pastedContent = event.clipboardData.getData('text');
     document.execCommand('insertText', false, pastedContent);
-
-    if(validator.isURL(pastedContent)) {
-      $.get('/posts/preview', {
-        'url': pastedContent
-      }, function(data) {
-        var html = data['html'].trim();
-        if (html != '') {
-          _this.setState({linkPreviewHTML: html});
-        }
-      });
-    }
+    this.props.onPaste(pastedContent);
   },
   stripTags(html) {
     return html ? html.replace(/<(?!br\s*\/?)[^>]+>/g, '') : '';
@@ -41,7 +30,6 @@ var ContentEditable = React.createClass({
         <div className="contenteditable">
           <div ref="contentEditable" contentEditable className="editable form-control input-mentionable" onInput={this.handleChange} onPaste={this.onPaste} placeholder={this.props.placeholder} dangerouslySetInnerHTML={{__html: this.state.content}}></div>
         </div>
-        <LinkPreview html={this.state.linkPreviewHTML} name={this.props.previewName} />
       </div>
     );
   }
