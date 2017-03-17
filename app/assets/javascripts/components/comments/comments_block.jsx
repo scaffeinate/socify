@@ -22,9 +22,26 @@ var CommentsBlock = React.createClass({
       }.bind(this)
     });
   },
-  onSubmit(event) {
+  onSubmit(event, params) {
     event.preventDefault();
-    console.log(event);
+    if(!params) {
+      return;
+    }
+
+    var _this = this;
+    $.ajax({
+      url: this.props.newCommentURL,
+      dataType: 'json',
+      type: 'POST',
+      data: params,
+      success: function(data) {
+        var _data = _this.state.data.concat([data]);
+        _this.setState({data: _data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.commentsURL, status, err.toString());
+      }.bind(this)
+    });
   },
   componentDidMount() {
     this.loadComments();
@@ -33,7 +50,7 @@ var CommentsBlock = React.createClass({
     return(
       <div className="comments-block">
         <div className="row">
-          <CommentsForm url={this.props.newCommentURL} authenticityToken={this.props.authenticity_token}
+          <CommentsForm authenticityToken={this.props.authenticity_token}
             userLinkTo={this.props.userLinkTo} userAvatar={this.props.userAvatar} onSubmit={this.onSubmit} />
         </div>
         <div className="row">

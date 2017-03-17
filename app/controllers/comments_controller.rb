@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
       comment.user = current_user
     end
     @comment.save
+    render json: @comment
   end
 
   def destroy
