@@ -1,6 +1,6 @@
 var Comment = React.createClass({
   onDelete(event) {
-    console.log('On delete');
+    this.props.onDelete(event, this.props.comment.id);
   },
   render() {
     var commentActions = '';
