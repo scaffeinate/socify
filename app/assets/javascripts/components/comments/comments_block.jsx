@@ -43,6 +43,24 @@ var CommentsBlock = React.createClass({
       }.bind(this)
     });
   },
+  onDelete(event, id) {
+    event.preventDefault();
+    var _this = this;
+    $.ajax({
+      url: '/comments/' + id,
+      dataType: 'json',
+      type: 'DELETE',
+      success: function(data) {
+        var _data = _this.state.data.filter(function(obj) {
+            return data.id !== obj.id;
+        });
+        _this.setState({data: _data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+
+      }.bind(this)
+    });
+  },
   componentDidMount() {
     this.loadComments();
   },
@@ -55,7 +73,7 @@ var CommentsBlock = React.createClass({
         </div>
         <div className="row">
           <div className="comments">
-            <Comments data={this.state.data} />
+            <Comments data={this.state.data} onDelete={this.onDelete} />
           </div>
         </div>
       </div>
