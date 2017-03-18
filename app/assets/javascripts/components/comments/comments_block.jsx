@@ -6,12 +6,12 @@ var CommentsBlock = React.createClass({
   },
   loadComments() {
     $.ajax({
-      url: this.props.url,
+      url: '/comments',
       type: 'get',
       dataType: 'json',
       data: {
-        commentable_type: this.props.resource_type,
-        commentable_id: this.props.resource_id,
+        commentable_type: this.props.commentable_type,
+        commentable_id: this.props.commentable_id,
         limit: 3
       },
       success: function(data) {
@@ -28,9 +28,12 @@ var CommentsBlock = React.createClass({
       return;
     }
 
+    params.commentable_type = this.props.commentable_type;
+    params.commentable_id = this.props.commentable_id;
+
     var _this = this;
     $.ajax({
-      url: this.props.newCommentURL,
+      url: '/comments',
       dataType: 'json',
       type: 'POST',
       data: params,
