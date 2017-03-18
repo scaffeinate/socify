@@ -10,16 +10,9 @@ var CommentsForm = React.createClass({
   },
   onPaste(pastedContent) {
     var _this = this;
-    if(validator.isURL(pastedContent)) {
-      $.get('/posts/preview', {
-        'url': pastedContent
-      }, function(data) {
-        var html = data['html'].trim();
-        if (html != '') {
-          _this.setState({linkPreviewHTML: html});
-        }
-      });
-    }
+    Utils.fetchPreview(pastedContent, function(html) {
+      _this.setState({linkPreviewHTML: html});
+    });
   },
   handleSubmit(event) {
     event.preventDefault();

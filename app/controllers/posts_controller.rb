@@ -44,11 +44,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def preview
-    @preview = Onebox.preview(params[:url])
-    render json: { html: @preview.to_s }, status: 200
-  end
-
   private
 
   def set_post

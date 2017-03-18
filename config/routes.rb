@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :events, except: [:edit, :update]
   resources :photo_albums
   resources :photos, only: [:create, :destroy]
+  resources :previews, only: [:index]
 
   authenticated :user do
     root to: 'home#index', as: 'home'
