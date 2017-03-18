@@ -1,11 +1,21 @@
 var CreatedAt = React.createClass({
-  componentDidMount() {
-    $(this.refs.createdAt).timeago();
+  timeagoInstance: null,
+  getInitialState() {
+    return {
+      isoTime: this.props.isoTime
+    }
+  },
+  componentWillMount() {
+    if(this.timeagoInstance === null) {
+      this.timeagoInstance = new timeago();
+    }
+    var formattedTime = this.timeagoInstance.format(this.props.isoTime);
+    this.setState({isoTime: formattedTime});
   },
   render() {
     return (
-      <time ref="createdAt" dateTime={this.props.isoTime}>
-        {this.props.isoTime}
+      <time dateTime={this.state.isoTime}>
+        {this.state.isoTime}
       </time>
     )
   }
