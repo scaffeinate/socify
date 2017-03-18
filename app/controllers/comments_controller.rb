@@ -4,7 +4,6 @@
 
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_commentable, only: :create
   respond_to :js, :json
 
   def index
@@ -13,7 +12,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @commentable.comments.new do |comment|
+    @comment = Comment.new do |comment|
+      comment.commentable_type = params[:commentable_type]
+      comment.commentable_id = params[:commentable_id]
       comment.comment = params[:comment_text]
       comment.user = current_user
     end
@@ -23,14 +24,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = current_user.comments.find(params[:id])
-    @comment_id = params[:id]
     @comment.destroy
-  end
-
-  private
-
-  def find_commentable
-    @commentable_type = params[:commentable_type].classify
-    @commentable = @commentable_type.constantize.find(params[:commentable_id])
+    render json: @comment
   end
 end
