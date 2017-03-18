@@ -1,4 +1,0 @@
-<% @div = "#{@commentable_type.underscore.dasherize}-#{@commentable.id}" %>
-$("#<%= @div %> .comments").prepend("<%=j render(@comment) %>");
-$('.timeago').timeago();
-ReactRailsUJS.mountComponents();
