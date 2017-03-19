@@ -52,7 +52,6 @@ gem 'counter_culture', '~> 0.1.33'
 
 gem 'faker'
 gem 'populator'
-gem 'auto_html', '~>1.6.4'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
