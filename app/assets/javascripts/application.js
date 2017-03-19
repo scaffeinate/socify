@@ -19,7 +19,7 @@
 //= require dropzone
 //= require alertify
 //= require lightbox.min
-//= require jquery.timeago
+//= require timeago.min
 //= require validator.min
 //= require react
 //= require react_ujs

@@ -1,13 +1,13 @@
 var ContentEditable = React.createClass({
   getInitialState() {
     return {
-      text: this.stripTags(this.props.content),
-      content: this.stripTags(this.props.content)
+      text: Utils.stripTags(this.props.content),
+      content: Utils.stripTags(this.props.content)
     }
   },
   handleChange(event) {
     var html = event.target.innerHTML;
-    var text = this.stripTags(html);
+    var text = Utils.stripTags(html);
     if(!text) {
       this.setState({content: ''});
     }
@@ -20,9 +20,6 @@ var ContentEditable = React.createClass({
     var pastedContent = event.clipboardData.getData('text');
     document.execCommand('insertText', false, pastedContent);
     this.props.onPaste(pastedContent);
-  },
-  stripTags(html) {
-    return html ? html.replace(/<(?!br\s*\/?)[^>]+>/g, '') : '';
   },
   render() {
     return (

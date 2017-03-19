@@ -16,7 +16,12 @@ var Utils = (function() {
     }
   };
 
+  var stripTags = function(html) {
+    return html ? html.replace(/<(?!br\s*\/?)[^>]+>/g, '') : '';
+  };
+
   return {
-    fetchPreview: fetchPreview
+    fetchPreview: fetchPreview,
+    stripTags: stripTags
   }
 })();
