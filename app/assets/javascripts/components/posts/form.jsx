@@ -1,7 +1,7 @@
 var PostsForm = React.createClass({
   getInitialState() {
     return {
-      inputText: Utils.stripTags(this.props.post.content),
+      inputText: Utils.stripTags(this.props.postContent),
       linkPreviewHTML: this.props.linkPreviewHTML || ''
     }
   },
@@ -20,9 +20,9 @@ var PostsForm = React.createClass({
         actionURL = '/posts';
         method = 'post';
 
-    if(this.props.edit) {
-      imgPreview = <ImagePreview src={this.props.post.attachment.url} className='img-preview-sm' />;
-      actionURL = '/posts/' + this.props.post.id;
+    if(this.props.postId) {
+      imgPreview = <ImagePreview src={this.props.attachment} className='img-preview-sm' />;
+      actionURL = '/posts/' + this.props.postId;
       method = 'put';
       inputFileField = '';
     }
@@ -32,7 +32,7 @@ var PostsForm = React.createClass({
         <input type='hidden' name='authenticity_token' value={this.props.authenticity_token} />
         <input type='hidden' name='_method' value={method} />
         <div className="form-group">
-          <ContentEditable placeholder="What's up?" content={this.props.post.content} handleChange={this.handleChange} onPaste={this.onPaste}></ContentEditable>
+          <ContentEditable placeholder="What's up?" content={this.props.postContent} handleChange={this.handleChange} onPaste={this.onPaste}></ContentEditable>
           <input name='post[content]' type="hidden" value={this.state.inputText}></input>
           <LinkPreview name='post[preview_html]' html={this.state.linkPreviewHTML}  />
         </div>
@@ -45,7 +45,7 @@ var PostsForm = React.createClass({
         <div className="form-group">
           <button type="submit" className="btn btn-primary">
             <i className="icon-paper-plane"></i>
-            {this.props.edit ? 'Update' : 'Post'}
+            {this.props.postId ? 'Update' : 'Post'}
           </button>
         </div>
       </form>
