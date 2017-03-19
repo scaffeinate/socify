@@ -1,6 +1,7 @@
 # Copyright (c) 2015, @sudharti(Sudharsanan Muralidharan)
 # Socify is an Open source Social network written in Ruby on Rails This file is licensed
 # under GNU GPL v2 or later. See the LICENSE.
+include Shared::AutoLink
 
 class CommentsController < ApplicationController
   before_action :authenticate_user!
@@ -15,7 +16,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new do |comment|
       comment.commentable_type = params[:commentable_type]
       comment.commentable_id = params[:commentable_id]
-      comment.comment = params[:comment_text]
+      comment.comment = link_urls(params[:comment_text])
       comment.user = current_user
     end
     @comment.save

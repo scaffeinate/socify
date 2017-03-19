@@ -30,8 +30,7 @@ class PostsController < ApplicationController
 
   def update
     params = post_params
-    params[:content] = link_urls(params[:content])
-    params[:attachment] = fetch_attachment(params[:attachment])
+    params[:content] = link_urls(post_params[:content])
     @post.update(params)
     redirect_to @post
   end
