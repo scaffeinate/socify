@@ -26,6 +26,7 @@ var InputFileField = React.createClass({
   onRemoveClick(event) {
     this.setState({attachment: ''});
     this.setState({preview: ''});
+    this.setState({data_uri: ''});
   },
   render() {
     return (
