@@ -216,17 +216,17 @@ div.editable {
 /***********************************************/
 
 /* Link preview with Onebox styles start */
-.autobox-preview {
+.onebox-preview {
   width: 100%;
   @extend .well;
   padding: 10px;
   margin-bottom: 10px;
 
-  .onebox {
-    iframe {
-      width: 100%;
-    }
+  iframe {
+    width: 100%;
+  }
 
+  .onebox {
     .source {
       @extend .label, .label-default;
       display: inline-block;
