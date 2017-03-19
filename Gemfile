@@ -52,7 +52,6 @@ gem 'counter_culture', '~> 0.1.33'
 
 gem 'faker'
 gem 'populator'
-gem 'auto_html', '~>1.6.4'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -61,6 +60,12 @@ gem 'sanitize'
 
 gem 'dropzonejs-rails'
 gem 'mini_magick'
+gem 'onebox'
+gem 'twitter-text'
+
+gem 'react-rails'
+gem 'active_model_serializers'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

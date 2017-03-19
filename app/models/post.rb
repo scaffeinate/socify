@@ -17,13 +17,12 @@ class Post < ActiveRecord::Base
 
   mount_uploader :attachment, AvatarUploader
 
-  validates_presence_of :content
+  validate :content_or_attachment
   validates_presence_of :user
 
-  auto_html_for :content do
-    image
-    youtube(width: 400, height: 250, autoplay: true)
-    link target: '_blank', rel: 'nofollow'
-    simple_format
+  private
+
+  def content_or_attachment
+    errors[:base] << 'Post cant be blank' if content.blank? && attachment.blank?
   end
 end

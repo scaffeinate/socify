@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     @user = current_user
   end
 
+  def set_mentionable
+    @mentionable = current_user.following_users.to_json(only: [:id, :name])
+  end
+
   protected
 
   def configure_permitted_parameters

@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="row">
-    <%= render 'shared/created_at', activity: photo_album %>
+    <%= render 'shared/created_at', resource: photo_album %>
   </div>
   <div class="row">
     <div class="content">
@@ -41,6 +41,6 @@
     </div>
   </div>
   <div class="row">
-    <%= render 'shared/comment/comments', resource: photo_album, expand: (defined?(expand_comments) && expand_comments) %>
+    <%= render 'comments/comments_block', resource: photo_album, expand: (defined?(expand_comments) && expand_comments) %>
   </div>
 </div>

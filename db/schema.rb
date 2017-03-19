@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608080500) do
+ActiveRecord::Schema.define(version: 20170301184306) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -124,14 +124,14 @@ ActiveRecord::Schema.define(version: 20160608080500) do
   add_index "photos", ["photo_album_id"], name: "index_photos_on_photo_album_id"
 
   create_table "posts", force: true do |t|
-    t.text     "content",                     null: false
+    t.text     "content",                      null: false
     t.integer  "user_id"
     t.string   "attachment"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cached_votes_up", default: 0
     t.integer  "comments_count",  default: 0
-    t.text     "content_html"
+    t.text     "preview_html",    default: "", null: false
   end
 
   add_index "posts", ["cached_votes_up"], name: "index_posts_on_cached_votes_up"

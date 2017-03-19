@@ -1,0 +1,36 @@
+<div id="post-<%= post.id %>" class="post-activity">
+  <div class="row">
+    <div class="activity-user-info">
+      <%= render 'shared/avatar', user: post.user %>
+      <h4 class="name"><%= link_to post.user.name, user_path(post.user) %></h4>
+    </div>
+    <div class="actions">
+      <%= render 'posts/actions', remote: true, post: post %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="activity-created-at">
+      <%= render 'shared/created_at', resource: post %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="post-activity-content">
+      <div class="content-html">
+        <%= post.content.html_safe %>
+      </div>
+      <% if post.attachment.present? %>
+        <%= react_component 'ImagePreview', {src: post.attachment.url} %>
+      <% elsif post.preview_html.present? %>
+        <%= react_component 'LinkPreview', {html: post.preview_html} %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="like-and-comment">
+      <%= render 'shared/like_and_comment', resource: post %>
+    </div>
+  </div>
+  <div class="row">
+    <%= render 'comments/comments_block', resource: post, expand: (defined?(expand_comments) && expand_comments) %>
+  </div>
+</div>

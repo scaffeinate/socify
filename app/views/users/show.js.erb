@@ -1,3 +1,4 @@
 $('#activities').append("<%= j render_activities(@activities, layout: '/shared/activity') %>");
 
 <%= render 'shared/paginate', resources: @activities %>
+ReactRailsUJS.mountComponents();

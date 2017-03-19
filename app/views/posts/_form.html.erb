@@ -1,18 +1,8 @@
-<%= form_for(@post) do |f| %>
-  <div class="form-group">
-    <div id="post-content" contenteditable="true" class="editable form-control input-mentionable" placeholder="What's up?"></div>
-    <%= f.hidden_field :content, class: 'form-control input-mentionable', autofocus: true %>
-  </div>
-  <div id="img-preview" class="form-group hidden">
-    <%= image_tag '' %>
-  </div>
-  <div class="form-group hidden">
-    <%= f.file_field :attachment %>
-  </div>
-  <div class="form-group">
-    <a id="post-attachment" href="javascript:void(0);" class="pull-right btn btn-primary">
-      <i class="icon-attach-1"></i>
-    </a>
-    <%= button_tag(type: :submit, class: 'btn btn-primary') do %><i class="icon-paper-plane"></i> Post<% end %>
-  </div>
-<% end %>
+<%= react_component 'PostsForm', {
+    authenticity_token: form_authenticity_token,
+    postId: @post.id,
+    attachment: @post.attachment.url,
+    postContent: @post.content,
+    linkPreviewHTML: @post.preview_html
+  }
+%>

@@ -14,6 +14,11 @@ GEM
       activesupport (= 4.1.6)
       builder (~> 3.1)
       erubis (~> 2.7.0)
+    active_model_serializers (0.10.2)
+      actionpack (>= 4.1, < 6)
+      activemodel (>= 4.1, < 6)
+      jsonapi (~> 0.1.1.beta2)
+      railties (>= 4.1, < 6)
     activemodel (4.1.6)
       activesupport (= 4.1.6)
       builder (~> 3.1)
@@ -35,12 +40,13 @@ GEM
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
-    auto_html (1.6.4)
-      redcarpet (~> 3.1)
-      rinku (~> 1.5.0)
     autoprefixer-rails (6.3.7)
       execjs
     aws_cf_signer (0.1.3)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -61,6 +67,8 @@ GEM
       aws_cf_signer
       rest-client
     coderay (1.1.1)
+    coffee-script-source (1.12.2)
+    connection_pool (2.2.1)
     counter_culture (0.1.34)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -84,6 +92,7 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
+    fast_blank (1.0.0)
     ffi (1.9.13)
     formatador (0.2.5)
     friendly_id (5.0.5)
@@ -102,6 +111,7 @@ GEM
       rspec (>= 2.14, < 4.0)
     hashie (3.4.4)
     hike (1.2.3)
+    htmlentities (4.3.4)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -110,6 +120,11 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    jsonapi (0.1.1.beta6)
+      jsonapi-parser (= 0.1.1.beta3)
+      jsonapi-renderer (= 0.1.1.beta1)
+    jsonapi-parser (0.1.1.beta3)
+    jsonapi-renderer (0.1.1.beta1)
     jwt (1.5.4)
     kgio (2.10.0)
     launchy (2.4.3)
@@ -131,9 +146,11 @@ GEM
     mini_magick (4.5.1)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
+    moneta (0.8.1)
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    mustache (1.0.3)
     nenv (0.3.0)
     netrc (0.11.0)
     nokogiri (1.6.8)
@@ -163,6 +180,14 @@ GEM
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    onebox (1.8.2)
+      fast_blank (>= 1.0.0)
+      htmlentities (~> 4.3.4)
+      moneta (~> 0.8)
+      multi_json (~> 1.11)
+      mustache
+      nokogiri (~> 1.6.6)
+      sanitize
     orm_adapter (0.5.0)
     pg (0.18.4)
     pkg-config (1.1.7)
@@ -204,14 +229,19 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
-    redcarpet (3.3.4)
+    react-rails (1.10.0)
+      babel-transpiler (>= 0.7.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     rest-client (2.0.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rinku (1.5.1)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -252,6 +282,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
+    twitter-text (1.14.5)
+      unf (~> 0.1.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -270,10 +302,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   acts_as_commentable
   acts_as_follower
   acts_as_votable (~> 0.10.0)
-  auto_html (~> 1.6.4)
   autoprefixer-rails
   better_errors
   binding_of_caller
@@ -294,15 +326,18 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-google-oauth2 (~> 0.3.0)
+  onebox
   pg
   populator
   public_activity
   rails (= 4.1.6)
   rails_12factor
+  react-rails
   sanitize
   sass-rails (~> 4.0.3)
   spring
   sqlite3
+  twitter-text
   uglifier (>= 1.3.0)
   unicorn
   will_paginate (~> 3.0.6)

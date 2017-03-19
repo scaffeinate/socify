@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :posts
-  resources :comments, only: [:create, :destroy]
+  resources :posts do
+    collection do
+      get :preview
+    end
+  end
+  resources :comments, only: [:index, :create, :destroy]
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users do
     member do
@@ -16,6 +20,7 @@ Rails.application.routes.draw do
   resources :events, except: [:edit, :update]
   resources :photo_albums
   resources :photos, only: [:create, :destroy]
+  resources :previews, only: [:index]
 
   authenticated :user do
     root to: 'home#index', as: 'home'

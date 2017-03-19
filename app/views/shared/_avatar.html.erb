@@ -1,5 +1,1 @@
-<% if user %>
-  <%= link_to user_path(user) do %>
-    <%= image_tag user.avatar.url || 'avatar.png', class: klass ||= 'avatar' %>
-  <% end %>
-<% end %>
+<%= react_component 'Avatar', { linkTo: user_path(user), avatar: user.avatar.url }, { class: 'inline-block' } %>
