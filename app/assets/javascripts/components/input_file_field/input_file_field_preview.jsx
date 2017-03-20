@@ -10,3 +10,5 @@ var InputFileFieldPreview = React.createClass({
     )
   }
 });
+
+module.exports = InputFileFieldPreview;

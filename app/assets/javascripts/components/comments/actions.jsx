@@ -14,3 +14,5 @@ var CommentActions = React.createClass({
     )
   }
 });
+
+module.exports = CommentActions;

@@ -22,3 +22,5 @@ var ContentEditable = React.createClass({
     );
   }
 });
+
+module.exports = ContentEditable;
