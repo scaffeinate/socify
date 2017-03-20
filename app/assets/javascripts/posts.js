@@ -9,7 +9,7 @@ $(document).ready(function() {
       if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
         $.getScript(url);
       }
-    }, 150);
+    }, 50);
   }
 
   $('.input-mentionable').atwho({
