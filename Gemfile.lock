@@ -56,6 +56,8 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
+    browserify-rails (1.1.0)
+      railties (>= 4.0.0, < 5.0)
     builder (3.2.2)
     carrierwave (0.11.2)
       activemodel (>= 3.2.0)
@@ -310,6 +312,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (~> 3.2.0)
+  browserify-rails
   carrierwave
   cloudinary
   counter_culture (~> 0.1.33)
