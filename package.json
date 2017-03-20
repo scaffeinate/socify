@@ -1,0 +1,26 @@
+{
+  "name": "socify",
+  "version": "2.0.0",
+  "description": "Socify is an open source social networking platform written in Ruby on Rails & React",
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "babel-preset-react": "^6.3.13",
+    "browserify": "^10.2.4",
+    "browserify-incremental": "^3.0.1",
+    "react": "15.4.1",
+    "react-dom": "15.4.1"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scaffeinate/socify.git"
+  },
+  "author": "scaffeinate",
+  "license": "GNU GPL v2",
+  "bugs": {
+    "url": "https://github.com/scaffeinate/socify/issues"
+  },
+  "homepage": "https://github.com/scaffeinate/socify#readme"
+}
