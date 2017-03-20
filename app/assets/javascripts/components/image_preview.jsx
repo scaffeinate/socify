@@ -8,3 +8,5 @@ const ImagePreview = React.createClass({
     );
   }
 });
+
+module.exports = ImagePreview;

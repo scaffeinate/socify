@@ -18,13 +18,10 @@
 //= require jquery.datetimepicker
 //= require dropzone
 //= require alertify
-//= require lightbox.min
 //= require timeago.min
 //= require validator.min
-//= require react
-//= require react_ujs
+//= require utils
 //= require components
-//= require_tree .
 
 $(document).ready(function() {
   $("#event_when").datetimepicker({

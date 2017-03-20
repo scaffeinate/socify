@@ -1,3 +1,5 @@
+var Comments = require('./comments.jsx');
+var CommentsForm = require('./form.jsx');
 var CommentsBlock = React.createClass({
   getInitialState() {
     return {
@@ -83,3 +85,5 @@ var CommentsBlock = React.createClass({
     );
   }
 });
+
+module.exports = CommentsBlock;

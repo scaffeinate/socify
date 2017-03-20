@@ -1,3 +1,5 @@
+var InputFileFieldPreview = require('./input_file_field_preview.jsx');
+
 var InputFileField = React.createClass({
   getInitialState() {
     return {
@@ -43,3 +45,5 @@ var InputFileField = React.createClass({
     )
   }
 });
+
+module.exports = InputFileField;

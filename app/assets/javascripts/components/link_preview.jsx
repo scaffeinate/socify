@@ -8,3 +8,5 @@ var LinkPreview = React.createClass({
     );
   }
 });
+
+module.exports = LinkPreview;

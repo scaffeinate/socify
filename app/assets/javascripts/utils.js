@@ -8,11 +8,11 @@ var Utils = (function() {
         if (html != '') {
           successCallback(html);
         } else {
-          failureCallback('HTML not valid');
+          console.log('HTML not valid');
         }
       });
     } else {
-      failureCallback('URL not valid');
+      console.log('URL not valid');
     }
   };
 

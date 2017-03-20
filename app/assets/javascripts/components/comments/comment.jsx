@@ -1,3 +1,4 @@
+var CommentActions = require('./actions.jsx');
 var Comment = React.createClass({
   onDelete(event) {
     this.props.onDelete(event, this.props.comment.id);
@@ -34,3 +35,5 @@ var Comment = React.createClass({
     )
   }
 });
+
+module.exports = Comment;

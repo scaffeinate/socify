@@ -20,3 +20,5 @@ var CreatedAt = React.createClass({
     )
   }
 });
+
+module.exports = CreatedAt;

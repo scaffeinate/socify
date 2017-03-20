@@ -1,3 +1,4 @@
+var InputFileField = require('../input_file_field/input_file_field.jsx');
 var PostsForm = React.createClass({
   getInitialState() {
     return {
@@ -52,3 +53,5 @@ var PostsForm = React.createClass({
     );
   }
 });
+
+module.exports = PostsForm;
