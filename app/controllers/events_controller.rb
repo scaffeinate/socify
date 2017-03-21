@@ -7,6 +7,10 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_event, only: [:show, :destroy]
 
+  def index
+    @events = current_user.events.paginate(page: params[:page], per_page: 10)
+  end
+
   def new
     @event = Event.new
   end

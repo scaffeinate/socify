@@ -10,8 +10,8 @@
       <% end %>
     <% end %>
     <% if is_current_user?(@user) %>
-      <%= link_to new_event_path , class: "list-group-item #{is_active?('events', 'new')}" do %>
-        <i class="icon-calendar-empty"></i> Create Event
+      <%= link_to events_path , class: "list-group-item #{is_active?('events', 'new')}" do %>
+        <i class="icon-calendar-empty"></i> Events
       <% end %>
     <% end %>
     <%= link_to photo_albums_path, class: "list-group-item #{is_active?('photo_albums', 'index')}" do %>
