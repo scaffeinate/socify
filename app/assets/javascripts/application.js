@@ -24,9 +24,30 @@
 //= require components
 
 $(document).ready(function() {
+
   $("#event_when").datetimepicker({
     format: 'Y/m/d H:i'
   });
+
+  if ($(".pagination").size() > 0) {
+    $(".pagination").hide();
+    $("#endless-scroll").removeClass("hidden");
+    $(window).bindWithDelay("scroll", function() {
+      var url = $("a.next_page").attr("href");
+      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+        $.getScript(url);
+      }
+    }, 50);
+  }
+
+  $('.input-mentionable').atwho({
+    at: '@',
+    data: $('#mentionable-data').data('content'),
+    insertTpl: '<a href="/users/${id}">${name}</a>',
+    displayTpl: '<li data-id="${id}"><span>${name}</span></li>',
+    limit: 15
+  });
+
   $("#user_dob").datetimepicker({
     timepicker: false,
     format: 'Y/m/d',
