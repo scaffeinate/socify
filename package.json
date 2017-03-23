@@ -22,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/scaffeinate/socify/issues"
   },
-  "homepage": "https://github.com/scaffeinate/socify#readme"
+  "homepage": "https://github.com/scaffeinate/socify#readme",
+  "dependencies": {
+    "input-moment": "^0.3.2",
+    "moment": "^2.18.1"
+  }
 }
