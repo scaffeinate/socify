@@ -1,25 +1,27 @@
-window.InputMoment = require('input-moment');
-
+DateTimePickerModal = require('../datetimepickermodal.jsx');
 var EventsForm = React.createClass({
   getInitialState() {
     return {
-      moment: Moment()
+
     }
   },
-  handleChange(moment) {
-    this.setState({moment: moment});
-  },
-  handleSave() {
-
+  handleClick() {
+    $('.datetimepickermodal').modal('show');
   },
   render() {
     return(
-      <InputMoment
-        moment={this.state.moment}
-        onChange={this.handleChange}
-        onSave={this.handleSave}
-        prevMonthIcon="ion-ios-arrow-left"
-        nextMonthIcon="ion-ios-arrow-right" />
+      <div>
+        <form>
+          <div className="form-group">
+            <label>Event Name</label>
+            <input type='text' placeholder='Event Name' name='name' value={this.state.event_name} className='form-control' autoFocus />
+          </div>
+          <div className="form-group">
+            <label>When is it?</label>
+            <input type='text' placeholder='When is it?' name='when' value={this.state.date} className='form-control' onClick={this.handleClick} />
+          </div>
+        </form>
+      </div>
     );
   }
 });
