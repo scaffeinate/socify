@@ -9,7 +9,7 @@ var DateTimePickerModal = React.createClass({
     this.setState({moment: moment});
   },
   handleSave() {
-
+    this.props.onDateSelected(this.state.moment);
   },
   render() {
     return (
