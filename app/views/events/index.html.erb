@@ -2,6 +2,11 @@
   <div class="resources-block">
     <h4 class="underlined">EVENTS</h4>
     <div class="row">
+      <%= link_to new_event_path, class: 'btn btn-sm btn-primary pull-right' do %>
+        <i class="icon-plus"></i> New Event
+      <% end %>
+    </div>
+    <div class="row">
       <div id="events">
         <%= render(@events) || render('shared/no_resource', resources: 'Events') %>
       </div>
