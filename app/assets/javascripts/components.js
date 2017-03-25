@@ -5,6 +5,7 @@ window.React = global.React = require('react');
 window.ReactDOM = global.ReactDOM = require('react-dom');
 
 window.Moment = require('moment');
+window.PlacesAutocomplete = require('react-places-autocomplete').default;
 
 window.Avatar = require('./components/avatar.jsx');
 window.PostsForm = require('./components/posts/form.jsx');
