@@ -15,20 +15,12 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bindWithDelay
-//= require jquery.datetimepicker
 //= require dropzone
-//= require alertify
-//= require timeago.min
 //= require validator.min
 //= require utils
 //= require components
 
 $(document).ready(function() {
-
-  $("#event_when").datetimepicker({
-    format: 'Y/m/d H:i'
-  });
-
   if ($(".pagination").size() > 0) {
     $(".pagination").hide();
     $("#endless-scroll").removeClass("hidden");
@@ -46,11 +38,5 @@ $(document).ready(function() {
     insertTpl: '<a href="/users/${id}">${name}</a>',
     displayTpl: '<li data-id="${id}"><span>${name}</span></li>',
     limit: 15
-  });
-
-  $("#user_dob").datetimepicker({
-    timepicker: false,
-    format: 'Y/m/d',
-    maxDate: '0'
   });
 });
