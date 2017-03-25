@@ -6,7 +6,7 @@ var EventsForm = React.createClass({
     }
   },
   handleClick() {
-    $('.datetimepickermodal').modal('show');
+    $('#datetimepickermodal').modal('show');
   },
   render() {
     return(

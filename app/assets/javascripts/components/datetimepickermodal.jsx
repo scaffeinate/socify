@@ -13,7 +13,7 @@ var DateTimePickerModal = React.createClass({
   },
   render() {
     return (
-      <div className="datetimepickermodal fade" role="dialog">
+      <div id="datetimepickermodal" className="modal fade" role="dialog">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -27,10 +27,6 @@ var DateTimePickerModal = React.createClass({
                 onSave={this.handleSave}
                 prevMonthIcon="icon-left-open"
                 nextMonthIcon="icon-right-open" />
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary">Save</button>
             </div>
           </div>
         </div>
