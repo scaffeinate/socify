@@ -1,8 +1,8 @@
-DateTimePickerModal = require('../datetimepickermodal.jsx');
+var DateTimePickerModal = require('../datetimepickermodal.jsx');
+var Places = require('../places.jsx');
 var EventsForm = React.createClass({
   getInitialState() {
     return {
-      address: '',
       date: this.formatDate()
     }
   },
@@ -14,16 +14,13 @@ var EventsForm = React.createClass({
     var formattedDate = this.formatDate(moment);
     this.setState({date: formattedDate});
   },
-  handlePlaceChange(address) {
-    this.setState({address: address});
-  },
   formatDate(moment) {
     var m = Moment();
     if(moment) {
       m = Moment(moment);
     }
 
-    return m.format('MMMM Do YYYY, h:mm:ss a');
+    return m.format('MMMM Do YYYY, h:mm a');
   },
   render() {
     return(
@@ -39,7 +36,7 @@ var EventsForm = React.createClass({
           </div>
           <div className="form-group">
             <label>Location</label>
-            <PlacesAutocomplete value={this.state.address} onChange={this.handlePlaceChange} classNames={{input:'form-control'}} />
+            <Places />
           </div>
         </form>
         <DateTimePickerModal onDateSelected={this.handleDateSelected} />
