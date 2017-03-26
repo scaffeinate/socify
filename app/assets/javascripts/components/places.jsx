@@ -34,7 +34,7 @@ var Places = React.createClass({
   render() {
     return (
       <div>
-        <PlacesAutocomplete inputName={this.props.inputName} value={this.state.address} onChange={this.handlePlaceChange} onSelect={this.handlePlaceSelect} classNames={{input:'form-control'}} />
+        <PlacesAutocomplete inputName={this.props.inputName} placeholder={this.props.inputPlaceholder} value={this.state.address} onChange={this.handlePlaceChange} onSelect={this.handlePlaceSelect} classNames={{input:'form-control'}} />
         <Map containerStyle={this.state.containerStyle} center={this.state.center} google={window.google} map={this.state.map} zoom={14}>
           <Marker name={'Place'} position={this.state.center} />
         </Map>

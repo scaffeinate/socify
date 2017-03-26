@@ -23,6 +23,8 @@ var EventsForm = React.createClass({
       var m = Moment(moment);
       return m.format('MMMM Do YYYY, h:mm a');
     }
+
+    return '';
   },
   handlePlaceSelected(address, latLng) {
     this.setState({latLng: JSON.stringify(latLng)});
@@ -33,16 +35,20 @@ var EventsForm = React.createClass({
         <form>
           <div className="form-group">
             <label>Event Name</label>
-            <input type='text' placeholder='Event Name' name='name' value={this.state.event_name} className='form-control' autoFocus />
+            <input type='text' placeholder='What&apos;s it called?' name='name' value={this.state.event_name} className='form-control' autoFocus />
           </div>
           <div className="form-group">
-            <label>When is it?</label>
+            <label>Date & Time</label>
             <input type='text' placeholder='When is it?' name='when' value={this.state.date} className='form-control' onClick={this.handleClick} onChange={function(){}} />
           </div>
           <div className="form-group">
             <label>Location</label>
-            <Places inputName='location' onPlaceSelected={this.handlePlaceSelected} />
+            <Places inputName='location' inputPlaceholder='Where is it?' onPlaceSelected={this.handlePlaceSelected} />
             <input type='hidden' name='latLng' value={this.state.latLng} />
+          </div>
+          <br />
+          <div className="form-group">
+            <button type='submit' className='btn btn-primary btn-block'>Create</button>
           </div>
         </form>
         <DateTimePickerModal onDateSelected={this.handleDateSelected} />
