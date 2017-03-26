@@ -3,11 +3,15 @@ var Places = require('../places.jsx');
 var EventsForm = React.createClass({
   getInitialState() {
     return {
-      date: this.formatDate()
+      date: this.formatDate(),
+      latLng: {}
     }
   },
   handleClick() {
-    $('#datetimepickermodal').modal('show');
+    $('#datetimepickermodal').modal({
+      backdrop: 'static',
+      keyboard: false
+    }, 'show');
   },
   handleDateSelected(moment) {
     $('#datetimepickermodal').modal('hide');
@@ -15,12 +19,13 @@ var EventsForm = React.createClass({
     this.setState({date: formattedDate});
   },
   formatDate(moment) {
-    var m = Moment();
     if(moment) {
-      m = Moment(moment);
+      var m = Moment(moment);
+      return m.format('MMMM Do YYYY, h:mm a');
     }
-
-    return m.format('MMMM Do YYYY, h:mm a');
+  },
+  handlePlaceSelected(address, latLng) {
+    this.setState({latLng: JSON.stringify(latLng)});
   },
   render() {
     return(
@@ -36,7 +41,8 @@ var EventsForm = React.createClass({
           </div>
           <div className="form-group">
             <label>Location</label>
-            <Places />
+            <Places inputName='location' onPlaceSelected={this.handlePlaceSelected} />
+            <input type='hidden' name='latLng' value={this.state.latLng} />
           </div>
         </form>
         <DateTimePickerModal onDateSelected={this.handleDateSelected} />
