@@ -23,21 +23,21 @@ var Places = React.createClass({
   handlePlaceSelect(address, placeId) {
     this.handlePlaceChange(address);
     GeocodeByAddress(address,  (err, { lat, lng }) => {
-      if (err) { console.log('Oh no!', err) }
-      center = { lat: lat, lng: lng };
-      this.setState({center: center});
-      this.setState({containerClassName: ''});
+      var latLng = {};
+      if (!err) {
+        latLng = { lat: lat, lng: lng };
+        this.setState({center: latLng});
+      }
+      this.props.onPlaceSelected(address, latLng);
     });
   },
   render() {
     return (
       <div>
-        <PlacesAutocomplete value={this.state.address} onChange={this.handlePlaceChange} onSelect={this.handlePlaceSelect} classNames={{input:'form-control'}} />
-        <div className={this.state.containerClassName}>
-          <Map containerStyle={this.state.containerStyle} center={this.state.center} google={window.google} map={this.state.map} zoom={14}>
-            <Marker name={'Place'} position={this.state.center} />
-          </Map>
-        </div>
+        <PlacesAutocomplete inputName={this.props.inputName} value={this.state.address} onChange={this.handlePlaceChange} onSelect={this.handlePlaceSelect} classNames={{input:'form-control'}} />
+        <Map containerStyle={this.state.containerStyle} center={this.state.center} google={window.google} map={this.state.map} zoom={14}>
+          <Marker name={'Place'} position={this.state.center} />
+        </Map>
       </div>
     );
   }
