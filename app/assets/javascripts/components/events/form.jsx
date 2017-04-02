@@ -41,7 +41,7 @@ var EventsForm = React.createClass({
           <input type='hidden' name='authenticity_token' value={this.props.authenticityToken} />
           <div className="form-group">
             <DropzoneUpload multiple={false} onImageUploaded={this.handleImageUpload} authenticityToken={this.props.authenticityToken} />
-            <input type='hidden' name='event[attachment_id]' value={this.state.attachmentId} />
+            <input type='hidden' name='attachment_id' value={this.state.attachmentId} />
           </div>
           <div className="form-group">
             <label>Event Name</label>

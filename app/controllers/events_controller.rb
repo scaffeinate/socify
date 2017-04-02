@@ -18,7 +18,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params.merge(user: current_user))
     if @event.save
-      @event.update_attachment(params[:event][:attachment_id])
+      @event.update_attachment(params[:attachment_id])
       redirect_to root_path
     else
       render 'new', notice: @event.errors.full_messages.first
