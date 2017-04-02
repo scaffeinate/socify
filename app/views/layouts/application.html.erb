@@ -30,6 +30,7 @@
         <%= yield %>
       <% end %>
     </div>
+    <%= render 'layouts/modals' %>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_maps_api_key %>&libraries=places"></script>
     <%= javascript_include_tag 'application' %>
   </body>
