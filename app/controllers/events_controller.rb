@@ -16,8 +16,9 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.new(event_params)
+    @event = Event.new(event_params.merge(user: current_user))
     if @event.save
+      @event.update_attachment(params[:event][:attachment_id])
       redirect_to root_path
     else
       render 'new', notice: @event.errors.full_messages.first
@@ -39,7 +40,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :when)
+    params.require(:event).permit(:name, :when, :location, :latlng)
   end
 
   def set_event

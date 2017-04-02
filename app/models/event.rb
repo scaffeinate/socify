@@ -17,4 +17,8 @@ class Event < ActiveRecord::Base
   validates_presence_of :when
   validates_presence_of :location
   validates_presence_of :user
+
+  def update_attachment(attachment_id)
+    update_attachment_resource(attachment_id, self.class.name.to_s, id)
+  end
 end

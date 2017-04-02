@@ -14,4 +14,8 @@ module Shared::Callbacks
     activity.destroy if activity.present?
     true
   end
+
+  def update_attachment_resource(attachment_id, attachable_type, attachable_id)
+    true if Attachment.update(attachment_id, attachable_type: attachable_type, attachable_id: attachable_id)
+  end
 end
