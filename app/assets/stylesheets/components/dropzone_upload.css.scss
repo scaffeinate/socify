@@ -1,0 +1,29 @@
+// Place all the styles related to the photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.dropzone {
+  background: $bg-color;
+  border: 1px solid $border-color;
+  border-style: dotted;
+  width: 100%;
+  height: 175px;
+  cursor: pointer;
+  position: relative;
+
+  .message {
+    margin-top: 85px;
+    font-family: $stylized-font;
+    font-size: $medium-font-size;
+    font-weight: lighter;
+  }
+
+  .preview {
+    width: 100%;
+    height: 100%;
+    position: 'absolute';
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
