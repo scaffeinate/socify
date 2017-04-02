@@ -5,7 +5,7 @@
       <h4 class="name"><%= link_to post.user.name, user_path(post.user) %></h4>
     </div>
     <div class="actions">
-      <%= render 'posts/actions', remote: true, post: post %>
+      <%= render 'posts/actions', is_editable: ((defined?(is_editable) && is_editable) || false), post: post %>
     </div>
   </div>
   <div class="row">
