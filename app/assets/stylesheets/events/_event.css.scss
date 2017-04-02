@@ -1,0 +1,53 @@
+.event {
+  .event-user-info {
+    @extend .col-xs-11;
+
+    .name {
+      display: inline-block;
+      margin-left: 12.5px;
+    }
+  }
+
+  .event-actions {
+    @extend .actions;
+  }
+
+  .event-created-at {
+    @extend .col-xs-offset-2;
+    margin-top: -17px;
+  }
+
+  .event-content {
+    @extend .col-xs-12;
+
+    .img-preview {
+      height: 200px;
+      overflow: hidden;
+
+      img {
+        object-fit: contain;
+      }
+    }
+
+    .event-details {
+      margin-top: 10px;
+
+      i {
+        font-size: 1.5rem;
+        width: 20px;
+        margin-right: 10px;
+      }
+
+      .calendar,
+      .location {
+        margin-top: 7px;
+      }
+
+      .text {
+        font-size: $large-font-size;
+        font-weight: 400;
+        color: $link-hover-color;
+      }
+    }
+  }
+}
