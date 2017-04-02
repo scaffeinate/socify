@@ -1,0 +1,41 @@
+<div id="event-<%= event.id %>" class="event-activity">
+  <div class="row">
+    <div class="activity-user-info">
+      <%= render 'shared/avatar', user: event.user %>
+      <h4 class="name"><%= link_to event.user.name, user_path(event.user) %></h4>
+      <span class="action">created an <%= link_to 'event', event %></span>
+    </div>
+    <div class="actions">
+      <%= render 'events/actions', remote: true, event: event %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="activity-created-at">
+      <%= render 'shared/created_at', resource: event %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="event-activity-content">
+      <% if event.attachment.present? %>
+        <%= react_component 'ImagePreview', {src: event.attachment.file_name.url} %>
+      <% end %>
+      <div class="event-details">
+        <span class="text"><%= event.name %></span>
+        <div class="calendar">
+          <i class="icon-calendar-empty"></i> <%= formatted_time(event.when) %>
+        </div>
+        <div class="location">
+          <i class="icon-location-1"></i> <%= event.location || 'Unknown' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="like-and-comment">
+      <%= render 'shared/like_and_comment', resource: event %>
+    </div>
+  </div>
+  <div class="row">
+    <%= render 'comments/comments_block', resource: event, expand: (defined?(expand_comments) && expand_comments) %>
+  </div>
+</div>

@@ -33,30 +33,6 @@
     }
   }
 
-  .event-details {
-    @extend .col-xs-6;
-    margin: 20px;
-
-    i {
-      font-size: 1.5rem;
-      width: 20px;
-    }
-
-    .calendar,
-    .location {
-      margin-top: 7px;
-    }
-
-    .location {
-      color: $light-text-color;
-    }
-
-    .text {
-      font-size: $large-font-size;
-      font-weight: 400;
-    }
-  }
-
   .content {
     @extend .col-xs-12;
     margin-top: 20px;

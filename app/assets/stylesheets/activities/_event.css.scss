@@ -1,0 +1,36 @@
+.event-activity {
+  .event-activity-content {
+    @extend .col-xs-12;
+    margin-top: 10px;
+
+    .img-preview {
+      height: 200px;
+      overflow: hidden;
+
+      img {
+        object-fit: contain;
+      }
+    }
+
+    .event-details {
+      margin-top: 10px;
+
+      i {
+        font-size: 1.5rem;
+        width: 20px;
+        margin-right: 10px;
+      }
+
+      .calendar,
+      .location {
+        margin-top: 7px;
+      }
+
+      .text {
+        font-size: $large-font-size;
+        font-weight: 400;
+        color: $link-hover-color;
+      }
+    }
+  }
+}
