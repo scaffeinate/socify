@@ -50,6 +50,7 @@ var DropzoneUpload = React.createClass({
     } else {
       this.setState({dropzoneContent: this.imageBackground(data)});
     }
+    this.props.onImageUploaded(data);
   },
   render() {
     return (
