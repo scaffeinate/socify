@@ -9,7 +9,7 @@
       </li>
       <% if is_editable %>
         <li>
-          <%= link_to 'Edit', edit_event_path(event), remote: true %>
+          <%= link_to 'Edit', edit_event_path(event) %>
         </li>
         <li>
           <%= link_to 'Delete', event_path(event), method: :delete %>

@@ -5,7 +5,7 @@
 class EventsController < ApplicationController
   before_action :set_user
   before_action :authenticate_user!
-  before_action :set_event, only: [:show, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
     @events = current_user.events.paginate(page: params[:page], per_page: 10)
@@ -29,12 +29,15 @@ class EventsController < ApplicationController
     @comments = @event.comments
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   def destroy
     @event.destroy
-    respond_to do |format|
-      format.js
-      format.html { redirect_to root_path }
-    end
+    redirect_to root_path
   end
 
   private
