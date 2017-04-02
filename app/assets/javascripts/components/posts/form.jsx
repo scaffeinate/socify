@@ -30,7 +30,7 @@ var PostsForm = React.createClass({
 
     return (
       <form action={actionURL} method="post" className="form">
-        <input type='hidden' name='authenticity_token' value={this.props.authenticity_token} />
+        <input type='hidden' name='authenticity_token' value={this.props.authenticityToken} />
         <input type='hidden' name='_method' value={method} />
         <div className="form-group">
           <ContentEditable placeholder="What's up?" content={this.props.postContent} handleChange={this.handleChange} onPaste={this.onPaste}></ContentEditable>

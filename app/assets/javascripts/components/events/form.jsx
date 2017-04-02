@@ -1,5 +1,6 @@
 var DateTimePickerModal = require('../datetimepickermodal.jsx');
 var Places = require('../places.jsx');
+var DropzoneUpload = require('../dropzone_upload.jsx');
 var EventsForm = React.createClass({
   getInitialState() {
     return {
@@ -33,6 +34,10 @@ var EventsForm = React.createClass({
     return(
       <div>
         <form>
+          <input type='hidden' name='authenticity_token' value={this.props.authenticityToken} />
+          <div className="form-group">
+            <DropzoneUpload multiple={false} authenticityToken={this.props.authenticityToken} />
+          </div>
           <div className="form-group">
             <label>Event Name</label>
             <input type='text' placeholder='What&apos;s it called?' name='name' value={this.state.event_name} className='form-control' autoFocus />

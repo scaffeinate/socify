@@ -8,10 +8,13 @@ class Event < ActiveRecord::Base
   acts_as_votable
   acts_as_commentable
 
+  has_one :attachment, as: :attachable
+
   include PublicActivity::Model
   tracked only: [:create], owner: proc { |_controller, model| model.user }
 
   validates_presence_of :name
   validates_presence_of :when
+  validates_presence_of :location
   validates_presence_of :user
 end
