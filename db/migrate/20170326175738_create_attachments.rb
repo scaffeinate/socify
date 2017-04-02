@@ -2,8 +2,8 @@ class CreateAttachments < ActiveRecord::Migration
   def change
     create_table :attachments do |t|
       t.string :file_name
-      t.string :attachable_type, null: false
-      t.integer :attachable_id, null: false
+      t.string :attachable_type, default: ''
+      t.integer :attachable_id, default: 0
 
       t.timestamps
     end

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :photo_albums
   resources :photos, only: [:create, :destroy]
   resources :previews, only: [:index]
+  resources :attachments, only: :create
 
   authenticated :user do
     root to: 'home#index', as: 'home'

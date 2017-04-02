@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20170326175738) do
 
   create_table "attachments", force: true do |t|
     t.string   "file_name"
-    t.string   "attachable_type", null: false
-    t.integer  "attachable_id",   null: false
+    t.string   "attachable_type", default: ""
+    t.integer  "attachable_id",   default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
