@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :events, except: [:edit, :update]
+  resources :events
   resources :photo_albums
   resources :photos, only: [:create, :destroy]
   resources :previews, only: [:index]

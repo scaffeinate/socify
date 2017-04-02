@@ -1,28 +1,32 @@
 <div id="event-<%= event.id %>" class="event">
   <div class="row">
-    <div class="user-info">
+    <div class="event-user-info">
       <%= render 'shared/avatar', user: event.user %>
       <h4 class="name"><%= link_to event.user.name, user_path(event.user) %></h4>
       <span class="action">created an <%= link_to 'event', event %></span>
     </div>
     <div class="actions">
-      <%= render 'events/actions', remote: remote, event: event %>
+      <%= render 'events/actions', is_editable: ((defined?(is_editable) && is_editable) || false), event: event %>
     </div>
   </div>
   <div class="row">
-    <%= render 'shared/created_at', resource: event %>
+    <div class="event-created-at">
+      <%= render 'shared/created_at', resource: event %>
+    </div>
   </div>
   <div class="row">
-    <div class="icon">
-      <%= image_tag 'event.png' %>
-    </div>
-    <div class="event-details">
-      <span class="text"><%= event.name %></span>
-      <div class="calendar">
-        <i class="icon-calendar-empty"></i> <%= formatted_time(event.when) %>
-      </div>
-      <div class="location">
-        <i class="icon-location-1"></i> <%= event.location || 'Unknown' %>
+    <div class="event-content">
+      <% if event.attachment.present? %>
+        <%= react_component 'ImagePreview', {src: event.attachment.file_name.url} %>
+      <% end %>
+      <div class="event-details">
+        <span class="text"><%= event.name %></span>
+        <div class="calendar">
+          <i class="icon-calendar-empty"></i> <%= formatted_time(event.when) %>
+        </div>
+        <div class="location">
+          <i class="icon-location-1"></i> <%= event.location || 'Unknown' %>
+        </div>
       </div>
     </div>
   </div>

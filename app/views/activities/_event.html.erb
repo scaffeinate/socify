@@ -6,7 +6,7 @@
       <span class="action">created an <%= link_to 'event', event %></span>
     </div>
     <div class="actions">
-      <%= render 'events/actions', remote: true, event: event %>
+      <%= render 'events/actions', is_editable: true, event: event %>
     </div>
   </div>
   <div class="row">

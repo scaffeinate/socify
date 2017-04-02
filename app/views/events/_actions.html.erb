@@ -7,9 +7,14 @@
       <li>
         <%= link_to 'View', event_path(event) %>
       </li>
-      <li>
-        <%= link_to 'Delete', event_path(event), method: :delete, remote: remote %>
-      </li>
+      <% if is_editable %>
+        <li>
+          <%= link_to 'Edit', edit_event_path(event), remote: true %>
+        </li>
+        <li>
+          <%= link_to 'Delete', event_path(event), method: :delete %>
+        </li>
+      <% end %>
     </ul>
   </div>
 <% end %>
