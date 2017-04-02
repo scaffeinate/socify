@@ -4,7 +4,7 @@
 include Shared::AutoLink
 
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :index
   respond_to :js, :json
 
   def index
