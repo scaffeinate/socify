@@ -27,6 +27,7 @@
     "google-maps-react": "^1.0.19",
     "input-moment": "^0.3.2",
     "moment": "^2.18.1",
+    "react-dropzone": "^3.12.2",
     "react-places-autocomplete": "^4.1.1"
   }
 }

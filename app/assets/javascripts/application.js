@@ -15,7 +15,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bindWithDelay
-//= require dropzone
 //= require validator.min
 //= require utils
 //= require components
