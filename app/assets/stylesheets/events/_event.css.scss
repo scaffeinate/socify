@@ -20,15 +20,6 @@
   .event-content {
     @extend .col-xs-12;
 
-    .img-preview {
-      height: 100px;
-      overflow: hidden;
-
-      img {
-        object-fit: contain;
-      }
-    }
-
     .event-details {
       margin-top: 10px;
 

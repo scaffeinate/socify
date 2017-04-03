@@ -17,7 +17,7 @@
   <div class="row">
     <div class="event-activity-content">
       <% if event.attachment.present? %>
-        <%= react_component 'ImagePreview', {src: event.attachment.file_name.url} %>
+        <%= react_component 'ImagePreview', {src: event.attachment.file_name.url, className: 'img-fit'} %>
       <% end %>
       <div class="event-details">
         <span class="text"><%= event.name %></span>

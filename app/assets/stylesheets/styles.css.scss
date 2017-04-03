@@ -275,6 +275,15 @@ div.editable {
 }
 /* Link preview with Onebox styles end */
 
+.img-fit {
+  height: 125px;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}
+
 /***********************************************/
 .inline-block {
   display: inline-block;

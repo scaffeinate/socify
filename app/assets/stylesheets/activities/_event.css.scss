@@ -3,15 +3,6 @@
     @extend .col-xs-12;
     margin-top: 10px;
 
-    .img-preview {
-      height: 125px;
-      overflow: hidden;
-
-      img {
-        object-fit: fill;
-      }
-    }
-
     .event-details {
       margin-top: 10px;
 
