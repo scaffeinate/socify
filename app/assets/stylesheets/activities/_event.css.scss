@@ -4,11 +4,11 @@
     margin-top: 10px;
 
     .img-preview {
-      height: 200px;
+      height: 125px;
       overflow: hidden;
 
       img {
-        object-fit: contain;
+        object-fit: fill;
       }
     }
 
@@ -16,7 +16,7 @@
       margin-top: 10px;
 
       i {
-        font-size: 1.5rem;
+        font-size: $large-font-size;
         width: 20px;
         margin-right: 10px;
       }
@@ -24,6 +24,14 @@
       .calendar,
       .location {
         margin-top: 7px;
+      }
+
+      .location i {
+        color: $location-icon-color;
+      }
+
+      .calendar i {
+        color: $calendar-icon-color;
       }
 
       .text {
