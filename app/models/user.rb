@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
   has_many :authentications
   has_many :photo_albums
 
+  has_many :event_attendees
+  has_many :attending_events, through: :event_attendees, source: :event
+
   mount_uploader :avatar, AvatarUploader
   mount_uploader :cover, AvatarUploader
 

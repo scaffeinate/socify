@@ -9,6 +9,8 @@ class Event < ActiveRecord::Base
   acts_as_commentable
 
   has_one :attachment, as: :attachable
+  has_many :event_attendees
+  has_many :attendees, through: :event_attendees, source: :user
 
   include PublicActivity::Model
   tracked only: [:create], owner: proc { |_controller, model| model.user }
