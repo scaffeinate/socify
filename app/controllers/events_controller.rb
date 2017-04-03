@@ -33,6 +33,11 @@ class EventsController < ApplicationController
   end
 
   def update
+    if @event.update(event_params)
+      redirect_to root_path
+    else
+      render 'edit', notice: @event.errors.full_messages.first
+    end
   end
 
   def destroy

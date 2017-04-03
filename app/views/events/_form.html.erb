@@ -1,5 +1,6 @@
 <%= react_component 'EventsForm', {
     authenticityToken: form_authenticity_token,
-    event: @event.to_json
+    event: @event.persisted? ? @event.to_json : nil,
+    attachment: @event.attachment ? @event.attachment.file_name.cover.url : nil
   }
 %>

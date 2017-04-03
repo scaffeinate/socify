@@ -6,7 +6,7 @@ var GeocodeByAddress = ReactPlacesAutocomplete.geocodeByAddress;
 var Places = React.createClass({
   getInitialState() {
     return {
-      address: '',
+      address: this.props.address || '',
       mapVisible: false,
       containerStyle: {
         position: 'relative',
@@ -14,7 +14,14 @@ var Places = React.createClass({
         width: '100%',
         height: '200px'
       },
-      center: {}
+      center: this.parseLatLng(this.props.latLng)
+    }
+  },
+  parseLatLng(latLng) {
+    try {
+      return JSON.parse(latLng);
+    } catch(e) {
+      return {};
     }
   },
   handlePlaceChange(address) {
