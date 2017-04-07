@@ -29,6 +29,10 @@ class User < ActiveRecord::Base
 
   self.per_page = 10
 
+  def attending_event_status(event)
+    User.joins(:event_attendees).where('event_attendees.event_id = ? and event_attendees.user_id = ?', event, id).pluck(:status)
+  end
+
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
 
