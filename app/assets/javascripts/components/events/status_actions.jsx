@@ -17,6 +17,25 @@ var EventStatusActions = React.createClass({
   handleClick(value, e) {
     e.preventDefault();
     this.setState({currentStatusItem: value});
+    var _this = this;
+    var originalState = this.state.currentStatusItem;
+    var formData = new FormData();
+    var url = '/events/' + this.props.eventId +'/change_status';
+    formData.append('event[status]', value);
+
+    fetch(url, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-CSRF-Token': _this.props.authenticityToken
+      },
+      credentials: 'same-origin'
+    }).then(function(response) {
+      if(response.status !== 200) {
+        _this.setState({currentStatusItem: originalState});
+      }
+    });
   },
   constructClassName(value) {
     return 'btn btn-sm btn-default ' +
