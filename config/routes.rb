@@ -17,7 +17,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :events
+  resources :events do
+    member do
+      post :change_status
+    end
+  end
   resources :photo_albums
   resources :photos, only: [:create, :destroy]
   resources :previews, only: [:index]

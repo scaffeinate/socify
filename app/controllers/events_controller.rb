@@ -5,7 +5,7 @@
 class EventsController < ApplicationController
   before_action :set_user
   before_action :authenticate_user!
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :change_status]
 
   def index
     @events = current_user.events.paginate(page: params[:page], per_page: 10)
@@ -45,10 +45,19 @@ class EventsController < ApplicationController
     redirect_to root_path
   end
 
+  def change_status
+    @event_attendee = EventAttendee.find_by(event: @event, user: current_user)
+    if @event_attendee.update(status: event_params[:status].to_i)
+      render json: {}, status: :ok
+    else
+      render json: { error: @event_attendee.errors.full_messages.first }, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def event_params
-    params.require(:event).permit(:name, :when, :location, :latlng)
+    params.require(:event).permit(:name, :when, :location, :latlng, :status)
   end
 
   def set_event

@@ -31,7 +31,7 @@
     </div>
   </div>
   <div class="row">
-    <%= react_component 'EventStatusActions', status: current_user.attending_event_status(event.id) %>
+    <%= react_component 'EventStatusActions', { eventId: event.id, status: current_user.attending_event_status(event.id), authenticityToken: form_authenticity_token } %>
   </div>
   <div class="row">
     <div class="like-and-comment">
