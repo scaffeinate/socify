@@ -8,7 +8,10 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy, :change_status]
 
   def index
-    @events = Event.select("events.*").joins("INNER JOIN follows ON events.user_id = follows.followable_id AND follows.followable_type = 'User'").where("follows.follower_id = #{current_user.id} AND follows.followable_type ='User'").paginate(page: params[:page], per_page: 10)
+    @events = Event.select("events.*").joins("INNER JOIN follows ON events.user_id = follows.followable_id").where("follows.follower_id = #{current_user.id} AND follows.followable_type ='User'").paginate(page: params[:page], per_page: 10)
+
+    @events_attending = Event.select("events.*").joins("INNER JOIN event_attendees ON event_attendees.event_id = events.id INNER JOIN follows ON event_attendees.user_id = follows.followable_id").where("follows.follower_id = #{current_user.id} AND follows.followable_type ='User' AND event_attendees.status IN (1, 2)").paginate(page: params[:page], per_page: 10)
+    @events = @events + @events_attending
   end
 
   def new
