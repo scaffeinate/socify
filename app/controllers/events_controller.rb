@@ -46,7 +46,7 @@ class EventsController < ApplicationController
   end
 
   def change_status
-    @event_attendee = EventAttendee.find_by(event: @event, user: current_user)
+    @event_attendee = EventAttendee.find_or_create_by(event: @event, user: current_user)
     if @event_attendee.update(status: event_params[:status].to_i)
       render json: {}, status: :ok
     else
