@@ -15,3 +15,4 @@ window.LinkPreview = require('./components/link_preview.jsx');
 window.ContentEditable = require('./components/contenteditable.jsx');
 window.EventsForm = require('./components/events/form.jsx');
 window.EventStatusActions = require('./components/events/status_actions.jsx');
+window.EventTabs = require('./components/events/tabs.jsx');
