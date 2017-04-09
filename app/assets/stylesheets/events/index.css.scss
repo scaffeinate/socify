@@ -1,7 +1,19 @@
-#events {
-  .event {
-    border-bottom: 1px solid $border-color;
-    padding: 25px 35px;
-    border-bottom: 1px solid $border-color;
+#events-stream {
+  .nav {
+    margin-top: 5px;
+
+    > li > a {
+      border-radius: 3px;
+      padding: 5px 10px;
+      font-size: $medium-font-size;
+    }
+  }
+
+  #events {
+    .event {
+      border-bottom: 1px solid $border-color;
+      padding: 25px 35px;
+      border-bottom: 1px solid $border-color;
+    }
   }
 }

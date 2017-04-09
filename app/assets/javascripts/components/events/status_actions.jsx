@@ -1,6 +1,7 @@
 var EventStatusActions = React.createClass({
   getDefaultProps() {
     return {
+      baseClassNames: 'btn btn-sm btn-default',
       statusItems: [
         { label: 'Not Going', value: 0, icon: 'icon-cancel-1' },
         { label: 'Interested', value: 1, icon: 'icon-bookmark' },
@@ -10,11 +11,10 @@ var EventStatusActions = React.createClass({
   },
   getInitialState() {
     return {
-      baseClasses: 'btn btn-sm btn-default',
       currentStatusItem: this.props.status[0]
     }
   },
-  handleClick(value, e) {
+  handleClick(e, value) {
     e.preventDefault();
     this.setState({currentStatusItem: value});
     var _this = this;
@@ -38,14 +38,14 @@ var EventStatusActions = React.createClass({
     });
   },
   constructClassName(value) {
-    return 'btn btn-sm btn-default ' +
+    return this.props.baseClassNames + ' ' +
           ((this.state.currentStatusItem == value) ? 'active' : '');
   },
   render() {
     var _this = this;
     var statusItems = this.props.statusItems.map(function(statusItem) {
       return (
-        <a key={statusItem.value} className={_this.constructClassName(statusItem.value)} href='#' onClick={(evt) => _this.handleClick(statusItem.value, evt)}>
+        <a key={statusItem.value} className={_this.constructClassName(statusItem.value)} href='#' onClick={(evt) => _this.handleClick(evt, statusItem.value)}>
           <i className={statusItem.icon}></i> {statusItem.label}
         </a>
       )

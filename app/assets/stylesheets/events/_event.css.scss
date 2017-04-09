@@ -50,4 +50,20 @@
       }
     }
   }
+
+  .status-actions {
+    margin-top: 20px;
+    @extend .col-xs-12;
+
+    .btn {
+      padding: 4px 12px;
+      margin-right: 10px;
+    }
+
+    .active {
+      background: $link-hover-color;
+      border: none;
+      color: $white;
+    }
+  }
 }

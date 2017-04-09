@@ -1,14 +1,10 @@
-<div class="stream">
+<div id="events-stream" class="stream">
   <div class="new-resource">
     <div class="row">
-      <div class="col-xs-6">
-        <ul class="nav nav-pills">
-          <li role="presentation" class="active"><a href="#">Home</a></li>
-          <li role="presentation"><a href="#">Profile</a></li>
-          <li role="presentation"><a href="#">Messages</a></li>
-        </ul>
+      <div class="col-xs-8">
+        <%= react_component 'EventTabs' %>
       </div>
-      <div class="col-xs-6">
+      <div class="col-xs-4">
         <%= link_to new_event_path, class: 'btn btn-sm btn-primary pull-right' do %>
           <i class="icon-plus"></i> New Event
         <% end %>
@@ -17,6 +13,6 @@
   </div>
   <div id="events" class="resources-block newsfeed">
     <h4 class="underlined">EVENTS</h4>
-    <%= render(@events) || render('shared/no_resource', resources: 'Events') %>
+    <%= render(@events, is_editable: true) || render('shared/no_resource', resources: 'Events') %>
   </div>
 </div>

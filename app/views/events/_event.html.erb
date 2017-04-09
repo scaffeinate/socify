@@ -29,6 +29,11 @@
       </div>
     </div>
   </div>
+  <% if (defined?(is_editable) && is_editable) %>
+    <div class="row">
+      <%= render 'events/status_actions', event: event %>
+    </div>
+  <% end %>
   <div class="row">
     <div class="like-and-comment">
       <%= render 'shared/like_and_comment', resource: event %>
