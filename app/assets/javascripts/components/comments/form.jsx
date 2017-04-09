@@ -35,7 +35,7 @@ var CommentsForm = React.createClass({
               <Avatar linkTo={this.props.userLinkTo} avatar={this.props.userAvatar}></Avatar>
             </div>
             <div className="comments-form-textbox">
-              <ContentEditable previewName='comment[preview_html]' placeholder='Enter Comment' handleChange={this.handleChange} onPaste={this.onPaste} content={this.state.inputText}></ContentEditable>
+              <ContentEditable previewName='comment[preview_html]' placeholder='Enter Comment' handleChange={this.handleChange} onPaste={this.onPaste}></ContentEditable>
               <input type="hidden" value={this.state.inputText}></input>
               <LinkPreview html={this.state.linkPreviewHTML} name={this.props.previewName} />
             </div>

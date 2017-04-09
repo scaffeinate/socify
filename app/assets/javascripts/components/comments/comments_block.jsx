@@ -70,12 +70,20 @@ var CommentsBlock = React.createClass({
     this.loadComments();
   },
   render() {
-    var commentsForm = <div className="row"><CommentsForm authenticityToken={this.props.authenticity_token} userLinkTo={this.props.userLinkTo} userAvatar={this.props.userAvatar} onSubmit={this.onSubmit} /></div>;
-    var comments = <div className="row"><div className="comments"><Comments data={this.state.data} onDelete={this.onDelete} /></div></div>;
-    var commentsBlock = [(this.props.userSignedIn ? commentsForm : ''), (this.state.data.length !== 0 ? comments : '')];
+    var commentsForm = this.props.userSignedIn ? <CommentsForm authenticityToken={this.props.authenticity_token} userLinkTo={this.props.userLinkTo} userAvatar={this.props.userAvatar} onSubmit={this.onSubmit} /> : '';
+    var comments = this.state.data.length !== 0 ? <div className="comments"><Comments data={this.state.data} onDelete={this.onDelete} /></div> : '';
     const commentsClassName = (this.props.userSignedIn || this.state.data.length !== 0) ? 'comments-block' : '';
 
-    return(<div className={commentsClassName}>{commentsBlock}</div>);
+    return(
+      <div className={commentsClassName}>
+        <div className="row">
+          {commentsForm}
+        </div>
+        <div className="row">
+          {comments}
+        </div>
+      </div>
+    );
   }
 });
 
