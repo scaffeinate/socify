@@ -163,6 +163,11 @@ h6 {
 
 /***********************************************/
 
+.newsfeed {
+  @extend .col-xs-12;
+  padding: 20px 0 0 !important;
+}
+
 /* Resource actions dropdown styles start */
 .actions {
   @extend .col-xs-1;

@@ -7,8 +7,10 @@
       <% end %>
     </div>
     <div class="row">
-      <div id="events">
-        <%= render(@events) || render('shared/no_resource', resources: 'Events') %>
+      <div class="col-xs-12">
+        <div id="events" class="newsfeed">
+          <%= render(@events) || render('shared/no_resource', resources: 'Events') %>
+        </div>
       </div>
     </div>
   </div>

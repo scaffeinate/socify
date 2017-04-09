@@ -1,7 +1,7 @@
 <div class="row">
   <div class="stream">
-    <div id="activities" class="resources-block">
-      <h4 class="underlined"><i class="icon-newspaper"></i> NEWSFEED</h4>
+    <div id="activities" class="resources-block newsfeed">
+      <h4 class="underlined">STREAM</h4>
       <% if @activities.empty? %>
         <%= render('shared/no_resource', resources: 'Activities') %>
       <% else %>

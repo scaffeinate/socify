@@ -10,7 +10,7 @@
       <% end %>
     <% end %>
     <% if is_current_user?(@user) %>
-      <%= link_to events_path , class: "list-group-item #{is_active?('events', 'new')}" do %>
+      <%= link_to events_path , class: "list-group-item #{is_active?('events', 'index') || is_active?('events', 'new')}" do %>
         <i class="icon-calendar-empty"></i> Events
       <% end %>
     <% end %>

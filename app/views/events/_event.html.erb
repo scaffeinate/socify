@@ -3,7 +3,6 @@
     <div class="event-user-info">
       <%= render 'shared/avatar', user: event.user %>
       <h4 class="name"><%= link_to event.user.name, user_path(event.user) %></h4>
-      <span class="action">created an <%= link_to 'event', event %></span>
     </div>
     <div class="actions">
       <%= render 'events/actions', is_editable: ((defined?(is_editable) && is_editable) || false), event: event %>

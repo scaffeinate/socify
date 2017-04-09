@@ -1,7 +1,3 @@
-#activities {
-  padding: 20px 0 0;
-}
-
 .activity,
 .show {
   border-bottom: 1px solid $border-color;
@@ -30,30 +26,6 @@
     img {
       width: 85px;
       height: 85px;
-    }
-  }
-
-  .content {
-    @extend .col-xs-12;
-    margin-top: 20px;
-
-    .text {
-      font-size: $medium-font-size;
-      font-weight: 300;
-      font-family: $default-font;
-    }
-
-    .attachment {
-      margin-top: 15px;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .calendar {
-      margin-top: 10px;
-      font-size: $small-font-size;
     }
   }
 
