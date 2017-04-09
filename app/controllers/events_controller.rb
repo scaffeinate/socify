@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy, :change_status]
 
   def index
-    @events = current_user.events.paginate(page: params[:page], per_page: 10)
+    @events = Event.select("events.*").joins("INNER JOIN follows ON events.user_id = follows.followable_id AND follows.followable_type = 'User'").where("follows.follower_id = #{current_user.id} AND follows.followable_type ='User'").paginate(page: params[:page], per_page: 10)
   end
 
   def new

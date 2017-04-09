@@ -16,7 +16,7 @@ var ContentEditable = React.createClass({
     return (
       <div>
         <div className="contenteditable">
-          <div ref="contentEditable" contentEditable className="editable form-control input-mentionable" onInput={this.handleChange} onPaste={this.onPaste} placeholder={this.props.placeholder} dangerouslySetInnerHTML={{__html: content}}></div>
+          <div contentEditable className="editable form-control input-mentionable" onInput={this.handleChange} onPaste={this.onPaste} placeholder={this.props.placeholder} dangerouslySetInnerHTML={{__html: content}}></div>
         </div>
       </div>
     );
