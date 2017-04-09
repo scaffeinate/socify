@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.atwho
 //= require jquery_ujs
 //= require bootstrap
 //= require bindWithDelay
@@ -30,12 +29,4 @@ $(document).ready(function() {
       }
     }, 50);
   }
-
-  $('.input-mentionable').atwho({
-    at: '@',
-    data: $('#mentionable-data').data('content'),
-    insertTpl: '<a href="/users/${id}">${name}</a>',
-    displayTpl: '<li data-id="${id}"><span>${name}</span></li>',
-    limit: 15
-  });
 });
