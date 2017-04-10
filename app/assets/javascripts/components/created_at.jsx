@@ -1,17 +1,18 @@
-var CreatedAt = React.createClass({
-  getInitialState() {
-    return {
-      isoTime: this.props.isoTime
+const CreatedAt = React.createClass({
+  fromNow(isoTime, format) {
+    if(format === 0) {
+      return Moment(isoTime).fromNow();
+    } else if(format === 1) {
+      return Moment(isoTime).format('lll');
+    } else if(format === 2){
+      return Moment(isoTime).format('ll');
     }
   },
-  componentWillMount() {
-    var fromNow = Moment(this.props.isoTime).fromNow();
-    this.setState({isoTime: fromNow});
-  },
   render() {
+    var time = this.fromNow(this.props.isoTime, this.props.format);
     return (
-      <time dateTime={this.state.isoTime}>
-        {this.state.isoTime}
+      <time dateTime={time}>
+        {time}
       </time>
     )
   }
