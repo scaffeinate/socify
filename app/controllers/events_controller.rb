@@ -8,10 +8,11 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy, :change_status]
 
   def index
-    @events = Event.select("events.*").joins("INNER JOIN follows ON events.user_id = follows.followable_id").where("follows.follower_id = #{current_user.id} AND follows.followable_type ='User'").paginate(page: params[:page], per_page: 10)
+    @events = Event.select("events.*").joins("INNER JOIN follows ON events.user_id = follows.followable_id").where("follows.follower_id = #{current_user.id} AND follows.followable_type ='User'")
 
-    @events_attending = Event.select("events.*").joins("INNER JOIN event_attendees ON event_attendees.event_id = events.id INNER JOIN follows ON event_attendees.user_id = follows.followable_id").where("follows.follower_id = #{current_user.id} AND follows.followable_type ='User' AND event_attendees.status IN (1, 2)").paginate(page: params[:page], per_page: 10)
-    @events = @events + @events_attending
+    @events_attending = Event.select("events.*").joins("INNER JOIN event_attendees ON event_attendees.event_id = events.id INNER JOIN follows ON event_attendees.user_id = follows.followable_id").where("follows.follower_id = #{current_user.id} AND follows.followable_type ='User' AND event_attendees.status IN (1, 2)")
+
+    @events = Event.from("(#{@events.to_sql} UNION #{@events_attending.to_sql}) as events").order(when: :desc).paginate(page: params[:page], per_page: 20)
   end
 
   def new
