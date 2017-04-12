@@ -15,6 +15,8 @@ class Event < ActiveRecord::Base
   include PublicActivity::Model
   tracked only: [:create], owner: proc { |_controller, model| model.user }
 
+  scope :latest, -> { order(when: :desc) }
+
   validates_presence_of :name
   validates_presence_of :when
   validates_presence_of :location
