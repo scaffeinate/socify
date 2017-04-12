@@ -1,11 +1,12 @@
-class EventsService
+class EventsFetchService
   class UserEvents
     def self.build
       new
     end
 
-    def call(user_id)
-      @events = Event.select("events.*").joins("INNER JOIN follows ON events.user_id = follows.followable_id").where("follows.follower_id = #{user_id} AND follows.followable_type ='User'")
+    def call(params)
+      user_id = params[:user_id]
+      @events = User.find_by(id: user_id).events.paginate(page: params[:page], per_page: params[:per_page])
     end
   end
 end
