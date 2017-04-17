@@ -8,7 +8,11 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy, :change_status]
 
   def index
-    @events = EventsFetchService.build.call({ mode: EventsFetchService::EXPLORE, user_id: current_user.id, page: params[:page], per_page: 10 })
+    @events = EventsFetchService.build.call({ mode: params[:mode] || 0, user_id: current_user.id, page: params[:page] })
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
