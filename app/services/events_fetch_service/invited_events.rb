@@ -5,6 +5,7 @@ class EventsFetchService
     end
 
     def call(params)
+      return []
     end
   end
 end

@@ -7,7 +7,7 @@ class EventsFetchService
   end
 
   def call(params)
-    mode = params[:mode]
+    mode = params[:mode].to_i
     if mode == EXPLORE
       return ExploreEvents.build.call(params)
     elsif mode == INVITED
