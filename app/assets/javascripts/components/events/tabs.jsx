@@ -18,6 +18,8 @@ var EventTabs = React.createClass({
   },
   handleClick(e, value) {
     e.preventDefault();
+    var url = '/events?mode=' + value;
+    $.getScript(url);
     this.setState({currentActiveItem: value});
   },
   render() {

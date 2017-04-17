@@ -2,7 +2,7 @@
   <div class="new-resource">
     <div class="row">
       <div class="col-xs-8">
-        <%= react_component 'EventTabs' %>
+        <%= react_component 'EventTabs', authenticityToken: form_authenticity_token %>
       </div>
       <div class="col-xs-4">
         <%= link_to new_event_path, class: 'btn btn-sm btn-primary pull-right' do %>
@@ -14,5 +14,8 @@
   <div id="events" class="resources-block newsfeed">
     <h4 class="underlined">EXPLORE EVENTS</h4>
     <%= render(@events, is_editable: true) || render('shared/no_resource', resources: 'Events') %>
+  </div>
+  <div class="pagination-block">
+    <%= @events.total_pages %>
   </div>
 </div>
