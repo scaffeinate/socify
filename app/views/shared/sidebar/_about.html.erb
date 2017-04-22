@@ -8,12 +8,12 @@
         <ul class="list-group">
           <% if @user.created_at.present? %>
             <li class="list-group-item">
-              <i class="icon-back-in-time"></i> Joined <%= get_date_and_year(@user.created_at) %>
+              <i class="icon-back-in-time"></i> Joined <%= render 'shared/created_at', resource: @user, format: 2 %>
             </li>
           <% end %>
           <% if @user.dob.present? %>
             <li class="list-group-item">
-              <i class="icon-birthday"></i> <%= get_date_and_year(@user.dob) %>
+              <i class="icon-birthday"></i> <%= react_component 'CreatedAt', { isoTime: @user.dob, format: 2 }, { class: 'inline-block' } %>
             </li>
           <% end %>
           <% if @user.sex.present? %>

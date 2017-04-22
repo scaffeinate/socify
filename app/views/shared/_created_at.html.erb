@@ -1,1 +1,2 @@
-<%= react_component 'CreatedAt', isoTime: resource.created_at.getutc.iso8601 %>
+<% format = 0 if local_assigns[:format].nil? %>
+<%= react_component 'CreatedAt', { isoTime: resource.created_at.getutc, format: format }, { class: 'inline-block' } %>

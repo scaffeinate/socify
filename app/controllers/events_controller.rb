@@ -5,15 +5,24 @@
 class EventsController < ApplicationController
   before_action :set_user
   before_action :authenticate_user!
-  before_action :set_event, only: [:show, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :change_status]
+
+  def index
+    @events = EventsFetchService.build.call({ mode: params[:mode] || 0, user_id: current_user.id, page: params[:page] })
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 
   def new
     @event = Event.new
   end
 
   def create
-    @event = current_user.events.new(event_params)
+    @event = Event.new(event_params.merge(user: current_user))
     if @event.save
+      @event.update_attachment(params[:attachment_id])
       redirect_to root_path
     else
       render 'new', notice: @event.errors.full_messages.first
@@ -24,18 +33,35 @@ class EventsController < ApplicationController
     @comments = @event.comments
   end
 
+  def edit
+  end
+
+  def update
+    if @event.update(event_params)
+      redirect_to root_path
+    else
+      render 'edit', notice: @event.errors.full_messages.first
+    end
+  end
+
   def destroy
     @event.destroy
-    respond_to do |format|
-      format.js
-      format.html { redirect_to root_path }
+    redirect_to root_path
+  end
+
+  def change_status
+    @event_attendee = EventAttendee.find_or_create_by(event: @event, user: current_user)
+    if @event_attendee.update(status: event_params[:status].to_i)
+      render json: {}, status: :ok
+    else
+      render json: { error: @event_attendee.errors.full_messages.first }, status: :unprocessable_entity
     end
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:name, :when)
+    params.require(:event).permit(:name, :when, :location, :latlng, :status)
   end
 
   def set_event

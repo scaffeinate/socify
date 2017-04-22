@@ -8,10 +8,21 @@ class Event < ActiveRecord::Base
   acts_as_votable
   acts_as_commentable
 
+  has_one :attachment, as: :attachable
+  has_many :event_attendees
+  has_many :attendees, through: :event_attendees, source: :user
+
   include PublicActivity::Model
   tracked only: [:create], owner: proc { |_controller, model| model.user }
 
+  scope :latest, -> { order(when: :desc) }
+
   validates_presence_of :name
   validates_presence_of :when
+  validates_presence_of :location
   validates_presence_of :user
+
+  def update_attachment(attachment_id)
+    update_attachment_resource(attachment_id, self.class.name.to_s, id)
+  end
 end

@@ -4,28 +4,34 @@
 include Shared::AutoLink
 
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :index
   respond_to :js, :json
 
   def index
     @comments = Comment.where('commentable_type = ? AND commentable_id = ?', params[:commentable_type], params[:commentable_id]).limit(params[:limit])
-    render json: @comments, each_serializer: CommentSerializer
+    render json: @comments, each_serializer: CommentSerializer, status: :ok
   end
 
   def create
-    @comment = Comment.new do |comment|
-      comment.commentable_type = params[:commentable_type]
-      comment.commentable_id = params[:commentable_id]
-      comment.comment = link_urls(params[:comment_text])
-      comment.user = current_user
+    @comment = Comment.new do |c|
+      c.commentable_type = params[:commentable_type]
+      c.commentable_id = params[:commentable_id]
+      c.comment = link_urls(params[:comment_text])
+      c.user = current_user
     end
-    @comment.save
-    render json: @comment
+    if @comment.save
+      render json: @comment, status: :ok
+    else
+      render json: { error: @comment.errors.full_messages.first }, status: :unprocessable_entity
+    end
   end
 
   def destroy
     @comment = current_user.comments.find(params[:id])
-    @comment.destroy
-    render json: @comment
+    if @comment.destroy
+      render json: @comment, status: :ok
+    else
+      render json: { error: @comment.errors.full_messages.first }, status: :unprocessable_entity
+    end
   end
 end

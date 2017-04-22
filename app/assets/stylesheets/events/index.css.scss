@@ -1,0 +1,17 @@
+#events-stream {
+  .nav {
+    > li > a {
+      border-radius: 3px;
+      padding: 10px 12px;
+      font-size: $small-font-size;
+    }
+  }
+
+  #events {
+    .event {
+      border-bottom: 1px solid $border-color;
+      padding: 25px 35px;
+      border-bottom: 1px solid $border-color;
+    }
+  }
+}

@@ -17,10 +17,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :events, except: [:edit, :update]
+  resources :events do
+    member do
+      post :change_status
+    end
+  end
   resources :photo_albums
   resources :photos, only: [:create, :destroy]
   resources :previews, only: [:index]
+  resources :attachments, only: :create
 
   authenticated :user do
     root to: 'home#index', as: 'home'

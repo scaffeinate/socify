@@ -1,9 +1,4 @@
-#activities {
-  padding: 20px 0 0;
-}
-
-.activity,
-.show {
+.activity {
   border-bottom: 1px solid $border-color;
   padding: 25px 35px;
 
@@ -33,54 +28,6 @@
     }
   }
 
-  .event-details {
-    @extend .col-xs-6;
-    margin: 20px;
-
-    i {
-      font-size: 1.5rem;
-      width: 20px;
-    }
-
-    .calendar,
-    .location {
-      margin-top: 7px;
-    }
-
-    .location {
-      color: $light-text-color;
-    }
-
-    .text {
-      font-size: $large-font-size;
-      font-weight: 400;
-    }
-  }
-
-  .content {
-    @extend .col-xs-12;
-    margin-top: 20px;
-
-    .text {
-      font-size: $medium-font-size;
-      font-weight: 300;
-      font-family: $default-font;
-    }
-
-    .attachment {
-      margin-top: 15px;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .calendar {
-      margin-top: 10px;
-      font-size: $small-font-size;
-    }
-  }
-
   .photo-album {
     .thumbnail {
       @extend .col-xs-3;
@@ -97,8 +44,4 @@
       }
     }
   }
-}
-
-.show {
-  background: none;
 }

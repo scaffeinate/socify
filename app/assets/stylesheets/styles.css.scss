@@ -163,6 +163,11 @@ h6 {
 
 /***********************************************/
 
+.newsfeed {
+  @extend .col-xs-12;
+  padding: 20px 0 0 !important;
+}
+
 /* Resource actions dropdown styles start */
 .actions {
   @extend .col-xs-1;
@@ -274,6 +279,15 @@ div.editable {
   }
 }
 /* Link preview with Onebox styles end */
+
+.img-fit {
+  height: 125px;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}
 
 /***********************************************/
 .inline-block {

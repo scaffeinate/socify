@@ -1,17 +1,6 @@
-<%= form_for(@event) do |f| %>
-  <div class="form-group">
-    <%= f.label :event_name %>
-    <%= f.text_field :name, autofocus: true, placeholder: 'Event Name', class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :date %>
-    <%= f.text_field :when, placeholder: 'When is it?', class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :location %>
-    <%= f.text_field :where, placeholder: 'Where is it being held?', class: 'form-control' %>
-  </div>
-  <div class="actions">
-    <%= f.submit :create, class: 'btn btn-primary' %>
-  </div>
-<% end %>
+<%= react_component 'EventsForm', {
+    authenticityToken: form_authenticity_token,
+    event: @event.persisted? ? @event.to_json : nil,
+    attachment: @event.attachment ? @event.attachment.file_name.cover.url : nil
+  }
+%>

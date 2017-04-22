@@ -19,12 +19,19 @@ class User < ActiveRecord::Base
   has_many :authentications
   has_many :photo_albums
 
+  has_many :event_attendees
+  has_many :attending_events, through: :event_attendees, source: :event
+
   mount_uploader :avatar, AvatarUploader
   mount_uploader :cover, AvatarUploader
 
   validates_presence_of :name
 
   self.per_page = 10
+
+  def attending_event_status(event)
+    User.joins(:event_attendees).where('event_attendees.event_id = ? and event_attendees.user_id = ?', event, id).pluck(:status)
+  end
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]

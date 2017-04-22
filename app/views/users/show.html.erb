@@ -5,12 +5,10 @@
         <%= render 'posts/form' %>
       </div>
     <% end %>
-    <div id="activities" class="resources-block">
+    <div id="activities" class="resources-block newsfeed">
       <h4 class="underlined">USER STREAM</h4>
       <% if @activities.empty? %>
-        <div class="well">
-          <%= render('shared/no_resource', resources: 'Activities') %>
-        </div>
+        <%= render('shared/no_resource', resources: 'Activities') %>
       <% else %>
         <%= render_activities(@activities, layout: '/shared/activity') %>
       <% end %>

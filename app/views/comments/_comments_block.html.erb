@@ -1,7 +1,8 @@
 <%= react_component 'CommentsBlock', {
     authenticity_token: form_authenticity_token,
-    userLinkTo: users_path(current_user),
-    userAvatar: current_user.avatar.url,
+    userSignedIn: user_signed_in?,
+    userLinkTo: user_signed_in? ? users_path(current_user) : '',
+    userAvatar: user_signed_in? ? current_user.avatar.url : '',
     commentable_type: resource.class.to_s,
     commentable_id: resource.id
   }

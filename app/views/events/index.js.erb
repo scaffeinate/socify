@@ -1,0 +1,6 @@
+<% if params[:page].to_i == 0 %>
+  $('#events').html("<%=j render(@events, is_editable: true) || render('shared/no_resource', resources: 'Events') %>");
+<% else %>
+  $('#events').append("<%=j render(@events, is_editable: true) %>");
+<% end %>
+ReactRailsUJS.mountComponents('#events');

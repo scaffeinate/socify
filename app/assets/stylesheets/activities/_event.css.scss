@@ -1,0 +1,51 @@
+.event-activity {
+  .event-activity-content {
+    @extend .col-xs-12;
+    margin-top: 20px;
+
+    .event-details {
+      margin-top: 10px;
+
+      i {
+        font-size: $large-font-size;
+        width: 20px;
+        margin-right: 10px;
+      }
+
+      .calendar,
+      .location {
+        margin-top: 7px;
+      }
+
+      .location i {
+        color: $location-icon-color;
+      }
+
+      .calendar i {
+        color: $calendar-icon-color;
+      }
+
+      .text {
+        font-size: $large-font-size;
+        font-weight: 400;
+        color: $link-hover-color;
+      }
+    }
+  }
+
+  .status-actions {
+    margin-top: 20px;
+    @extend .col-xs-12;
+
+    .btn {
+      padding: 4px 12px;
+      margin-right: 10px;
+    }
+
+    .active {
+      background: $link-hover-color;
+      border: none;
+      color: $white;
+    }
+  }
+}

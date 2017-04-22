@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_mentionable
-    @mentionable = current_user.following_users.to_json(only: [:id, :name])
+    @mentionable = current_user.following_users.to_json(only: [:id, :name]) if user_signed_in?
   end
 
   protected
