@@ -1,4 +1,4 @@
-var LinkPreview = React.createClass({
+const LinkPreview = React.createClass({
   render() {
     return (
       <div className={this.props.html ? "link-preview" : "link-preview hidden"}>

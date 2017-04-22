@@ -1,4 +1,4 @@
-var Avatar = React.createClass({
+const Avatar = React.createClass({
   render() {
     return(
       <a href={this.props.linkTo}>

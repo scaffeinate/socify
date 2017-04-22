@@ -1,4 +1,4 @@
-var InputFileFieldPreview = React.createClass({
+const InputFileFieldPreview = React.createClass({
   render() {
     return (
       <div>

@@ -1,6 +1,3 @@
-var DateTimePickerModal = require('../datetimepickermodal.jsx');
-var Places = require('../places.jsx');
-var DropzoneUpload = require('../dropzone_upload.jsx');
 var EventsForm = React.createClass({
   getInitialState() {
     return {

@@ -1,5 +1,5 @@
-var Comment = require('./comment.jsx');
-var Comments = React.createClass({
+var Comment = require('./_comment.jsx');
+var CommentsList = React.createClass({
   onDelete(event, id) {
     this.props.onDelete(event, id);
   },
@@ -19,4 +19,4 @@ var Comments = React.createClass({
   }
 });
 
-module.exports = Comments;
+module.exports = CommentsList;

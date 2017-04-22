@@ -1,4 +1,4 @@
-var CommentActions = require('./actions.jsx');
+var CommentActions = require('./_actions.jsx');
 var Comment = React.createClass({
   onDelete(event) {
     this.props.onDelete(event, this.props.comment.id);

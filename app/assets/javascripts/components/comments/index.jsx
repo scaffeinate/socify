@@ -1,6 +1,6 @@
-var Comments = require('./comments.jsx');
-var CommentsForm = require('./form.jsx');
-var CommentsBlock = React.createClass({
+var CommentsList = require('./_comments_list.jsx');
+var CommentsForm = require('./_form.jsx');
+var CommentsIndex = React.createClass({
   getInitialState() {
     return {
       data: []
@@ -71,7 +71,7 @@ var CommentsBlock = React.createClass({
   },
   render() {
     var commentsForm = this.props.userSignedIn ? <CommentsForm authenticityToken={this.props.authenticity_token} userLinkTo={this.props.userLinkTo} userAvatar={this.props.userAvatar} onSubmit={this.onSubmit} /> : '';
-    var comments = this.state.data.length !== 0 ? <div className="comments"><Comments data={this.state.data} onDelete={this.onDelete} /></div> : '';
+    var commentsList = this.state.data.length !== 0 ? <div className="comments"><CommentsList data={this.state.data} onDelete={this.onDelete} /></div> : '';
     const commentsClassName = (this.props.userSignedIn || this.state.data.length !== 0) ? 'comments-block' : '';
 
     return(
@@ -80,11 +80,11 @@ var CommentsBlock = React.createClass({
           {commentsForm}
         </div>
         <div className="row">
-          {comments}
+          {commentsList}
         </div>
       </div>
     );
   }
 });
 
-module.exports = CommentsBlock;
+module.exports = CommentsIndex;
