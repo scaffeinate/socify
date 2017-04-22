@@ -16,6 +16,7 @@
 //= require bindWithDelay
 //= require validator.min
 //= require utils
+//= require react_ujs
 //= require components
 
 $(document).ready(function() {
