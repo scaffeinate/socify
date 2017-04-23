@@ -6,6 +6,8 @@ global.React = React;
 global.ReactDOM = ReactDOM;
 global.Avatar = Base.Avatar;
 global.CreatedAt = Base.CreatedAt;
+global.LinkPreview = Base.LinkPreview;
+global.ImagePreview = Base.ImagePreview;
 
 // window.Moment = require('moment');
 //
