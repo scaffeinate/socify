@@ -5,6 +5,7 @@ import Base from './components/base.js';
 global.React = React;
 global.ReactDOM = ReactDOM;
 global.Avatar = Base.Avatar;
+global.CreatedAt = Base.CreatedAt;
 
 // window.Moment = require('moment');
 //

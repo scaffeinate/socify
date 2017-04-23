@@ -1,6 +1,8 @@
-import Avatar from './avatar'
+import Avatar from './Avatar'
+import CreatedAt from './CreatedAt'
 const Base = {
-  Avatar: Avatar
+  Avatar: Avatar,
+  CreatedAt: CreatedAt
 }
 
 export default Base
