@@ -10,22 +10,22 @@ class CreatedAt extends Component {
 
   fromNow(time, format) {
     if (format === 0) {
-      return Moment(time).fromNow();
+      return Moment(time).fromNow()
     } else if (format === 1) {
-      return Moment(time).format('lll');
+      return Moment(time).format('lll')
     } else if (format === 2) {
-      return Moment(time).format('ll');
+      return Moment(time).format('ll')
     }
   }
   render() {
-    const {isoTime, format} = this.props;
-    let time = this.fromNow(isoTime, format);
+    const {isoTime, format} = this.props
+    let time = this.fromNow(isoTime, format)
     return (
       <time dateTime={time}>
         {time}
       </time>
-    );
+    )
   }
 }
 
-export default CreatedAt;
+export default CreatedAt

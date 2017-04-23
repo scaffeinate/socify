@@ -66,7 +66,7 @@ var EventsForm = React.createClass({
           </div>
           <div className="form-group">
             <label>Location</label>
-            <Places inputName='event[location]' address={this.state.event.location} latLng={this.state.event.latlng} inputPlaceholder='Where is it?' onPlaceSelected={this.handlePlaceSelected} />
+            <Location inputName='event[location]' address={this.state.event.location} latLng={this.state.event.latlng} inputPlaceholder='Where is it?' onPlaceSelected={this.handlePlaceSelected} />
             <input type='hidden' name='event[latlng]' value={this.state.event.latlng} />
           </div>
           <br />

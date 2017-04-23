@@ -8,6 +8,8 @@ global.Avatar = Base.Avatar;
 global.CreatedAt = Base.CreatedAt;
 global.LinkPreview = Base.LinkPreview;
 global.ImagePreview = Base.ImagePreview;
+global.DateTimePickerModal = Base.DateTimePickerModal;
+global.Location = Base.Location;
 
 // window.Moment = require('moment');
 //
@@ -24,7 +26,7 @@ global.ImagePreview = Base.ImagePreview;
 //
 // window.PostsForm = require('./containers/posts/form.jsx');
 //
-// window.Events = require('./containers/events/index.jsx');
-// window.EventsForm = require('./containers/events/_form.jsx');
-// window.EventStatusActions = require('./containers/events/_status_actions.jsx');
-// window.EventTabs = require('./containers/events/_tabs.jsx');
+window.Events = require('./containers/events/index.jsx');
+window.EventsForm = require('./containers/events/_form.jsx');
+window.EventStatusActions = require('./containers/events/_status_actions.jsx');
+window.EventTabs = require('./containers/events/_tabs.jsx');
