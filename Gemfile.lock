@@ -301,6 +301,7 @@ GEM
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-timeout (0.4.2)
     rails (5.0.2)
       actioncable (= 5.0.2)
       actionmailer (= 5.0.2)
@@ -428,6 +429,7 @@ DEPENDENCIES
   populator
   public_activity
   puma
+  rack-timeout
   rails (= 5.0.2)
   rails_12factor
   sanitize
