@@ -21,7 +21,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event.when = @event.when.strftime("%Y/%m/%d %H:%M")
+    @event.event_datetime = @event.event_datetime.strftime("%Y/%m/%d %H:%M")
   end
 
   def show

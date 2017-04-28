@@ -7,7 +7,7 @@
   <div class="content">
     <h3><%= event.name %></h3>
     <span class="text">
-      <%= fa_icon'calendar' %> <%= formatted_time(event.when) %>
+      <%= fa_icon'calendar' %> <%= formatted_time(event.event_datetime) %>
     </span>
     <%= render 'shared/created_at', activity: event %>
     <div class="points">

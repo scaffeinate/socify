@@ -71,7 +71,7 @@ namespace :fill do
     15.times do
       event = Event.new
       event.name = Populator.words(1..3).titleize
-      event.when = Faker::Date.between(2.years.ago, 1.day.from_now)
+      event.event_datetime = Faker::Date.between(2.years.ago, 1.day.from_now)
       event.user = users.sample
       event.save
       puts "created event #{event.name}"
