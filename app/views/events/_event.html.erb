@@ -14,10 +14,11 @@
     <span class="comment-count"><%= pluralize(event.comments_count, 'comment') %></span>
     <div class="pull-right">
       <% if belongs_to_user?(event) %>
-        <%= form_tag event_path(event), method: :delete, remote: remote do %>
-          <% button_tag class: 'btn btn-danger btn-sm' do %>
-            <%= fa_icon 'trash' %>
-          <% end %>
+        <%= link_to edit_event_path(event), class: 'btn btn-primary btn-sm' do %>
+          <% fa_icon 'pencil' %>
+        <% end %>
+        <%= link_to event_path(event), method: :delete, class:'btn btn-danger btn-sm', remote: remote do %>
+          <% fa_icon 'trash' %>
         <% end %>
       <% end %>
     </div>

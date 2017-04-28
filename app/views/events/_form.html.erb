@@ -8,6 +8,6 @@
     <%= f.text_field :when, placeholder: 'When is it?', class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit :create, class: 'btn btn-primary' %>
+    <%= f.submit (@event.persisted? ? :update : :create), class: 'btn btn-primary' %>
   </div>
 <% end %>

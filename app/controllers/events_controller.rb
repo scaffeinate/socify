@@ -5,7 +5,7 @@
 class EventsController < ApplicationController
   before_action :set_user
   before_action :authenticate_user!
-  before_action :set_event, only: [:show, :destroy]
+  before_action :set_event, only: [:edit, :update, :show, :destroy]
 
   def new
     @event = Event.new
@@ -20,8 +20,17 @@ class EventsController < ApplicationController
     end
   end
 
+  def edit
+    @event.when = @event.when.strftime("%Y/%m/%d %H:%M")
+  end
+
   def show
     @comments = @event.comments
+  end
+
+  def update
+    @event.update(event_params)
+    redirect_to @event
   end
 
   def destroy
