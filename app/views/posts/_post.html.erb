@@ -1,29 +1,31 @@
-<div class="info">
-  <%= render 'shared/avatar', user: post.user %>
-  <h4 class="name"><%= link_to post.user.name, user_path(post.user) %></h4>
-  <span class="action">created a <%= link_to 'post', post %></span>
-</div>
-<div class="content">
-  <span class="text"><%= post.content_html %></span>
-  <% if post.attachment.present? %>
-    <div class="attachment">
-      <%= image_tag post.attachment %>
-    </div>
-  <% end %>
-  <%= render 'shared/created_at', activity: post %>
-  <div class="points">
-    <span class="like-count"><%= pluralize(post.cached_votes_up, 'like') %></span>
-    <span class="comments-count"><%= pluralize(post.comments_count, 'comment') %></span>
-    <div class="pull-right">
-      <% if belongs_to_user?(post) %>
-        <%= link_to edit_post_path(post), class: 'btn btn-primary btn-sm' do %>
-          <% fa_icon 'pencil' %>
+<% if post.user %>
+  <div class="info">
+    <%= render 'shared/avatar', user: post.user %>
+    <h4 class="name"><%= link_to post.user.name, user_path(post.user) %></h4>
+    <span class="action">created a <%= link_to 'post', post %></span>
+  </div>
+  <div class="content">
+    <span class="text"><%= post.content_html %></span>
+    <% if post.attachment.present? %>
+      <div class="attachment">
+        <%= image_tag post.attachment %>
+      </div>
+    <% end %>
+    <%= render 'shared/created_at', activity: post %>
+    <div class="points">
+      <span class="like-count"><%= pluralize(post.cached_votes_up, 'like') %></span>
+      <span class="comments-count"><%= pluralize(post.comments_count, 'comment') %></span>
+      <div class="pull-right">
+        <% if belongs_to_user?(post) %>
+          <%= link_to edit_post_path(post), class: 'btn btn-primary btn-sm' do %>
+            <% fa_icon 'pencil' %>
+          <% end %>
+          <%= link_to post_path(post), method: :delete, class:'btn btn-danger btn-sm', remote: remote do %>
+            <% fa_icon 'trash' %>
+          <% end %>
         <% end %>
-        <%= link_to post_path(post), method: :delete, class:'btn btn-danger btn-sm', remote: remote do %>
-          <% fa_icon 'trash' %>
-        <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
-</div>
-<%= render 'shared/actions', resource: post %>
+  <%= render 'shared/actions', resource: post %>
+<% end %>
