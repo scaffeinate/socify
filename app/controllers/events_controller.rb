@@ -41,9 +41,19 @@ class EventsController < ApplicationController
     end
   end
 
+  def calendar
+    if request.xhr?
+      @events = Event.select("events.*").joins("INNER JOIN follows ON events.user_id = follows.followable_id").where("follows.follower_id = #{current_user.id} AND follows.followable_type ='User' AND events.event_datetime BETWEEN '#{params[:start]}' AND '#{params[:end]}'")
+    end
+    respond_to do |format|
+      format.html
+      format.json { render :json => @events, each_serializer: EventCalendarSerializer }
+    end
+  end
+
   private
   def event_params
-    params.require(:event).permit(:name, :when)
+    params.require(:event).permit(:name, :event_datetime)
   end
 
   def set_event
