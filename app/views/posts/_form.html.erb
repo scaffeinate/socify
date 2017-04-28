@@ -4,7 +4,7 @@
     <div class="form-group">
       <h4>Update Status</h4>
       <div id="post-content" contenteditable="true" class="editable form-control input-mentionable" placeholder="What's up?"></div>
-      <%= f.hidden_field :content, class: 'form-control input-mentionable', autofocus: true %>
+      <%= f.hidden_field :content, value: @post.content, class: 'form-control input-mentionable', autofocus: true %>
     </div>
     <div id="img-preview" class="form-group hidden">
       <img src="" alt="Preview">
@@ -18,5 +18,10 @@
       </a>
       <%= f.submit 'Post', class: 'btn btn-primary'%>
     </div>
+    <% if @post.attachment.present? %>
+      <div class="attachment">
+        <%= image_tag @post.attachment %>
+      </div>
+    <% end %>
   <% end %>
 </div>
