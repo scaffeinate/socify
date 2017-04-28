@@ -16,7 +16,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %> <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><%= link_to('Profile', user_path(current_user)) %></li>
-              <li><%= link_to 'Edit Profile', edit_user_path(@user) %></li>
+              <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
               <li><%= link_to 'Change password', edit_user_registration_path %></li>
               <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
             </ul>
