@@ -1,5 +1,7 @@
 <% if activity_resources_exist?(activity) %>
-  <div id="event-<%= activity.trackable.id %>" class="activity-event">
-    <%= render activity.trackable, remote: true %>
+  <div id="activity-<%= activity.id %>" class="activity">
+    <div id="event-<%= activity.trackable.id %>" class="activity-event">
+      <%= render activity.trackable, remote: true %>
+    </div>
   </div>
 <% end %>
