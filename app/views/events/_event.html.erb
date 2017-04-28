@@ -1,27 +1,29 @@
-<div class="info">
-  <%= render 'shared/avatar', user: event.user %>
-  <h4 class="name"><%= link_to event.user.name, user_path(event.user) %></h4>
-  <span class="action">created an <%= link_to 'event', event %></span>
-</div>
-<div class="content">
-  <h3><%= event.name %></h3>
-  <span class="text">
-    <%= fa_icon'calendar' %> <%= formatted_time(event.when) %>
-  </span>
-  <%= render 'shared/created_at', activity: event %>
-  <div class="points">
-    <span class="like-count"><%= pluralize(event.cached_votes_up, 'like') %></span>
-    <span class="comment-count"><%= pluralize(event.comments_count, 'comment') %></span>
-    <div class="pull-right">
-      <% if belongs_to_user?(event) %>
-        <%= link_to edit_event_path(event), class: 'btn btn-primary btn-sm' do %>
-          <% fa_icon 'pencil' %>
+<% if event.user %>
+  <div class="info">
+    <%= render 'shared/avatar', user: event.user %>
+    <h4 class="name"><%= link_to event.user.name, user_path(event.user) %></h4>
+    <span class="action">created an <%= link_to 'event', event %></span>
+  </div>
+  <div class="content">
+    <h3><%= event.name %></h3>
+    <span class="text">
+      <%= fa_icon'calendar' %> <%= formatted_time(event.when) %>
+    </span>
+    <%= render 'shared/created_at', activity: event %>
+    <div class="points">
+      <span class="like-count"><%= pluralize(event.cached_votes_up, 'like') %></span>
+      <span class="comment-count"><%= pluralize(event.comments_count, 'comment') %></span>
+      <div class="pull-right">
+        <% if belongs_to_user?(event) %>
+          <%= link_to edit_event_path(event), class: 'btn btn-primary btn-sm' do %>
+            <% fa_icon 'pencil' %>
+          <% end %>
+          <%= link_to event_path(event), method: :delete, class:'btn btn-danger btn-sm', remote: remote do %>
+            <% fa_icon 'trash' %>
+          <% end %>
         <% end %>
-        <%= link_to event_path(event), method: :delete, class:'btn btn-danger btn-sm', remote: remote do %>
-          <% fa_icon 'trash' %>
-        <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
-</div>
-<%= render 'shared/actions', resource: event %>
+  <%= render 'shared/actions', resource: event %>
+<% end %>
