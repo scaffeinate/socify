@@ -11,11 +11,11 @@
  * file per style scope.
  *
  */
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 @import "variables";
 @import "jquery.datetimepicker";
 @import "jquery.atwho";
+@import "fullcalendar.min";
 @import "*";
