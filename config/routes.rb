@@ -11,7 +11,12 @@ Rails.application.routes.draw do
       get :mentionable
     end
   end
-  resources :events
+
+  resources :events do
+    collection do
+      get :calendar
+    end
+  end
 
   authenticated :user do
     root to: 'home#index', as: 'home'
