@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       get :mentionable
     end
   end
-  resources :events, except: [:edit, :update]
+  resources :events
 
   authenticated :user do
     root to: 'home#index', as: 'home'
