@@ -2,18 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.activity-post, .post {
+.activity-post,
+.post {
   .content {
     margin-left: 60px;
     padding: 5px 15px;
+
     .text {
       font-size: $default-font-size;
+    }
+
+    img {
+      width: 100%;
     }
 
     .attachment {
       border: 1px solid $border-color;
       padding: 5px;
       margin-top: 10px;
+
       img {
         width: 100%;
       }

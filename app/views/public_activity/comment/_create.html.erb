@@ -3,7 +3,7 @@
     <div class="info">
       <%= render 'shared/avatar', user: activity.owner %>
       <h4 class="name"><%= link_to activity.owner.name, user_path(activity.owner) %></h4>
-      <span class="action">commented on a <%= link_to 'post', activity.trackable.commentable %></span>
+      <span class="action">commented on a <%= link_to activity.trackable.commentable.class.to_s, activity.trackable.commentable %></span>
     </div>
     <div class="content">
       <h4><small><%= activity.trackable.comment_html %></small></h4>
