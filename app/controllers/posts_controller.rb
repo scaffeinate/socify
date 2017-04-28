@@ -37,7 +37,8 @@ class PostsController < ApplicationController
 
   private
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.find_by(id: params[:id])
+    render_404 and return unless @post && User.find_by(id: @post.user_id)
   end
 
   def post_params

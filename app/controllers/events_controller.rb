@@ -47,7 +47,8 @@ class EventsController < ApplicationController
   end
 
   def set_event
-    @event = Event.find(params[:id])
+    @event = Event.find_by(id: params[:id])
+    render_404 and return unless @event && User.find_by(id: @event.user_id)
   end
 
   def set_user
