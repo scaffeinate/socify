@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Base from './components/base.js';
+import ComponentBase from './components/ComponentBase.js';
 
 global.React = React;
 global.ReactDOM = ReactDOM;
-global.Avatar = Base.Avatar;
-global.CreatedAt = Base.CreatedAt;
-global.LinkPreview = Base.LinkPreview;
-global.ImagePreview = Base.ImagePreview;
-global.DateTimePickerModal = Base.DateTimePickerModal;
-global.Location = Base.Location;
+global.Avatar = ComponentBase.Avatar;
+global.CreatedAt = ComponentBase.CreatedAt;
+global.LinkPreview = ComponentBase.LinkPreview;
+global.ImagePreview = ComponentBase.ImagePreview;
+global.DateTimePickerModal = ComponentBase.DateTimePickerModal;
+global.Location = ComponentBase.Location;
+global.ContentEditable = ComponentBase.ContentEditable;
 
 // window.Moment = require('moment');
 //

@@ -8,7 +8,7 @@ const propTypes = {
   content: PropTypes.string
 };
 
-class ContentEditable extends Component {
+export default class ContentEditable extends Component {
   onInputChange(event) {
     let html = event.target.innerHTML;
     let text = Utils.stripTags(html);
@@ -36,5 +36,3 @@ class ContentEditable extends Component {
 }
 
 ContentEditable.propTypes = propTypes;
-
-export default ContentEditable;
