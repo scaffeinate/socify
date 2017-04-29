@@ -5,9 +5,9 @@ const propTypes = {
   avatar: PropTypes.string
 };
 
-export default const Avatar = (props) => (
+export default Avatar = (props) => (
   <a href={props.linkTo}>
-    <img src={props.avatar || '/assets/avatar.png'} className='avatar'></img>
+    <img src={props.avatar || '/assets/avatar.png'} className="avatar"></img>
   </a>
 );
 

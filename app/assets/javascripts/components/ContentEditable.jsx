@@ -26,9 +26,7 @@ export default class ContentEditable extends Component {
     return (
       <div>
         <div className="contenteditable">
-          <div contentEditable className="editable form-control input-mentionable" onInput={this.onInputChange} onPaste={this.onContentPaste} placeholder={this.props.placeholder} dangerouslySetInnerHTML={{
-            __html: () => Utils.stripTags(this.props.content)
-          }}></div>
+          <div contentEditable className="editable form-control input-mentionable" onInput={this.onInputChange} onPaste={this.onContentPaste} placeholder={this.props.placeholder} dangerouslySetInnerHTML={{__html: () => Utils.stripTags(this.props.content)}}></div>
         </div>
       </div>
     );
