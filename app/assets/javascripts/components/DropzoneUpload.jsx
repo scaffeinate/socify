@@ -17,7 +17,7 @@ const defaultProps = {
   multiple: false
 };
 
-export default class DropzoneUpload extends Component {
+class DropzoneUpload extends Component {
   constructor(props) {
     super(props);
     this.getDefaultMessage = this.getDefaultMessage.bind(this);
@@ -77,3 +77,5 @@ export default class DropzoneUpload extends Component {
 
 DropzoneUpload.propTypes = propTypes;
 DropzoneUpload.defaultProps = defaultProps;
+
+export default DropzoneUpload;
