@@ -7,13 +7,13 @@ import Location from './Location';
 import ContentEditable from './ContentEditable';
 
 const ComponentBase = {
-  Avatar: Avatar,
-  CreatedAt: CreatedAt,
-  LinkPreview: LinkPreview,
-  ImagePreview: ImagePreview,
-  DateTimePickerModal: DateTimePickerModal,
-  ContentEditable: ContentEditable,
-  Location: Location
+  Avatar,
+  CreatedAt,
+  LinkPreview,
+  ImagePreview,
+  DateTimePickerModal,
+  ContentEditable,
+  Location
 };
 
 export default ComponentBase;
