@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
 import InputMoment from 'input-moment';
@@ -7,9 +7,9 @@ const propTypes = {
   onDateSelected: PropTypes.func.isRequired
 };
 
-export default class DateTimePickerModal extends Component {
+class DateTimePickerModal extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.onDateChange = this.onDateChange.bind(this);
     this.onSaveClick = this.onSaveClick.bind(this);
     this.state = {
@@ -18,7 +18,7 @@ export default class DateTimePickerModal extends Component {
   }
 
   onDateChange(moment) {
-    this.setState({moment: moment});
+    this.setState({ moment });
   }
 
   onSaveClick() {
@@ -32,7 +32,7 @@ export default class DateTimePickerModal extends Component {
           <div className="modal-content">
             <div className="modal-header">
               <button type="button" className="close" data-dismiss="modal">
-                <i className="icon-cancel"></i>
+                <i className="icon-cancel" />
               </button>
               <h4 className="modal-title">Pick Date &amp; Time</h4>
             </div>
@@ -47,3 +47,5 @@ export default class DateTimePickerModal extends Component {
 }
 
 DateTimePickerModal.propTypes = propTypes;
+
+export default DateTimePickerModal;
