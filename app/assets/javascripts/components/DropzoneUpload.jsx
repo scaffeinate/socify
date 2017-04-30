@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
-import FormData from 'form-data';
 import fetch from 'isomorphic-fetch';
+
+/* global FormData */
 
 const propTypes = {
   uploadURL: PropTypes.string.isRequired,
