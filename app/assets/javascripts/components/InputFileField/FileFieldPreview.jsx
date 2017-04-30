@@ -8,7 +8,7 @@ const propTypes = {
 const FileFieldPreview = ({ onRemoveClick }) => (
   <div>
     <img src={this.props.src} className="attachment" alt="Attachment" />
-    <button href="#" onClick={onRemoveClick} className="remove-attachment">
+    <button onClick={onRemoveClick} className="remove-attachment">
       <i className="icon-trash" />
     </button>
   </div>
