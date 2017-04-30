@@ -30,13 +30,17 @@
   },
   "homepage": "https://github.com/scaffeinate/socify#readme",
   "dependencies": {
+    "es6-promise": "^4.1.0",
+    "form-data": "^2.1.4",
     "google-maps-react": "^1.0.19",
     "input-moment": "^0.3.2",
+    "isomorphic-fetch": "^2.2.1",
     "moment": "^2.18.1",
     "prop-types": "^15.5.8",
     "react": "15.4.1",
     "react-dom": "15.4.1",
     "react-dropzone": "^3.12.2",
-    "react-places-autocomplete": "^4.1.1"
+    "react-places-autocomplete": "^4.1.1",
+    "validator": "^7.0.0"
   }
 }

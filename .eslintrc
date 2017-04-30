@@ -6,5 +6,9 @@
     "comma-dangle": ["error", "never"],
     "no-console": ["error", { allow: ["warn", "error"] }]
   },
+  "globals": {
+    "document": true,
+    "window": true,
+  },
   "extends": "airbnb"
 }
