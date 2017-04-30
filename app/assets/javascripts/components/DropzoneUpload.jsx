@@ -1,13 +1,20 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
-import imageBackgroundDiv from './ImageBackgroundDiv';
+import FormData from 'form-data';
+import fetch from 'isomorphic-fetch';
 
 const propTypes = {
   uploadURL: PropTypes.string.isRequired,
-  authenticityToken: PropTypes.string.isRequired, //TODO: Remove this and use global CSRF-Token
+  authenticityToken: PropTypes.string.isRequired, // TODO: Remove this and use global CSRF-Token
+  onFileUploaded: PropTypes.func.isRequired,
   defaultMessage: PropTypes.string,
-  onFileUploaded: PropTypes.func.isRequired
+  multiple: PropTypes.boolean
+};
+
+const defaultProps = {
+  defaultMessage: 'Drop/Upload file',
+  multiple: false
 };
 
 export default class DropzoneUpload extends Component {
@@ -18,53 +25,49 @@ export default class DropzoneUpload extends Component {
     this.onFileDrop = this.onFileDrop.bind(this);
     this.state = {
       dropzoneContent: this.getDefaultMessage()
-    }
+    };
   }
 
-  onFileDrop(acceptedFiles, rejectedFiles) {
-    let _this = this;
-    let formData = new FormData();
-    let url = this.props.uploadURL;
-    let files = [];
+  onFileDrop(acceptedFiles) {
+    const formData = new FormData();
+    const url = this.props.uploadURL;
+    const authenticityToken = this.props.authenticityToken;
+    const onFileUploaded = this.props.onFileUploaded;
 
-    this.setState({dropzoneContent: this.getUploadingMessage()});
+    this.setState({ dropzoneContent: this.getUploadingMessage() });
 
-    for(var index in acceptedFiles) {
-      var file = acceptedFiles[index];
-      formData.append('files[]', file, file['name']);
-    }
+    acceptedFiles.forEach((file) => {
+      formData.append('files[]', file, file.name);
+    });
 
     fetch(url, {
       method: 'POST',
       body: formData,
       headers: {
         'X-Requested-With': 'XMLHttpRequest',
-        'X-CSRF-Token': _this.props.authenticityToken
+        'X-CSRF-Token': authenticityToken
       },
       credentials: 'same-origin'
-    }).then(function(response) {
-      response.json().then(function(data) {
-        this.props.onFileUploaded(data);
-      });
-    });
+    })
+    .then(response => response.json())
+    .then(data => onFileUploaded(data))
+    .catch(e => console.error(e));
   }
 
   getDefaultMessage() {
-    return <div className='text-center message'>{this.props.defaultMessage || 'Drop/Upload file'}</div>;
+    return <div className="text-center message">{this.props.defaultMessage}</div>;
   }
 
-  getUploadingMessage() {
-    return (
-      <div className='text-center message'>
-        <img src='/assets/ajax-loader.gif' /> &nbsp;&nbsp;Uploading...
-      </div>
-    );
-  }
+  getUploadingMessage = () => (
+    <div className="text-center message">
+      <img src="/assets/ajax-loader.gif" alt="" /> &nbsp;&nbsp;Uploading...
+    </div>
+  )
 
   render() {
     return (
       <div>
-        <Dropzone multiple={this.props.multiple} className='dropzone' accept='image/*' onDrop={this.onFileDrop}>
+        <Dropzone multiple={this.props.multiple} className="dropzone" accept="image/*" onDrop={this.onFileDrop}>
           {this.state.dropzoneContent}
         </Dropzone>
       </div>
@@ -73,3 +76,4 @@ export default class DropzoneUpload extends Component {
 }
 
 DropzoneUpload.propTypes = propTypes;
+DropzoneUpload.defaultProps = defaultProps;

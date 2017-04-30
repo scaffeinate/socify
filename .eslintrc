@@ -3,7 +3,8 @@
   "rules": {
     "strict": 0,
     "func-names": ["error", "never"],
-    "comma-dangle": ["error", "never"]
+    "comma-dangle": ["error", "never"],
+    "no-console": ["error", { allow: ["warn", "error"] }]
   },
   "extends": "airbnb"
 }
