@@ -6,9 +6,9 @@ import CreatedAt from '../CreatedAt';
 
 const propTypes = {
   onCommentDelete: PropTypes.func.isRequired,
-  shouldRenderActions: PropTypes.boolean.isRequired,
-  user: PropTypes.obj.isRequired,
-  comment: PropTypes.obj.isRequired
+  shouldRenderActions: PropTypes.bool.isRequired,
+  user: PropTypes.object.isRequired,
+  comment: PropTypes.object.isRequired
 };
 
 

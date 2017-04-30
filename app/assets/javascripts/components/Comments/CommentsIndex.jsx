@@ -7,7 +7,7 @@ import CommentsForm from './CommentsForm';
 /* global FormData */
 
 const propTypes = {
-  userSignedIn: PropTypes.boolean, // TODO: Remove this and use global state
+  userSignedIn: PropTypes.bool, // TODO: Remove this and use global state
   authenticityToken: PropTypes.string.isRequired, // TODO: Remove this and use global CSRF-Token
   userLinkTo: PropTypes.string.isRequired,
   userAvatar: PropTypes.string,

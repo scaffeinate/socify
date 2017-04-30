@@ -10,7 +10,7 @@ const propTypes = {
   authenticityToken: PropTypes.string.isRequired, // TODO: Remove this and use global CSRF-Token
   onFileUploaded: PropTypes.func.isRequired,
   defaultMessage: PropTypes.string,
-  multiple: PropTypes.boolean
+  multiple: PropTypes.bool
 };
 
 const defaultProps = {
