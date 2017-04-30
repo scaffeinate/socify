@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -5,10 +6,17 @@ const propTypes = {
   avatar: PropTypes.string
 };
 
-export default Avatar = (props) => (
-  <a href={props.linkTo}>
-    <img src={props.avatar || '/assets/avatar.png'} className="avatar"></img>
+const defaultProps = {
+  avatar: '/assets/avatar.png'
+};
+
+const Avatar = ({ linkTo, avatar }) => (
+  <a href={linkTo}>
+    <img src={avatar} className="avatar" alt="Avatar" />
   </a>
 );
 
 Avatar.propTypes = propTypes;
+Avatar.defaultProps = defaultProps;
+
+export default Avatar;

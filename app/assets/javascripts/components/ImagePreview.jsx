@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -5,10 +6,17 @@ const propTypes = {
   clsName: PropTypes.string
 };
 
-export default ImagePreview = (props) => (
-  <div className={props.src ? (props.clsName || 'img-preview') : 'hidden'}>
-    <img src={props.src}></img>
+const defaultProps = {
+  clsName: 'img-preview'
+};
+
+const ImagePreview = ({ src, clsName }) => (
+  <div className={src ? clsName : 'hidden'}>
+    <img src={src} alt="Preview" />
   </div>
 );
 
 ImagePreview.propTypes = propTypes;
+ImagePreview.defaultProps = defaultProps;
+
+export default ImagePreview;
