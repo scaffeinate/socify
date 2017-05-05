@@ -91,6 +91,4 @@ Rails.application.configure do
     authentication: 'plain',
     enable_starttls_auto: true
   }
-
-  config.react.variant = :production
 end
