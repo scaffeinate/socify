@@ -7,30 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/mentions' %>
-    <% unless notice.blank? %>
-      <div class="alert alert-info alert-dismissable alert-fixed">
-        <%= notice %>
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      </div>
-    <% end %>
-    <% unless alert.blank? %>
-      <div class="alert alert-danger alert-dismissable alert-fixed">
-        <%= alert %>
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      </div>
-    <% end %>
-    <%= render 'shared/cover' %>
     <div class="container">
-      <% if user_signed_in? %>
-        <% render 'layouts/main' %>
-        <%= yield :main%>
-      <% else %>
-        <%= yield %>
-      <% end %>
+      <%= react_component 'Application' %>
     </div>
-    <%= render 'layouts/modals' %>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_maps_api_key %>&libraries=places"></script>
     <%= javascript_include_tag 'application' %>
   </body>
