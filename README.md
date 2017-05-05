@@ -12,6 +12,13 @@ Do you want to see it in action? Here is a working version deployed to heroku [h
 * [Public Activity](https://github.com/chaps-io/public_activity)
 
 
+### Dependencies:
+* Ruby > 2.2.1
+* Rails 5.0.2
+* Foreman
+* Nodejs
+* Yarn
+
 ### How do I get set up?
 
 To set it up on your local machine here is what you need to do. Install Ruby & Rails. Clone this repo using the following command:
