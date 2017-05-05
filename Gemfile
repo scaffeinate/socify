@@ -8,9 +8,6 @@ gem 'sass-rails', '~> 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '~> 3.0.0'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
 # Use twitter bootstrap sass
 gem 'bootstrap-sass', '~> 3.2.0'
 
@@ -59,10 +56,9 @@ gem 'mini_magick'
 gem 'onebox'
 gem 'twitter-text'
 
-gem 'react-rails'
 gem 'active_model_serializers'
 
-gem 'browserify-rails'
+gem 'webpacker'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -52,13 +52,7 @@ GEM
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
     arel (7.1.4)
-    autoprefixer-rails (6.7.7.2)
-      execjs
     aws_cf_signer (0.1.3)
-    babel-source (5.8.35)
-    babel-transpiler (0.7.0)
-      babel-source (>= 4.0, < 6)
-      execjs (~> 2.0)
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -68,10 +62,6 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
-    browserify-rails (4.2.0)
-      addressable (>= 2.4.0)
-      railties (>= 4.0.0, < 5.2)
-      sprockets (>= 3.6.0)
     builder (3.2.3)
     carrierwave (1.0.0)
       activemodel (>= 4.0.0)
@@ -84,7 +74,6 @@ GEM
       rest-client
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
-    connection_pool (2.2.1)
     counter_culture (0.1.34)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -100,8 +89,6 @@ GEM
     diff-lcs (1.3)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
-    dropzonejs-rails (0.7.3)
-      rails (> 3.1)
     erubis (2.7.0)
     execjs (2.7.0)
     faker (1.7.3)
@@ -132,10 +119,6 @@ GEM
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (0.8.1)
-    jquery-rails (4.3.1)
-      rails-dom-testing (>= 1, < 3)
-      railties (>= 4.2.0)
-      thor (>= 0.14, < 2.0)
     jsonapi-renderer (0.1.2)
     jwt (1.5.6)
     kgio (2.11.0)
@@ -251,12 +234,6 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
-    react-rails (2.1.0)
-      babel-transpiler (>= 0.7.0)
-      connection_pool
-      execjs
-      railties (>= 3.2)
-      tilt
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rest-client (2.0.2)
@@ -317,6 +294,10 @@ GEM
       raindrops (~> 0.7)
     warden (1.2.7)
       rack (>= 1.0)
+    webpacker (1.2)
+      activesupport (>= 4.2)
+      multi_json (~> 1.2)
+      railties (>= 4.2)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -330,21 +311,17 @@ DEPENDENCIES
   acts_as_commentable
   acts_as_follower
   acts_as_votable (~> 0.10.0)
-  autoprefixer-rails
   better_errors
   binding_of_caller
   bootstrap-sass (~> 3.2.0)
-  browserify-rails
   carrierwave
   cloudinary
   counter_culture (~> 0.1.33)
   devise
-  dropzonejs-rails
   faker
   friendly_id (~> 5.0.0)
   guard
   guard-rspec (~> 4.2.8)
-  jquery-rails
   letter_opener
   mini_magick
   omniauth
@@ -357,7 +334,6 @@ DEPENDENCIES
   puma
   rails (= 5.0.2)
   rails_12factor
-  react-rails
   sanitize
   sass-rails (~> 5.0.6)
   spring
@@ -365,7 +341,8 @@ DEPENDENCIES
   twitter-text
   uglifier (~> 3.0.0)
   unicorn
+  webpacker
   will_paginate (~> 3.0.6)
 
 BUNDLED WITH
-   1.14.6
+   1.12.5
