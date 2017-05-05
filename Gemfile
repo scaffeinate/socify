@@ -13,7 +13,6 @@ gem 'jquery-rails'
 
 # Use twitter bootstrap sass
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails'
 
 group :development do
   gem 'puma'
@@ -56,7 +55,6 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2', '~> 0.3.0'
 gem 'sanitize'
 
-gem 'dropzonejs-rails'
 gem 'mini_magick'
 gem 'onebox'
 gem 'twitter-text'
