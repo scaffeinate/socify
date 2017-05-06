@@ -5,5 +5,4 @@ const Application = () => (
   <NavBar />
 );
 
-
 export default Application;

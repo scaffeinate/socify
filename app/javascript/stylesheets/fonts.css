@@ -1,0 +1,9 @@
+:root {
+  --default-font-size: 1.5rem;
+  --vlarge-font-size: 2.25rem;
+  --large-font-size: 1.85rem;
+  --medium-font-size: 1.45rem;
+  --small-font-size: 1.25rem;
+  --default-font: 'Lato', sans-serif;
+  --stylized-font: 'Raleway', sans-serif;
+}

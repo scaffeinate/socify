@@ -10,8 +10,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import './variables.css';
-import Socify from '../components/containers/Socify';
+import './application.css';
+import Socify from '../containers/Socify';
 
 document.addEventListener('DOMContentLoaded', () => {
   const mountNode = document.getElementById('socify');
