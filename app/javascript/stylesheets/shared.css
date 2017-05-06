@@ -1,0 +1,11 @@
+@import "./colors";
+@import "./fonts";
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400);
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,600);
+
+body {
+  padding-top: 100px;
+  background: var(--bg-color, '#fff');
+  font-family: var(--lato-font, 'Helvetica');
+  font-weight: 300;
+}

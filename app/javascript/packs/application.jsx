@@ -10,7 +10,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import './application.css';
+import '../stylesheets/shared.css';
 import Socify from '../containers/Socify';
 
 document.addEventListener('DOMContentLoaded', () => {

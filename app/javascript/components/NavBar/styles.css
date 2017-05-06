@@ -1,10 +1,13 @@
 @import "../../stylesheets/colors";
 @import "../../stylesheets/fonts";
 
-.navbar {
-  padding: 2px;
-  border: none;
+.bg-navbar-color {
   background-color: var(--navbar-color);
+}
+
+.navbar {
+  padding: 5px 50px;
+  border: none;
 
   input {
     margin-top: -2px;
@@ -14,8 +17,8 @@
 }
 
 .navbar-brand {
-  font-family: 'Raleway', sans-serif;
-  font-size: 2rem;
+  font-family: var(--raleway-font), sans-serif;
+  font-size: var(--medium-font-size, 1.5rem);
   font-weight: 300;
 }
 
@@ -28,21 +31,16 @@
   };
 }
 
-.navbar-nav > li > .dropdown-menu {
-  width: 200px;
-}
-
-.navbar-nav > li > .dropdown-toggle > i {
-  margin-left: 5px;
-}
-
 .navbar {
-  .navbar-nav li a {
+  .navbar-nav .nav-link {
+    color: var(--white);
+    background: var(--navbar-color);
+
     &:active,
     &:focus,
     &:hover {
       color: var(--white);
-      background: var(--navbar-color);
+      background: var(--navbar-color-dark);
     }
   }
 }
