@@ -1,7 +1,7 @@
 .navbar {
   padding: 2px;
   border: none;
-  background-color: $navbar-color;
+  background-color: var(--navbar-color);
 
   input {
     margin-top: -2px;
@@ -21,7 +21,7 @@
   color: white !important;
 
   &:hover {
-    color: $bg-color !important;
+    color: var(--bg-color) !important;
   };
 }
 
@@ -39,22 +39,22 @@
     &:focus,
     &:hover {
       color: white;
-      background: darken($navbar-color, 10%);
+      background: var(--navbar-color);
     }
   }
 }
 
 .navbar-default .navbar-nav > .open > a {
-  background: darken($navbar-color, 10%);
+  background: var(--navbar-color);
 
   &:focus,
   &:hover {
-    background: darken($navbar-color, 10%);
+    background: var(--navbar-color);
   }
 }
 
 .navbar-nav > li > .dropdown-menu a {
   padding: 7px 20px;
-  font-size: $medium-font-size;
+  font-size: var(--medium-font-size);
   font-weight: 300;
 }
