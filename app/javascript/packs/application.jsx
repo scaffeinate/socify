@@ -9,12 +9,13 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Application from '../components/containers/Application';
-import './application.scss';
+import 'bootstrap/dist/css/bootstrap.css';
+import './variables.css';
+import Socify from '../components/containers/Socify';
 
 document.addEventListener('DOMContentLoaded', () => {
   const mountNode = document.getElementById('socify');
   ReactDOM.render(
-    <Application />, mountNode
+    <Socify />, mountNode
   );
 });
