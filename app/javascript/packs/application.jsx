@@ -7,4 +7,14 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Application from '../components/containers/Application';
+import './application.scss';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mountNode = document.getElementById('socify');
+  ReactDOM.render(
+    <Application />, mountNode
+  );
+});

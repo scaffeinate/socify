@@ -2,15 +2,13 @@
 <html>
   <head>
     <title>Socify - Open source social networking platform</title>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= csrf_meta_tags %>
+    <%= stylesheet_pack_tag 'application' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div class="container">
-      <%= react_component 'Application' %>
+    <div id="socify">
     </div>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_maps_api_key %>&libraries=places"></script>
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
   </body>
 </html>
