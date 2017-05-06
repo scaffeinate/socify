@@ -3,14 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.2'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.6'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 3.0.0'
-
-# Use twitter bootstrap sass
-gem 'bootstrap-sass', '~> 3.2.0'
-
 group :development do
   gem 'puma'
   gem 'spring'
