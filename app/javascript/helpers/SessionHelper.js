@@ -8,5 +8,10 @@ class SessionHelper {
     const currentUser = {}; // TODO: Fetch it from the store
     return currentUser !== null;
   }
+
+  static isUserPage() {
+    // TODO: Check if the currentRoute is /users
+    return true;
+  }
 }
 export default SessionHelper;
