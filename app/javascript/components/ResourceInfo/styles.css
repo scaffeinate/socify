@@ -1,0 +1,40 @@
+@import "../../stylesheets/colors";
+@import "../../stylesheets/fonts";
+
+.like-and-comment {
+  @extend .col-xs-12;
+  margin-top: 20px;
+
+  .like-btn button {
+    background: none !important;
+    border: none !important;
+    outline: none;
+    padding: 0;
+
+    > form {
+      display: inline-block;
+    }
+  }
+
+  .liked i {
+    color: var(--liked-color) !important;
+  }
+
+  .comment-btn,
+  .like-btn {
+    margin-left: 10px;
+    display: inline-block;
+
+    i {
+      color: var(--light-text-color);
+      font-size: var(--large-font-size);
+    }
+  }
+
+  .comments-count,
+  .likes-count {
+    color: var(--default-text-color);
+    font-size: var(--medium-font-size);
+    margin-left: 5px;
+  }
+}

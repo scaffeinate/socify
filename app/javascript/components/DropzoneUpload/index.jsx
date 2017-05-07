@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
 import fetch from 'isomorphic-fetch';
+import './styles.css';
 
 /* global FormData */
 
