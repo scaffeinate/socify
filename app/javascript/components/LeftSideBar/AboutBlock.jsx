@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CreatedAt from '../CreatedAt';
-import './styles.css';
 
 const propTypes = {
   user: PropTypes.object.isRequired
 };
 
 const AboutBlock = ({ user }) => (
-  <div className="sidebar-block">
+  <div id="about-block" className="sidebar-block">
     <h4 className="block-title">
       <i className="icon-user" /> About
     </h4>

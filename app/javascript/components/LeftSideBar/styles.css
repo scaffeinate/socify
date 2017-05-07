@@ -1,0 +1,32 @@
+@import "../../stylesheets/fonts";
+
+#profile-block {
+  padding-bottom: 15px;
+
+  .section {
+    text-align: center;
+    padding: 5px 30px 10px;
+    line-height: 1.85rem !important;
+  }
+}
+
+#about-block {
+  margin-top: 20px;
+  padding: 0;
+}
+
+.stats-count {
+  h4 {
+    margin: 0;
+    font-family: var(--default-font);
+    font-size: var(--vlarge-font-size);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  span {
+    font-size: 0.95rem;
+    font-weight: 300;
+    text-align: center;
+  }
+}
