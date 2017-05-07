@@ -1,0 +1,30 @@
+.img-preview,
+.img-preview-sm {
+  padding: 5px;
+  border: 1px solid $border-color;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.img-preview {
+  img {
+    width: 100%;
+  }
+}
+
+.img-preview-sm {
+  border: none;
+
+  img {
+    width: 45%;
+  }
+}
+
+.img-fit {
+  height: 125px;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}

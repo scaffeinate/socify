@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './styles.css';
 
 const propTypes = {
   html: PropTypes.string.isRequired,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import stripTags from '../helpers/stripTags';
+import stripTags from '../../helpers/stripTags';
+import './styles.css';
 
 const propTypes = {
   onInputChange: PropTypes.func.isRequired,
@@ -35,7 +36,7 @@ class ContentEditable extends Component {
     return (
       <div>
         <div className="contenteditable">
-          <div contentEditable className="editable form-control input-mentionable" onInput={this.onInputChange} onPaste={this.onContentPaste} placeholder={this.props.placeholder} dangerouslySetInnerHTML={{ __html: () => stripTags(this.props.content) }} />
+          <div contentEditable className="editable form-control" onInput={this.onInputChange} onPaste={this.onContentPaste} placeholder={this.props.placeholder} dangerouslySetInnerHTML={{ __html: () => stripTags(this.props.content) }} />
         </div>
       </div>
     );

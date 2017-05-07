@@ -1,0 +1,12 @@
+div.editable {
+  height: 65px;
+  max-height: 65px;
+  overflow-y: scroll;
+  padding: 10px 17px;
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
+
+  &:focus {
+    border: 1px solid #888 !important;
+  };
+}

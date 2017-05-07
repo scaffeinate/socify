@@ -9,3 +9,29 @@ body {
   font-family: var(--lato-font, 'Helvetica');
   font-weight: 300;
 }
+/***********************************************/
+/* input field, textarea styles start */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+textarea {
+  height: auto;
+  padding: 10px 17px;
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
+
+  &:focus {
+    border: 1px solid #888 !important;
+  };
+}
+
+[placeholder]:empty:before {
+  content: attr(placeholder);
+  color: var(--light-text-color);
+}
+
+[placeholder]:empty:focus:before {
+  content: '';
+}
+/* input field, textarea styles end */
+/***********************************************/

@@ -1,0 +1,64 @@
+@import "../../stylesheets/colors";
+@import "../../stylesheets/fonts";
+
+.link-preview {
+  margin-top: 20px;
+
+  .onebox-preview {
+    width: 100%;
+    @extend .well;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    iframe {
+      width: 100%;
+    }
+
+    .onebox {
+      .source {
+        @extend .label, .label-default;
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: var(--small-font-size);
+
+        a {
+          color: var(--white);
+        }
+      }
+
+      .onebox-body {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          a {
+            font-size: var(--large-font-size);
+            font-family: var(--default-font);
+            color: var(--default-text-color);
+          }
+        }
+
+        .tags {
+          @extend .label, .label-primary;
+        }
+
+        .date {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    p {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-height: 100px;
+    }
+
+    img {
+      width: 100px;
+      height: auto;
+    }
+  }
+}

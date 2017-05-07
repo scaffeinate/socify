@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FileFieldPreview from './FileFieldPreview';
+import './styles.css';
 /* global FileReader */
 
 const propTypes = {

@@ -31,9 +31,11 @@ class CreatedAt extends Component {
     const { isoTime, format } = this.props;
     const time = this.fromNow(isoTime, format);
     return (
-      <time dateTime={time}>
-        {time}
-      </time>
+      <div className="inline-block">
+        <time dateTime={time}>
+          {time}
+        </time>
+      </div>
     );
   }
 }
