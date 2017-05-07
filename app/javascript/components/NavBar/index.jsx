@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink,
-  Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+  UncontrolledNavDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import './styles.css';
 
 class NavBar extends Component {
@@ -33,16 +33,13 @@ class NavBar extends Component {
               <NavItem>
                 <NavLink href="/">Sudhar</NavLink>
               </NavItem>
-              <NavItem>
-                <Dropdown isOpen={this.state.isDropdownOpen} toggle={this.dropdownToggle}>
-                  <DropdownToggle caret>Profile</DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem><NavLink href="/">Edit Profile</NavLink></DropdownItem>
-                    <DropdownItem><NavLink href="/">Change Password</NavLink></DropdownItem>
-                    <DropdownItem><NavLink href="/">Logout</NavLink></DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
-              </NavItem>
+              <UncontrolledNavDropdown>
+                <DropdownToggle caret nav>Profile</DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem>Edit Profile</DropdownItem>
+                  <DropdownItem>Logout</DropdownItem>
+                </DropdownMenu>
+              </UncontrolledNavDropdown>
               <NavItem>
                 <NavLink href="/">About</NavLink>
               </NavItem>

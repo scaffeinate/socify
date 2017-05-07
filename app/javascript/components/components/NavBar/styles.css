@@ -1,0 +1,60 @@
+.navbar {
+  padding: 2px;
+  border: none;
+  background-color: var(--navbar-color);
+
+  input {
+    margin-top: -2px;
+    width: 350px !important;
+    padding: 7px 10px !important;
+  }
+}
+
+.navbar-brand {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.navbar-brand,
+.navbar-default .navbar-nav > li > a {
+  color: var(--white) !important;
+
+  &:hover {
+    color: var(--bg-color) !important;
+  };
+}
+
+.navbar-nav > li > .dropdown-menu {
+  width: 200px;
+}
+
+.navbar-nav > li > .dropdown-toggle > i {
+  margin-left: 5px;
+}
+
+.navbar {
+  .navbar-nav li a {
+    &:active,
+    &:focus,
+    &:hover {
+      color: var(--white);
+      background: var(--navbar-color);
+    }
+  }
+}
+
+.navbar-default .navbar-nav > .open > a {
+  background: var(--navbar-color-dark);
+
+  &:focus,
+  &:hover {
+    background: var(--navbar-color-dark);
+  }
+}
+
+.navbar-nav > li > .dropdown-menu a {
+  padding: 7px 20px;
+  font-size: var(--medium-font-size);
+  font-weight: 300;
+}
