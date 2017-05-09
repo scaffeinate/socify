@@ -1,0 +1,3 @@
+web: bundle exec rails s -p 3000
+# watcher: ./bin/webpack-watcher
+webpacker: ./bin/webpack-dev-server
