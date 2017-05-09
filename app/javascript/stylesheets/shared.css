@@ -35,3 +35,47 @@ textarea {
 }
 /* input field, textarea styles end */
 /***********************************************/
+/***********************************************/
+/* sidebar styles start */
+.sidebar-block {
+  background-color: var(--white);
+  border-radius: 3px;
+  box-shadow: 2px 3px 5px var(--box-shadow);
+
+  .block-title {
+    font-family: var(--default-font);
+    font-size: var(--default-font-size);
+    font-weight: bold;
+    margin: 0;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+  }
+
+  .list-group {
+    margin-bottom: 5px;
+
+    .list-group-item {
+      text-align: left;
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+
+      i {
+        font-size: var(--default-font-size);
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+    }
+
+    .list-group-item:first-child {
+      border-top: none;
+    }
+
+    .list-group-item:last-child {
+      border-bottom: none;
+    }
+  }
+}
+/* sidebar styles end */
+/***********************************************/
