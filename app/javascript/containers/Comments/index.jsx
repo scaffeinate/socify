@@ -130,7 +130,7 @@ class Comments extends Component {
   }
 }
 
-CommentsIndex.propTypes = propTypes;
-CommentsIndex.defaultProps = defaultProps;
+Comments.propTypes = propTypes;
+Comments.defaultProps = defaultProps;
 
-export default CommentsIndex;
+export default Comments;
