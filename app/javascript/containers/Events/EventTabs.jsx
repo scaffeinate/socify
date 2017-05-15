@@ -1,42 +1,54 @@
-var EventTabs = React.createClass({
-  getDefaultProps() {
-    return {
-      tabItems: [
-        { label: 'Explore', value: 0, icon: 'icon-compass' },
-        { label: 'Invited', value: 1, icon: 'icon-users' },
-        { label: 'Created By You', value: 2, icon: 'icon-user' }
-      ]
-    }
-  },
-  getInitialState() {
-    return {
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+const propTypes = {
+  tabItems: PropTypes.array.isRequired
+};
+
+const defaultProps = {
+  tabItems: [
+    { label: 'Explore', value: 0, icon: 'icon-compass' },
+    { label: 'Invited', value: 1, icon: 'icon-users' },
+    { label: 'Created By You', value: 2, icon: 'icon-user' }
+  ]
+};
+
+class EventTabs extends Component {
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+    this.getClassName = this.getClassName.bind(this);
+    this.state = {
       currentActiveItem: 0
-    }
-  },
-  constructClassName(value) {
-    return ((this.state.currentActiveItem == value) ? 'active' : '');
-  },
-  handleClick(e, value) {
+    };
+  }
+
+  onClick(e, value) {
     e.preventDefault();
-    var url = '/events?mode=' + value;
-    $.getScript(url);
-    this.setState({currentActiveItem: value});
-  },
+    /* TODO: API Call here */
+    this.setState({ currentActiveItem: value });
+  }
+
+  getClassName(currentItem) {
+    return ((this.state.currentActiveItem === currentItem) ? 'active' : '');
+  }
+
   render() {
-    var _this = this;
-    var tabItems = this.props.tabItems.map(function(tabItem) {
-      return (
-        <li key={tabItem.value} className={_this.constructClassName(tabItem.value)}>
-          <a href="#" onClick={(evt) => _this.handleClick(evt, tabItem.value)}><i className={tabItem.icon}></i> {tabItem.label}</a>
-        </li>
-      );
-    });
+    const self = this;
+    const tabItems = this.props.tabItems.map(({ tabItem }) => (
+      <li key={tabItem.value} className={self.getClassName(tabItem.value)}>
+        <a href="#click" onClick={e => self.onClick(e, tabItem.value)}><i className={tabItem.icon} /> {tabItem.label}</a>
+      </li>
+    ));
     return (
       <ul className="nav nav-pills">
         {tabItems}
       </ul>
     );
   }
-});
+}
 
-module.exports = EventTabs;
+EventTabs.propTypes = propTypes;
+EventTabs.defaultProps = defaultProps;
+
+export default EventTabs;
