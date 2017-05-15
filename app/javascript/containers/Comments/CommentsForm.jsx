@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import validator from 'validator';
 import fetch from 'isomorphic-fetch';
-import Avatar from '../Avatar';
-import ContentEditable from '../ContentEditable';
-import LinkPreview from '../LinkPreview';
+import Avatar from '../../components/Avatar';
+import ContentEditable from '../../components/ContentEditable';
+import LinkPreview from '../../components/LinkPreview';
 
 /* global FormData */
 

@@ -7,6 +7,7 @@ const propTypes = {
 
 const CommentActions = ({ onCommentDelete }) => (
   <div className="dropdown">
+    {/* Change to reactstrap component */}
     <a href="#dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
       <i className="icon-down-open-big" />
     </a>

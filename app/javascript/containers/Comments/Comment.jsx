@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CommentActions from './CommentActions';
-import Avatar from '../Avatar';
-import CreatedAt from '../CreatedAt';
+import Avatar from '../../components/Avatar';
+import CreatedAt from '../../components/CreatedAt';
 
 const propTypes = {
   onCommentDelete: PropTypes.func.isRequired,

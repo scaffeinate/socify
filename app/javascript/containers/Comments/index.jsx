@@ -20,7 +20,7 @@ const defaultProps = {
   userAvatar: ''
 };
 
-class CommentsIndex extends Component {
+class Comments extends Component {
   constructor(props) {
     super(props);
 
