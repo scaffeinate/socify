@@ -9,13 +9,16 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { browserHistory } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.css';
-import '../stylesheets/shared.css';
-import Socify from '../containers/Socify';
+import './application.css';
+import Root from '../containers/Root';
+
+// TODO: Redux history integration
 
 document.addEventListener('DOMContentLoaded', () => {
   const mountNode = document.getElementById('socify');
   ReactDOM.render(
-    <Socify />, mountNode
+    <Root history={browserHistory} />, mountNode
   );
 });
