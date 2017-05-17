@@ -64,6 +64,7 @@
     "react-dom": "^15.5.4",
     "react-dropzone": "^3.12.2",
     "react-places-autocomplete": "^4.1.1",
+    "react-router": "^3.0.0",
     "reactstrap": "^4.5.0",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.17.0",
