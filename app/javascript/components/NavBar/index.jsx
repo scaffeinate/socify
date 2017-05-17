@@ -24,14 +24,14 @@ class NavBar extends Component {
       <div>
         <Navbar light toggleable fixed={'top'} color={'navbar-color'}>
           <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand href="/">Socify</NavbarBrand>
+          <NavbarBrand href="/#/">Socify</NavbarBrand>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/">Home</NavLink>
+                <NavLink href="/#/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">Sudhar</NavLink>
+                <NavLink href="/#/">Sudhar</NavLink>
               </NavItem>
               <UncontrolledNavDropdown>
                 <DropdownToggle caret nav>Profile</DropdownToggle>
@@ -41,13 +41,13 @@ class NavBar extends Component {
                 </DropdownMenu>
               </UncontrolledNavDropdown>
               <NavItem>
-                <NavLink href="/">About</NavLink>
+                <NavLink href="/#/about">About</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">Sign up</NavLink>
+                <NavLink href="/#/">Sign up</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">Sign in</NavLink>
+                <NavLink href="/#/">Sign in</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
