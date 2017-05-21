@@ -6,7 +6,6 @@
 
   .onebox-preview {
     width: 100%;
-    @extend .well;
     padding: 10px;
     margin-bottom: 10px;
 
@@ -16,7 +15,6 @@
 
     .onebox {
       .source {
-        @extend .label, .label-default;
         display: inline-block;
         margin-bottom: 20px;
         font-size: var(--small-font-size);
@@ -38,10 +36,6 @@
             font-family: var(--default-font);
             color: var(--default-text-color);
           }
-        }
-
-        .tags {
-          @extend .label, .label-primary;
         }
 
         .date {

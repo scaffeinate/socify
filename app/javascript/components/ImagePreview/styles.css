@@ -1,7 +1,9 @@
+@import "../../stylesheets/colors";
+
 .img-preview,
 .img-preview-sm {
   padding: 5px;
-  border: 1px solid $border-color;
+  border: 1px solid var(--border-color);
   margin-top: 20px;
   margin-bottom: 20px;
 }

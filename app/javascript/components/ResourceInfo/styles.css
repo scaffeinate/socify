@@ -2,7 +2,6 @@
 @import "../../stylesheets/fonts";
 
 .like-and-comment {
-  @extend .col-xs-12;
   margin-top: 20px;
 
   .like-btn button {

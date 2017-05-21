@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { hashHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../stylesheets/shared.css';
 import Root from '../containers/Root';
@@ -19,6 +19,6 @@ import Root from '../containers/Root';
 document.addEventListener('DOMContentLoaded', () => {
   const mountNode = document.getElementById('socify');
   ReactDOM.render(
-    <Root history={hashHistory} />, mountNode
+    <Root history={browserHistory} />, mountNode
   );
 });
