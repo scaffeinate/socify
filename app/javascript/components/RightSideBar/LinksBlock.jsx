@@ -18,7 +18,7 @@ class LinksBlock extends Component {
       { label: 'Followers', value: 5, icon: 'icon-users' },
       { label: 'Find Friends', value: 6, icon: 'icon-search' },
       { label: 'Edit Profile', value: 7, icon: 'icon-pencil' },
-      { label: 'Change Password', value: 9, icon: 'icon-lock' }, // TODO: Move this to elsewhere internal
+      { label: 'Change Password', value: 8, icon: 'icon-lock' }, // TODO: Move this to elsewhere internal
       { label: 'Deactivate', value: 9, icon: 'icon-trash' } // TODO: Move this to elsewhere internal
     ];
     this.linkItems = linkItems;
@@ -28,7 +28,7 @@ class LinksBlock extends Component {
   }
   render() {
     // TODO: Handle active click
-    const links = this.linkItems.map(({ linkItem }) => (
+    const links = this.linkItems.map(linkItem => (
       <a key={linkItem.value} className="list-group-item">
         <i className={linkItem.icon} /> {linkItem.label}
       </a>

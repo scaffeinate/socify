@@ -1,7 +1,8 @@
 class SessionHelper {
   static isCurrentUser({ user }) {
     const currentUser = {}; // TODO: Fetch it from the store
-    return currentUser.id === user.id;
+    return true;
+    // return currentUser.id === user.id;
   }
 
   static userSignedIn() {

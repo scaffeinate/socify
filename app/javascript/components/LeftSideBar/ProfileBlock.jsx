@@ -11,10 +11,8 @@ const ProfileBlock = ({ user }) => (
   <div className="sidebar-block">
     <div
       className={SessionHelper.isUserPage ? 'sidebar-cover-user' : 'sidebar-cover'}
-      style={`background-image: url(${user.cover.url || '/assets/cover.png'});`}
-    >
-      <Avatar user={user} /><br />
-    </div>
+      style={{ backgroundImage: `url(${(user.cover ? user.cover.url : '/assets/cover.png')})` }}
+    />
     <div className="row">
       <div className="section">
         <h4 className="name">{user.name}</h4>

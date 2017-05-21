@@ -16,7 +16,7 @@ const AboutBlock = ({ user }) => (
         <ul className="list-group">
           <li className="list-group-item">
             <i className="icon-back-in-time" />
-            Joined <CreatedAt isoTime={user.created_at} format={2} />
+            {user.created_at ? (<div>Joined <CreatedAt isoTime={user.created_at} format={2} /></div>) : ''}
           </li>
           <li className="list-group-item">
             {user.dob ? (
