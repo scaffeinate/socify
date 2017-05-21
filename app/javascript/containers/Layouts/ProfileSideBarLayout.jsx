@@ -11,15 +11,14 @@ const propTypes = {
 
 const defaultProps = {
   linkItems: [
-    { label: 'NewsFeed', key: 1, icon: 'icon-newspaper', path: '/' },
-    { label: 'Events', key: 2, icon: 'icon-calendar-empty', path: '/' },
-    { label: 'Photo Albums', key: 3, icon: 'icon-picture', path: '/' },
-    { label: 'Friends', key: 4, icon: 'icon-users', path: '/' },
-    { label: 'Find Friends', key: 5, icon: 'icon-search', path: '/' }
+    { label: 'Profile', key: 1, icon: 'icon-user', path: '/' },
+    { label: 'Photo Albums', key: 2, icon: 'icon-picture', path: '/' },
+    { label: 'Friends', key: 3, icon: 'icon-users', path: '/' },
+    { label: 'Edit Profile', key: 4, icon: 'icon-pencil', path: '/' }
   ]
 };
 
-const SideBarLayout = ({ children, linkItems }) => (
+const ProfileSideBarLayout = ({ children, linkItems }) => (
   <Row>
     <Col xs={3}>
       <LeftSideBar user={{}} />
@@ -33,7 +32,7 @@ const SideBarLayout = ({ children, linkItems }) => (
   </Row>
 );
 
-SideBarLayout.propTypes = propTypes;
-SideBarLayout.defaultProps = defaultProps;
+ProfileSideBarLayout.propTypes = propTypes;
+ProfileSideBarLayout.defaultProps = defaultProps;
 
-export default SideBarLayout;
+export default ProfileSideBarLayout;

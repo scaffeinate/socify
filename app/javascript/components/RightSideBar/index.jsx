@@ -5,13 +5,13 @@ import GalleryBlock from './GalleryBlock';
 import './styles.css';
 
 const propTypes = {
-  user: PropTypes.object.isRequired
+  linkItems: PropTypes.array.isRequired
 };
 
-const RightSideBar = ({ user }) => (
+const RightSideBar = ({ linkItems }) => (
   <div>
-    <LinksBlock user={user} />
-    <GalleryBlock user={user} />
+    <LinksBlock linkItems={linkItems} />
+    <GalleryBlock />
   </div>
 );
 

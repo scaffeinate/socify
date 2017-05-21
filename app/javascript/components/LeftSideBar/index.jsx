@@ -10,8 +10,8 @@ const propTypes = {
 
 const LeftSideBar = ({ user }) => (
   <div>
+    <ProfileBlock user={user} /><br />
     <AboutBlock user={user} />
-    <ProfileBlock user={user} />
   </div>
 );
 
