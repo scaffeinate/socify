@@ -11,8 +11,7 @@ class SessionHelper {
   }
 
   static isUserPage() {
-    // TODO: Check if the currentRoute is /users
-    return true;
+    return false;
   }
 }
 export default SessionHelper;

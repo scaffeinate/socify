@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Input } from 'reactstrap';
 import HeaderNav from './HeaderNav';
 import './styles.css';
 
@@ -29,6 +29,7 @@ class HeaderNavBar extends Component {
         <Navbar light toggleable fixed={'top'} color={'navbar-color'}>
           <NavbarToggler right onClick={this.toggle} />
           <NavbarBrand href="/#/">Socify</NavbarBrand>
+          <Input type="text" name="search" placeholder="Search" />
           <Collapse isOpen={this.state.isOpen} navbar>
             <HeaderNav navItems={this.props.navItems} />
           </Collapse>

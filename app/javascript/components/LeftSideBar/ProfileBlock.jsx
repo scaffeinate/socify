@@ -11,17 +11,21 @@ const propTypes = {
 const ProfileBlock = ({ user }) => (
   <div className="sidebar-block">
     <div
-      className={SessionHelper.isUserPage ? 'sidebar-cover-user' : 'sidebar-cover'}
+      className={SessionHelper.isUserPage() ? 'sidebar-cover-user' : 'sidebar-cover'}
       style={{ backgroundImage: `url(${(user.cover ? user.cover.url : '/assets/cover.png')})` }}
-    />
-    <Row>
-      <div className="section">
-        <h4 className="name">{user.name}</h4>
-        <span id="bio">{user.bio || 'Nothing to say about me.'}</span>
-      </div>
-    </Row>
-    <Row>
-      <div className="section">
+    >
+      <Avatar linkTo={'/'} /><br />
+    </div>
+    <div className="section">
+      <Row>
+        <Col xs={12}>
+          <h4 className="name">{user.name}</h4>
+          <span id="bio">{user.bio || 'Nothing to say about me.'}</span>
+        </Col>
+      </Row>
+    </div>
+    <div className="section">
+      <Row>
         <Col xs={4}>
           <div className="stats-count">
             <span>FRIENDS</span>
@@ -40,14 +44,16 @@ const ProfileBlock = ({ user }) => (
             <h4>{user.photo_albums_count}</h4>
           </div>
         </Col>
-      </div>
-    </Row>
+      </Row>
+    </div>
     {SessionHelper.isCurrentUser(user) ?
       (<Row>
-        <div className="section">
-          { /* TODO: Insert Follo button here */ }
-          <h6>{/* TODO: Shows Follows You if the user follows current_user */}</h6>
-        </div>
+        <Col xs={12}>
+          <div className="section">
+            { /* TODO: Insert Follow button here */ }
+            <h6>{/* TODO: Shows Follows You if the user follows current_user */}</h6>
+          </div>
+        </Col>
       </Row>) : ''}
   </div>
 );
