@@ -49,8 +49,10 @@ gem 'onebox'
 gem 'twitter-text'
 
 gem 'active_model_serializers'
+gem 'turbolinks'
 
 gem 'webpacker'
+gem 'react-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

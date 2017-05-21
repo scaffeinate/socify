@@ -1,0 +1,5 @@
+<% content_for :static_base do %>
+  <%= react_component 'StaticNavBar', {}, { prerender: true } %>
+  <%= yield %>
+  <%= javascript_pack_tag 'server_rendering' %>
+<% end %>

@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
-  root to: 'home#base'
+  devise_for :users
+  match :about, to: 'home#about', as: :about, via: :get
+  unauthenticated :user do
+    root 'home#front'
+  end
+  authenticated :user do
+    root to: 'home#index', as: 'home'
+  end
   get '*path' => redirect('/')
 end
