@@ -8,8 +8,7 @@
   </head>
   <body>
     <% if user_signed_in? %>
-      <%= render 'layouts/react_base' %>
-      <%= yield :react_base %>
+      <%= yield %>
     <% else %>
       <%= render 'layouts/static_base' %>
       <%= yield :static_base %>

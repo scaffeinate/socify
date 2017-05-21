@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   end
   authenticated :user do
     root to: 'home#index', as: 'home'
+    get '*path' => redirect('/')
   end
-  get '*path' => redirect('/')
 end
