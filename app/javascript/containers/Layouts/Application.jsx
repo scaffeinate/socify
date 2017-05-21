@@ -1,20 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Container } from 'reactstrap';
 import HeaderNavBar from '../../components/HeaderNavBar';
 
 const propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.object.isRequired,
+  navItems: PropTypes.array
 };
 
-const Application = ({ children }) => (
+const defaultProps = {
+  navItems: [
+    { key: 0, name: 'Home', path: '/#/' },
+    { key: 1, name: 'Profile', path: '/#/profile' }
+  ]
+};
+
+const Application = ({ children, navItems }) => (
   <div>
-    <HeaderNavBar />
-    <div className="container">
+    <HeaderNavBar navItems={navItems} />
+    <Container>
       {children}
-    </div>
+    </Container>
   </div>
 );
 
 Application.propTypes = propTypes;
+Application.defaultProps = defaultProps;
 
 export default Application;
