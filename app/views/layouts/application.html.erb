@@ -7,7 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <%= yield %>
-    <%= javascript_pack_tag 'application' %>
+    <% if user_signed_in? %>
+      <%= render 'layouts/react_base' %>
+      <%= yield :react_base %>
+    <% else %>
+      <%= render 'layouts/static_base' %>
+      <%= yield :static_base %>
+    <% end %>
   </body>
 </html>

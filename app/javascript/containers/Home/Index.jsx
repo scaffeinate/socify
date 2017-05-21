@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Front = () => (
+const Index = () => (
   <div>Hello World</div>
 );
 
-export default Front;
+export default Index;

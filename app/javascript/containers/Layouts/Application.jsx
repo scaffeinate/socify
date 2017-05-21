@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NavBar from '../../components/NavBar';
+import HeaderNavBar from '../../components/HeaderNavBar';
 
 const propTypes = {
   children: PropTypes.object.isRequired
@@ -8,7 +8,7 @@ const propTypes = {
 
 const Application = ({ children }) => (
   <div>
-    <NavBar />
+    <HeaderNavBar />
     <div className="container">
       {children}
     </div>

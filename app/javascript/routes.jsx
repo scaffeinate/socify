@@ -2,12 +2,10 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import Application from './containers/Layouts/Application';
-import Front from './containers/Home/Front';
-import AboutPage from './containers/Home/AboutPage';
+import Index from './containers/Home/Index';
 
 export default (
   <Route path="/" component={Application}>
-    <IndexRoute component={Front} />
-    <Route path="/about" component={AboutPage} />
+    <IndexRoute component={Index} />
   </Route>
 );
