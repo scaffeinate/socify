@@ -7,7 +7,7 @@
         <span class="action">liked a <%= link_to 'post', activity.trackable %></span>
       </div>
       <div class="content">
-        <h4><small><%= activity.trackable.content %></small></h4>
+        <h4><small><%= activity.trackable.content_html %></small></h4>
       </div>
       <%= render 'shared/created_at', activity: activity %>
     </div>
