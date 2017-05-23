@@ -43,7 +43,9 @@ class EventsController < ApplicationController
 
   def calendar
     if request.xhr?
-      @events = Event.select("events.*").joins("INNER JOIN follows ON events.user_id = follows.followable_id").where("follows.follower_id = #{current_user.id} AND follows.followable_type ='User' AND events.event_datetime BETWEEN '#{params[:start]}' AND '#{params[:end]}'")
+      friend_events = Event.select("events.*").joins("INNER JOIN follows ON events.user_id = follows.followable_id").where("follows.follower_id = #{current_user.id} AND follows.followable_type ='User'")
+      current_user_events = current_user.events
+      @events = Event.from("(#{friend_events.to_sql} UNION #{current_user_events.to_sql}) as events").where("events.event_datetime BETWEEN '#{params[:start]}' AND '#{params[:end]}'")
     end
     respond_to do |format|
       format.html
