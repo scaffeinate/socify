@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap';
+import { connect } from 'react-redux';
 import LeftSideBar from '../../components/LeftSideBar';
 import RightSideBar from '../../components/RightSideBar';
 
 const propTypes = {
   children: PropTypes.object.isRequired,
+  currentUser: PropTypes.object.isRequired,
   linkItems: PropTypes.array
 };
 
@@ -19,10 +21,10 @@ const defaultProps = {
   ]
 };
 
-const SideBarLayout = ({ children, linkItems }) => (
+const SideBarLayout = ({ children, currentUser, linkItems }) => (
   <Row>
     <Col xs={3}>
-      <LeftSideBar user={{}} />
+      <LeftSideBar user={currentUser} />
     </Col>
     <Col xs={6}>
       {children}
@@ -33,7 +35,13 @@ const SideBarLayout = ({ children, linkItems }) => (
   </Row>
 );
 
+const mapStateToProps = function (store) {
+  return {
+    currentUser: store.userState.currentUser
+  };
+};
+
 SideBarLayout.propTypes = propTypes;
 SideBarLayout.defaultProps = defaultProps;
 
-export default SideBarLayout;
+export default connect(mapStateToProps)(SideBarLayout);
