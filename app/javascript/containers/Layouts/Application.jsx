@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Container } from 'reactstrap';
 import HeaderNavBar from '../../components/HeaderNavBar';
+import { fetchCurrentUser } from '../../api/userApi';
 
 const propTypes = {
   children: PropTypes.object.isRequired,
@@ -15,14 +16,21 @@ const defaultProps = {
   ]
 };
 
-const Application = ({ children, navItems }) => (
-  <div>
-    <HeaderNavBar navItems={navItems} />
-    <Container>
-      {children}
-    </Container>
-  </div>
-);
+class Application extends Component {
+  componentDidMount() {
+    fetchCurrentUser();
+  }
+  render() {
+    return (
+      <div>
+        <HeaderNavBar navItems={this.props.navItems} />
+        <Container>
+          {this.props.children}
+        </Container>
+      </div>
+    );
+  }
+}
 
 Application.propTypes = propTypes;
 Application.defaultProps = defaultProps;

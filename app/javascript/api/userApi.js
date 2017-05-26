@@ -1,8 +1,13 @@
+import axios from 'axios';
 import store from '../store/index';
 import { fetchCurrentUserSuccess, fetchUserSuccess } from '../actions/userActions';
 
 export function fetchCurrentUser() {
-  store.dispatch(fetchCurrentUserSuccess({}));
+  return axios.get('/api/v1/users/current')
+    .then((response) => {
+      store.dispatch(fetchCurrentUserSuccess(response.data));
+      return response;
+    });
 }
 
 export function fetchUser(userId) {
