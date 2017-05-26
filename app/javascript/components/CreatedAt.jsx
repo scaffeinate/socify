@@ -22,14 +22,9 @@ class CreatedAt extends Component {
     return Moment(time).fromNow();
   }
 
-  constructor(props) {
-    super(props);
-    this.fromNow = this.fromNow.bind(this);
-  }
-
   render() {
     const { isoTime, format } = this.props;
-    const time = this.fromNow(isoTime, format);
+    const time = CreatedAt.fromNow(isoTime, format);
     return (
       <div className="inline-block">
         <time dateTime={time}>
