@@ -8,6 +8,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  isoTime: '',
   format: 0
 };
 

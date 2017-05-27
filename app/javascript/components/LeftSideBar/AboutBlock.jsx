@@ -13,7 +13,7 @@ const getListItems = user => (
     { icon: 'icon-back-in-time',
       afterIconText: 'Joined',
       key: 0,
-      value: (<CreatedAt isoTime={user.created_at} format={2} />)
+      value: (user.created_at ? <CreatedAt isoTime={user.created_at} format={2} /> : null)
     },
     {
       icon: 'icon-birthday',
