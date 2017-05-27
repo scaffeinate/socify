@@ -1,11 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col } from 'reactstrap';
+import { Row } from 'reactstrap';
 import CreatedAt from '../CreatedAt';
+import ListGroupWithIcon from '../ListGroupWithIcon';
 
 const propTypes = {
   user: PropTypes.object.isRequired
 };
+
+const getListItems = user => (
+  [
+    { icon: 'icon-back-in-time',
+      afterIconText: 'Joined',
+      key: 0,
+      value: (<CreatedAt isoTime={user.created_at} format={2} />)
+    },
+    {
+      icon: 'icon-birthday',
+      beforeIconText: 'Celebrates',
+      afterIconText: 'on',
+      key: 1,
+      value: (user.dob ? (<CreatedAt isoTime={user.dob} format={2} />) : null)
+    },
+    {
+      icon: 'icon-location-1',
+      afterIconText: 'Lives in',
+      key: 2,
+      value: user.location
+    },
+    {
+      icon: 'icon-home',
+      afterIconText: 'From',
+      key: 3,
+      value: user.hometown
+    },
+    {
+      icon: 'icon-briefcase',
+      afterIconText: 'Works at',
+      key: 4,
+      value: user.works_at
+    },
+    {
+      icon: 'icon-user',
+      afterIconText: 'Became friends with',
+      key: 5,
+      value: user.recent_friend
+    }
+  ]
+);
 
 const AboutBlock = ({ user }) => (
   <div className="sidebar-block">
@@ -14,53 +56,11 @@ const AboutBlock = ({ user }) => (
     </h4>
     <Row>
       <div className="section">
-        <ul className="list-group">
-          {
-            user.created_at ?
-              (
-                <li className="list-group-item">
-                  <i className="icon-back-in-time" /> Joined <CreatedAt isoTime={user.created_at} format={2} />
-                </li>
-              ) : ''
-          }
-          {
-            user.dob ?
-              (
-                <li className="list-group-item">
-                  Celebrates <i className="icon-birthday" /> on <CreatedAt isoTime={user.dob} format={2} />
-                </li>
-              ) : ''
-          }
-          {user.sex ? (<li className="list-group-item"><i className="icon-user" />{user.sex}</li>) : ''}
-          {
-            user.location ?
-              (
-                <li className="list-group-item">
-                  <i className="icon-location-1" /> Lives in {user.location}
-                </li>
-              ) : ''
-          }
-          {user.hometown ? (<li className="list-group-item"><i className="icon-home" /> From {user.hometown}</li>) : ''}
-          {user.works_at ?
-              (
-                <li className="list-group-item">
-                  <i className="icon-briefcase" /> Works at {user.works_at}
-                </li>
-              ) : ''
-          }
-          {user.recent_friend ?
-            (
-              <li className="list-group-item">
-                <i className="icon-users" /> Became friends with {user.recent_friend}
-              </li>
-            ) : ''
-          }
-        </ul>
+        <ListGroupWithIcon listItems={getListItems(user)} />
       </div>
     </Row>
   </div>
 );
 
 AboutBlock.propTypes = propTypes;
-
 export default AboutBlock;
