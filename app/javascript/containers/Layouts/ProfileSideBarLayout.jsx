@@ -11,10 +11,10 @@ const propTypes = {
 
 const defaultProps = {
   linkItems: [
-    { value: 'Profile', key: 0, icon: 'icon-user', path: '/' },
-    { value: 'Photo Albums', key: 1, icon: 'icon-picture', path: '/' },
-    { value: 'Friends', key: 2, icon: 'icon-users', path: '/' },
-    { value: 'Edit Profile', key: 3, icon: 'icon-pencil', path: '/' }
+    { value: 'Profile', key: 0, icon: 'icon-user', path: '/#/profile' },
+    { value: 'Photo Albums', key: 1, icon: 'icon-picture', path: '/#/photo-albums' },
+    { value: 'Friends', key: 2, icon: 'icon-users', path: '/#/friends' },
+    { value: 'Edit Profile', key: 3, icon: 'icon-pencil', path: '/#/edit-profile' }
   ]
 };
 

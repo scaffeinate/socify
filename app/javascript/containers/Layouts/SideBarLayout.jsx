@@ -13,11 +13,11 @@ const propTypes = {
 
 const defaultProps = {
   linkItems: [
-    { value: 'NewsFeed', key: 0, icon: 'icon-newspaper', path: '/' },
-    { value: 'Events', key: 1, icon: 'icon-calendar-empty', path: '/' },
-    { value: 'Photo Albums', key: 2, icon: 'icon-picture', path: '/' },
-    { value: 'Friends', key: 3, icon: 'icon-users', path: '/' },
-    { value: 'Find Friends', key: 4, icon: 'icon-search', path: '/' }
+    { value: 'NewsFeed', key: 0, icon: 'icon-newspaper', path: '/#/' },
+    { value: 'Events', key: 1, icon: 'icon-calendar-empty', path: '/#/events' },
+    { value: 'Photo Albums', key: 2, icon: 'icon-picture', path: '/#/photo-albums' },
+    { value: 'Friends', key: 3, icon: 'icon-users', path: '/#/friends' },
+    { value: 'Find Friends', key: 4, icon: 'icon-search', path: '/#/find-friends' }
   ]
 };
 
