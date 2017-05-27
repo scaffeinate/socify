@@ -9,6 +9,15 @@ body {
   font-family: var(--lato-font, 'Helvetica');
   font-weight: 300;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--raleway-font, 'Helvetica');
+}
 /***********************************************/
 /* input field, textarea styles start */
 input[type="email"],
@@ -19,6 +28,7 @@ textarea {
   padding: 10px 17px;
   box-shadow: none !important;
   border: 1px solid #ccc !important;
+  font-family: var(--lato-font, 'Helvetica');
 
   &:focus {
     border: 1px solid #888 !important;
@@ -78,4 +88,11 @@ textarea {
   }
 }
 /* sidebar styles end */
+/***********************************************/
+/***********************************************/
+/* btn styles start */
+.btn {
+  font-family: var(--lato-font, 'Helvetica');
+}
+/* btn styles end */
 /***********************************************/
