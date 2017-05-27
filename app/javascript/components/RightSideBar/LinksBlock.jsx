@@ -1,37 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router';
+import ListGroupWithIcon from '../ListGroupWithIcon';
 import '../../helpers/SessionHelper';
 
 const propTypes = {
-  linkItems: PropTypes.array.isRequired
+  linkItems: PropTypes.array.isRequired,
+  currentItem: PropTypes.number
 };
 
-class LinksBlock extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentItem: 0
-    };
-  }
-  render() {
-    // TODO: Handle active click
-    const links = this.props.linkItems.map(linkItem => (
-      <Link key={linkItem.key} to={linkItem.path} className="list-group-item">
-        <i className={linkItem.icon} /> {linkItem.label}
-      </Link>
-    ));
+const defaultProps = {
+  currentItem: 0
+};
 
-    return (
-      <div className="sidebar-block">
-        <div className="list-group">
-          {links}
-        </div>
-      </div>
-    );
-  }
-}
+const LinksBlock = ({ linkItems }) => (
+  <div className="sidebar-block">
+    <ListGroupWithIcon listItems={linkItems} links />
+  </div>
+);
 
 LinksBlock.propTypes = propTypes;
+LinksBlock.defaultProps = defaultProps;
 
 export default LinksBlock;
