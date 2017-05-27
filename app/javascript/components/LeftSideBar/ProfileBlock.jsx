@@ -12,7 +12,7 @@ const ProfileBlock = ({ user }) => (
   <div className="sidebar-block">
     <div
       className={SessionHelper.isUserPage() ? 'sidebar-cover-user' : 'sidebar-cover'}
-      style={{ backgroundImage: `url(${(user.cover ? user.cover.url : '/assets/cover.png')})` }}
+      style={{ backgroundImage: `url(${(user.cover ? user.cover.url : '/assets/cover-card.png')})` }}
     >
       <Avatar linkTo={'/'} /><br />
     </div>
