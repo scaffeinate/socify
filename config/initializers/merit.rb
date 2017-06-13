@@ -1,52 +1,44 @@
 # Use this hook to configure merit parameters
 Merit.setup do |config|
-
+  Merit::Badge.create!(
+    id: 1,
+    name: "Jr.Critics",
+    description: "Over 5 comments",
+    custom_fields: { color: '#C9AE5D', icon: 'icon-star-circled' }
+  )
+  Merit::Badge.create!(
+    id: 2,
+    name: "Sr.Critic",
+    description: "Over 50 comments",
+    custom_fields: { color: '#FFD700', icon: 'icon-crown' }
+  )
 
   Merit::Badge.create!(
-  id: 1,
-  name: "Jr.Critics",
-  description: "Over 5 comments",
-  custom_fields: { difficulty: :bronze },
-  custom_fields: { img: 'bronze.png' }
-)
-Merit::Badge.create!(
-  id: 2,
-  name: "Sr.Critic",
-  description: "Over 50 comments",
-  custom_fields: { difficulty: :gold },
-  custom_fields: { img: 'badge.png' }
-)
+    id: 3,
+    name: "Story Teller",
+    description: "Over 5 posts!",
+    custom_fields: { color: '#C0C0C0', icon: 'icon-certificate' }
+  )
+  Merit::Badge.create!(
+    id: 4,
+    name: "First story ",
+    description: "created first story",
+    custom_fields: { color: '#C9AE5D', icon: 'icon-star-1' }
+  )
 
-Merit::Badge.create!(
-id: 3,
-name: "Story Teller",
-description: "Over 5 notes!",
-custom_fields: { difficulty: :silver },
-custom_fields: { img: 'badge.png' }
-)
-Merit::Badge.create!(
-id: 4,
-name: "First story ",
-description: "created first story",
-custom_fields: { difficulty: :bronze },
-custom_fields: { img: 'grey.png' }
-)
-
-Merit::Badge.create!(
-  id: 5,
-  name: "Scholar",
-  description: "recieve over 2 likes on your post!",
-  custom_fields: { difficulty: :gold },
-  custom_fields: { img: 'badge.png' }
-)
-Merit::Badge.create!(
-  id: 6,
-  name: "Necromancer",
-  description: "followed 7 people",
-  custom_fields: { difficulty: :gold },
-  custom_fields: { img: 'badge.png' }
-)
-
+  Merit::Badge.create!(
+    id: 5,
+    name: "Scholar",
+    description: "Recieved over 2 likes on your post!",
+    custom_fields: { color: '#FFD700', icon: 'icon-certificate' }
+  )
+  Merit::Badge.create!(
+    id: 6,
+    name: "Necromancer",
+    description: "followed 7 people",
+    custom_fields: { color: '#FFD700', icon: 'icon-minefield' }
+  )
+end
   # Check rules on each request or in background
   # config.checks_on_each_request = true
 
@@ -64,7 +56,7 @@ Merit::Badge.create!(
   # to retrieve :user_model_name object if no `:to` option is given. Default
   # is "current_#{user_model_name.downcase}".
   # config.current_user_method = 'current_user'
-end
+
 
 # Create application badges (uses https://github.com/norman/ambry)
 # badge_id = 0

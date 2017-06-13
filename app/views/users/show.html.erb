@@ -3,13 +3,6 @@
 <div id="user-<%= @user.id %>" class="row">
   <div class="col-lg-3">
     <%= render 'shared/user_info' %>
-    
-    <p><%=@user.points%></p>
-         <% @user.badges.each do |badge| %>
-          <p class="activity"><%= badge.name %></p>
-          <p class="activity"><%= badge.custom_fields[:difficulty] %></p>
-            <p class="activity"><%=image_tag (badge.custom_fields[:img])%></p>
-        <% end %>
   </div>
   <div class="col-lg-6">
     <div id="activities">
