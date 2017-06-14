@@ -19,6 +19,18 @@
       <%= @user.location %>
     </h5>
   <% end %>
+  <h5>
+    <i class="icon-record"></i> <%= pluralize(@user.points, 'point') %>
+  </h5>
+  <% if @user.badges %>
+    <h5>
+      <% @user.badges.each do |badge| %>
+        <i class="<%= badge.custom_fields[:icon] %>" style="color: <%= badge.custom_fields[:color] %>">
+        </i>
+        <%= badge.name %>
+      <% end %>
+    </h5>
+  <% end %>
   <br>
   <div class="text-center">
     <% unless is_current_user?(@user) %>

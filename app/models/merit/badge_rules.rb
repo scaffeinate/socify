@@ -21,10 +21,10 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
-
       grant_on 'comments#create',  badge: 'Jr.Critics', temporary: true, to: :user do |comment|
-    comment.user.comments.count >= 2
-end
+        comment.user.comments.count >= 2
+      end
+    end
 
       # If it creates user, grant badge
       # Should be "current_user" after registration for badge to be granted.
@@ -49,6 +49,5 @@ end
       #
       #   user.name.length > 4
       # end
-    end
   end
 end
