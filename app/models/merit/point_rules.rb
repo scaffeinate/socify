@@ -3,14 +3,12 @@ module Merit
     include Merit::PointRulesMethods
 
     def initialize
+      score 2, on: 'comments#create', to: [:user]
+      score 1, on: 'posts#upvote', to: [:user]
+      score 4, on: 'posts#create', to: [:user]
 
-      score 1, on: 'comments#create', to: [:user]
-
-
-       score 5, on: 'post#upvote', to: [:user]
-
-
-              score 3, on: 'post#create', to: [:user]
+      score 3, on: 'events#create', to: [:user]
+      score 1, on: 'events#upvote', to: [:user]
       # score 10, :on => 'users#create' do |user|
       #   user.bio.present?
       # end
