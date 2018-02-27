@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @inventory.product_id %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @inventory.item %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @inventory.condition %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @inventory.price %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @inventory.owner_id %>
+</p>
+
+<p>
+  <strong>Borrower:</strong>
+  <%= @inventory.borrower_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @inventory.status %>
+</p>
+
+<p>
+  <strong>Borrowed date:</strong>
+  <%= @inventory.borrowed_date %>
+</p>
+
+<p>
+  <strong>Return date:</strong>
+  <%= @inventory.return_date %>
+</p>
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>

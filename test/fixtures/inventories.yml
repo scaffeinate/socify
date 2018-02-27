@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_id: 1
+  item: MyString
+  condition: MyString
+  price: 1
+  owner_id: 1
+  borrower_id: 1
+  status: MyString
+  borrowed_date: MyString
+  return_date: 2018-02-27
+
+two:
+  product_id: 1
+  item: MyString
+  condition: MyString
+  price: 1
+  owner_id: 1
+  borrower_id: 1
+  status: MyString
+  borrowed_date: MyString
+  return_date: 2018-02-27
