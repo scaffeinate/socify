@@ -1,7 +1,7 @@
 class InventoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_inventory, only: [:show, :edit, :update, :destroy]
-  
+  respond_to :js
 
   # GET /inventories
   def index
@@ -10,6 +10,7 @@ class InventoriesController < ApplicationController
 
   # GET /inventories/1
   def show
+
   end
 
   # GET /inventories/new
