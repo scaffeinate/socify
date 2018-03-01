@@ -1,6 +1,8 @@
 class InventoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_inventory, only: [:show, :edit, :update, :destroy]
+  before_action :check_ownership, only: [:edit, :update]
+
   respond_to :js
 
   # GET /inventories
