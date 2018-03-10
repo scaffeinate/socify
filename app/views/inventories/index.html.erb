@@ -1,0 +1,69 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<h1>Inventories</h1>
+
+<style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: orange;
+    color: white;
+}
+</style>
+<div contain><%= link_to 'New Inventory', new_inventory_path %></div>
+
+<table id="customers">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Item</th>
+      <th>Condition</th>
+      <th>Price</th>
+      <th>Owner</th>
+      <th>Borrower</th>
+      <th>Status</th>
+      <th>Borrowed date</th>
+      <th>Return date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inventories.each do |inventory| %>
+      <tr>
+        <td><%= inventory.product_id %></td>
+        <td><%= inventory.item %></td>
+        <td><%= inventory.condition %></td>
+        <td><%= inventory.price %></td>
+        <td><%= inventory.owner_id %></td>
+        <td><%= inventory.borrower_id %></td>
+        <td><%= inventory.status %></td>
+        <td><%= inventory.borrowed_date %></td>
+        <td><%= inventory.return_date %></td>
+        <td><%= link_to 'Show', inventory %></td>
+        <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
+        <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

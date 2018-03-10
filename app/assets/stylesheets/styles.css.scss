@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 body {
-  padding-top: 100px;
+  padding-top: 35px;
   background: $bg-color;
   font-family: 'Noto Sans', sans-serif;
 }
@@ -22,7 +22,7 @@ h6 {
 }
 
 .navbar-brand {
-  font-weight: 600;
+  font-weight: 100;
 }
 
 .navbar-brand,
@@ -84,7 +84,7 @@ h6 {
 }
 
 .btn-sm {
-  padding: 7px 15px;
+  padding: 7px 8px;
   border: none;
 }
 
@@ -125,7 +125,7 @@ textarea {
   width: 450px;
   z-index: 10000;
   text-align: center;
-  padding: 5px 25px;
+  padding: 5px 15px;
 }
 
 .liked {
@@ -168,7 +168,7 @@ textarea {
 #user-info {
   h5 {
     border-bottom: 1px solid $border-color;
-    padding: 15px 10px;
+    padding: 5px 5px;
     margin: 0;
   }
 

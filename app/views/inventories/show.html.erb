@@ -1,0 +1,96 @@
+<p id="notice"><%= notice %></p>
+
+
+<style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: orange;
+    color: white;
+}
+</style>
+
+
+
+<table id="customers">
+  <tr>
+    <th><strong>Product:</strong></th>
+    <th> <strong>Item:</strong></th>
+    <th>  <strong>Condition:</strong></th>
+    <th><strong>Price:</strong></th>
+    <th><strong>Owner:</strong></th>
+    <th><strong>Borrower:</strong></th>
+    <th><strong>Status:</strong></th>
+    <th><strong>Borrowed date:</strong></th>
+     <th><strong>Return date:</strong></th>
+
+<tr>
+    <td>
+  <%= @inventory.product_id %> </td>
+  
+    
+<td>
+  <%= @inventory.item %></td>
+
+
+
+    
+
+<td>
+  <%= @inventory.condition %></td>
+
+
+
+    
+
+    <td>
+  <%= @inventory.price %></td>
+    
+    
+
+    <td>
+  <%= @inventory.owner_id %></td>
+
+    
+
+<td>
+  <%= @inventory.borrower_id %></td>
+
+    
+
+    <td>
+  <%= @inventory.status %></td>
+
+    
+    <td>
+  <%= @inventory.borrowed_date %></td>
+
+   
+
+    <td>
+  <%= @inventory.return_date %></td>
+  
+  </tr>
+ 
+</table>
+
+
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>

@@ -1,27 +1,44 @@
-<div class="row">
-  <div id="newsfeed" class="col-lg-6">
-    <h4><%= fa_icon "newspaper-o" %> NEWSFEED</h4>
-    <div id="activities">
-      <% if @activities.empty? %>
-        <div class="well">
-          <%= render('shared/no_resource', resources: 'Activities') %>
+
+
+<div class="container">
+      <div class="row">
+  <div class="col-lg-4 col-lg-offset-4 well">
+    <h3 class="text-center">Log in</h3>
+    <br>
+    <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="6mGw6FpSj8u/mrZdhLZM1GeRMBmeuciU/UIhMAirB0oIKnwfSksVL+dzbwuafDiF5cKZWDdIAEtg3mxS4sNYDg==" />
+      <div class="form-group">
+        <label for="user_email">Email</label>
+        <input class="form-control" autofocus="autofocus" placeholder="email@example.com" type="email" value="" name="user[email]" id="user_email" />
+      </div>
+      <div class="form-group">
+        <label for="user_password">Password</label>
+        <input class="form-control" autocomplete="off" placeholder="password" type="password" name="user[password]" id="user_password" />
+      </div>
+        <div class="form-group">
+          <input name="user[remember_me]" type="hidden" value="0" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
+          <label for="user_remember_me">Remember me</label>
         </div>
-      <% else %>
-        <%= render_activities(@activities, layout: '/shared/activity') %>
-      <% end %>
-    </div>
-    <%= render 'shared/paginate', resources: @activities %>
+      <div class="actions">
+        <input type="submit" name="commit" value="Log in" class="btn btn-success" data-disable-with="Log in" />
+      </div>
+</form>    <br>
+    
+  <a href="/users/sign_up">Sign up</a><br />
+
+  <a href="/users/password/new">Forgot your password?</a><br />
+
+  <a href="/users/confirmation/new">Didn&#39;t receive confirmation instructions?</a><br />
+
+
+
   </div>
-  <div id="intro" class="col-lg-6">
-    <h1>Socify</h1>
-    <p>Socify is an open source social networking app written using <%= fa_icon 'diamond' %> Ruby on Rails. You can checkout the blog <a href="https://medium.com/@sudharshanmuralidharaniyer/eb31da569233">post</a> on how
-    it was developed and also the source code on <a href="https://github.com/sudharti/socify"><%= fa_icon 'github' %> Github</a>.</p>
-    <hr>
-    <a href="https://github.com/sudharti/socify" class="btn btn-warning">
-      <%= fa_icon 'star' %> Star it
-    </a>
-    <a href="https://github.com/sudharti/socify" class="btn btn-primary">
-      <%= fa_icon 'code-fork' %> Fork it
-    </a>
-  </div>
+</div>
+
+
+
+
+    
+    
+    
+
 </div>

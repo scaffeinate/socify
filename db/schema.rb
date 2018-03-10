@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613183247) do
+ActiveRecord::Schema.define(version: 20180228014907) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "trackable_type"
@@ -26,25 +26,6 @@ ActiveRecord::Schema.define(version: 20170613183247) do
     t.index ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type"
     t.index ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
     t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
-  end
-
-  create_table "attachments", force: :cascade do |t|
-    t.string   "file_name"
-    t.string   "attachable_type", default: ""
-    t.integer  "attachable_id",   default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["attachable_type", "attachable_id"], name: "index_attachments_on_attachable_type_and_attachable_id"
-  end
-
-  create_table "authentications", force: :cascade do |t|
-    t.string   "uid"
-    t.string   "provider"
-    t.string   "oauth_token"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["user_id"], name: "index_authentications_on_user_id"
   end
 
   create_table "badges_sashes", force: :cascade do |t|
@@ -72,16 +53,6 @@ ActiveRecord::Schema.define(version: 20170613183247) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "event_attendees", force: :cascade do |t|
-    t.integer  "event_id",                 null: false
-    t.integer  "user_id",                  null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.         "status",     default: "0", null: false
-    t.index ["event_id"], name: "index_event_attendees_on_event_id"
-    t.index ["user_id"], name: "index_event_attendees_on_user_id"
-  end
-
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.datetime "event_datetime"
@@ -90,8 +61,6 @@ ActiveRecord::Schema.define(version: 20170613183247) do
     t.datetime "updated_at"
     t.integer  "cached_votes_up", default: 0
     t.integer  "comments_count",  default: 0
-    t.string   "location"
-    t.string   "latlng",          default: ""
     t.index ["cached_votes_up"], name: "index_events_on_cached_votes_up"
     t.index ["comments_count"], name: "index_events_on_comments_count"
     t.index ["user_id"], name: "index_events_on_user_id"
@@ -119,6 +88,20 @@ ActiveRecord::Schema.define(version: 20170613183247) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "inventories", force: :cascade do |t|
+    t.integer  "product_id"
+    t.string   "item"
+    t.string   "condition"
+    t.integer  "price"
+    t.integer  "owner_id"
+    t.integer  "borrower_id"
+    t.string   "status"
+    t.string   "borrowed_date"
+    t.date     "return_date"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "merit_actions", force: :cascade do |t|
@@ -154,38 +137,15 @@ ActiveRecord::Schema.define(version: 20170613183247) do
     t.string  "category", default: "default"
   end
 
-  create_table "photo_albums", force: :cascade do |t|
-    t.string   "title",           default: "Album"
-    t.string   "front_image_url"
-    t.integer  "photos_count",    default: 0,       null: false
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "slug"
-    t.integer  "cached_votes_up", default: 0
-    t.integer  "comments_count",  default: 0
-    t.index ["slug"], name: "index_photo_albums_on_slug", unique: true
-    t.index ["user_id"], name: "index_photo_albums_on_user_id"
-  end
-
-  create_table "photos", force: :cascade do |t|
-    t.string   "title",          default: "", null: false
-    t.string   "file",                        null: false
-    t.integer  "photo_album_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["photo_album_id"], name: "index_photos_on_photo_album_id"
-  end
-
   create_table "posts", force: :cascade do |t|
-    t.text     "content",                      null: false
+    t.text     "content",                     null: false
     t.integer  "user_id"
     t.string   "attachment"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cached_votes_up", default: 0
     t.integer  "comments_count",  default: 0
-    t.text     "preview_html",    default: "", null: false
+    t.text     "content_html"
     t.index ["cached_votes_up"], name: "index_posts_on_cached_votes_up"
     t.index ["comments_count"], name: "index_posts_on_comments_count"
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -200,7 +160,7 @@ ActiveRecord::Schema.define(version: 20170613183247) do
     t.string   "name",                   default: "",     null: false
     t.string   "email",                  default: "",     null: false
     t.string   "encrypted_password",     default: "",     null: false
-    t.string   "bio"
+    t.string   "about"
     t.string   "avatar"
     t.string   "cover"
     t.string   "reset_password_token"
@@ -222,14 +182,10 @@ ActiveRecord::Schema.define(version: 20170613183247) do
     t.string   "phone_number"
     t.integer  "posts_count",            default: 0,      null: false
     t.string   "slug"
-    t.boolean  "profile_complete",       default: false,  null: false
-    t.string   "first_name",             default: "",     null: false
-    t.string   "last_name",              default: "",     null: false
-    t.string   "hometown"
-    t.string   "works_at"
-    t.integer  "photo_albums_count",     default: 0,      null: false
     t.integer  "sash_id"
     t.integer  "level",                  default: 0
+    t.string   "provider"
+    t.string   "uid"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -9,6 +9,10 @@ gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
+gem 'pg'
+
+gem 'activeadmin', '~> 0.6.6'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'merit'
