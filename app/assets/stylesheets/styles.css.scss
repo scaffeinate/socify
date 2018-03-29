@@ -5,6 +5,7 @@ body {
   padding-top: 100px;
   background: $bg-color;
   font-family: 'Noto Sans', sans-serif;
+color: blue;
 }
 
 h1,
@@ -14,6 +15,7 @@ h4,
 h5,
 h6 {
   font-family: 'Montserrat', sans-serif;
+color: Orange;
 }
 
 .navbar {
@@ -28,7 +30,7 @@ h6 {
 .navbar-brand,
 .navbar-default .navbar-nav > li > a {
   font-family: 'Montserrat';
-  color: white !important;
+  color: orange !important;
 
   &:hover {
     color: $bg-color !important;
@@ -50,7 +52,7 @@ h6 {
 }
 
 .activity {
-  background: white;
+  background: red;
   border: 1px solid $border-color;
   border-radius: 3px;
   padding: 10px;
@@ -138,8 +140,8 @@ textarea {
   color: $light-text-color;
   display: inline-block;
   font-size: $small-font-size;
-  margin-top: 10px;
-  margin-right: 10px;
+  margin-top: 13px;
+  margin-right: 13px;
 }
 
 .activity-event,
