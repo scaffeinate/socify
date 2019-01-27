@@ -6,16 +6,16 @@ default: &default
 development:
   <<: *default
   database: socify_development
-  host: localhost
-  username:
-  password:
+  host: 18.136.120.134
+  username: postgres
+  password: Tuanphong0402
   
 test:
   <<: *default
   database: socify_test
-  host: localhost
-  username:
-  password:
+  host: 18.136.120.134
+  username: postgres
+  password: Tuanphong0402
 
 production:
   <<: *default
