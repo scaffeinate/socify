@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :events
 
-  mount_uploader :avatar, AvatarUploader
-  mount_uploader :cover, AvatarUploader
+  has_one_attached :avatar
+  has_one_attached :cover
 
   validates_presence_of :name
 
