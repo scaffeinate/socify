@@ -5,6 +5,9 @@ ruby '2.5.3'
 gem 'rails', '5.2.2'
 gem "bootsnap", require: false
 
+# Use postgres as the database for Active Record
+gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sassc-rails', '>= 2.0.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,19 +35,14 @@ end
 
 group :development, :test do
   gem 'puma'
-  gem 'sqlite3'
 end
 
 group :production do
-  gem 'pg'
   gem 'unicorn'
   gem 'rails_12factor'
-  gem 'fog'
-  gem 'fog-aws'
 end
 
 gem 'devise'
-gem 'carrierwave'
 gem 'friendly_id', '~> 5.0'
 
 gem 'will_paginate', '~> 3.1.0'

@@ -12,11 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2019_01_27_020258) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
+  enable_extension "pgcrypto"
+  enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -35,13 +41,13 @@ ActiveRecord::Schema.define(version: 2019_01_27_020258) do
 
   create_table "activities", force: :cascade do |t|
     t.string "trackable_type"
-    t.integer "trackable_id"
+    t.bigint "trackable_id"
     t.string "owner_type"
-    t.integer "owner_id"
+    t.bigint "owner_id"
     t.string "key"
     t.text "parameters"
     t.string "recipient_type"
-    t.integer "recipient_id"
+    t.bigint "recipient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type"
@@ -66,8 +72,8 @@ ActiveRecord::Schema.define(version: 2019_01_27_020258) do
     t.string "title", limit: 50, default: ""
     t.text "comment"
     t.string "commentable_type"
-    t.integer "commentable_id"
-    t.integer "user_id"
+    t.bigint "commentable_id"
+    t.bigint "user_id"
     t.string "role", default: "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -81,7 +87,7 @@ ActiveRecord::Schema.define(version: 2019_01_27_020258) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.datetime "event_datetime"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cached_votes_up", default: 0
@@ -93,9 +99,9 @@ ActiveRecord::Schema.define(version: 2019_01_27_020258) do
 
   create_table "follows", force: :cascade do |t|
     t.string "followable_type", null: false
-    t.integer "followable_id", null: false
+    t.bigint "followable_id", null: false
     t.string "follower_type", null: false
-    t.integer "follower_id", null: false
+    t.bigint "follower_id", null: false
     t.boolean "blocked", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -139,7 +145,7 @@ ActiveRecord::Schema.define(version: 2019_01_27_020258) do
   end
 
   create_table "merit_score_points", force: :cascade do |t|
-    t.integer "score_id"
+    t.bigint "score_id"
     t.integer "num_points", default: 0
     t.string "log"
     t.datetime "created_at"
@@ -147,14 +153,14 @@ ActiveRecord::Schema.define(version: 2019_01_27_020258) do
   end
 
   create_table "merit_scores", force: :cascade do |t|
-    t.integer "sash_id"
+    t.bigint "sash_id"
     t.string "category", default: "default"
     t.index ["sash_id"], name: "index_merit_scores_on_sash_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.text "content", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -207,9 +213,9 @@ ActiveRecord::Schema.define(version: 2019_01_27_020258) do
 
   create_table "votes", force: :cascade do |t|
     t.string "votable_type"
-    t.integer "votable_id"
+    t.bigint "votable_id"
     t.string "voter_type"
-    t.integer "voter_id"
+    t.bigint "voter_id"
     t.boolean "vote_flag"
     t.string "vote_scope"
     t.integer "vote_weight"
@@ -221,4 +227,5 @@ ActiveRecord::Schema.define(version: 2019_01_27_020258) do
     t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end
