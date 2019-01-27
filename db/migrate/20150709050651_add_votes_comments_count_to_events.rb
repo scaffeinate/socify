@@ -1,4 +1,4 @@
-class AddVotesCommentsCountToEvents < ActiveRecord::Migration
+class AddVotesCommentsCountToEvents < ActiveRecord::Migration[5.2]
   def change
     add_column :events, :cached_votes_up, :integer, :default => 0
     add_index  :events, :cached_votes_up

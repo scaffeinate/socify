@@ -3,6 +3,7 @@ ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.2.2'
+gem "bootsnap", require: false
 
 # Use SCSS for stylesheets
 gem 'sassc-rails', '>= 2.0.0'
