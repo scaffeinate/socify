@@ -6,17 +6,17 @@ default: &default
 development:
   <<: *default
   database: socify_development
-  host: localhost
-  username:
-  password:
+  host: <%= ENV['DATABASE_LOCAL_HOST'] %>
+  username: <%= ENV['DATABASE_LOCAL_USER'] %>
+  password: <%= ENV['DATABASE_LOCAL_PASSWORD'] %>
   
 test:
   <<: *default
   database: socify_test
-  host: localhost
-  username:
-  password:
+  host: <%= ENV['DATABASE_HOST'] %>
+  username: <%= ENV['DATABASE_LOCAL_USER'] %>
+  password: <%= ENV['DATABASE_LOCAL_PASSWORD'] %>
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_PROD_URL'] %>
