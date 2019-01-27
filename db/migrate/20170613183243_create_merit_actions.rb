@@ -1,4 +1,4 @@
-class CreateMeritActions < ActiveRecord::Migration
+class CreateMeritActions < ActiveRecord::Migration[5.2]
   def change
     create_table :merit_actions do |t|
       t.integer :user_id

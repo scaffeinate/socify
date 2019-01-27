@@ -1,11 +1,18 @@
 source 'https://rubygems.org'
-ruby '~> 2.3.1'
+ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.2'
+gem 'rails', '5.2.2'
+gem "bootsnap", require: false
+
+gem 'dotenv-rails'
+gem 'puma', '~> 3.11'
+
+# Use postgres as the database for Active Record
+gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.0'
+gem 'sassc-rails', '>= 2.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -16,34 +23,30 @@ gem 'merit'
 gem 'jquery-atwho-rails'
 
 # Use twitter bootstrap sass
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.4.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
 
-group :development do
-  gem 'spring'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'letter_opener'
-  gem 'guard'
-  gem 'guard-rspec', '~> 4.2.8'
+group :test do
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '>= 2.15'
+  gem 'selenium-webdriver'
+  # Easy installation and use of chromedriver to run system tests with Chrome
+  gem 'chromedriver-helper'
 end
 
-group :development, :test do
-  gem 'puma'
-  gem 'sqlite3'
+group :development do
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console', '>= 3.3.0'
+  gem 'listen', '>= 3.0.5', '< 3.2'
 end
 
 group :production do
-  gem 'pg'
-  gem 'unicorn'
-  gem 'rails_12factor'
-  gem 'fog'
-  gem 'fog-aws'
+  gem "lograge"
 end
 
 gem 'devise'
-gem 'carrierwave'
 gem 'friendly_id', '~> 5.0'
 
 gem 'will_paginate', '~> 3.1.0'

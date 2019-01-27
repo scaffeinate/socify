@@ -6,7 +6,7 @@
   </div>
   <div class="content">
     <span class="text"><%= post.content_html %></span>
-    <% if post.attachment.present? %>
+    <% if post.attachment.attached? %>
       <div class="attachment">
         <%= image_tag post.attachment %>
       </div>
