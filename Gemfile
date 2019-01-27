@@ -4,6 +4,7 @@ ruby '2.5.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.2.2'
 gem "bootsnap", require: false
+gem 'puma', '~> 3.11'
 
 # Use postgres as the database for Active Record
 gem 'pg'
@@ -24,22 +25,23 @@ gem 'bootstrap-sass', '~> 3.4.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
 
-group :development do
-  gem 'spring'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'letter_opener'
-  gem 'guard'
-  gem 'guard-rspec', '~> 4.2.8'
+group :test do
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '>= 2.15'
+  gem 'selenium-webdriver'
+  # Easy installation and use of chromedriver to run system tests with Chrome
+  gem 'chromedriver-helper'
 end
 
-group :development, :test do
-  gem 'puma'
+group :development do
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console', '>= 3.3.0'
+  gem 'listen', '>= 3.0.5', '< 3.2'
 end
 
 group :production do
-  gem 'unicorn'
-  gem 'rails_12factor'
+  gem "lograge"
 end
 
 gem 'devise'
